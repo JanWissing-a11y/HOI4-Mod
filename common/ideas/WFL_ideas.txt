@@ -1,0 +1,24 @@
+ideas = {
+    country = {
+        WFL_kleine_verwaltung = {
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { consumer_goods_factor = 0.05 }
+        }
+        WFL_rheinhandel = {
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { production_speed_industrial_complex_factor = 0.05 }
+        }
+        WFL_schuetzenverbaende = {
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { army_defence_factor = 0.05 }
+        }
+        WFL_koenigsgarde = {
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { army_org_factor = 0.03 }
+        }
+    }
+}

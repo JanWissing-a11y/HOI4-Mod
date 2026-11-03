@@ -1,0 +1,16 @@
+# Entwicklungsstand: Hauptstadt, Technologien und OOB folgen nach Vanilla-Prüfung.
+# Ohne zugewiesenes Startgebiet ist WFL noch nicht auswählbar.
+recruit_character = WFL_buergerrat
+set_politics = {
+    ruling_party = neutrality
+    elections_allowed = no
+}
+set_popularities = {
+    democratic = 20
+    neutrality = 80
+    fascism = 0
+    communism = 0
+}
+set_stability = 0.55
+set_war_support = 0.10
+add_ideas = WFL_kleine_verwaltung

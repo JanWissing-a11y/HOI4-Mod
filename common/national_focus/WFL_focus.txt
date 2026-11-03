@@ -1,0 +1,95 @@
+focus_tree = {
+    id = WFL_focus_tree
+    country = {
+        factor = 0
+        modifier = { add = 100 tag = WFL }
+    }
+    default = no
+
+    focus = {
+        id = WFL_rat_der_buergerhalle
+        icon = GFX_goal_generic_political_pressure
+        x = 6 y = 0 cost = 5
+        completion_reward = { add_political_power = 50 }
+    }
+    focus = {
+        id = WFL_werkbank_am_niederrhein
+        icon = GFX_goal_generic_construct_civ_factory
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        x = 0 y = 1 cost = 5
+        completion_reward = { add_political_power = 50 }
+    }
+    focus = {
+        id = WFL_rheinhandel_beleben
+        icon = GFX_goal_generic_construct_civ_factory
+        prerequisite = { focus = WFL_werkbank_am_niederrhein }
+        x = 0 y = 2 cost = 5
+        completion_reward = { add_ideas = WFL_rheinhandel }
+    }
+    focus = {
+        id = WFL_schuetzen_zu_soldaten
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        x = 3 y = 1 cost = 5
+        completion_reward = { add_ideas = WFL_schuetzenverbaende }
+    }
+    focus = {
+        id = WFL_uebungsplatz_am_auesee
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_schuetzen_zu_soldaten }
+        x = 3 y = 2 cost = 5
+        completion_reward = { add_army_experience = 10 }
+    }
+    focus = {
+        id = WFL_buergerverfassung
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        mutually_exclusive = { focus = WFL_die_krone_von_flueren focus = WFL_niederrhein_direktorium }
+        x = 6 y = 1 cost = 5
+        completion_reward = { country_event = { id = wfl.2 days = 1 } }
+    }
+    focus = {
+        id = WFL_kommunaler_aufbau
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_buergerverfassung }
+        available = { has_country_flag = WFL_republic_established }
+        x = 6 y = 2 cost = 5
+        completion_reward = { add_stability = 0.05 }
+    }
+    focus = {
+        id = WFL_die_krone_von_flueren
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        mutually_exclusive = { focus = WFL_buergerverfassung focus = WFL_niederrhein_direktorium }
+        x = 9 y = 1 cost = 5
+        completion_reward = { country_event = { id = wfl.1 days = 1 } }
+    }
+    focus = {
+        id = WFL_die_koenigsgarde
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_die_krone_von_flueren }
+        available = { has_country_flag = WFL_coronation_held }
+        x = 9 y = 2 cost = 5
+        completion_reward = { add_ideas = WFL_koenigsgarde }
+    }
+    focus = {
+        id = WFL_niederrhein_direktorium
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        mutually_exclusive = { focus = WFL_buergerverfassung focus = WFL_die_krone_von_flueren }
+        x = 12 y = 1 cost = 5
+        completion_reward = {
+            retire_character = WFL_buergerrat
+            recruit_character = WFL_direktorium
+            set_politics = { ruling_party = neutrality elections_allowed = no }
+            add_war_support = 0.05
+        }
+    }
+    focus = {
+        id = WFL_verwaltung_buendeln
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_niederrhein_direktorium }
+        x = 12 y = 2 cost = 5
+        completion_reward = { remove_ideas = WFL_kleine_verwaltung }
+    }
+}

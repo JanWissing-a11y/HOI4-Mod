@@ -1,0 +1,4 @@
+WFL_local_initiatives = {
+    allowed = { tag = WFL }
+    visible = { tag = WFL }
+}

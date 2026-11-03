@@ -1,2 +1,2 @@
-version="0.1.0"
-name="HOI4-Mod"
+version="0.0.1"
+name="Wesel-Flüren – Die Macht am Niederrhein"

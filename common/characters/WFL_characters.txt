@@ -1,0 +1,31 @@
+characters = {
+    WFL_buergerrat = {
+        name = WFL_buergerrat
+        country_leader = {
+            ideology = despotism
+            traits = { }
+        }
+    }
+    WFL_buergerpraesidium = {
+        name = WFL_buergerpraesidium
+        country_leader = {
+            ideology = conservatism
+            traits = { }
+        }
+    }
+    WFL_schuetzenkoenig = {
+        name = WFL_schuetzenkoenig
+        # Das vom Nutzer gewählte Porträt wird nach Bereitstellung der Bilddatei ergänzt.
+        country_leader = {
+            ideology = despotism
+            traits = { }
+        }
+    }
+    WFL_direktorium = {
+        name = WFL_direktorium
+        country_leader = {
+            ideology = despotism
+            traits = { }
+        }
+    }
+}

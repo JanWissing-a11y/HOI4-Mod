@@ -1,0 +1,37 @@
+add_namespace = wfl
+
+country_event = {
+    id = wfl.1
+    title = wfl.1.t
+    desc = wfl.1.d
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_completed_focus = WFL_die_krone_von_flueren }
+    option = {
+        name = wfl.1.a
+        retire_character = WFL_buergerrat
+        recruit_character = WFL_schuetzenkoenig
+        set_politics = { ruling_party = neutrality elections_allowed = no }
+        set_cosmetic_tag = WFL_KINGDOM
+        set_country_flag = WFL_coronation_held
+        add_stability = 0.05
+    }
+}
+
+country_event = {
+    id = wfl.2
+    title = wfl.2.t
+    desc = wfl.2.d
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_completed_focus = WFL_buergerverfassung }
+    option = {
+        name = wfl.2.a
+        retire_character = WFL_buergerrat
+        recruit_character = WFL_buergerpraesidium
+        set_popularities = { democratic = 60 neutrality = 40 fascism = 0 communism = 0 }
+        set_politics = { ruling_party = democratic elections_allowed = yes }
+        set_country_flag = WFL_republic_established
+        add_stability = 0.05
+    }
+}

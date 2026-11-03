@@ -1,0 +1,14 @@
+WFL_local_initiatives = {
+    WFL_organisiertes_exerzieren = {
+        visible = { has_completed_focus = WFL_uebungsplatz_am_auesee }
+        cost = 25
+        fire_only_once = yes
+        complete_effect = { add_army_experience = 5 }
+    }
+    WFL_rheinhandelsmesse = {
+        visible = { has_completed_focus = WFL_rheinhandel_beleben }
+        cost = 35
+        fire_only_once = yes
+        complete_effect = { add_stability = 0.03 }
+    }
+}

@@ -1,13 +1,21 @@
-# HOI4-Mod
+# Wesel-Flüren – Die Macht am Niederrhein
 
-Grundgerüst für eine Mod für **Hearts of Iron IV**. Es enthält noch keine
-Spieländerungen. Name, Thema und Inhalte können darauf aufbauend entwickelt werden.
+Begonnene Mod für **Hearts of Iron IV** mit elf Fokussen, vier nationalen Geistern,
+zwei Events, zwei Entscheidungen und deutschen sowie englischen Texten.
+**Noch nicht spielbar:** Verifiziertes Startgebiet, Hauptstadt, Startarmee und
+Grafiken fehlen. Die Länderhistorie ist provisorisch; WFL ist noch nicht auswählbar.
+Es gab keinen Ingame-Test. Details stehen in [docs/STATUS.md](docs/STATUS.md).
+
+Das bereitgestellte [Projektbriefing für Wesel/Flüren](docs/HOI4_Wesel_Flueren_Codex_Briefing.md)
+ist als Planungsgrundlage unverändert abgelegt. Sein vollständiger Zielumfang
+ist noch nicht implementiert. Die [Anleitung zur lokalen Weiterarbeit](docs/LOKAL_WEITERARBEITEN.md)
+erklärt den Umzug auf den Windows-PC mit der Steam-Installation.
 
 ## Entwicklung in der Cloud
 
 Die Mod besteht aus Daten- und Skriptdateien. Für dieses Grundgerüst sind weder
-Paketinstallation noch Build oder Serverstart erforderlich. Git ist bereits in
-der Cloud-Umgebung vorhanden.
+Paketinstallation noch Build oder Serverstart erforderlich. Die Prüfwerkzeuge
+benötigen Python 3.10 oder neuer; Git und Python 3.12 sind in der Cloud vorhanden.
 
 Das bestehende Checkout unter `/workspace/HOI4-Mod` verwenden. Ein zusätzliches
 Git-Worktree ist nicht erforderlich.
@@ -15,11 +23,15 @@ Git-Worktree ist nicht erforderlich.
 ```sh
 cd /workspace/HOI4-Mod
 git status --short --branch
+python3 tools/validate_mod.py
+python3 -m unittest discover -s tests -v
 git diff --check
 ```
 
 `git diff --check` prüft die Änderungen auf Whitespace-Fehler. Es ersetzt keine
-Prüfung durch die Spielengine. Automatisierte Spieltests sind noch nicht vorhanden.
+Prüfung durch die Spielengine. Der Python-Prüfer kontrolliert eigene Struktur,
+Referenzen, Fokusgraph und Textabdeckung. Er bestätigt keine Vanilla-Kompatibilität.
+Automatisierte Spieltests sind noch nicht vorhanden.
 
 ## Struktur
 
@@ -52,10 +64,11 @@ Paradox Launcher. Spieldateien und Zugangsdaten gehören nicht in dieses Reposit
    `descriptor.mod` muss direkt in diesem Verzeichnis liegen. Der Launcher legt
    daneben eine zusätzliche `.mod`-Datei mit dem lokalen Pfad an. Diese
    rechnerabhängige Datei nicht ins Repository übernehmen.
-3. Die Mod einem Playset hinzufügen, aktivieren und HOI4 mit `-debug` starten.
+3. Erst nach Fertigstellung des Startgebiets die Mod einem Playset hinzufügen,
+   aktivieren und HOI4 mit `-debug` starten.
 4. Ein neues Spiel starten und `logs/error.log` im HOI4-Benutzerdatenverzeichnis
-   auf neue, durch die Mod verursachte Meldungen prüfen. Dieses Grundgerüst
-   verändert das Spiel noch nicht.
+   auf neue, durch die Mod verursachte Meldungen prüfen. Die Abnahme aus
+   `docs/STATUS.md` durchführen und die Ergebnisse in `docs/TESTPROTOKOLL.md` festhalten.
 
 Das Benutzerdatenverzeichnis liegt unter Windows üblicherweise in
 `Dokumente/Paradox Interactive/Hearts of Iron IV`, unter Linux in

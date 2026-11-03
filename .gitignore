@@ -9,3 +9,7 @@
 # Betriebssystemdateien
 .DS_Store
 Thumbs.db
+
+# Python-Prüfwerkzeuge
+__pycache__/
+*.pyc
