@@ -1,0 +1,11 @@
+# Lokale Spielausgaben
+/logs/
+/crashes/
+/dumps/
+
+# Rechnerabhängiger Launcher-Descriptor
+/HOI4-Mod.mod
+
+# Betriebssystemdateien
+.DS_Store
+Thumbs.db
