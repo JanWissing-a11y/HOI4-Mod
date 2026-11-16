@@ -31,8 +31,9 @@ class NamePoolTests(unittest.TestCase):
         cls.path = ROOT / 'common/names/WFL_names.txt'
         cls.pools = parse(cls.path.read_text(encoding='utf-8-sig'))
 
-    def test_only_wfl_and_its_cosmetic_tag_are_defined(self):
-        self.assertEqual([pool.key for pool in self.pools], ['WFL', 'WFL_KINGDOM'])
+    def test_only_wfl_and_its_cosmetic_tags_are_defined(self):
+        self.assertEqual([pool.key for pool in self.pools],
+                         ['WFL', 'WFL_KINGDOM', 'WFL_GREATER_REICH'])
         self.assertNotEqual(self.path.name, '00_names.txt')
         for pool in self.pools:
             self.assertEqual({part.key for part in children(pool)}, {'male', 'female', 'surnames', 'callsigns'})
@@ -60,13 +61,15 @@ class NamePoolTests(unittest.TestCase):
         for pool in self.pools:
             self.assertGreaterEqual(len(names(block(pool, 'callsigns'))), 8)
 
-    def test_cosmetic_tag_preserves_both_name_pools(self):
-        base, kingdom = self.pools
-        for key in ('surnames', 'callsigns'):
-            self.assertEqual(names(block(base, key)), names(block(kingdom, key)))
-        for gender in ('male', 'female'):
-            self.assertEqual(names(block(block(base, gender), 'names')),
-                             names(block(block(kingdom, gender), 'names')))
+    def test_both_cosmetic_tags_preserve_all_name_pools(self):
+        base, *cosmetics = self.pools
+        for cosmetic in cosmetics:
+            with self.subTest(country=cosmetic.key):
+                for key in ('surnames', 'callsigns'):
+                    self.assertEqual(names(block(base, key)), names(block(cosmetic, key)))
+                for gender in ('male', 'female'):
+                    self.assertEqual(names(block(block(base, gender), 'names')),
+                                     names(block(block(cosmetic, gender), 'names')))
 
 
 if __name__ == '__main__':

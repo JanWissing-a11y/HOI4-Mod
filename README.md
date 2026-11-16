@@ -1,7 +1,7 @@
-# Wesel-Flüren – Die Macht am Niederrhein
+# Flüren – Die Macht am Niederrhein
 
 Lokaler Entwicklungsprototyp für **Hearts of Iron IV**: Ein unabhängiges
-Wesel-Flüren erhält einen eigenen Staat, eine Startarmee, einen Fokusbaum und
+Flüren erhält einen eigenen Staat, eine Startarmee, einen Fokusbaum und
 das Schützenwesen unter Jan Graf von Insel I., eine demokratische Alternative
 und eine königliche Verwaltungsroute.
 Entwickelt wird unter Windows gegen die vorhandene Steam-Version **1.19.5.0**.
@@ -116,7 +116,7 @@ in den gewählten Mod-Ordner. Originaldateien des Spiels bleiben unverändert.
 Für die Installation sind PowerShell 5.1 oder neuer, aber weder Python noch
 Administratorrechte erforderlich. Playsets werden nicht automatisch verändert.
 
-Anschließend im Paradox Launcher die lokale Mod **Wesel-Flüren – Die Macht am
+Anschließend im Paradox Launcher die lokale Mod **Flüren – Die Macht am
 Niederrhein** einem eigenen Playset hinzufügen und aktivieren. Für die erste
 Prüfung andere Mods deaktivieren und ein neues Spiel mit dem eigenen
 1936-Lesezeichen **„Die Macht am Niederrhein“** beginnen.
@@ -195,3 +195,9 @@ Versöhnung frei. [Regeln und Wahrscheinlichkeiten](docs/BATAILLONSVERSAMMLUNG.m
 Neue Partien beginnen außerdem mit leichtem Flugzeug und leichter
 Flugzeugbewaffnung: mit By Blood Alone kleines Flugzeugmodell 1936,
 leichte MGs und passende Motoren; ohne DLC die entsprechende Jagdflugzeugtechnik.
+
+
+Der Staat heißt bis zur deutschen Einigung **Flüren**, danach
+**Groß Flürener Reich**. Die gelieferte grün-schwarz-goldene
+Glockenflagge gilt für alle politischen Varianten und beide kosmetischen
+Namensstufen. [Namenswechsel und Flagge](docs/STAATSNAME_UND_FLAGGE.md).

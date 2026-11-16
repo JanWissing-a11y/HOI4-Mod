@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DECISION = 'WFL_deutschland_unter_schuetzenhut_vereinen'
 DONE = 'WFL_deutschland_vereint_done'
 SPIRIT = 'WFL_volk_unter_schuetzenhut'
+REICH = 'WFL_GREATER_REICH'
 # Independently recorded from vanilla 1.19's undated German state history,
 # plus the mod's Wesel-Flueren split. Later German gains are not prerequisites.
 GERMANY_1936 = (5, 42, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
@@ -31,6 +32,11 @@ class GermanIntegrationWorld(ScopeFixture):
     def __init__(self):
         super().__init__()
         self.ideas = {SPIRIT}
+        self.cosmetic_tag = 'WFL_KINGDOM'
+        self.cosmetic_changes = []
+        self.other_event_effects = []
+        self.scripted_effects = {n.key: children(n) for n in
+                                read('common/scripted_effects/WFL_country_name_effects.txt')}
         self.triggers = {n.key: children(n) for n in
                          read('common/scripted_triggers/WFL_german_integration_triggers.txt')}
         self.states = {key: State('WFL', 'WFL', {'GER'}) for key in GERMANY_1936}
@@ -63,6 +69,10 @@ class GermanIntegrationWorld(ScopeFixture):
                 valid = self.conditions(children(node), stack)
             elif node.key == 'tag':
                 valid = stack[-1].tag == node.value
+            elif node.key == 'has_cosmetic_tag':
+                valid = self.cosmetic_tag == node.value
+            elif node.key == 'exists':
+                valid = (stack[-1].tag in self.countries) == (node.value == 'yes')
             else:
                 valid = super().conditions([node], stack)
             if not valid:
@@ -72,7 +82,18 @@ class GermanIntegrationWorld(ScopeFixture):
     def effects(self, nodes, stack=None):
         stack = stack or [self.root]
         for node in nodes:
-            if node.key == 'every_state':
+            if node.key in self.scripted_effects:
+                self.effects(self.scripted_effects[node.key], stack)
+            elif node.key in self.countries:
+                self.effects(children(node), stack + [self.countries[node.key]])
+            elif node.key == 'set_cosmetic_tag':
+                self.cosmetic_tag = node.value
+                self.cosmetic_changes.append(node.value)
+            elif node.key in ('promote_character', 'set_politics', 'add_stability'):
+                # Coronation's other effects are outside this bounded identity
+                # evaluator; retain their actual AST rather than emulate them.
+                self.other_event_effects.append(node)
+            elif node.key == 'every_state':
                 limit = children(block(node, 'limit'))
                 body = [entry for entry in children(node) if entry.key != 'limit']
                 for state in self.states.values():
@@ -114,6 +135,7 @@ class GermanIntegrationTests(unittest.TestCase):
         self.assertEqual(owners, {key: state.owner for key, state in world.states.items()})
         self.assertEqual(world.ideas, {'WFL_rheinhandel'})
         self.assertIn(DONE, world.root.flags)
+        self.assertEqual(world.cosmetic_tag, REICH)
 
     def test_incomplete_ownership_or_control_never_removes_the_spirit_or_grants_cores(self):
         for change, value in [('owner', 'GER'), ('owner', 'HOL'), ('controller', 'HOL'),
@@ -128,6 +150,7 @@ class GermanIntegrationTests(unittest.TestCase):
                 self.assertIn(SPIRIT, world.ideas)
                 self.assertNotIn(DONE, world.root.flags)
                 self.assertNotIn('WFL', world.claims[85])
+                self.assertEqual(world.cosmetic_tag, 'WFL_KINGDOM')
 
     def test_annexed_germany_war_or_subject_status_do_not_add_unrequested_gates(self):
         world = GermanIntegrationWorld()
@@ -240,6 +263,54 @@ class GermanIntegrationTests(unittest.TestCase):
             self.assertIn(f' {DECISION}:0 ', text)
             self.assertIn(f' {DECISION}_desc:0 ', text)
             self.assertIn(description, text)
+
+    def test_unification_name_migrates_completed_saves_without_repeating_rewards(self):
+        hooks = read('common/on_actions/WFL_country_name_on_actions.txt')[0]
+        startup = children(block(block(hooks, 'on_startup'), 'effect'))
+        daily = children(block(block(hooks, 'on_daily_WFL'), 'effect'))
+        for pulse in (startup, daily):
+            with self.subTest(pulse=pulse):
+                world = GermanIntegrationWorld()
+                world.root.flags.add(DONE)
+                original_cores = {key: set(s.cores) for key, s in world.states.items()}
+                original_claims = {key: set(tags) for key, tags in world.claims.items()}
+                world.effects(pulse)
+                world.effects(pulse)
+                self.assertEqual(world.cosmetic_tag, REICH)
+                self.assertEqual(world.cosmetic_changes, [REICH])
+                self.assertIn(SPIRIT, world.ideas)
+                self.assertEqual(original_cores, {key: s.cores for key, s in world.states.items()})
+                self.assertEqual(original_claims, world.claims)
+
+    def test_name_refresh_does_not_rename_unfinished_or_other_countries(self):
+        for tag, done in (('WFL', False), ('GER', True)):
+            with self.subTest(tag=tag, done=done):
+                world = GermanIntegrationWorld()
+                world.root.tag = tag
+                world.cosmetic_tag = 'EXISTING_CUSTOM_IDENTITY'
+                if done:
+                    world.root.flags.add(DONE)
+                world.effects(world.scripted_effects['WFL_refresh_country_name'])
+                self.assertEqual(world.cosmetic_tag, 'EXISTING_CUSTOM_IDENTITY')
+                self.assertEqual(world.cosmetic_changes, [])
+
+    def test_late_coronation_preserves_reich_name_and_normal_coronation_still_works(self):
+        event = next(n for n in read('events/WFL_events.txt')
+                     if n.key == 'country_event' and field(n, 'id') == 'wfl.1')
+        option = [n for n in children(block(event, 'option')) if n.key != 'name']
+        for done in (False, True):
+            with self.subTest(unified=done):
+                world = GermanIntegrationWorld()
+                world.cosmetic_tag = 'PREVIOUS_CUSTOM_IDENTITY'
+                if done:
+                    world.root.flags.add(DONE)
+                world.effects(option)
+                self.assertEqual(world.cosmetic_tag, REICH if done else 'WFL_KINGDOM')
+                if done:
+                    self.assertNotIn('WFL_KINGDOM', world.cosmetic_changes)
+                self.assertIn('WFL_coronation_held', world.root.flags)
+                self.assertEqual([n.key for n in world.other_event_effects],
+                                 ['promote_character', 'set_politics', 'add_stability'])
 
 
 if __name__ == '__main__':

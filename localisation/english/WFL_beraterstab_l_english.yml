@@ -3,7 +3,7 @@
  WFL_beraterstab_gruenden_desc:0 "The Count invites five capable minds to the civic hall. Unfortunately, the council table has only three comfortable chairs. Appointed members gain special powers and complete three successive assignments alongside our normal national focus. The council serves only Jan and the Marksmen Tradition."
  WFL_staff_shortcut:0 "Marksmen Council"
  WFL_staff_system_tt:0 "Three additional special seats chosen from five councillors. Appointments take 14 days, followed by a 175-day appointment cooldown. Each member automatically handles their own subsequent focuses: 75–120 days of preparation, then 140/140/280 days of work. Your normal focus continues. Removal ends office bonuses; achieved ranks and completed focuses remain."
- WFL_staff_leadership_tt:0 "Jan Graf von Insel I. rules uncapitulated Wesel-Flüren under the Marksmen Tradition."
+ WFL_staff_leadership_tt:0 "Jan Graf von Insel I. rules uncapitulated Flüren under the Marksmen Tradition."
  WFL_staff_cooldown_tt:0 "The appointment cooldown has expired. [?WFL_staff_cooldown|0] days remain."
  WFL_staff_pending_tt:0 "No council replacement is awaiting a response."
  WFL_staff_appointment_tt:0 "The councillor receives a vacant special seat. If all three are occupied, a replacement event lets us choose an existing member to dismiss. Their office bonuses end and their current assignment is discarded. Cancelling makes the appointment focus available again. Normal political advisor slots are not used."

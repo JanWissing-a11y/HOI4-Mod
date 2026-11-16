@@ -19,3 +19,9 @@ Zwei Installerprüfungen sichern Grundtag, Königreichsfarbe, UI-Farbe, Erhalt
 der ursprünglichen Register, Wiederinstallation und ungültige RGB-Werte ab.
 Die Spielaufnahme des Nutzers belegt noch den vorherigen Stand. Die neue
 Kartenfarbe benötigt eine erneute Prüfung nach einem vollständigen Spielneustart.
+
+
+Seit 16. November 2026 gilt dieselbe Farbe auch für
+`WFL_GREATER_REICH` nach der deutschen Einigung. Das Installerrezept
+`cosmetic_tags` ergänzt beide kosmetischen Identitäten, ohne fremde
+Vanilla-Farbeinträge zu ersetzen.

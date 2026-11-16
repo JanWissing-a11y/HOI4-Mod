@@ -282,6 +282,46 @@ class ModTests(unittest.TestCase):
         (self.root / 'gfx/flags/medium/WFL_democratic.tga').unlink()
         self.assert_problem('WFL_democratic.tga')
 
+    def test_cosmetic_flags_are_explicit_for_every_size_and_ideology(self):
+        for tag in ('WFL_KINGDOM', 'WFL_GREATER_REICH'):
+            for folder in ('', 'medium', 'small'):
+                for suffix in ('', '_democratic', '_neutrality', '_fascism', '_communism'):
+                    with self.subTest(tag=tag, folder=folder, ideology=suffix):
+                        path = self.root / 'gfx/flags' / folder / f'{tag}{suffix}.tga'
+                        self.assertTrue(path.is_file(), path)
+                        expected = self.root / 'gfx/flags' / folder / 'WFL.tga'
+                        self.assertEqual(path.read_bytes(), expected.read_bytes())
+
+    def test_missing_cosmetic_flag_is_rejected(self):
+        for tag in ('WFL_KINGDOM', 'WFL_GREATER_REICH'):
+            path = self.root / f'gfx/flags/small/{tag}_communism.tga'
+            with self.subTest(tag=tag):
+                data = path.read_bytes()
+                path.unlink()
+                try:
+                    self.assert_problem(f'{tag}_communism.tga')
+                finally:
+                    path.write_bytes(data)
+
+    def test_cosmetic_flag_uses_same_design_as_base(self):
+        path = self.root / 'gfx/flags/medium/WFL_GREATER_REICH_neutrality.tga'
+        data = bytearray(path.read_bytes())
+        data[18] ^= 0xFF
+        path.write_bytes(data)
+        self.assert_problem('WFL_GREATER_REICH_neutrality.tga must match WFL.tga in the same size')
+
+    def test_cosmetic_flag_orientation_is_validated(self):
+        path = self.root / 'gfx/flags/small/WFL_GREATER_REICH_neutrality.tga'
+        data = bytearray(path.read_bytes())
+        data[17] |= 0x20
+        path.write_bytes(data)
+        self.assert_problem('WFL_GREATER_REICH_neutrality.tga requires bottom-left TGA origin for HoI4')
+
+    def test_cosmetic_country_names_require_localisation(self):
+        self.replace('localisation/english/WFL_german_integration_l_english.yml',
+                     ' WFL_GREATER_REICH_fascism_DEF:0', ' unused_cosmetic_name:0')
+        self.assert_problem('english: missing localisation: WFL_GREATER_REICH_fascism_DEF')
+
     def test_duplicate_province_in_mod_states(self):
         self.replace('history/states/51-Moselland.txt', 'provinces = {', 'provinces = { 3512')
         self.assert_problem('province assigned to multiple mod states: 3512')

@@ -3,7 +3,7 @@
  WFL_beraterstab_gruenden_desc:0 "Der Graf bestellt fünf fähige Köpfe in die Bürgerhalle. Leider stehen am Ratstisch nur drei bequeme Stühle. Ernannte Ratsmitglieder erhalten eigene Befugnisse und erledigen nacheinander drei Aufgaben parallel zu unserem normalen nationalen Fokus. Der Rat arbeitet ausschließlich unter Jan und dem Schützenwesen."
  WFL_staff_shortcut:0 "Schützenrat"
  WFL_staff_system_tt:0 "Drei zusätzliche Sonderplätze aus fünf Ratsmitgliedern. Ernennungen dauern 14 Tage; danach gilt eine Sperre von 175 Tagen. Jedes Mitglied bearbeitet seine eigenen Folgefokusse automatisch: 75–120 Tage Vorbereitung, dann 140/140/280 Tage Arbeit. Der normale Fokus läuft weiter. Bei Absetzung entfallen die Amtsboni; erreichte Stufen und abgeschlossene Fokusse bleiben erhalten."
- WFL_staff_leadership_tt:0 "Jan Graf von Insel I. regiert das nicht kapitulierte Wesel-Flüren unter dem Schützenwesen."
+ WFL_staff_leadership_tt:0 "Jan Graf von Insel I. regiert das nicht kapitulierte Flüren unter dem Schützenwesen."
  WFL_staff_cooldown_tt:0 "Die Ernennungssperre ist abgelaufen. Noch [?WFL_staff_cooldown|0] Tage."
  WFL_staff_pending_tt:0 "Kein noch unbeantworteter Austausch im Schützenrat."
  WFL_staff_appointment_tt:0 "Das Ratsmitglied erhält einen freien Sonderplatz. Sind alle drei Plätze besetzt, wählen wir im Austauschereignis ein bisheriges Mitglied aus. Seine Amtsboni verschwinden und sein laufender Auftrag wird verworfen. Ein Abbruch gibt den Ernennungsfokus wieder frei. Ein bestehender politischer Beraterplatz wird nicht belegt."

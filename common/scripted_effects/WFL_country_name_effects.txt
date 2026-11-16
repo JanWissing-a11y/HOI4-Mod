@@ -1,0 +1,11 @@
+# Only cosmetic identity changes; the real WFL tag and its mechanics stay intact.
+WFL_refresh_country_name = {
+    if = {
+        limit = {
+            tag = WFL
+            has_country_flag = WFL_deutschland_vereint_done
+            NOT = { has_cosmetic_tag = WFL_GREATER_REICH }
+        }
+        set_cosmetic_tag = WFL_GREATER_REICH
+    }
+}

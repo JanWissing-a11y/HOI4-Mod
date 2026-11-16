@@ -1,0 +1,14 @@
+# Migrate completed unifications from existing saves. Daily fallback also
+# handles saves loaded after startup and restored/released WFL countries.
+on_actions = {
+    on_startup = {
+        effect = {
+            WFL = {
+                if = { limit = { exists = yes } WFL_refresh_country_name = yes }
+            }
+        }
+    }
+    on_daily_WFL = {
+        effect = { WFL_refresh_country_name = yes }
+    }
+}

@@ -2,6 +2,7 @@
 from pathlib import Path
 import hashlib
 import json
+import re
 import shutil
 import subprocess
 import tempfile
@@ -109,24 +110,75 @@ class InstallerTests(unittest.TestCase):
         recipe.write_bytes((ROOT / 'tools/data/WFL_country_colors.json').read_bytes())
         return game, countries, recipe
 
-    def test_colors_preserve_vanilla_and_cover_base_and_kingdom(self):
+    def test_colors_preserve_vanilla_and_cover_base_kingdom_and_greater_reich(self):
         game, countries, _ = self.make_color_recipe()
         originals = {p.name: p.read_bytes() for p in countries.iterdir()}
         self.run_installer('-GameRoot', str(game))
         installed = self.destination / 'wesel_flueren'
         manifest = json.loads((installed / '.wesel_flueren_install.json').read_text())
-        for name, tag in (('colors.txt', 'WFL'), ('cosmetic.txt', 'WFL_KINGDOM')):
+        tags = (('colors.txt', 'WFL'), ('cosmetic.txt', 'WFL_KINGDOM'),
+                ('cosmetic.txt', 'WFL_GREATER_REICH'))
+        for name, tag in tags:
             relative = f'common/countries/{name}'
             output_bytes = (installed / relative).read_bytes()
             output = output_bytes.decode('utf-8')
             self.assertTrue(output_bytes.startswith(originals[name]))
-            self.assertIn(f'{tag} = {{', output)
-            self.assertIn('color = rgb { 35 107 59 }', output)
-            self.assertIn('color_ui = rgb { 57 153 86 }', output)
+            entry = re.search(rf'(?m)^{tag} = \{{\n([^}}]+)\}}\n([^}}]+)\}}\n\}}', output)
+            self.assertIsNotNone(entry, output)
+            self.assertIn('color = rgb { 35 107 59 }', entry[0])
+            self.assertIn('color_ui = rgb { 57 153 86 }', entry[0])
             self.assertIn(relative, manifest['files'])
             self.assertEqual((countries / name).read_bytes(), originals[name])
         self.run_installer('-GameRoot', str(game))
-        self.assertEqual((installed / 'common/countries/colors.txt').read_text().count('WFL = {'), 1)
+        for name, tag in tags:
+            self.assertEqual((installed / f'common/countries/{name}').read_text().count(f'{tag} = {{'), 1)
+
+    def test_legacy_single_cosmetic_color_recipe_still_installs(self):
+        game, _, recipe_path = self.make_color_recipe()
+        recipe = json.loads(recipe_path.read_text())
+        del recipe['cosmetic_tags']
+        recipe_path.write_text(json.dumps(recipe))
+        self.run_installer('-GameRoot', str(game))
+        cosmetic = (self.destination / 'wesel_flueren/common/countries/cosmetic.txt').read_text()
+        self.assertIn('WFL_KINGDOM = {', cosmetic)
+        self.assertNotIn('WFL_GREATER_REICH', cosmetic)
+
+    def test_cosmetic_color_tags_are_an_explicit_nonempty_unique_whitelist(self):
+        game, _, recipe_path = self.make_color_recipe()
+        recipe = json.loads(recipe_path.read_text())
+        for value in ('WFL_GREATER_REICH', [], ['GER'], ['WFL_KINGDOM', 'WFL_KINGDOM'],
+                      ['wfl_greater_reich'], [None]):
+            with self.subTest(cosmetic_tags=value):
+                recipe['cosmetic_tags'] = value
+                recipe_path.write_text(json.dumps(recipe))
+                self.run_installer('-GameRoot', str(game), success=False)
+                self.assertFalse(self.destination.exists())
+
+    def test_unknown_or_malformed_base_color_tags_are_rejected(self):
+        game, _, recipe_path = self.make_color_recipe()
+        original = json.loads(recipe_path.read_text())
+        for field, value in (('base_tag', 'GER'), ('base_tag', ['WFL']),
+                             ('cosmetic_tag', 'GER_monarchy')):
+            with self.subTest(field=field, value=value):
+                recipe = dict(original, **{field: value})
+                recipe_path.write_text(json.dumps(recipe))
+                self.run_installer('-GameRoot', str(game), success=False)
+                self.assertFalse(self.destination.exists())
+
+    def test_existing_vanilla_color_tag_collisions_are_preserved_and_refused(self):
+        game, countries, _ = self.make_color_recipe()
+        original = {p.name: p.read_bytes() for p in countries.iterdir()}
+        for name, tag in (('colors.txt', 'WFL'), ('cosmetic.txt', 'WFL_KINGDOM'),
+                          ('cosmetic.txt', 'WFL_GREATER_REICH')):
+            with self.subTest(tag=tag):
+                for filename, content in original.items():
+                    (countries / filename).write_bytes(content)
+                path = countries / name
+                collision = original[name] + f'{tag} = {{ color = rgb {{ 99 98 97 }} }}\n'.encode()
+                path.write_bytes(collision)
+                self.run_installer('-GameRoot', str(game), success=False)
+                self.assertEqual(path.read_bytes(), collision)
+                self.assertFalse(self.destination.exists())
 
     def test_invalid_colors_fail_before_installation(self):
         game, _, recipe_path = self.make_color_recipe()

@@ -1,9 +1,9 @@
 #requires -Version 5.1
 <#
 .SYNOPSIS
-Converts the approved PNG flag into exactly fifteen uncompressed 32-bit TGAs.
+Converts the approved PNG flag into forty-five uncompressed 32-bit TGAs.
 .DESCRIPTION
-All five political variants use the same source design. No other flag files
+All political variants of WFL and its two cosmetic names use the same design. No other flag files
 are changed. Run with Python's generate_flags.py bridge or supply -Source and
 -FlagsRoot explicitly. An optional contact sheet is saved through -Preview.
 #>
@@ -90,8 +90,10 @@ try {
         $directory = $flagsPath
         if ($size.Folder) { $directory = Join-Path $flagsPath $size.Folder }
         [IO.Directory]::CreateDirectory($directory) | Out-Null
-        foreach ($suffix in @('', '_democratic', '_neutrality', '_fascism', '_communism')) {
-            [IO.File]::WriteAllBytes((Join-Path $directory ('WFL' + $suffix + '.tga')), $bytes)
+        foreach ($tag in @('WFL', 'WFL_KINGDOM', 'WFL_GREATER_REICH')) {
+            foreach ($suffix in @('', '_democratic', '_neutrality', '_fascism', '_communism')) {
+                [IO.File]::WriteAllBytes((Join-Path $directory ($tag + $suffix + '.tga')), $bytes)
+            }
         }
     }
     if ($Preview) {
@@ -104,7 +106,7 @@ try {
         $border = [Drawing.Pen]::new([Drawing.Color]::FromArgb(185, 192, 202))
         try {
             $graphics.Clear([Drawing.Color]::FromArgb(240, 243, 247))
-            $graphics.DrawString('Wesel-Flueren - approved coat-of-arms flag', $font, $brush, 22, 15)
+            $graphics.DrawString('Flueren - approved green bell flag', $font, $brush, 22, 15)
             $graphics.InterpolationMode = [Drawing.Drawing2D.InterpolationMode]::NearestNeighbor
             $graphics.PixelOffsetMode = [Drawing.Drawing2D.PixelOffsetMode]::Half
             $panels = @(
@@ -126,7 +128,7 @@ try {
         Write-Output "Preview: $previewPath"
     }
     Write-Output "Source: $sourcePath ($($sourceImage.Width)x$($sourceImage.Height))"
-    Write-Output 'Generated exactly 15 WFL flags: 82x52, 41x26 and 10x7; uncompressed 32-bit BGRA TGA.'
+    Write-Output 'Generated 45 flags for WFL, WFL_KINGDOM and WFL_GREATER_REICH: 82x52, 41x26 and 10x7; uncompressed 32-bit BGRA TGA.'
 } finally {
     foreach ($bitmap in $bitmaps) { $bitmap.Dispose() }
     $sourceImage.Dispose()

@@ -2,7 +2,7 @@
 
 Stand: 10. November 2026. Die kostenlose Entscheidung benötigt jetzt
 **Deutschlands Startterritorium vom 1. Januar 1936**, einschließlich des für
-Wesel-Flüren abgetrennten Teils von Moselland. Spätere deutsche Kerngebiete,
+Flüren abgetrennten Teils von Moselland. Spätere deutsche Kerngebiete,
 Annexionen und Ansprüche erweitern diese Voraussetzung nicht mehr.
 
 Erforderliche Staaten aus den lokalen Vanilla-Historien und Mod-Overrides
@@ -56,3 +56,10 @@ Elf begrenzte Skripttests prüfen die tatsächlichen Trigger und Effekte mit
 festem Startgebiet, fehlendem Besitz, Teilkontrolle, optionalen Auslandsgebieten,
 zusätzlichen Kernen, Ansprüchen und einmaligem Abschluss. Sie ersetzen keine
 Engine-Prüfung.
+
+
+Seit dem 16. November 2026 setzt der erfolgreiche Abschluss zusätzlich
+den Staatsnamen **Groß Flürener Reich**. Bereits vereinte Spielstände
+erhalten den Namen beim Laden beziehungsweise spätestens am nächsten
+Spieltag; Kerne und sonstige Belohnungen werden dabei nicht erneut vergeben.
+Eine spätere Krönung erhält diesen Namen.

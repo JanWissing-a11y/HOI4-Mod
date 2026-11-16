@@ -93,6 +93,7 @@ WFL_deutsche_einigung = {
                 }
                 remove_ideas = WFL_volk_unter_schuetzenhut
                 set_country_flag = WFL_deutschland_vereint_done
+                WFL_refresh_country_name = yes
             }
         }
     }

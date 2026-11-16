@@ -1,6 +1,7 @@
 {
   "base_tag": "WFL",
   "cosmetic_tag": "WFL_KINGDOM",
+  "cosmetic_tags": ["WFL_KINGDOM", "WFL_GREATER_REICH"],
   "map_color": [35, 107, 59],
   "ui_color": [57, 153, 86]
 }

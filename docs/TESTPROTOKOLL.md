@@ -606,3 +606,36 @@ Reiner Subagent-Review fand keine weiteren aktiven 30-Pp.-Referenzen.
 Lokal installiert mit Sicherung `20261116-172204-bb6dc168`; alle 296
 direkten Quelldateien stimmen mit der Installation überein.
 Keine neue Engine-Abnahme.
+
+
+## 16. November: Flüren, neue Flagge und Reichsname
+
+Alle politischen Varianten und die Krönung heißen jetzt Flüren. Staat,
+Hauptstadt, Länderauswahl, Herstellerzusätze und sonstige DE/EN-Texte
+wurden angepasst. Nach erfolgreicher deutscher Einigung lautet der Name
+Groß Flürener Reich (Cosmetic WFL_GREATER_REICH); Altsaves mit Done-Marker
+werden per Start-/Tagesaktion migriert. Späte Krönung überschreibt den
+Reichsnamen nicht. Kerne, Ansprüche und Entfernung des 20-Pp.-Geists behalten
+ihre bisherigen Bedingungen. Neue Cosmetic verwendet eigene Namens- und
+Porträtpools sowie dasselbe Schützengrün.
+
+Gelieferte PNG-Flagge bytegenau als Quelle übernommen (SHA256
+5fe58d417e733927fb1721c692fdf79e91b8f9677b7e872d1dc5e203fb16f464).
+45 unkomprimierte TGA-Varianten für drei Identitäten, fünf Varianten und
+drei Größen erzeugt. Konvertierungsvorschau visuell korrekt ausgerichtet;
+kein Motiv neu generiert oder abgeschnitten. Validator prüft alle Varianten.
+
+Gesamtlauf: 288 Tests in 165,360 Sekunden, zunächst zwei Fehler: neuer
+Lokalisierungstest mit falschem Dateipfad und alte Quellen-Versionsangabe
+1.19.4.2 im Militärstabsmanifest. Testpfad korrigiert. Frisch erzeugte
+Militärstabsdaten mit vorhandenen verglichen: vollständig identisch außer
+Versionsmetadatum; Manifest auf lokale Version 1.19.5.0 aktualisiert.
+Gezielter Nachlauf aller betroffenen Bereiche: 29 Tests in 4,570 Sekunden
+bestanden. Sechs gezielte Installertests bestanden separat in 12,524 Sekunden,
+inklusive kosmetischer Farbtags, Legacy-Rezept und Kollisionsschutz.
+Validator mit Spielpfad bestanden: 78 Fokusse, 48 Events, 133 Ideen,
+38 Entscheidungen und 95 Skriptdateien. Keine neue Engine-Abnahme.
+
+Installiert mit Sicherung `20261116-175213-38e5bb4e`; alle 328 direkten
+Quelldateien stimmen mit der Installation überein. Beide kosmetischen
+Identitäten sind im erzeugten Farbregister genau einmal grün eingetragen.

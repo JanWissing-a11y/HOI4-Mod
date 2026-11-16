@@ -106,6 +106,24 @@ class SchuetzenwesenTests(unittest.TestCase):
                 bookmark = (ROOT / 'localisation' / language / f'WFL_map_l_{language}.yml').read_text(encoding='utf-8-sig')
                 self.assertIn('Jan Graf von Insel I.', bookmark)
 
+    def test_country_names_follow_identity_for_every_ideology_in_both_languages(self):
+        expected = {'WFL': 'Flüren', 'WFL_KINGDOM': 'Flüren',
+                    'WFL_GREATER_REICH': 'Groß Flürener Reich'}
+        for language in ('german', 'english'):
+            localized = {}
+            for path in (ROOT / 'localisation' / language).glob('*.yml'):
+                localized.update(re.findall(r'^ ([\w.]+):\d* "(.*)"$',
+                                           path.read_text(encoding='utf-8-sig'), re.MULTILINE))
+            for tag, name in expected.items():
+                for ideology in ('', '_democratic', '_neutrality', '_fascism', '_communism'):
+                    with self.subTest(language=language, tag=tag, ideology=ideology):
+                        self.assertEqual(localized[tag + ideology], name)
+                        self.assertEqual(localized[tag + ideology + '_DEF'], name)
+                        adjective = ('großflürener' if tag == 'WFL_GREATER_REICH' else 'flürener')
+                        if language == 'english':
+                            adjective = 'Greater Flürener' if tag == 'WFL_GREATER_REICH' else 'Flürener'
+                        self.assertEqual(localized[tag + ideology + '_ADJ'], adjective)
+
 
 if __name__ == '__main__':
     unittest.main()

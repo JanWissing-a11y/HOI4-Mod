@@ -1,5 +1,5 @@
 {
-  "source_version": "1.19.4.2",
+  "source_version": "1.19.5.0",
   "scope": "Military advisor roles explicitly allowed for GER, including two Austrian profiles in AUS.txt; FIN-only Falkenhorst is excluded.",
   "default_military_advisor_cost": 50,
   "staff": [

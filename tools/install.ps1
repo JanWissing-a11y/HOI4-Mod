@@ -161,7 +161,21 @@ function Build-LocalMap([string]$RecipePath, [string]$InstalledGame) {
 
 function Build-LocalColors([string]$RecipePath, [string]$InstalledGame) {
     $recipe = Get-Content -LiteralPath $RecipePath -Raw -Encoding UTF8 | ConvertFrom-Json
-    if ($recipe.base_tag -ne 'WFL' -or $recipe.cosmetic_tag -ne 'WFL_KINGDOM') { throw 'Unbekanntes Farbrezept.' }
+    if ($recipe.base_tag -isnot [string] -or $recipe.cosmetic_tag -isnot [string] -or
+        $recipe.base_tag -cne 'WFL' -or $recipe.cosmetic_tag -cne 'WFL_KINGDOM') { throw 'Unbekanntes Farbrezept.' }
+    # Legacy recipes have one cosmetic_tag. New recipes may add only these
+    # explicitly owned WFL cosmetics; never accept arbitrary country tags.
+    $cosmeticTags = @($recipe.cosmetic_tag)
+    if ($recipe.PSObject.Properties['cosmetic_tags']) {
+        if ($recipe.cosmetic_tags -isnot [array] -or $recipe.cosmetic_tags.Count -eq 0) { throw 'cosmetic_tags muss ein nichtleeres Array sein.' }
+        $seen = @()
+        foreach ($tag in $recipe.cosmetic_tags) {
+            if ($tag -isnot [string] -or @('WFL_KINGDOM', 'WFL_GREATER_REICH') -cnotcontains $tag) { throw 'Unbekannter kosmetischer Farbtag.' }
+            if ($seen -ccontains $tag) { throw 'Doppelter kosmetischer Farbtag.' }
+            $seen += $tag
+            if ($cosmeticTags -cnotcontains $tag) { $cosmeticTags += $tag }
+        }
+    }
     foreach ($values in @($recipe.map_color, $recipe.ui_color)) {
         if ($values.Count -ne 3) { throw 'Farben benoetigen drei RGB-Werte.' }
         foreach ($value in $values) {
@@ -174,11 +188,17 @@ function Build-LocalColors([string]$RecipePath, [string]$InstalledGame) {
         $original = Join-Path $InstalledGame $relative
         if (-not (Test-Path -LiteralPath $original -PathType Leaf)) { throw "Vanilla-Farbdatei fehlt: $relative" }
         $text = [IO.File]::ReadAllText($original)
-        $tag = if ($name -eq 'colors') { $recipe.base_tag } else { $recipe.cosmetic_tag }
-        if ($text -match "(?m)^\s*$tag\s*=") { throw "Vanilla definiert bereits den Mod-Farbtag $tag." }
+        $tags = if ($name -eq 'colors') { @($recipe.base_tag) } else { $cosmeticTags }
+        foreach ($tag in $tags) {
+            if ($text -match "(?m)^\s*$tag\s*=") { throw "Vanilla definiert bereits den Mod-Farbtag $tag." }
+        }
         # These special filenames replace the whole vanilla registry. Preserve
-        # every other tag from the installed version and append only our entry.
-        $result[$relative] = $text + "`n# Wesel-Flueren: generated from the local vanilla registry.`n$tag = {`n    color = rgb { $($recipe.map_color -join ' ') }`n    color_ui = rgb { $($recipe.ui_color -join ' ') }`n}`n"
+        # every other tag from the installed version and append only our entries.
+        $generated = "`n# Wesel-Flueren: generated from the local vanilla registry.`n"
+        foreach ($tag in $tags) {
+            $generated += "$tag = {`n    color = rgb { $($recipe.map_color -join ' ') }`n    color_ui = rgb { $($recipe.ui_color -join ' ') }`n}`n"
+        }
+        $result[$relative] = $text + $generated
     }
     return $result
 }

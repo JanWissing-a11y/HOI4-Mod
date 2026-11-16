@@ -29,6 +29,10 @@ class Result:
     counts: dict[str, int]
 
 
+WFL_IDENTITIES = ('WFL', 'WFL_KINGDOM', 'WFL_GREATER_REICH')
+FLAG_SUFFIXES = ('', '_democratic', '_neutrality', '_fascism', '_communism')
+
+
 TOKEN = re.compile(
     r'(?P<space>\s+)|(?P<comment>\#[^\n]*)|'
     r'(?P<string>"(?:[^"\\]|\\.)*")|(?P<brace>[{}])|'
@@ -112,6 +116,10 @@ def validate(root: Path, game_root: Path | None = None) -> Result:
         kind: {} for kind in ('tag', 'character', 'trait', 'sprite', 'idea', 'focus', 'event', 'category', 'decision')
     }
     required_text: set[str] = set()
+    # Explicit names prevent cosmetic tags from inheriting a vanilla ideology name.
+    required_text.update(tag + ideology + suffix
+                         for tag in WFL_IDENTITIES for ideology in FLAG_SUFFIXES
+                         for suffix in ('', '_DEF', '_ADJ'))
     opinion_modifiers: set[str] = set()
 
     def problem(path: Path, message: str):
@@ -493,23 +501,29 @@ def validate_startup(root: Path, documents: dict[Path, list[Node]],
                 report(f'unknown starting division template: {field(division, "division_template")}')
 
     for folder, expected in (('', (82, 52)), ('medium', (41, 26)), ('small', (10, 7))):
-        for suffix in ('', '_democratic', '_neutrality', '_fascism', '_communism'):
-            flag = root / 'gfx/flags' / folder / f'WFL{suffix}.tga'
-            try:
-                data = flag.read_bytes()
-                if len(data) < 18:
-                    raise ValueError('truncated TGA header')
-                width, height, depth = struct.unpack_from('<HHB', data, 12)
-                if (width, height) != expected:
-                    report(f'{flag.relative_to(root)} requires dimensions {expected}, got {(width, height)}')
-                if data[1] != 0 or data[2] not in (2, 10) or depth not in (24, 32):
-                    report(f'{flag.relative_to(root)} must be a true-color 24/32-bit TGA')
-                if data[17] & 0x30:
-                    report(f'{flag.relative_to(root)} requires bottom-left TGA origin for HoI4')
-                if data[2] == 2 and len(data) < 18 + data[0] + width * height * (depth // 8):
-                    report(f'{flag.relative_to(root)} has truncated pixel data')
-            except (OSError, ValueError, struct.error) as exc:
-                report(f'{flag.relative_to(root)}: {exc}')
+        base_data = None
+        for tag in WFL_IDENTITIES:
+            for suffix in FLAG_SUFFIXES:
+                flag = root / 'gfx/flags' / folder / f'{tag}{suffix}.tga'
+                try:
+                    data = flag.read_bytes()
+                    if tag == 'WFL' and not suffix:
+                        base_data = data
+                    elif base_data is not None and data != base_data:
+                        report(f'{flag.relative_to(root)} must match WFL.tga in the same size')
+                    if len(data) < 18:
+                        raise ValueError('truncated TGA header')
+                    width, height, depth = struct.unpack_from('<HHB', data, 12)
+                    if (width, height) != expected:
+                        report(f'{flag.relative_to(root)} requires dimensions {expected}, got {(width, height)}')
+                    if data[1] != 0 or data[2] not in (2, 10) or depth not in (24, 32):
+                        report(f'{flag.relative_to(root)} must be a true-color 24/32-bit TGA')
+                    if data[17] & 0x30:
+                        report(f'{flag.relative_to(root)} requires bottom-left TGA origin for HoI4')
+                    if data[2] == 2 and len(data) < 18 + data[0] + width * height * (depth // 8):
+                        report(f'{flag.relative_to(root)} has truncated pixel data')
+                except (OSError, ValueError, struct.error) as exc:
+                    report(f'{flag.relative_to(root)}: {exc}')
 
     if game_root is None:
         return

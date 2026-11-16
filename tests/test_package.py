@@ -21,8 +21,13 @@ class PackageTests(unittest.TestCase):
                 names = set(archive.namelist())
             self.assertTrue({'descriptor.mod', 'tools/install.ps1', 'tools/data/building_overrides.json',
                              'history/states/1082-Wesel-Flueren.txt', 'gfx/flags/WFL.tga',
+                             'gfx/flags/source/WFL_flag.png', 'common/names/WFL_names.txt',
                              'portraits/WFL_portraits.txt'} <= names)
             self.assertNotIn('map/buildings.txt', names)
+            for tag in ('WFL', 'WFL_KINGDOM', 'WFL_GREATER_REICH'):
+                for folder in ('', 'medium/', 'small/'):
+                    for suffix in ('', '_democratic', '_neutrality', '_fascism', '_communism'):
+                        self.assertIn(f'gfx/flags/{folder}{tag}{suffix}.tga', names)
             self.assertFalse(any(name.startswith(('.git/', '.local-test/', 'dist/')) for name in names))
 
 

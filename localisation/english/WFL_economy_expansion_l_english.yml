@@ -9,7 +9,7 @@
  WFL_alkoholfreies_bier_verbot_idee:0 "No Alcohol-Free Beer in the Canteen"
  WFL_alkoholfreies_bier_verbot_idee_desc:0 "The new canteen regulations increase army morale and organisation recovery by 10 percent."
  WFL_flachglas_ruestungsproduktion:0 "Convert Flachglas to Arms Production"
- WFL_flachglas_ruestungsproduktion_desc:0 "The glassworks receive a new assignment. Three military factories and three additional building slots are created immediately in our owned and fully controlled Wesel-Flüren. If the site is lost, demilitarised or the maximum building limits prevent construction, receive 150 political power instead."
+ WFL_flachglas_ruestungsproduktion_desc:0 "The glassworks receive a new assignment. Three military factories and three additional building slots are created immediately in our owned and fully controlled Flüren. If the site is lost, demilitarised or the maximum building limits prevent construction, receive 150 political power instead."
  WFL_schuetzen_kriegswirtschaft:0 "Everything for the Marksmen's Economy"
  WFL_schuetzen_kriegswirtschaft_desc:0 "After the glassworks conversion, the government coordinates resources, orders and labour. Adopt War Economy immediately and without a political power cost. If War Economy or Total Mobilisation is already in force, receive 100 political power instead."
  WFL_anglo_bier_diplomatie:0 "Anglo Beer Diplomacy"

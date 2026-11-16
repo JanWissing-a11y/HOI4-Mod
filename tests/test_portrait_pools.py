@@ -36,8 +36,9 @@ class PortraitPoolTests(unittest.TestCase):
     def setUpClass(cls):
         cls.countries = parse((ROOT / 'portraits/WFL_portraits.txt').read_text(encoding='utf-8-sig'))
 
-    def test_pools_apply_only_to_wfl_and_its_cosmetic_tag(self):
-        self.assertEqual([node.key for node in self.countries], ['WFL', 'WFL_KINGDOM'])
+    def test_pools_apply_only_to_wfl_and_its_cosmetic_tags(self):
+        self.assertEqual([node.key for node in self.countries],
+                         ['WFL', 'WFL_KINGDOM', 'WFL_GREATER_REICH'])
         for country in self.countries:
             self.assertEqual(
                 {node.key for node in children(country)},

@@ -2,7 +2,7 @@
 
 Stand: 16. November 2026. Lokale Windows-Entwicklung gegen die Steam-Installation
 von **HoI4 1.19.5.0**. Ziel dieses Schritts ist ein erster
-lokaler Prototyp mit unabhängigem Wesel-Flüren im Jahr 1936. Eine erfolgreiche
+lokaler Prototyp mit unabhängigem Flüren im Jahr 1936. Eine erfolgreiche
 statische Prüfung allein bestätigt weder Spielbarkeit noch DLC-Kompatibilität.
 Tatsächlich ausgeführte Prüfungen stehen im [Prüfprotokoll](TESTPROTOKOLL.md).
 

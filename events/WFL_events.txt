@@ -12,7 +12,12 @@ country_event = {
         name = wfl.1.a
         promote_character = WFL_schuetzenkoenig
         set_politics = { ruling_party = neutrality elections_allowed = no }
-        set_cosmetic_tag = WFL_KINGDOM
+        # A late coronation must not replace the completed unification name.
+        if = {
+            limit = { NOT = { has_country_flag = WFL_deutschland_vereint_done } }
+            set_cosmetic_tag = WFL_KINGDOM
+        }
+        WFL_refresh_country_name = yes
         set_country_flag = WFL_coronation_held
         add_stability = 0.05
     }

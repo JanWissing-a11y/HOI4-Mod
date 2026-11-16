@@ -52,7 +52,18 @@ geprüft; große und kleine DDS entstehen aus demselben Ausschnitt. Reproduktion
 `tools/data/al_hoehne_portrait.json`. Das bestehende Feldmarschallporträt von
 Lukas Höhne I. bleibt erhalten.
 
-## Nationalflagge
+## Aktuelle Nationalflagge
+
+Seit 16. November 2026 verwenden Flüren und das Groß Flürener Reich
+die vom Nutzer gelieferte grün-schwarz-goldene Glockenflagge. Original:
+`gfx/flags/source/WFL_flag.png`. Der Konverter erstellt 45 Varianten mit
+Ursprung unten links für WFL, WFL_KINGDOM und WFL_GREATER_REICH.
+[Namenswechsel und technische Details](STAATSNAME_UND_FLAGGE.md).
+
+## Historische Nationalflagge vor dem 16. November
+
+Der folgende Abschnitt dokumentiert das frühere Motiv und seinen Entstehungsverlauf.
+Die dort genannte Quelldatei wurde durch die neue Nutzerflagge ersetzt.
 
 Die Landesfarbe auf der politischen Karte ist seit dem 8. November 2026
 Schützengrün **#236B3B** (RGB 35, 107, 59), definiert in
