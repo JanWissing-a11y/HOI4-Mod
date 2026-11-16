@@ -8,6 +8,10 @@ Entwickelt wird unter Windows gegen die vorhandene Steam-Version **1.19.5.0**.
 Statische Prüfungen ersetzen keine Abnahme im Spiel. Tatsächlich ausgeführte
 Prüfungen stehen in [docs/TESTPROTOKOLL.md](docs/TESTPROTOKOLL.md).
 
+Die vollständige Projektübergabe mit aktuellem Stand, Dateistruktur, Konventionen,
+Fehlerhistorie und priorisierten Aufgaben steht in
+[docs/UEBERGABE_AN_KI.md](docs/UEBERGABE_AN_KI.md).
+
 Enthalten sind **78 Fokusse, 46 sichtbare nationale Geister, 48 Events und 38
 Entscheidungen**, vollständig auf Deutsch und Englisch. Dazu kommen
 drei Divisionsvorlagen, zwei Startdivisionen, eigene Flaggen und das vom Nutzer
@@ -64,9 +68,11 @@ Das Reichspfandministerium bringt dauerhaft +15 % Ressourcen, einen um 10 %
 geringeren Rohstoffmangelmalus und +5 % Fabrikleistung. In der Zapfhahnkrise
 führen Eiswürfelverträge oder ein königliches Trinkduell zu eigenen Boni.
 [Pfand und Zapfhahnkrise](docs/PFAND_UND_ZAPFHAHN.md).
-Die **Dorfkeller Diplomatie** führt nach erfolgreich beigelegter Zapfhahnkrise
-in 35 Tagen direkt zu den demokratischen, britisch geführten Alliierten.
-Flüren muss unabhängig, bündnislos und mit allen Mitgliedern ohne Krieg sein.
+Die **Dorfkeller Diplomatie** führt nach dem abgeschlossenen Zapfhahnkrisen-Fokus
+in 35 Tagen direkt zu den tatsächlichen Alliierten unter ihrer aktuellen Führung.
+Großbritannien muss Mitglied sein; Demokratie und britische Bündnisführung sind
+nicht erforderlich. Flüren muss unabhängig, nicht kapituliert, bündnislos und
+mit allen Mitgliedern ohne Krieg sein.
 [Dorfkeller-Vertrag](docs/DORFKELLER_DIPLOMATIE.md).
 Vier Iran-Fokusse erzählen von Erbfolgechaos, Höhnes Gesandtschaft, Hochzeit
 und Treuevertrag. Der Abschluss macht Iran garantiert zur Flürener Marionette
