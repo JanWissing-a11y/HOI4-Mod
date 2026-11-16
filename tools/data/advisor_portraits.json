@@ -1,0 +1,23 @@
+{
+  "description": "User-supplied photos, selected by visible image position only. No real person is identified. Original photos are not modified or included in the package.",
+  "portraits": [
+    { "id": "01", "file": "6bef4f01-cf1f-4d4c-8afa-381c3df3040a.JPG", "crop": [145, 65, 490, 660] },
+    { "id": "02", "file": "6bef4f01-cf1f-4d4c-8afa-381c3df3040a.JPG", "crop": [555, 240, 525, 707] },
+    { "id": "03", "file": "a3d9d2c7-5e3b-4e39-a4e7-19017ef987bf.JPG", "crop": [180, 70, 620, 835] },
+    { "id": "04", "file": "fd9ae2e1-4697-48fa-b10c-1ff46d093b1d.JPG", "crop": [140, 500, 800, 1077] },
+    { "id": "05", "file": "fd9ae2e1-4697-48fa-b10c-1ff46d093b1d.JPG", "crop": [800, 925, 715, 962] },
+    { "id": "06", "file": "c0bbf879-d369-4212-831c-fc397ef1dcf8.JPG", "crop": [70, 350, 770, 1037] },
+    { "id": "07", "file": "c0bbf879-d369-4212-831c-fc397ef1dcf8.JPG", "crop": [760, 475, 755, 1016] },
+    { "id": "08", "file": "6bf06a69-41c5-4f4c-95af-2f7e4860015e.JPG", "crop": [190, 0, 860, 1158] },
+    { "id": "09", "file": "06a7f89b-fde4-4513-9802-8c1d2aef1540.JPG", "crop": [427, 670, 280, 377] },
+    { "id": "10", "file": "8 (1).png", "crop": [565, 85, 425, 572] },
+    { "id": "11", "file": "8 (1).png", "crop": [365, 735, 455, 612] },
+    { "id": "12", "file": "d1ff126d-4348-4577-a22f-cef033ffa814.JPG", "crop": [835, 640, 313, 421] },
+    { "id": "13", "file": "b392bdfb-8c24-4ff4-a1b3-dfbad501050d.JPG", "crop": [315, 130, 710, 956] },
+    { "id": "14", "file": "cee0a542-bad0-4af0-9c5a-bb0ecf560c0c.JPG", "crop": [575, 130, 700, 942] },
+    { "id": "15", "file": "IMG_1844.jpeg", "crop": [2070, 0, 880, 1185] },
+    { "id": "16", "file": "14086c45-1524-4ff3-a5a3-0762cc52d055.JPG", "crop": [130, 545, 790, 1063] },
+    { "id": "17", "file": "IMG_1922.jpeg", "crop": [440, 1220, 1450, 1952] },
+    { "id": "18", "file": "IMG_1801.jpeg", "crop": [865, 430, 860, 1158] }
+  ]
+}

@@ -1,0 +1,77 @@
+# Fictional WFL scientists; values match the corresponding Vanilla manufacturer specialists.
+characters = {
+    WFL_manufacturer_porsche_scientist = {
+        name = WFL_manufacturer_porsche_scientist
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+        }
+        scientist = {
+            traits = {
+                scientist_trait_armored_specialist
+                scientist_trait_gifted_engineer
+            }
+            skills = {
+                specialization_land = 3
+            }
+            visible = {
+                owner = {
+                    has_dlc = "Gotterdammerung"
+                    if = {
+                        limit = {
+                            has_dlc = "Arms Against Tyranny"
+                        }
+                        mio:WFL_mio_porsche = {
+                            is_mio_trait_completed = GER_mio_trait_involve_porsche_in_special_projects
+                        }
+                    }
+                    else = {
+                        OR = {
+                            has_idea = WFL_mfr_porsche
+                            has_idea = WFL_mfr_porsche_improved
+                        }
+                    }
+                }
+            }
+        }
+    }
+    WFL_manufacturer_henschel_scientist = {
+        name = WFL_manufacturer_henschel_scientist
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+        }
+        scientist = {
+            traits = {
+                scientist_trait_armored_specialist
+                scientist_trait_brilliant_theorist
+            }
+            skills = {
+                specialization_land = 3
+            }
+            visible = {
+                owner = {
+                    has_dlc = "Gotterdammerung"
+                    if = {
+                        limit = {
+                            has_dlc = "Arms Against Tyranny"
+                        }
+                        mio:WFL_mio_henschel = {
+                            is_mio_trait_completed = GER_mio_trait_involve_henschel_in_special_projects
+                        }
+                    }
+                    else = {
+                        OR = {
+                            has_idea = WFL_mfr_henschel
+                            has_idea = WFL_mfr_henschel_improved
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

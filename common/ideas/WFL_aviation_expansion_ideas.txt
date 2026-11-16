@@ -1,0 +1,29 @@
+ideas = {
+    country = {
+        WFL_roemerwardt_flugschule_idee = {
+            picture = generic_air_research
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                air_training_xp_gain_factor = 0.20
+            }
+        }
+        WFL_roemerwardt_luftfahrtwerkstaetten_idee = {
+            picture = generic_air_manufacturer_1
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                air_accidents_factor = -0.20
+                air_range_factor = 0.10
+            }
+        }
+        WFL_roemerwardt_luftwaffenakademie_idee = {
+            picture = generic_air_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                air_mission_efficiency = 0.10
+            }
+        }
+    }
+}

@@ -1,31 +1,29 @@
 characters = {
     WFL_buergerrat = {
         name = WFL_buergerrat
-        country_leader = {
-            ideology = despotism
-            traits = { }
-        }
+        portraits = { civilian = { large = GFX_portrait_WFL_advisor_13 small = GFX_portrait_WFL_advisor_13_small } }
     }
     WFL_buergerpraesidium = {
         name = WFL_buergerpraesidium
+        portraits = { civilian = { large = GFX_portrait_WFL_advisor_14 small = GFX_portrait_WFL_advisor_14_small } }
         country_leader = {
             ideology = conservatism
             traits = { }
+            expire = "1965.1.1.1"
         }
     }
     WFL_schuetzenkoenig = {
         name = WFL_schuetzenkoenig
-        # Das vom Nutzer gewählte Porträt wird nach Bereitstellung der Bilddatei ergänzt.
+        # Original portrait supplied by the user; deterministic crop/conversion only.
+        portraits = { civilian = { large = GFX_portrait_WFL_jan_graf_von_insel_i small = GFX_portrait_WFL_jan_graf_von_insel_i_small } }
         country_leader = {
             ideology = despotism
-            traits = { }
+            traits = { WFL_genialer_schuetzenkoenig }
+            expire = "1965.1.1.1"
         }
     }
     WFL_direktorium = {
         name = WFL_direktorium
-        country_leader = {
-            ideology = despotism
-            traits = { }
-        }
+        portraits = { civilian = { large = GFX_portrait_WFL_advisor_15 small = GFX_portrait_WFL_advisor_15_small } }
     }
 }

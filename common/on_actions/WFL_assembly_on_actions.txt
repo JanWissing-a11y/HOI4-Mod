@@ -1,0 +1,14 @@
+# Country tag pulses follow the vanilla on_actions documentation.
+on_actions = {
+    on_startup = {
+        effect = { WFL = { if = { limit = { exists = yes } WFL_assembly_initialize = yes } } }
+    }
+    on_daily_WFL = {
+        effect = {
+            WFL_assembly_initialize = yes
+            # The calendar pauses in exile; expired state capacity is not kept.
+            if = { limit = { has_capitulated = yes } WFL_assembly_clear_ideas = yes }
+        }
+    }
+    on_monthly_WFL = { effect = { WFL_assembly_monthly_tick = yes } }
+}

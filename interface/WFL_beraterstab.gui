@@ -1,0 +1,401 @@
+# WFL focus-tree inlay. Coordinates stay within 960 x 590 pixels.
+# Child clipping must stay off: the focus-tree zoom otherwise cuts away content.
+guiTypes = {
+    containerWindowType = {
+        name = "WFL_beraterstab_window"
+        orientation = lower_left
+        position = { x = 0 y = 0 }
+        size = { width = 960 height = 590 }
+        clipping = no
+        background = {
+            name = "WFL_staff_background"
+            quadTextureSprite = "GFX_WFL_staff_panel"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_title"
+            position = { x = 16 y = 12 }
+            font = "hoi_36header"
+            format = center
+            maxWidth = 928
+            maxHeight = 40
+            fixedsize = yes
+            text = "WFL_staff_ui_title"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_subtitle"
+            position = { x = 16 y = 54 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 928
+            maxHeight = 24
+            fixedsize = yes
+            text = "WFL_staff_ui_subtitle"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_status"
+            position = { x = 16 y = 80 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 928
+            maxHeight = 22
+            fixedsize = yes
+            context_aware_text = "WFL_staff_ui_cooldown_text"
+        }
+        containerWindowType = {
+            name = "WFL_staff_slot_1_card"
+            position = { x = 20 y = 107 }
+            size = { width = 286 height = 285 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_slot_1_portrait"
+                position = { x = 95 y = 12 }
+                spriteType = "GFX_WFL_staff_empty"
+                scale = 0.75
+                context_aware_tooltip = "WFL_staff_ui_slot_1_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_1_name"
+            position = { x = 8 y = 116 }
+            font = "hoi_20b"
+            format = center
+            maxWidth = 270
+            maxHeight = 24
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot1Name]"
+            context_aware_tooltip = "WFL_staff_ui_slot_1_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_1_rank"
+            position = { x = 8 y = 143 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot1Rank]"
+            context_aware_tooltip = "WFL_staff_ui_slot_1_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_1_bonus"
+            position = { x = 4 y = 168 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 278
+            maxHeight = 78
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot1Bonus]"
+            context_aware_tooltip = "WFL_staff_ui_slot_1_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_1_job"
+            position = { x = 8 y = 253 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 22
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot1Job]"
+            context_aware_tooltip = "WFL_staff_ui_slot_1_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_slot_2_card"
+            position = { x = 337 y = 107 }
+            size = { width = 286 height = 285 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_slot_2_portrait"
+                position = { x = 95 y = 12 }
+                spriteType = "GFX_WFL_staff_empty"
+                scale = 0.75
+                context_aware_tooltip = "WFL_staff_ui_slot_2_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_2_name"
+            position = { x = 8 y = 116 }
+            font = "hoi_20b"
+            format = center
+            maxWidth = 270
+            maxHeight = 24
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot2Name]"
+            context_aware_tooltip = "WFL_staff_ui_slot_2_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_2_rank"
+            position = { x = 8 y = 143 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot2Rank]"
+            context_aware_tooltip = "WFL_staff_ui_slot_2_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_2_bonus"
+            position = { x = 4 y = 168 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 278
+            maxHeight = 78
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot2Bonus]"
+            context_aware_tooltip = "WFL_staff_ui_slot_2_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_2_job"
+            position = { x = 8 y = 253 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 22
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot2Job]"
+            context_aware_tooltip = "WFL_staff_ui_slot_2_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_slot_3_card"
+            position = { x = 654 y = 107 }
+            size = { width = 286 height = 285 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_slot_3_portrait"
+                position = { x = 95 y = 12 }
+                spriteType = "GFX_WFL_staff_empty"
+                scale = 0.75
+                context_aware_tooltip = "WFL_staff_ui_slot_3_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_3_name"
+            position = { x = 8 y = 116 }
+            font = "hoi_20b"
+            format = center
+            maxWidth = 270
+            maxHeight = 24
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot3Name]"
+            context_aware_tooltip = "WFL_staff_ui_slot_3_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_3_rank"
+            position = { x = 8 y = 143 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot3Rank]"
+            context_aware_tooltip = "WFL_staff_ui_slot_3_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_3_bonus"
+            position = { x = 4 y = 168 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 278
+            maxHeight = 78
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot3Bonus]"
+            context_aware_tooltip = "WFL_staff_ui_slot_3_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_slot_3_job"
+            position = { x = 8 y = 253 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 270
+            maxHeight = 22
+            fixedsize = yes
+            context_aware_text = "[WFLStaffSlot3Job]"
+            context_aware_tooltip = "WFL_staff_ui_slot_3_tooltip"
+        }
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_candidates_heading"
+            position = { x = 16 y = 402 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 928
+            maxHeight = 24
+            fixedsize = yes
+            text = "WFL_staff_ui_candidates"
+        }
+        containerWindowType = {
+            name = "WFL_staff_dante_grossy_card"
+            position = { x = 20 y = 431 }
+            size = { width = 168 height = 142 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_candidate_dante_grossy"
+                spriteType = "GFX_WFL_staff_dante_grossy"
+                position = { x = 42 y = 6 }
+                scale = 0.65625
+                context_aware_tooltip = "WFL_staff_ui_dante_grossy_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_dante_grossy_name"
+            position = { x = 5 y = 95 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 22
+            fixedsize = yes
+            text = "WFL_staff_dante_grossy_name"
+            context_aware_tooltip = "WFL_staff_ui_dante_grossy_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_dante_grossy_status"
+            position = { x = 5 y = 119 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffDanteGrossyCandidateStatus]"
+            context_aware_tooltip = "WFL_staff_ui_dante_grossy_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_neal_foerster_card"
+            position = { x = 208 y = 431 }
+            size = { width = 168 height = 142 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_candidate_neal_foerster"
+                spriteType = "GFX_WFL_staff_neal_foerster"
+                position = { x = 42 y = 6 }
+                scale = 0.65625
+                context_aware_tooltip = "WFL_staff_ui_neal_foerster_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_neal_foerster_name"
+            position = { x = 5 y = 95 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 22
+            fixedsize = yes
+            text = "WFL_staff_neal_foerster_name"
+            context_aware_tooltip = "WFL_staff_ui_neal_foerster_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_neal_foerster_status"
+            position = { x = 5 y = 119 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffNealFoersterCandidateStatus]"
+            context_aware_tooltip = "WFL_staff_ui_neal_foerster_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_max_heinsch_card"
+            position = { x = 396 y = 431 }
+            size = { width = 168 height = 142 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_candidate_max_heinsch"
+                spriteType = "GFX_WFL_staff_max_heinsch"
+                position = { x = 42 y = 6 }
+                scale = 0.65625
+                context_aware_tooltip = "WFL_staff_ui_max_heinsch_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_max_heinsch_name"
+            position = { x = 5 y = 95 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 22
+            fixedsize = yes
+            text = "WFL_staff_max_heinsch_name"
+            context_aware_tooltip = "WFL_staff_ui_max_heinsch_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_max_heinsch_status"
+            position = { x = 5 y = 119 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffMaxHeinschCandidateStatus]"
+            context_aware_tooltip = "WFL_staff_ui_max_heinsch_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_max_mueller_card"
+            position = { x = 584 y = 431 }
+            size = { width = 168 height = 142 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_candidate_max_mueller"
+                spriteType = "GFX_WFL_staff_max_mueller"
+                position = { x = 42 y = 6 }
+                scale = 0.65625
+                context_aware_tooltip = "WFL_staff_ui_max_mueller_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_max_mueller_name"
+            position = { x = 5 y = 95 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 22
+            fixedsize = yes
+            text = "WFL_staff_max_mueller_name"
+            context_aware_tooltip = "WFL_staff_ui_max_mueller_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_max_mueller_status"
+            position = { x = 5 y = 119 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffMaxMuellerCandidateStatus]"
+            context_aware_tooltip = "WFL_staff_ui_max_mueller_tooltip"
+        }
+        }
+        containerWindowType = {
+            name = "WFL_staff_till_hoehne_card"
+            position = { x = 772 y = 431 }
+            size = { width = 168 height = 142 }
+            clipping = no
+            iconType = {
+                name = "WFL_staff_candidate_till_hoehne"
+                spriteType = "GFX_WFL_staff_till_hoehne"
+                position = { x = 42 y = 6 }
+                scale = 0.65625
+                context_aware_tooltip = "WFL_staff_ui_till_hoehne_tooltip"
+            }
+        instantTextBoxType = {
+            name = "WFL_staff_till_hoehne_name"
+            position = { x = 5 y = 95 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 22
+            fixedsize = yes
+            text = "WFL_staff_till_hoehne_name"
+            context_aware_tooltip = "WFL_staff_ui_till_hoehne_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_staff_till_hoehne_status"
+            position = { x = 5 y = 119 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 158
+            maxHeight = 20
+            fixedsize = yes
+            context_aware_text = "[WFLStaffTillHoehneCandidateStatus]"
+            context_aware_tooltip = "WFL_staff_ui_till_hoehne_tooltip"
+        }
+        }
+    }
+}

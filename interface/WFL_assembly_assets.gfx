@@ -1,0 +1,10 @@
+spriteTypes = {
+    spriteType = { name = GFX_WFL_board_card texturefile = "gfx/interface/assembly/board_card.dds" }
+    spriteType = { name = GFX_WFL_board_nils_meyer texturefile = "gfx/interface/assembly/nils_meyer.dds" }
+    spriteType = { name = GFX_WFL_board_jannik_altenschmidt texturefile = "gfx/interface/assembly/jannik_altenschmidt.dds" }
+    spriteType = { name = GFX_WFL_board_tobias_gaertner texturefile = "gfx/interface/assembly/tobias_gaertner.dds" }
+    spriteType = { name = GFX_WFL_board_finn_bielig texturefile = "gfx/interface/assembly/finn_bielig.dds" }
+    spriteType = { name = GFX_WFL_board_max_gerwers texturefile = "gfx/interface/assembly/max_gerwers.dds" }
+    spriteType = { name = GFX_WFL_board_tim_wissing texturefile = "gfx/interface/assembly/tim_wissing.dds" }
+    spriteType = { name = GFX_WFL_assembly_hall texturefile = "gfx/interface/assembly/assembly_hall.dds" }
+}

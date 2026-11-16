@@ -1,0 +1,467 @@
+# Campaign owner flags bind the 90-day action to its original host.
+# every_country cleanup runs only on campaign completion/cancellation.
+# Two paid request decisions per state, each fire_only_once. Second-chain flags
+# are separate so delayed first-chain events never resolve the second request.
+WFL_schuetzenreferenden = {
+    WFL_schuetzenkampagne_51 = {
+        visible = {
+            OR = {
+                NOT = { has_country_flag = WFL_ref_51_campaign_started }
+                has_country_flag = WFL_ref_51_campaign_active
+            }
+        }
+        available = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            51 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 51
+                }
+            }
+        }
+        cost = 75
+        fire_only_once = yes
+        days_remove = 90
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_51_campaign_started
+            set_country_flag = WFL_ref_51_campaign_active
+            51 = { owner = { set_country_flag = WFL_ref_51_campaign_host } }
+        }
+        cancel_trigger = {
+            NOT = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                51 = {
+                    NOT = { is_owned_by = WFL }
+                    NOT = { is_core_of = WFL }
+                    owner = {
+                        exists = yes
+                        has_war = no
+                        is_subject = no
+                        has_capitulated = no
+                        has_full_control_of_state = 51
+                        has_country_flag = WFL_ref_51_campaign_host
+                    }
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_ref_51_campaign_active
+            set_country_flag = WFL_ref_51_campaign_failed
+            every_country = {
+                limit = { has_country_flag = WFL_ref_51_campaign_host }
+                clr_country_flag = WFL_ref_51_campaign_host
+            }
+            country_event = { id = wfl_referendum.5 hours = 1 }
+        }
+        remove_effect = {
+            if = {
+                limit = { has_country_flag = WFL_ref_51_campaign_active }
+                clr_country_flag = WFL_ref_51_campaign_active
+                if = {
+                    limit = {
+                        exists = yes
+                        has_war = no
+                        is_subject = no
+                        has_capitulated = no
+                        51 = {
+                            NOT = { is_owned_by = WFL }
+                            NOT = { is_core_of = WFL }
+                            owner = {
+                                exists = yes
+                                has_war = no
+                                is_subject = no
+                                has_capitulated = no
+                                has_full_control_of_state = 51
+                                has_country_flag = WFL_ref_51_campaign_host
+                            }
+                        }
+                    }
+                    set_country_flag = WFL_ref_51_campaign_done
+                    country_event = { id = wfl_referendum.7 hours = 1 }
+                }
+                else = {
+                    set_country_flag = WFL_ref_51_campaign_failed
+                    country_event = { id = wfl_referendum.5 hours = 1 }
+                }
+            }
+            every_country = {
+                limit = { has_country_flag = WFL_ref_51_campaign_host }
+                clr_country_flag = WFL_ref_51_campaign_host
+            }
+        }
+    }
+    WFL_referendum_beantragen_51 = {
+        visible = {
+            has_country_flag = WFL_ref_51_campaign_done
+            NOT = { has_country_flag = WFL_ref_51_requested }
+        }
+        available = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            51 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 51
+                }
+            }
+            NOT = { has_country_flag = WFL_ref_51_pending }
+            NOT = { has_country_flag = WFL_ref_51_resolved }
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_51_requested
+            if = {
+                limit = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    51 = {
+                        NOT = { is_owned_by = WFL }
+                        NOT = { is_core_of = WFL }
+                        owner = {
+                            exists = yes
+                            has_war = no
+                            is_subject = no
+                            has_capitulated = no
+                            has_full_control_of_state = 51
+                        }
+                    }
+                }
+                set_country_flag = WFL_ref_51_pending
+                51 = { owner = { country_event = { id = wfl_referendum.1 days = 1 } } }
+                country_event = { id = wfl_referendum.6 days = 120 }
+            }
+            else = {
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+    WFL_schuetzenkampagne_57 = {
+        visible = {
+            OR = {
+                NOT = { has_country_flag = WFL_ref_57_campaign_started }
+                has_country_flag = WFL_ref_57_campaign_active
+            }
+        }
+        available = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            57 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 57
+                }
+            }
+        }
+        cost = 75
+        fire_only_once = yes
+        days_remove = 90
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_57_campaign_started
+            set_country_flag = WFL_ref_57_campaign_active
+            57 = { owner = { set_country_flag = WFL_ref_57_campaign_host } }
+        }
+        cancel_trigger = {
+            NOT = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                57 = {
+                    NOT = { is_owned_by = WFL }
+                    NOT = { is_core_of = WFL }
+                    owner = {
+                        exists = yes
+                        has_war = no
+                        is_subject = no
+                        has_capitulated = no
+                        has_full_control_of_state = 57
+                        has_country_flag = WFL_ref_57_campaign_host
+                    }
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_ref_57_campaign_active
+            set_country_flag = WFL_ref_57_campaign_failed
+            every_country = {
+                limit = { has_country_flag = WFL_ref_57_campaign_host }
+                clr_country_flag = WFL_ref_57_campaign_host
+            }
+            country_event = { id = wfl_referendum.15 hours = 1 }
+        }
+        remove_effect = {
+            if = {
+                limit = { has_country_flag = WFL_ref_57_campaign_active }
+                clr_country_flag = WFL_ref_57_campaign_active
+                if = {
+                    limit = {
+                        exists = yes
+                        has_war = no
+                        is_subject = no
+                        has_capitulated = no
+                        57 = {
+                            NOT = { is_owned_by = WFL }
+                            NOT = { is_core_of = WFL }
+                            owner = {
+                                exists = yes
+                                has_war = no
+                                is_subject = no
+                                has_capitulated = no
+                                has_full_control_of_state = 57
+                                has_country_flag = WFL_ref_57_campaign_host
+                            }
+                        }
+                    }
+                    set_country_flag = WFL_ref_57_campaign_done
+                    country_event = { id = wfl_referendum.17 hours = 1 }
+                }
+                else = {
+                    set_country_flag = WFL_ref_57_campaign_failed
+                    country_event = { id = wfl_referendum.15 hours = 1 }
+                }
+            }
+            every_country = {
+                limit = { has_country_flag = WFL_ref_57_campaign_host }
+                clr_country_flag = WFL_ref_57_campaign_host
+            }
+        }
+    }
+    WFL_referendum_beantragen_57 = {
+        visible = {
+            has_country_flag = WFL_ref_57_campaign_done
+            NOT = { has_country_flag = WFL_ref_57_requested }
+        }
+        available = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            57 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 57
+                }
+            }
+            NOT = { has_country_flag = WFL_ref_57_pending }
+            NOT = { has_country_flag = WFL_ref_57_resolved }
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_57_requested
+            if = {
+                limit = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    57 = {
+                        NOT = { is_owned_by = WFL }
+                        NOT = { is_core_of = WFL }
+                        owner = {
+                            exists = yes
+                            has_war = no
+                            is_subject = no
+                            has_capitulated = no
+                            has_full_control_of_state = 57
+                        }
+                    }
+                }
+                set_country_flag = WFL_ref_57_pending
+                57 = { owner = { country_event = { id = wfl_referendum.11 days = 1 } } }
+                country_event = { id = wfl_referendum.16 days = 120 }
+            }
+            else = {
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+
+
+    WFL_referendum_zweiter_versuch_51 = {
+        visible = {
+            has_country_flag = WFL_ref_51_requested
+            has_country_flag = WFL_ref_51_resolved
+            NOT = { has_country_flag = WFL_ref_51_pending }
+            NOT = { has_country_flag = WFL_ref_51_joined }
+            has_country_flag = WFL_ref_51_campaign_done
+            NOT = { has_country_flag = WFL_ref_51_second_requested }
+        }
+        available = {
+            has_country_flag = WFL_ref_51_requested
+            has_country_flag = WFL_ref_51_resolved
+            NOT = { has_country_flag = WFL_ref_51_pending }
+            NOT = { has_country_flag = WFL_ref_51_joined }
+            has_country_flag = WFL_ref_51_campaign_done
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            51 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 51
+                }
+            }
+            NOT = { has_country_flag = WFL_ref_51_second_pending }
+            NOT = { has_country_flag = WFL_ref_51_second_resolved }
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_51_second_requested
+            if = {
+                limit = {
+                    has_country_flag = WFL_ref_51_requested
+                    has_country_flag = WFL_ref_51_resolved
+                    NOT = { has_country_flag = WFL_ref_51_pending }
+                    NOT = { has_country_flag = WFL_ref_51_joined }
+                    has_country_flag = WFL_ref_51_campaign_done
+                    NOT = { has_country_flag = WFL_ref_51_second_pending }
+                    NOT = { has_country_flag = WFL_ref_51_second_resolved }
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    51 = {
+                        NOT = { is_owned_by = WFL }
+                        NOT = { is_core_of = WFL }
+                        owner = {
+                            exists = yes
+                            has_war = no
+                            is_subject = no
+                            has_capitulated = no
+                            has_full_control_of_state = 51
+                        }
+                    }
+                }
+                set_country_flag = WFL_ref_51_second_pending
+                51 = { owner = { country_event = { id = wfl_referendum.21 days = 1 } } }
+                country_event = { id = wfl_referendum.26 days = 120 }
+            }
+            else = {
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+
+    WFL_referendum_zweiter_versuch_57 = {
+        visible = {
+            has_country_flag = WFL_ref_57_requested
+            has_country_flag = WFL_ref_57_resolved
+            NOT = { has_country_flag = WFL_ref_57_pending }
+            NOT = { has_country_flag = WFL_ref_57_joined }
+            has_country_flag = WFL_ref_57_campaign_done
+            NOT = { has_country_flag = WFL_ref_57_second_requested }
+        }
+        available = {
+            has_country_flag = WFL_ref_57_requested
+            has_country_flag = WFL_ref_57_resolved
+            NOT = { has_country_flag = WFL_ref_57_pending }
+            NOT = { has_country_flag = WFL_ref_57_joined }
+            has_country_flag = WFL_ref_57_campaign_done
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            57 = {
+                NOT = { is_owned_by = WFL }
+                NOT = { is_core_of = WFL }
+                owner = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_full_control_of_state = 57
+                }
+            }
+            NOT = { has_country_flag = WFL_ref_57_second_pending }
+            NOT = { has_country_flag = WFL_ref_57_second_resolved }
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_ref_57_second_requested
+            if = {
+                limit = {
+                    has_country_flag = WFL_ref_57_requested
+                    has_country_flag = WFL_ref_57_resolved
+                    NOT = { has_country_flag = WFL_ref_57_pending }
+                    NOT = { has_country_flag = WFL_ref_57_joined }
+                    has_country_flag = WFL_ref_57_campaign_done
+                    NOT = { has_country_flag = WFL_ref_57_second_pending }
+                    NOT = { has_country_flag = WFL_ref_57_second_resolved }
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    57 = {
+                        NOT = { is_owned_by = WFL }
+                        NOT = { is_core_of = WFL }
+                        owner = {
+                            exists = yes
+                            has_war = no
+                            is_subject = no
+                            has_capitulated = no
+                            has_full_control_of_state = 57
+                        }
+                    }
+                }
+                set_country_flag = WFL_ref_57_second_pending
+                57 = { owner = { country_event = { id = wfl_referendum.31 days = 1 } } }
+                country_event = { id = wfl_referendum.36 days = 120 }
+            }
+            else = {
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+}

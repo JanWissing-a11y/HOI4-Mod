@@ -1,0 +1,166 @@
+# Fictional local comedy. Focuses schedule these once; an options ledger also
+# prevents a repeated option/effect from granting the reward a second time.
+# Keep leadership/ownership out of the event trigger so changed circumstances
+# resolve with compensation instead of silently swallowing a completed focus.
+add_namespace = wfl_community
+
+country_event = {
+    id = wfl_community.1
+    title = wfl_community.1.t
+    desc = wfl_community.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        tag = WFL
+        has_completed_focus = WFL_brauereiverbund
+        NOT = { has_country_flag = WFL_community_1_resolved }
+    }
+    option = {
+        name = wfl_community.1.a
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_1_resolved } }
+            set_country_flag = WFL_community_1_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_stability = 0.05
+                add_political_power = 50
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    option = {
+        name = wfl_community.1.b
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_1_resolved } }
+            set_country_flag = WFL_community_1_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_ideas = WFL_festkasse_idee
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_community.2
+    title = wfl_community.2.t
+    desc = wfl_community.2.d
+    picture = GFX_report_event_royal_parade
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        tag = WFL
+        has_completed_focus = WFL_schuetzenolympiade
+        NOT = { has_country_flag = WFL_community_2_resolved }
+    }
+    option = {
+        name = wfl_community.2.a
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_2_resolved } }
+            set_country_flag = WFL_community_2_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                army_experience = 30
+                add_war_support = 0.05
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    option = {
+        name = wfl_community.2.b
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_2_resolved } }
+            set_country_flag = WFL_community_2_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_ideas = WFL_vereinsnachwuchs_idee
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+}
+
+
+country_event = {
+    id = wfl_community.4
+    title = wfl_community.4.t
+    desc = wfl_community.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        tag = WFL
+        has_completed_focus = WFL_tag_der_offenen_labortuer
+        NOT = { has_country_flag = WFL_community_4_resolved }
+    }
+    option = {
+        name = wfl_community.4.a
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_4_resolved } }
+            set_country_flag = WFL_community_4_resolved
+            add_tech_bonus = {
+                name = WFL_community_industrieforschung
+                bonus = 1.0
+                uses = 1
+                category = industry
+            }
+        }
+    }
+    option = {
+        name = wfl_community.4.b
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_4_resolved } }
+            set_country_flag = WFL_community_4_resolved
+            add_political_power = 100
+            add_stability = 0.05
+        }
+    }
+}
+
+country_event = {
+    id = wfl_community.5
+    title = wfl_community.5.t
+    desc = wfl_community.5.d
+    picture = GFX_report_event_royal_parade
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        tag = WFL
+        has_completed_focus = WFL_weltkongress_des_schuetzenwesens
+        NOT = { has_country_flag = WFL_community_5_resolved }
+    }
+    option = {
+        name = wfl_community.5.a
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_5_resolved } }
+            set_country_flag = WFL_community_5_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_ideas = WFL_vereinsverstaendigung_idee
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    option = {
+        name = wfl_community.5.b
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { NOT = { has_country_flag = WFL_community_5_resolved } }
+            set_country_flag = WFL_community_5_resolved
+            if = {
+                limit = { has_government = neutrality has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_ideas = WFL_weltweiter_vereinsnachwuchs_idee
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+}

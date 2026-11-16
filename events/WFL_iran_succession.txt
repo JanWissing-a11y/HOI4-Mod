@@ -1,0 +1,44 @@
+# Fictional royal comedy. All outcomes execute in the focus rewards, so neither
+# a player leaving this window open nor an AI response can block the treaty.
+add_namespace = wfl_iran_succession
+
+country_event = {
+    id = wfl_iran_succession.1
+    title = wfl_iran_succession.1.t
+    desc = wfl_iran_succession.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_iran_succession.1.a }
+}
+country_event = {
+    id = wfl_iran_succession.2
+    title = wfl_iran_succession.2.t
+    desc = wfl_iran_succession.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_iran_succession.2.a }
+}
+country_event = {
+    id = wfl_iran_succession.3
+    title = wfl_iran_succession.3.t
+    desc = wfl_iran_succession.3.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_iran_succession.3.a }
+}
+country_event = {
+    id = wfl_iran_succession.4
+    title = wfl_iran_succession.4.t
+    desc = wfl_iran_succession.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_iran_treaty_completed }
+    option = { name = wfl_iran_succession.4.a }
+}

@@ -1,0 +1,16 @@
+ideas = {
+    country = {
+        WFL_berufskolleg_idee = {
+            picture = generic_research_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { research_speed_factor = 0.05 }
+        }
+        WFL_alkoholfreies_bier_verbot_idee = {
+            picture = generic_army_war_college
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { army_morale_factor = 0.10 }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "WFL_POL_kevin_von_beverungen_i",
+  "name": "Kevin von Beverungen I.",
+  "source_file": "Polnischer König mit Zepter und Reichsapfel.png",
+  "input_size": [
+    1122,
+    1402
+  ],
+  "crop": [
+    300,
+    0,
+    550,
+    740
+  ],
+  "output": "gfx/leaders/POL/Portrait_POL_kevin_von_beverungen_i.dds",
+  "small_output": "gfx/leaders/POL/Portrait_POL_kevin_von_beverungen_i_small.dds",
+  "preview": "gfx/leaders/POL/Portrait_POL_kevin_von_beverungen_i.png",
+  "description": "User-supplied Polish ruler portrait and name on 2026-11-05; original is read only."
+}

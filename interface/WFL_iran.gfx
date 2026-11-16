@@ -1,0 +1,10 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_WFL_PER_al_hoehne
+        texturefile = "gfx/leaders/PER/Portrait_PER_al_hoehne.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_PER_al_hoehne_small
+        texturefile = "gfx/leaders/PER/Portrait_PER_al_hoehne_small.dds"
+    }
+}

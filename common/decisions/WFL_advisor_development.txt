@@ -1,0 +1,272 @@
+# Mirrors vanilla remove_trait/add_trait for the political_advisor slot.
+# Never removes/recreates a role, hires a new character, or allocates another slot.
+WFL_advisor_development = {
+    WFL_develop_advisor_01 = {
+        visible = {
+            has_character = WFL_advisor_33
+            NOT = { has_country_flag = WFL_advisor_developed_01 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "La Resistance"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_33
+            WFL_advisor_33 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_01 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "La Resistance"
+            has_intelligence_agency = yes
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_33
+                    WFL_advisor_33 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_01 }
+                    has_dlc = "Gotterdammerung"
+                    has_dlc = "La Resistance"
+                    has_intelligence_agency = yes
+                }
+                remove_trait = { character = WFL_advisor_33 slot = political_advisor trait = WFL_advisor_skill_35 }
+                add_trait = { character = WFL_advisor_33 slot = political_advisor trait = WFL_advisor_upgrade_01 }
+                set_country_flag = WFL_advisor_developed_01
+            }
+        }
+    }
+    WFL_develop_advisor_02 = {
+        visible = {
+            has_character = WFL_advisor_31
+            NOT = { has_country_flag = WFL_advisor_developed_02 }
+            has_dlc = "Gotterdammerung"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_31
+            WFL_advisor_31 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_02 }
+            has_dlc = "Gotterdammerung"
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_31
+                    WFL_advisor_31 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_02 }
+                    has_dlc = "Gotterdammerung"
+                }
+                remove_trait = { character = WFL_advisor_31 slot = political_advisor trait = WFL_advisor_skill_33 }
+                add_trait = { character = WFL_advisor_31 slot = political_advisor trait = WFL_advisor_upgrade_02 }
+                set_country_flag = WFL_advisor_developed_02
+            }
+        }
+    }
+    WFL_develop_advisor_03 = {
+        visible = {
+            has_character = WFL_advisor_36
+            NOT = { has_country_flag = WFL_advisor_developed_03 }
+            has_dlc = "Gotterdammerung"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_36
+            WFL_advisor_36 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_03 }
+            has_dlc = "Gotterdammerung"
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_36
+                    WFL_advisor_36 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_03 }
+                    has_dlc = "Gotterdammerung"
+                }
+                remove_trait = { character = WFL_advisor_36 slot = political_advisor trait = WFL_advisor_skill_38 }
+                add_trait = { character = WFL_advisor_36 slot = political_advisor trait = WFL_advisor_upgrade_03 }
+                set_country_flag = WFL_advisor_developed_03
+            }
+        }
+    }
+    WFL_develop_advisor_04 = {
+        visible = {
+            has_character = WFL_advisor_32
+            NOT = { has_country_flag = WFL_advisor_developed_04 }
+            has_dlc = "Gotterdammerung"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_32
+            WFL_advisor_32 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_04 }
+            has_dlc = "Gotterdammerung"
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_32
+                    WFL_advisor_32 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_04 }
+                    has_dlc = "Gotterdammerung"
+                }
+                remove_trait = { character = WFL_advisor_32 slot = political_advisor trait = WFL_advisor_skill_34 }
+                add_trait = { character = WFL_advisor_32 slot = political_advisor trait = WFL_advisor_upgrade_04 }
+                set_country_flag = WFL_advisor_developed_04
+            }
+        }
+    }
+    WFL_develop_advisor_05 = {
+        visible = {
+            has_character = WFL_advisor_22
+            NOT = { has_country_flag = WFL_advisor_developed_05 }
+            has_dlc = "Gotterdammerung"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_22
+            WFL_advisor_22 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_05 }
+            has_dlc = "Gotterdammerung"
+            NOT = { has_government = democratic }
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_22
+                    WFL_advisor_22 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_05 }
+                    has_dlc = "Gotterdammerung"
+                    NOT = { has_government = democratic }
+                }
+                remove_trait = { character = WFL_advisor_22 slot = political_advisor trait = WFL_advisor_skill_23 }
+                add_trait = { character = WFL_advisor_22 slot = political_advisor trait = WFL_advisor_upgrade_05 }
+                set_country_flag = WFL_advisor_developed_05
+            }
+        }
+    }
+    WFL_develop_advisor_06 = {
+        visible = {
+            has_character = WFL_advisor_17
+            NOT = { has_country_flag = WFL_advisor_developed_06 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "La Resistance"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_17
+            WFL_advisor_17 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_06 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "La Resistance"
+            has_intelligence_agency = yes
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_17
+                    WFL_advisor_17 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_06 }
+                    has_dlc = "Gotterdammerung"
+                    has_dlc = "La Resistance"
+                    has_intelligence_agency = yes
+                }
+                remove_trait = { character = WFL_advisor_17 slot = political_advisor trait = WFL_advisor_skill_18 }
+                add_trait = { character = WFL_advisor_17 slot = political_advisor trait = WFL_advisor_upgrade_06 }
+                set_country_flag = WFL_advisor_developed_06
+            }
+        }
+    }
+    WFL_develop_advisor_07 = {
+        visible = {
+            has_character = WFL_advisor_18
+            NOT = { has_country_flag = WFL_advisor_developed_07 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "Waking the Tiger"
+            has_dlc = "La Resistance"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_18
+            WFL_advisor_18 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_07 }
+            has_dlc = "Gotterdammerung"
+            has_dlc = "Waking the Tiger"
+            has_dlc = "La Resistance"
+            has_intelligence_agency = yes
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_18
+                    WFL_advisor_18 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_07 }
+                    has_dlc = "Gotterdammerung"
+                    has_dlc = "Waking the Tiger"
+                    has_dlc = "La Resistance"
+                    has_intelligence_agency = yes
+                }
+                remove_trait = { character = WFL_advisor_18 slot = political_advisor trait = WFL_advisor_skill_19 }
+                add_trait = { character = WFL_advisor_18 slot = political_advisor trait = WFL_advisor_upgrade_07 }
+                set_country_flag = WFL_advisor_developed_07
+            }
+        }
+    }
+    WFL_develop_advisor_08 = {
+        visible = {
+            has_character = WFL_advisor_27
+            NOT = { has_country_flag = WFL_advisor_developed_08 }
+            has_dlc = "Gotterdammerung"
+        }
+        available = {
+            has_completed_focus = WFL_technikschule
+            has_character = WFL_advisor_27
+            WFL_advisor_27 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+            NOT = { has_country_flag = WFL_advisor_developed_08 }
+            has_dlc = "Gotterdammerung"
+        }
+        cost = 100
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = {
+                    has_completed_focus = WFL_technikschule
+                    has_character = WFL_advisor_27
+                    WFL_advisor_27 = { has_advisor_role = political_advisor is_hired_as_advisor = yes }
+                    NOT = { has_country_flag = WFL_advisor_developed_08 }
+                    has_dlc = "Gotterdammerung"
+                }
+                remove_trait = { character = WFL_advisor_27 slot = political_advisor trait = WFL_advisor_skill_28 }
+                add_trait = { character = WFL_advisor_27 slot = political_advisor trait = WFL_advisor_upgrade_08 }
+                set_country_flag = WFL_advisor_developed_08
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+WFL_vorstand = {
+    WFL_board_lobby_nils_meyer = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_nils_meyer = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_nils_meyer = yes }
+                WFL_board_lobby_nils_meyer_effect = yes
+            }
+        }
+    }
+    WFL_board_lobby_jannik_altenschmidt = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_jannik_altenschmidt = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_jannik_altenschmidt = yes }
+                WFL_board_lobby_jannik_altenschmidt_effect = yes
+            }
+        }
+    }
+    WFL_board_lobby_tobias_gaertner = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_tobias_gaertner = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_tobias_gaertner = yes }
+                WFL_board_lobby_tobias_gaertner_effect = yes
+            }
+        }
+    }
+    WFL_board_lobby_finn_bielig = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_finn_bielig = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_finn_bielig = yes }
+                WFL_board_lobby_finn_bielig_effect = yes
+            }
+        }
+    }
+    WFL_board_lobby_max_gerwers = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_max_gerwers = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_max_gerwers = yes }
+                WFL_board_lobby_max_gerwers_effect = yes
+            }
+        }
+    }
+    WFL_board_lobby_tim_wissing = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { tag = WFL }
+        available = { WFL_board_can_lobby_tim_wissing = yes }
+        cost = 35
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_lobby_tim_wissing = yes }
+                WFL_board_lobby_tim_wissing_effect = yes
+            }
+        }
+    }
+}

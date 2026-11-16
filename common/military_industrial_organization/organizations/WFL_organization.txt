@@ -1,0 +1,1460 @@
+# WFL-only MIO instances; native include/override_trait syntax is documented in the local game.
+# Bonus payloads remain inherited; flags and cross-organization contracts belong only to WFL.
+
+WFL_mio_porsche = {
+    include = GER_porsche_organization
+    name = WFL_mio_porsche
+    icon = GFX_idea_porsche
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hoesch_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_hoesch_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hoesch_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_involve_porsche_in_special_projects
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = {
+                localization_key = available_scientist_one_line_tt
+                CHARACTER = WFL_manufacturer_porsche_scientist
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_multi_role_tanks
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_anti_tank_specialization
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_unorthodox_transmission_design
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_henschel = {
+    include = GER_henschel_organization
+    name = WFL_mio_henschel
+    icon = GFX_idea_henschel
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hoesch_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_hoesch_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hoesch_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_involve_henschel_in_special_projects
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = {
+                localization_key = available_scientist_one_line_tt
+                CHARACTER = WFL_manufacturer_henschel_scientist
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_telescopic_sight
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_man = {
+    include = GER_man_organization
+    name = WFL_mio_man
+    icon = GFX_idea_GER_MAN
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hoesch_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_hoesch_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hoesch_taken
+            }
+        }
+    }
+}
+
+WFL_mio_alkett = {
+    include = GER_alkett_organization
+    name = WFL_mio_alkett
+    icon = GFX_idea_GER_alkett
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hoesch_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_hoesch_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hoesch_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_panzerjager
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_armored_superstructure_specialist
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_sturmhaubitze
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                OR = {
+                    has_completed_focus = WFL_technikschule
+                    has_completed_focus = WFL_technikschule
+                    has_completed_focus = WFL_technikschule
+                }
+            }
+        }
+    }
+}
+
+WFL_mio_daimler_benz = {
+    include = GER_daimler_benz_organization
+    name = WFL_mio_daimler_benz
+    icon = GFX_idea_GER_daimler_benz
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hoesch_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_hoesch_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hoesch_taken
+            }
+        }
+    }
+}
+
+WFL_mio_deschimag = {
+    include = GER_deschimag_organization
+    name = WFL_mio_deschimag
+    icon = GFX_idea_GER_deschimag
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+}
+
+WFL_mio_germaniawerft = {
+    include = GER_germaniawerft_organization
+    name = WFL_mio_germaniawerft
+    icon = GFX_idea_germaniawerft
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_history_of_battleships
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_krupp_guns
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_h_class_battleships
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+}
+
+WFL_mio_blohm_und_voss = {
+    include = GER_blohm_und_voss_organization
+    name = WFL_mio_blohm_und_voss
+    icon = GFX_idea_blohm_und_voss
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    # Vanilla places the complementary MtG/no-MtG nodes on the same cell.
+    # Keep both DLC payloads and their parents, but give this WFL node its own cell.
+    override_trait = {
+        token = generic_mio_trait_high_speed_operation_stores_no_mtg
+        position = { x = 1 y = 0 }
+    }
+    override_trait = {
+        token = GER_mio_trait_heavy_raiders
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_o_class_battlecruisers
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_u_boat_yards
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+}
+
+WFL_mio_hdw = {
+    include = GER_hdw_organization
+    name = WFL_mio_hdw
+    icon = GFX_idea_GER_hdw
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_ocean_u_boats
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_kilian_submarine_bunker
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_atlantic_raiders
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+}
+
+WFL_mio_deutsche_werke = {
+    include = GER_deutsche_werke_organization
+    name = WFL_mio_deutsche_werke
+    icon = GFX_idea_GER_deutsche_werke
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+}
+
+WFL_mio_kriegsmarinewerft_wilhelmshaven = {
+    include = GER_kriegsmarinewerft_wilhelmshaven_organization
+    name = WFL_mio_kriegsmarinewerft_wilhelmshaven
+    icon = GFX_idea_GER_kriegsmarinewerft_wilhelmshaven
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_historical_shipyard
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+}
+
+WFL_mio_messerschmitt = {
+    include = GER_messerschmitt_organization
+    name = WFL_mio_messerschmitt
+    icon = GFX_idea_messerschmitt
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_amerikabomber_learnings
+        visible = {
+            has_dlc = "Gotterdammerung"
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            owner = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_long_range_partner_chosen
+                }
+            }
+        }
+        on_complete = {
+            FROM = {
+                set_country_flag = WFL_mio_long_range_partner_chosen
+            }
+        }
+    }
+}
+
+WFL_mio_junkers = {
+    include = GER_junkers_organization
+    name = WFL_mio_junkers
+    icon = GFX_idea_junkers
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_amerikabomber_learnings
+        visible = {
+            has_dlc = "Gotterdammerung"
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            owner = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_long_range_partner_chosen
+                }
+            }
+        }
+        on_complete = {
+            FROM = {
+                set_country_flag = WFL_mio_long_range_partner_chosen
+            }
+        }
+    }
+}
+
+WFL_mio_focke_wulf = {
+    include = GER_focke_wulf_organization
+    name = WFL_mio_focke_wulf
+    icon = GFX_idea_focke_wulf
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_amerikabomber_learnings
+        visible = {
+            has_dlc = "Gotterdammerung"
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            owner = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_long_range_partner_chosen
+                }
+            }
+        }
+        on_complete = {
+            FROM = {
+                set_country_flag = WFL_mio_long_range_partner_chosen
+            }
+        }
+    }
+}
+
+WFL_mio_heinkel = {
+    include = GER_heinkel_organization
+    name = WFL_mio_heinkel
+    icon = GFX_idea_heinkel
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_amerikabomber_learnings
+        visible = {
+            has_dlc = "Gotterdammerung"
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            owner = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_long_range_partner_chosen
+                }
+            }
+        }
+        on_complete = {
+            FROM = {
+                set_country_flag = WFL_mio_long_range_partner_chosen
+            }
+        }
+    }
+}
+
+WFL_mio_dornier = {
+    include = GER_dornier_organization
+    name = WFL_mio_dornier
+    icon = GFX_idea_dornier
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+}
+
+WFL_mio_arado_flugzeugwerke = {
+    include = GER_arado_flugzeugwerke_organization
+    name = WFL_mio_arado_flugzeugwerke
+    icon = GFX_idea_GER_arado_flugzeugwerke
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+}
+
+WFL_mio_fieseler = {
+    include = GER_fieseler_organization
+    name = WFL_mio_fieseler
+    icon = GFX_idea_GER_fieseler
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+}
+
+WFL_mio_focke_achgelis = {
+    include = GER_focke_achgelis_organization
+    name = WFL_mio_focke_achgelis
+    icon = GFX_idea_GER_focke_achgelis
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+        has_dlc = "Gotterdammerung"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_hamburger_flugzeugbau
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                mio:WFL_mio_blohm_und_voss = {
+                    has_mio_size > 4
+                }
+                NOT = {
+                    has_country_flag = WFL_mio_hamburger_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_hamburger_taken
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+}
+
+WFL_mio_rheinmetall = {
+    include = GER_rheinmetall_organization
+    name = WFL_mio_rheinmetall
+    icon = GFX_idea_rheinmetall
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+}
+
+WFL_mio_mauser = {
+    include = GER_mauser_organization
+    name = WFL_mio_mauser
+    icon = GFX_idea_mauser
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_experienced_manufacturer
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_export_models
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_karabiner
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_sturmgewehr
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_opel = {
+    include = GER_opel_organization
+    name = WFL_mio_opel
+    icon = GFX_idea_opel
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_continental_ag_tires
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_ford_facilities
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_efficiency_in_mass_production
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_improved_engines
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_carl_walther = {
+    include = GER_carl_walther_organization
+    name = WFL_mio_carl_walther
+    icon = GFX_idea_GER_carl_walther
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+}
+
+WFL_mio_auto_union = {
+    include = GER_auto_union_organization
+    name = WFL_mio_auto_union
+    icon = GFX_idea_GER_auto_union
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+        has_dlc = "La Resistance"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_schwerer_panzerspahwagen
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+            }
+        }
+    }
+}
+
+WFL_mio_henschel_kassel = {
+    include = GER_henschel_kassel_organization
+    name = WFL_mio_henschel_kassel
+    icon = GFX_idea_GER_henschel_civilian
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_lokomotivfabrik_floridsdorf
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_cze_skoda_works_german = {
+    include = CZE_skoda_works_german_organization
+    name = WFL_mio_cze_skoda_works_german
+    icon = GFX_idea_CZE_skoda_artillery
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+            has_completed_focus = WFL_technikschule
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_experienced_manufacturer_skoda_works_german
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_cze_bohmische_mahrische_maschinenfabrik_ag_german = {
+    include = CZE_bohmische_mahrische_maschinenfabrik_ag_german_organization
+    name = WFL_mio_cze_bohmische_mahrische_maschinenfabrik_ag_german
+    icon = GFX_idea_CZE_ckd
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+            has_completed_focus = WFL_technikschule
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_panzer_38t_chassis_conversion
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_sturmhaubitze
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+}
+
+WFL_mio_cze_avia_german = {
+    include = CZE_avia_german_organization
+    name = WFL_mio_cze_avia_german
+    icon = GFX_idea_CZE_avia
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+        has_dlc = "Peace For Our Time"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+            has_completed_focus = WFL_technikschule
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_messerschmitt_integration
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+    }
+    override_trait = {
+        token = GER_mio_trait_aerodynamic_research_insitute
+        visible = {
+            FROM = {
+                original_tag = WFL
+            }
+        }
+        available = {
+            FROM = {
+                has_completed_focus = WFL_technikschule
+                NOT = {
+                    has_country_flag = WFL_mio_aerodynamic_taken
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_aerodynamic_taken
+            }
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_walter_co_german
+        visible = {
+            FROM = {
+                original_tag = WFL
+                has_dlc = "Peace For Our Time"
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_cze_mio_trait_walter_co_german_taken_flag
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_cze_mio_trait_walter_co_german_taken_flag
+            }
+        }
+    }
+}
+
+WFL_mio_cze_ceska_zbrojovka_uhersky_brod = {
+    include = CZE_ceska_zbrojovka_uhersky_brod_organization
+    name = WFL_mio_cze_ceska_zbrojovka_uhersky_brod
+    icon = GFX_idea_CZE_ceska_zbrojovka_uhersky_brod
+    allowed = {
+        original_tag = WFL
+        has_dlc = "Arms Against Tyranny"
+        has_dlc = "Peace For Our Time"
+    }
+    visible = {
+        always = yes
+    }
+    available = {
+        FROM = {
+            original_tag = WFL
+            has_completed_focus = WFL_technikschule
+        }
+    }
+    override_trait = {
+        token = CZE_mio_trait_walter_co_german
+        visible = {
+            FROM = {
+                original_tag = WFL
+                has_dlc = "Peace For Our Time"
+            }
+        }
+        available = {
+            FROM = {
+                NOT = {
+                    has_country_flag = WFL_mio_cze_mio_trait_walter_co_german_taken_flag
+                }
+            }
+        }
+        on_complete = {
+            custom_effect_tooltip = generic_trait_will_not_be_available_in_other_organizations
+            FROM = {
+                set_country_flag = WFL_mio_cze_mio_trait_walter_co_german_taken_flag
+            }
+        }
+    }
+}

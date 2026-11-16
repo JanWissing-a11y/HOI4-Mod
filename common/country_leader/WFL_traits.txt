@@ -1,0 +1,7 @@
+leader_traits = {
+    WFL_genialer_schuetzenkoenig = {
+        random = no
+        political_power_factor = 0.15
+        industrial_capacity_factory = 0.10
+    }
+}

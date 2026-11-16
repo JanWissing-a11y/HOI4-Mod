@@ -1,0 +1,121 @@
+# One focus reward chain with no forced partner spending. All payouts recheck pending/resolved flags.
+add_namespace = wfl_zapfhahn
+country_event = {
+    id = wfl_zapfhahn.1
+    title = wfl_zapfhahn.1.t
+    desc = wfl_zapfhahn.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } NOT = { has_country_flag = WFL_zapfhahn_choice } }
+    option = {
+        name = wfl_zapfhahn.1.a
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } NOT = { has_country_flag = WFL_zapfhahn_choice } }
+            set_country_flag = WFL_zapfhahn_choice
+            set_country_flag = WFL_zapfhahn_trade
+            if = {
+                limit = { ENG = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } WFL = { exists = yes has_capitulated = no } } }
+                ENG = { country_event = { id = wfl_zapfhahn.2 days = 1 } }
+            }
+            else = {
+                clr_country_flag = WFL_zapfhahn_pending
+                set_country_flag = WFL_zapfhahn_resolved
+                add_political_power = 50
+            }
+        }
+    }
+    option = {
+        name = wfl_zapfhahn.1.b
+        ai_chance = { factor = 50 }
+        if = {
+            limit = { has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } NOT = { has_country_flag = WFL_zapfhahn_choice } }
+            set_country_flag = WFL_zapfhahn_choice
+            set_country_flag = WFL_zapfhahn_duel
+            if = {
+                limit = { ENG = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } WFL = { exists = yes has_capitulated = no } } }
+                ENG = { country_event = { id = wfl_zapfhahn.2 days = 1 } }
+            }
+            else = {
+                clr_country_flag = WFL_zapfhahn_pending
+                set_country_flag = WFL_zapfhahn_resolved
+                add_political_power = 50
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_zapfhahn.2
+    title = wfl_zapfhahn.2.t
+    desc = {
+        trigger = { WFL = { has_country_flag = WFL_zapfhahn_trade } }
+        text = wfl_zapfhahn.2.trade
+    }
+    desc = {
+        trigger = { WFL = { has_country_flag = WFL_zapfhahn_duel } }
+        text = wfl_zapfhahn.2.duel
+    }
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = ENG WFL = { has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } has_country_flag = WFL_zapfhahn_choice } }
+    option = {
+        name = wfl_zapfhahn.2.a
+        if = {
+            limit = { WFL = { has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } has_country_flag = WFL_zapfhahn_choice } }
+            WFL = { clr_country_flag = WFL_zapfhahn_pending set_country_flag = WFL_zapfhahn_resolved }
+            if = {
+                limit = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } WFL = { exists = yes has_capitulated = no } }
+                if = {
+                    limit = { WFL = { has_country_flag = WFL_zapfhahn_trade } }
+                    add_opinion_modifier = { target = WFL modifier = WFL_zapfhahn_handelsfreundschaft }
+                    add_opinion_modifier = { target = WFL modifier = WFL_zapfhahn_kuehlhandel }
+                    WFL = {
+                        add_ideas = WFL_kuehlkettenkompromiss
+                        add_opinion_modifier = { target = ENG modifier = WFL_zapfhahn_handelsfreundschaft }
+                        add_opinion_modifier = { target = ENG modifier = WFL_zapfhahn_kuehlhandel }
+                    }
+                }
+                else = {
+                    add_opinion_modifier = { target = WFL modifier = WFL_zapfhahn_trinkfreundschaft }
+                    WFL = {
+                        add_ideas = WFL_trinkduell_der_freundschaft
+                        add_opinion_modifier = { target = ENG modifier = WFL_zapfhahn_trinkfreundschaft }
+                    }
+                }
+                WFL = { set_country_flag = WFL_zapfhahn_success country_event = { id = wfl_zapfhahn.3 days = 1 } }
+            }
+            else = { WFL = { add_political_power = 50 } }
+        }
+    }
+}
+country_event = {
+    id = wfl_zapfhahn.3
+    title = wfl_zapfhahn.3.t
+    desc = {
+        trigger = { WFL = { has_country_flag = WFL_zapfhahn_trade } }
+        text = wfl_zapfhahn.3.trade
+    }
+    desc = {
+        trigger = { WFL = { has_country_flag = WFL_zapfhahn_duel } }
+        text = wfl_zapfhahn.3.duel
+    }
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_zapfhahn_resolved has_country_flag = WFL_zapfhahn_success }
+    option = { name = wfl_zapfhahn.3.a }
+}
+country_event = {
+    id = wfl_zapfhahn.4
+    hidden = yes
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_zapfhahn_pending NOT = { has_country_flag = WFL_zapfhahn_resolved } }
+    immediate = {
+        clr_country_flag = WFL_zapfhahn_pending
+        set_country_flag = WFL_zapfhahn_resolved
+        add_political_power = 50
+    }
+}

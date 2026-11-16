@@ -1,0 +1,11 @@
+﻿l_german:
+ WFL_board_mood_divided_idea:0 "Zerstrittener Vorstand"
+ WFL_board_mood_divided_idea_desc:0 "Die Vorstandsstimmung liegt unter 40. -5 Prozentpunkte Stabilität, bis sich die Stimmung auf mindestens 40 erholt. Ohne Versöhnung verschlechtert sich die Lage weiter."
+ WFL_board_mood_hostile_idea:0 "Vorstand vor dem Bruch"
+ WFL_board_mood_hostile_idea_desc:0 "Die Vorstandsstimmung liegt unter 20. -10 Prozentpunkte Stabilität statt des geringeren Stimmungsabzugs. Erholt sie sich, wird der Malus sofort neu bewertet."
+ WFL_board_kameradschaftsabend:0 "Kameradschaftsabend ohne Tagesordnung"
+ WFL_board_kameradschaftsabend_desc:0 "Tim sperrt den Rednerhammer weg und erklärt den Abend für beschlussfrei. Wer über Politik spricht, muss die nächste Runde holen. +15 Vorstandsstimmung für 35 politische Macht; alle 30 Tage möglich. Höchstens 100 Stimmung. Bereits verärgerte Mitglieder behalten ihre Haltung zur nächsten Abstimmung."
+ WFL_board_kassensturz:0 "Den Pfandstreit mit einem Kassensturz beenden"
+ WFL_board_kassensturz_desc:0 "Jannik und Max zählen gemeinsam sämtliche Pfandbons. Nach drei Kontrollen stellt sich heraus: Die fehlende Flasche war die Blumenvase. +25 Vorstandsstimmung für 50 politische Macht; alle 60 Tage möglich. Höchstens 100 Stimmung. Einzelne Verärgerungen bleiben bestehen."
+ WFL_board_versoehnungsgrillen:0 "Versöhnungsgrillen mit diplomatischem Senf"
+ WFL_board_versoehnungsgrillen_desc:0 "Finn eröffnet zwei gleichberechtigte Ausgabestellen für Senf und Ketchup. Tobias überwacht den Waffenstillstand an der Grillzange, Nils macht das Versöhnungsfoto. +35 Vorstandsstimmung für 70 politische Macht; alle 90 Tage möglich. Höchstens 100 Stimmung. Zusagen und Verärgerungen für die nächste Abstimmung bleiben unverändert."

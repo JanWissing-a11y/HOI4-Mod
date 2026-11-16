@@ -1,0 +1,276 @@
+# Four voluntary recruitment drives. The 0.05 non_core_manpower bonuses stack.
+# Scope/leader triggers verified in installed HoI4 1.19.4.1 documentation.
+WFL_royal_recruitment_festivals = {
+    WFL_koenigliche_freibieroffensive = {
+        visible = {
+            OR = {
+                NOT = { has_country_flag = WFL_koenigliche_freibieroffensive_started }
+                has_country_flag = WFL_koenigliche_freibieroffensive_active
+            }
+        }
+        available = {
+            tag = WFL
+            exists = yes
+            has_capitulated = no
+            has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+            OR = {
+                any_owned_state = { NOT = { is_core_of = ROOT } }
+                any_controlled_state = { NOT = { is_core_of = ROOT } }
+            }
+            NOT = { has_idea = WFL_freibierfreiwillige }
+            NOT = { has_country_flag = WFL_koenigliche_freibieroffensive_started }
+        }
+        cost = 50
+        days_remove = 30
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_koenigliche_freibieroffensive_started
+            set_country_flag = WFL_koenigliche_freibieroffensive_active
+        }
+        cancel_trigger = {
+            NOT = {
+                AND = {
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_koenigliche_freibieroffensive_active
+            set_country_flag = WFL_koenigliche_freibieroffensive_failed
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = WFL_koenigliche_freibieroffensive_active
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    NOT = { has_idea = WFL_freibierfreiwillige }
+                }
+                add_ideas = WFL_freibierfreiwillige
+                set_country_flag = WFL_koenigliche_freibieroffensive_done
+            }
+            clr_country_flag = WFL_koenigliche_freibieroffensive_active
+        }
+    }
+    WFL_kartoffelsalat_ohne_grenzen = {
+        visible = {
+            has_idea = WFL_freibierfreiwillige
+            OR = {
+                NOT = { has_country_flag = WFL_kartoffelsalat_ohne_grenzen_started }
+                has_country_flag = WFL_kartoffelsalat_ohne_grenzen_active
+            }
+        }
+        available = {
+            tag = WFL
+            exists = yes
+            has_capitulated = no
+            has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+            OR = {
+                any_owned_state = { NOT = { is_core_of = ROOT } }
+                any_controlled_state = { NOT = { is_core_of = ROOT } }
+            }
+            has_idea = WFL_freibierfreiwillige
+            NOT = { has_idea = WFL_kartoffelsalat_kameraden }
+            NOT = { has_country_flag = WFL_kartoffelsalat_ohne_grenzen_started }
+        }
+        cost = 75
+        days_remove = 45
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_kartoffelsalat_ohne_grenzen_started
+            set_country_flag = WFL_kartoffelsalat_ohne_grenzen_active
+        }
+        cancel_trigger = {
+            NOT = {
+                AND = {
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_freibierfreiwillige
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_kartoffelsalat_ohne_grenzen_active
+            set_country_flag = WFL_kartoffelsalat_ohne_grenzen_failed
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = WFL_kartoffelsalat_ohne_grenzen_active
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_freibierfreiwillige
+                    NOT = { has_idea = WFL_kartoffelsalat_kameraden }
+                }
+                add_ideas = WFL_kartoffelsalat_kameraden
+                set_country_flag = WFL_kartoffelsalat_ohne_grenzen_done
+            }
+            clr_country_flag = WFL_kartoffelsalat_ohne_grenzen_active
+        }
+    }
+    WFL_blasmusik_statt_formulare = {
+        visible = {
+            has_idea = WFL_kartoffelsalat_kameraden
+            OR = {
+                NOT = { has_country_flag = WFL_blasmusik_statt_formulare_started }
+                has_country_flag = WFL_blasmusik_statt_formulare_active
+            }
+        }
+        available = {
+            tag = WFL
+            exists = yes
+            has_capitulated = no
+            has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+            OR = {
+                any_owned_state = { NOT = { is_core_of = ROOT } }
+                any_controlled_state = { NOT = { is_core_of = ROOT } }
+            }
+            has_idea = WFL_kartoffelsalat_kameraden
+            NOT = { has_idea = WFL_blasmusik_bataillone }
+            NOT = { has_country_flag = WFL_blasmusik_statt_formulare_started }
+        }
+        cost = 100
+        days_remove = 60
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_blasmusik_statt_formulare_started
+            set_country_flag = WFL_blasmusik_statt_formulare_active
+        }
+        cancel_trigger = {
+            NOT = {
+                AND = {
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_kartoffelsalat_kameraden
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_blasmusik_statt_formulare_active
+            set_country_flag = WFL_blasmusik_statt_formulare_failed
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = WFL_blasmusik_statt_formulare_active
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_kartoffelsalat_kameraden
+                    NOT = { has_idea = WFL_blasmusik_bataillone }
+                }
+                add_ideas = WFL_blasmusik_bataillone
+                set_country_flag = WFL_blasmusik_statt_formulare_done
+            }
+            clr_country_flag = WFL_blasmusik_statt_formulare_active
+        }
+    }
+    WFL_der_grosse_schuetzenpass = {
+        visible = {
+            has_idea = WFL_blasmusik_bataillone
+            OR = {
+                NOT = { has_country_flag = WFL_der_grosse_schuetzenpass_started }
+                has_country_flag = WFL_der_grosse_schuetzenpass_active
+            }
+        }
+        available = {
+            tag = WFL
+            exists = yes
+            has_capitulated = no
+            has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+            OR = {
+                any_owned_state = { NOT = { is_core_of = ROOT } }
+                any_controlled_state = { NOT = { is_core_of = ROOT } }
+            }
+            has_idea = WFL_blasmusik_bataillone
+            NOT = { has_idea = WFL_schuetzenpass_freiwillige }
+            NOT = { has_country_flag = WFL_der_grosse_schuetzenpass_started }
+        }
+        cost = 125
+        days_remove = 90
+        fire_only_once = yes
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            set_country_flag = WFL_der_grosse_schuetzenpass_started
+            set_country_flag = WFL_der_grosse_schuetzenpass_active
+        }
+        cancel_trigger = {
+            NOT = {
+                AND = {
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_blasmusik_bataillone
+                }
+            }
+        }
+        cancel_effect = {
+            clr_country_flag = WFL_der_grosse_schuetzenpass_active
+            set_country_flag = WFL_der_grosse_schuetzenpass_failed
+        }
+        remove_effect = {
+            if = {
+                limit = {
+                    has_country_flag = WFL_der_grosse_schuetzenpass_active
+                    tag = WFL
+                    exists = yes
+                    has_capitulated = no
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    OR = {
+                        any_owned_state = { NOT = { is_core_of = ROOT } }
+                        any_controlled_state = { NOT = { is_core_of = ROOT } }
+                    }
+                    has_idea = WFL_blasmusik_bataillone
+                    NOT = { has_idea = WFL_schuetzenpass_freiwillige }
+                }
+                add_ideas = WFL_schuetzenpass_freiwillige
+                set_country_flag = WFL_der_grosse_schuetzenpass_done
+            }
+            clr_country_flag = WFL_der_grosse_schuetzenpass_active
+        }
+    }
+}

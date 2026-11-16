@@ -1,0 +1,58 @@
+ideas = {
+    country = {
+        WFL_brauereiverbund_idee = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { production_speed_industrial_complex_factor = 0.10 }
+        }
+        WFL_festlogistik_idee = {
+            picture = generic_build_infrastructure
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { supply_consumption_factor = -0.08 }
+        }
+        WFL_vereinsdiplomatie_idee = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { improve_relations_maintain_cost_factor = -0.15 }
+        }
+        WFL_schuetzenakademie_idee = {
+            picture = generic_army_war_college
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { army_org_factor = 0.05 }
+        }
+        WFL_rheinischer_forschungsbund_idee = {
+            picture = generic_research_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { research_speed_factor = 0.05 }
+        }
+        WFL_festkasse_idee = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { political_power_gain = 0.05 stability_factor = 0.02 }
+        }
+        WFL_vereinsnachwuchs_idee = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { conscription = 0.005 training_time_army_factor = -0.05 }
+        }
+        WFL_vereinsverstaendigung_idee = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { stability_factor = 0.10 war_support_factor = -0.05 }
+        }
+        WFL_weltweiter_vereinsnachwuchs_idee = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { conscription = 0.01 non_core_manpower = 0.05 }
+        }
+    }
+}

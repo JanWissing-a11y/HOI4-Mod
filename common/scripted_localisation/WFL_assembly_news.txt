@@ -1,0 +1,8 @@
+defined_text = {
+    name = WFLAssemblyStory
+    text = { trigger = { has_country_flag = WFL_assembly_last_eklat } localization_key = WFL_assembly_story_5 }
+    text = { trigger = { has_country_flag = WFL_assembly_last_blockade } localization_key = WFL_assembly_story_4 }
+    text = { trigger = { check_variable = { WFL_assembly_story = 2 } } localization_key = WFL_assembly_story_2 }
+    text = { trigger = { check_variable = { WFL_assembly_story = 3 } } localization_key = WFL_assembly_story_3 }
+    text = { localization_key = WFL_assembly_story_1 }
+}

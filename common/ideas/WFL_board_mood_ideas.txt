@@ -1,0 +1,16 @@
+ideas = {
+    country = {
+        WFL_board_mood_divided_idea = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { stability_factor = -0.05 }
+        }
+        WFL_board_mood_hostile_idea = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { stability_factor = -0.10 }
+        }
+    }
+}

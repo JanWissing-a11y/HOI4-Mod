@@ -1,0 +1,4 @@
+WFL_advisor_development = {
+    allowed = { tag = WFL }
+    visible = { tag = WFL has_completed_focus = WFL_technikschule }
+}

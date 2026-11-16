@@ -1,0 +1,1658 @@
+defined_text = {
+    name = WFLStaffDanteGrossyBonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_bonus_dante_grossy_0
+    }
+}
+
+defined_text = {
+    name = WFLStaffDanteGrossyStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { WFL_staff_dante_grossy_phase = 2 }
+        }
+        localization_key = WFL_staff_ui_working_dante_grossy
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { WFL_staff_dante_grossy_phase = 1 }
+        }
+        localization_key = WFL_staff_ui_preparing_dante_grossy
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffDanteGrossyCandidateStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_dante_grossy_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffNealFoersterBonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_bonus_neal_foerster_0
+    }
+}
+
+defined_text = {
+    name = WFLStaffNealFoersterStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { WFL_staff_neal_foerster_phase = 2 }
+        }
+        localization_key = WFL_staff_ui_working_neal_foerster
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { WFL_staff_neal_foerster_phase = 1 }
+        }
+        localization_key = WFL_staff_ui_preparing_neal_foerster
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffNealFoersterCandidateStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_neal_foerster_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxHeinschBonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_bonus_max_heinsch_0
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxHeinschStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { WFL_staff_max_heinsch_phase = 2 }
+        }
+        localization_key = WFL_staff_ui_working_max_heinsch
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { WFL_staff_max_heinsch_phase = 1 }
+        }
+        localization_key = WFL_staff_ui_preparing_max_heinsch
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxHeinschCandidateStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_heinsch_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxMuellerBonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_bonus_max_mueller_0
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxMuellerStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { WFL_staff_max_mueller_phase = 2 }
+        }
+        localization_key = WFL_staff_ui_working_max_mueller
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { WFL_staff_max_mueller_phase = 1 }
+        }
+        localization_key = WFL_staff_ui_preparing_max_mueller
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffMaxMuellerCandidateStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_max_mueller_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffTillHoehneBonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_bonus_till_hoehne_0
+    }
+}
+
+defined_text = {
+    name = WFLStaffTillHoehneStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { WFL_staff_till_hoehne_phase = 2 }
+        }
+        localization_key = WFL_staff_ui_working_till_hoehne
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { WFL_staff_till_hoehne_phase = 1 }
+        }
+        localization_key = WFL_staff_ui_preparing_till_hoehne
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffTillHoehneCandidateStatus
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_fully_developed
+    }
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_till_hoehne_active
+        }
+        localization_key = WFL_staff_ui_active
+    }
+    text = {
+        localization_key = WFL_staff_ui_candidate
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot1Name
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+        }
+        localization_key = WFL_staff_dante_grossy_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+        }
+        localization_key = WFL_staff_neal_foerster_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+        }
+        localization_key = WFL_staff_max_heinsch_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+        }
+        localization_key = WFL_staff_max_mueller_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+        }
+        localization_key = WFL_staff_till_hoehne_name
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot1Role
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+        }
+        localization_key = WFL_staff_ui_role_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+        }
+        localization_key = WFL_staff_ui_role_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+        }
+        localization_key = WFL_staff_ui_role_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+        }
+        localization_key = WFL_staff_ui_role_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+        }
+        localization_key = WFL_staff_ui_role_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot1Rank
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_rank
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot1Bonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_bonus
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot1Job
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 1 }
+        }
+        localization_key = WFL_staff_ui_status_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 2 }
+        }
+        localization_key = WFL_staff_ui_status_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 3 }
+        }
+        localization_key = WFL_staff_ui_status_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 4 }
+        }
+        localization_key = WFL_staff_ui_status_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_1 = 5 }
+        }
+        localization_key = WFL_staff_ui_status_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_job
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot2Name
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+        }
+        localization_key = WFL_staff_dante_grossy_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+        }
+        localization_key = WFL_staff_neal_foerster_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+        }
+        localization_key = WFL_staff_max_heinsch_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+        }
+        localization_key = WFL_staff_max_mueller_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+        }
+        localization_key = WFL_staff_till_hoehne_name
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot2Role
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+        }
+        localization_key = WFL_staff_ui_role_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+        }
+        localization_key = WFL_staff_ui_role_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+        }
+        localization_key = WFL_staff_ui_role_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+        }
+        localization_key = WFL_staff_ui_role_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+        }
+        localization_key = WFL_staff_ui_role_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot2Rank
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_rank
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot2Bonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_bonus
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot2Job
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 1 }
+        }
+        localization_key = WFL_staff_ui_status_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 2 }
+        }
+        localization_key = WFL_staff_ui_status_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 3 }
+        }
+        localization_key = WFL_staff_ui_status_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 4 }
+        }
+        localization_key = WFL_staff_ui_status_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_2 = 5 }
+        }
+        localization_key = WFL_staff_ui_status_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_job
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot3Name
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+        }
+        localization_key = WFL_staff_dante_grossy_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+        }
+        localization_key = WFL_staff_neal_foerster_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+        }
+        localization_key = WFL_staff_max_heinsch_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+        }
+        localization_key = WFL_staff_max_mueller_name
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+        }
+        localization_key = WFL_staff_till_hoehne_name
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot3Role
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+        }
+        localization_key = WFL_staff_ui_role_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+        }
+        localization_key = WFL_staff_ui_role_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+        }
+        localization_key = WFL_staff_ui_role_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+        }
+        localization_key = WFL_staff_ui_role_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+        }
+        localization_key = WFL_staff_ui_role_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_seat
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot3Rank
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_rank_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_rank_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_rank_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_rank_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_rank
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot3Bonus
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+            check_variable = { WFL_staff_dante_grossy_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_dante_grossy_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+            check_variable = { WFL_staff_neal_foerster_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_neal_foerster_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+            check_variable = { WFL_staff_max_heinsch_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_heinsch_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+            check_variable = { WFL_staff_max_mueller_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_max_mueller_0
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 3 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_3
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 2 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_2
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 1 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_1
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+            check_variable = { WFL_staff_till_hoehne_rank = 0 }
+        }
+        localization_key = WFL_staff_ui_bonus_till_hoehne_0
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_bonus
+    }
+}
+
+defined_text = {
+    name = WFLStaffSlot3Job
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 1 }
+        }
+        localization_key = WFL_staff_ui_status_dante_grossy
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 2 }
+        }
+        localization_key = WFL_staff_ui_status_neal_foerster
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 3 }
+        }
+        localization_key = WFL_staff_ui_status_max_heinsch
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 4 }
+        }
+        localization_key = WFL_staff_ui_status_max_mueller
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_slot_3 = 5 }
+        }
+        localization_key = WFL_staff_ui_status_till_hoehne
+    }
+    text = {
+        localization_key = WFL_staff_ui_empty_job
+    }
+}
+
+defined_text = {
+    name = WFLStaffCooldown
+    text = {
+        trigger = {
+            has_country_flag = WFL_staff_replacement_pending
+        }
+        localization_key = WFL_staff_ui_replacement_pending
+    }
+    text = {
+        trigger = {
+            check_variable = { WFL_staff_cooldown > 0 }
+        }
+        localization_key = WFL_staff_ui_cooldown_remaining
+    }
+    text = {
+        localization_key = WFL_staff_ui_cooldown_ready
+    }
+}

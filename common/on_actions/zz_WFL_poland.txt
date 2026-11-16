@@ -1,0 +1,39 @@
+# A country-scoped startup addition preserves Poland's vanilla history and OOB.
+on_actions = {
+    on_startup = {
+        effect = {
+            POL = {
+                if = {
+                    limit = {
+                        exists = yes
+                        NOT = { has_country_flag = WFL_POL_kevin_initialized }
+                    }
+                    # Runtime creation can allocate a dynamic character ID.
+                    # Find the result by its unique trait, not the name token.
+                    create_country_leader = {
+                        name = WFL_POL_kevin_von_beverungen_i
+                        picture = GFX_portrait_WFL_POL_kevin_von_beverungen_i
+                        ideology = despotism
+                        traits = { WFL_POL_pragmatischer_koenig WFL_POL_ausgleichender_monarch }
+                        expire = "1965.1.1.1"
+                    }
+                    every_character = {
+                        limit = { has_trait = WFL_POL_pragmatischer_koenig }
+                        set_portraits = {
+                            civilian = {
+                                large = GFX_portrait_WFL_POL_kevin_von_beverungen_i
+                                small = GFX_portrait_WFL_POL_kevin_von_beverungen_i_small
+                            }
+                        }
+                        promote_character = yes
+                    }
+                    set_politics = {
+                        ruling_party = neutrality
+                        elections_allowed = no
+                    }
+                    set_country_flag = WFL_POL_kevin_initialized
+                }
+            }
+        }
+    }
+}

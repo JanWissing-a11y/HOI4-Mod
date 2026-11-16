@@ -1,0 +1,19 @@
+characters = {
+    WFL_florian_klaus = {
+        name = WFL_florian_klaus
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_florian_klaus
+                small = GFX_portrait_WFL_florian_klaus_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_florian_klaus
+            allowed = { original_tag = WFL }
+            cost = 150
+            traits = { WFL_wirtschaftsstratege_mit_ruhiger_hand }
+            ai_will_do = { factor = 1 }
+        }
+    }
+}

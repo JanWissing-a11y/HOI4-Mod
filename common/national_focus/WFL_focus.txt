@@ -5,47 +5,69 @@ focus_tree = {
         modifier = { add = 100 tag = WFL }
     }
     default = no
+    reset_on_civilwar = no
+    initial_show_position = { focus = WFL_rat_der_buergerhalle }
+    continuous_focus_position = { x = 0 y = 1650 }
+    inlay_window = {
+        id = WFL_beraterstab_inlay
+        position = { x = 3300 y = 1000 }
+    }
 
     focus = {
         id = WFL_rat_der_buergerhalle
         icon = GFX_goal_generic_political_pressure
-        x = 6 y = 0 cost = 5
+        x = 15 y = 0 cost = 5
         completion_reward = { add_political_power = 50 }
     }
     focus = {
         id = WFL_werkbank_am_niederrhein
         icon = GFX_goal_generic_construct_civ_factory
         prerequisite = { focus = WFL_rat_der_buergerhalle }
-        x = 0 y = 1 cost = 5
-        completion_reward = { add_political_power = 50 }
+        x = 4 y = 2 cost = 5
+        available = { has_capitulated = no }
+        completion_reward = {
+            if = {
+                limit = {
+                    capital_scope = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                        free_building_slots = { building = industrial_complex size > 0 include_locked = no }
+                    }
+                }
+                capital_scope = {
+                    add_building_construction = { type = industrial_complex level = 1 instant_build = yes }
+                }
+            }
+            else = { add_political_power = 50 }
+        }
     }
     focus = {
         id = WFL_rheinhandel_beleben
         icon = GFX_goal_generic_construct_civ_factory
         prerequisite = { focus = WFL_werkbank_am_niederrhein }
-        x = 0 y = 2 cost = 5
+        x = 4 y = 3 cost = 5
         completion_reward = { add_ideas = WFL_rheinhandel }
     }
     focus = {
         id = WFL_schuetzen_zu_soldaten
         icon = GFX_goal_generic_army_doctrines
         prerequisite = { focus = WFL_rat_der_buergerhalle }
-        x = 3 y = 1 cost = 5
+        x = 10 y = 2 cost = 5
         completion_reward = { add_ideas = WFL_schuetzenverbaende }
     }
     focus = {
         id = WFL_uebungsplatz_am_auesee
         icon = GFX_goal_generic_army_doctrines
         prerequisite = { focus = WFL_schuetzen_zu_soldaten }
-        x = 3 y = 2 cost = 5
-        completion_reward = { add_army_experience = 10 }
+        x = 10 y = 3 cost = 5
+        completion_reward = { army_experience = 10 }
     }
     focus = {
         id = WFL_buergerverfassung
         icon = GFX_goal_generic_political_pressure
         prerequisite = { focus = WFL_rat_der_buergerhalle }
         mutually_exclusive = { focus = WFL_die_krone_von_flueren focus = WFL_niederrhein_direktorium }
-        x = 6 y = 1 cost = 5
+        x = 16 y = 2 cost = 5
         completion_reward = { country_event = { id = wfl.2 days = 1 } }
     }
     focus = {
@@ -53,15 +75,18 @@ focus_tree = {
         icon = GFX_goal_generic_political_pressure
         prerequisite = { focus = WFL_buergerverfassung }
         available = { has_country_flag = WFL_republic_established }
-        x = 6 y = 2 cost = 5
-        completion_reward = { add_stability = 0.05 }
+        x = 16 y = 3 cost = 5
+        completion_reward = {
+            remove_ideas = WFL_kleine_verwaltung
+            add_stability = 0.05
+        }
     }
     focus = {
         id = WFL_die_krone_von_flueren
         icon = GFX_goal_generic_political_pressure
         prerequisite = { focus = WFL_rat_der_buergerhalle }
         mutually_exclusive = { focus = WFL_buergerverfassung focus = WFL_niederrhein_direktorium }
-        x = 9 y = 1 cost = 5
+        x = 18 y = 2 cost = 5
         completion_reward = { country_event = { id = wfl.1 days = 1 } }
     }
     focus = {
@@ -69,7 +94,7 @@ focus_tree = {
         icon = GFX_goal_generic_army_doctrines
         prerequisite = { focus = WFL_die_krone_von_flueren }
         available = { has_country_flag = WFL_coronation_held }
-        x = 9 y = 2 cost = 5
+        x = 18 y = 3 cost = 5
         completion_reward = { add_ideas = WFL_koenigsgarde }
     }
     focus = {
@@ -77,19 +102,1085 @@ focus_tree = {
         icon = GFX_goal_generic_political_pressure
         prerequisite = { focus = WFL_rat_der_buergerhalle }
         mutually_exclusive = { focus = WFL_buergerverfassung focus = WFL_die_krone_von_flueren }
-        x = 12 y = 1 cost = 5
-        completion_reward = {
-            retire_character = WFL_buergerrat
-            recruit_character = WFL_direktorium
-            set_politics = { ruling_party = neutrality elections_allowed = no }
-            add_war_support = 0.05
-        }
+        x = 22 y = 2 cost = 5
+        completion_reward = { country_event = { id = wfl.3 days = 1 } }
     }
     focus = {
         id = WFL_verwaltung_buendeln
         icon = GFX_goal_generic_political_pressure
         prerequisite = { focus = WFL_niederrhein_direktorium }
-        x = 12 y = 2 cost = 5
+        available = { has_country_flag = WFL_directorate_established }
+        x = 22 y = 3 cost = 5
         completion_reward = { remove_ideas = WFL_kleine_verwaltung }
+    }
+
+    focus = {
+        id = WFL_gewerbehoefe
+        icon = GFX_goal_generic_production
+        prerequisite = { focus = WFL_rheinhandel_beleben }
+        x = 4 y = 4 cost = 5
+        completion_reward = { add_ideas = WFL_gewerbliche_zusammenarbeit }
+    }
+    focus = {
+        id = WFL_ruestungswerkstatt
+        icon = GFX_goal_generic_construct_mil_factory
+        prerequisite = { focus = WFL_gewerbehoefe }
+        available = { has_capitulated = no }
+        x = 4 y = 5 cost = 7
+        completion_reward = {
+            if = {
+                limit = {
+                    capital_scope = {
+                        is_owned_by = ROOT
+                        is_controlled_by = ROOT
+                        free_building_slots = { building = arms_factory size > 0 include_locked = no }
+                    }
+                }
+                capital_scope = {
+                    add_building_construction = { type = arms_factory level = 1 instant_build = yes }
+                }
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    focus = {
+        id = WFL_technikschule
+        icon = GFX_goal_generic_scientific_exchange
+        prerequisite = { focus = WFL_gewerbehoefe }
+        x = 2 y = 5 cost = 7
+        completion_reward = {
+            add_ideas = WFL_berufskolleg_idee
+            add_tech_bonus = {
+                name = WFL_berufskolleg_industriebonus
+                bonus = 1.0
+                uses = 2
+                category = industry
+            }
+            if = {
+                limit = { amount_research_slots < 4 }
+                add_research_slot = 1
+            }
+            else = { add_political_power = 75 }
+        }
+    }
+    focus = {
+        id = WFL_berliner_tor_sichern
+        icon = GFX_goal_generic_fortify_city
+        prerequisite = { focus = WFL_uebungsplatz_am_auesee }
+        x = 10 y = 4 cost = 5
+        completion_reward = { add_ideas = WFL_heimatverteidigung }
+    }
+    focus = {
+        id = WFL_standardisierte_gewehre
+        icon = GFX_goal_generic_production
+        prerequisite = { focus = WFL_berliner_tor_sichern }
+        x = 10 y = 5 cost = 5
+        completion_reward = {
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 250 producer = WFL }
+            army_experience = 10
+        }
+    }
+    focus = {
+        id = WFL_offene_haushalte
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_kommunaler_aufbau }
+        x = 16 y = 4 cost = 5
+        completion_reward = { add_ideas = WFL_buergerhaushalt }
+    }
+    focus = {
+        id = WFL_forschungsgemeinschaft
+        icon = GFX_goal_generic_scientific_exchange
+        prerequisite = { focus = WFL_offene_haushalte }
+        prerequisite = { focus = WFL_technikschule }
+        x = 16 y = 8 cost = 7
+        completion_reward = {
+            add_ideas = WFL_freie_wissenschaft
+            country_event = { id = wfl.4 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_bewaffnete_neutralitaet
+        icon = GFX_goal_generic_fortify_city
+        prerequisite = { focus = WFL_die_koenigsgarde }
+        x = 18 y = 4 cost = 7
+        completion_reward = {
+            add_ideas = WFL_bewaffnete_neutralitaet_idee
+            add_war_support = 0.05
+        }
+    }
+    focus = {
+        id = WFL_mobilmachungsplan
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_verwaltung_buendeln }
+        x = 22 y = 4 cost = 7
+        completion_reward = {
+            add_ideas = WFL_reserveorganisation
+            army_experience = 15
+        }
+    }
+    focus = {
+        id = WFL_niederrheinische_ansprueche
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_mobilmachungsplan }
+        x = 22 y = 5 cost = 7
+        completion_reward = {
+            if = { limit = { 51 = { NOT = { is_owned_by = ROOT } } } add_state_claim = 51 }
+            if = { limit = { 57 = { NOT = { is_owned_by = ROOT } } } add_state_claim = 57 }
+        }
+    }
+    focus = {
+        id = WFL_rheinland_fordern
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_niederrheinische_ansprueche }
+        x = 20 y = 6 cost = 10
+        bypass = { 51 = { is_owned_by = ROOT } }
+        available = {
+            has_capitulated = no
+            is_subject = no
+            51 = {
+                NOT = { is_owned_by = ROOT }
+                owner = {
+                    NOT = { is_in_faction_with = ROOT }
+                    NOT = { is_subject_of = ROOT }
+                    NOT = { has_war_with = ROOT }
+                }
+            }
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    has_capitulated = no
+                    is_subject = no
+                    51 = {
+                        NOT = { is_owned_by = ROOT }
+                        owner = {
+                            NOT = { is_in_faction_with = ROOT }
+                            NOT = { is_subject_of = ROOT }
+                            NOT = { has_war_with = ROOT }
+                        }
+                    }
+                }
+                # ROOT stays WFL; PREV inside ROOT is the current state owner.
+                51 = {
+                    owner = {
+                        ROOT = {
+                            create_wargoal = { type = take_state_focus target = PREV generator = { 51 } }
+                        }
+                    }
+                }
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    focus = {
+        id = WFL_westfalen_fordern
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_niederrheinische_ansprueche }
+        x = 24 y = 6 cost = 10
+        bypass = { 57 = { is_owned_by = ROOT } }
+        available = {
+            has_capitulated = no
+            is_subject = no
+            57 = {
+                NOT = { is_owned_by = ROOT }
+                owner = {
+                    NOT = { is_in_faction_with = ROOT }
+                    NOT = { is_subject_of = ROOT }
+                    NOT = { has_war_with = ROOT }
+                }
+            }
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    has_capitulated = no
+                    is_subject = no
+                    57 = {
+                        NOT = { is_owned_by = ROOT }
+                        owner = {
+                            NOT = { is_in_faction_with = ROOT }
+                            NOT = { is_subject_of = ROOT }
+                            NOT = { has_war_with = ROOT }
+                        }
+                    }
+                }
+                # Resolve the owner on completion instead of assuming GER.
+                57 = {
+                    owner = {
+                        ROOT = {
+                            create_wargoal = { type = take_state_focus target = PREV generator = { 57 } }
+                        }
+                    }
+                }
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    focus = {
+        id = WFL_niederrheinunion
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rheinland_fordern }
+        prerequisite = { focus = WFL_westfalen_fordern }
+        x = 22 y = 7 cost = 7
+        available = {
+            has_war = no
+            51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+            57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    has_war = no
+                    51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+                    57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+                }
+                set_country_flag = WFL_union_proclaimed
+                add_stability = 0.05
+                add_political_power = 50
+            }
+            else = { add_political_power = 25 }
+        }
+    }
+
+    # Research and transatlantic branches retain their original IDs and rewards.
+    focus = {
+        id = WFL_zusaetzlicher_forschungsrat
+        icon = GFX_goal_generic_scientific_exchange
+        prerequisite = { focus = WFL_technikschule }
+        x = 2 y = 6 cost = 7
+        completion_reward = {
+            if = {
+                limit = { NOT = { has_country_flag = WFL_extra_research_slot_granted } }
+                add_research_slot = 1
+                set_country_flag = WFL_extra_research_slot_granted
+            }
+        }
+    }
+    focus = {
+        id = WFL_atomprogramm_am_auesee
+        icon = GFX_goal_generic_secret_weapon
+        prerequisite = { focus = WFL_zusaetzlicher_forschungsrat }
+        x = 0 y = 7 cost = 10
+        completion_reward = {
+            add_ideas = WFL_auesee_atomoffensive
+            add_tech_bonus = {
+                name = WFL_atomprogramm_forschungsbonus
+                bonus = 3.0
+                ahead_reduction = 4
+                uses = 3
+                category = nuclear
+            }
+        }
+    }
+    focus = {
+        id = WFL_geheimlabor_flueren
+        icon = GFX_goal_generic_secret_weapon
+        prerequisite = { focus = WFL_atomprogramm_am_auesee }
+        x = 0 y = 8 cost = 7
+        available = {
+            has_capitulated = no
+            1082 = { is_owned_by = ROOT is_fully_controlled_by = ROOT }
+        }
+        completion_reward = {
+            if = {
+                limit = {
+                    1082 = {
+                        is_owned_by = ROOT
+                        is_fully_controlled_by = ROOT
+                        is_demilitarized_zone = no
+                        free_building_slots = { building = nuclear_facility size > 0 province = 3512 }
+                    }
+                }
+                1082 = {
+                    add_building_construction = {
+                        type = nuclear_facility
+                        level = 1
+                        province = 3512
+                        instant_build = yes
+                    }
+                }
+            }
+            else = { add_political_power = 150 }
+            if = {
+                limit = { NOT = { has_country_flag = WFL_nuclear_team_granted } }
+                generate_scientist_character = {
+                    portrait = GFX_portrait_WFL_advisor_13
+                    gender = male
+                    skills = { specialization_nuclear = 5 }
+                }
+                add_breakthrough_progress = { specialization = specialization_nuclear value = 5 }
+                set_country_flag = WFL_nuclear_team_granted
+            }
+        }
+    }
+    focus = {
+        id = WFL_flueren_flugzeugwunder
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = WFL_ruestungswerkstatt }
+        prerequisite = { focus = WFL_standardisierte_gewehre }
+        x = 10 y = 8 cost = 10
+        completion_reward = { add_ideas = WFL_dreifache_flugzeugfertigung }
+    }
+
+    # Community and research follow-ups.
+    focus = {
+        id = WFL_brauereiverbund
+        icon = GFX_goal_generic_construct_civ_factory
+        prerequisite = { focus = WFL_rheinhandel_beleben }
+        x = 0 y = 4 cost = 5
+        completion_reward = {
+            add_ideas = WFL_brauereiverbund_idee
+            country_event = { id = wfl_community.1 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_festlogistik
+        icon = GFX_goal_generic_production
+        prerequisite = { focus = WFL_brauereiverbund }
+        x = 0 y = 5 cost = 5
+        completion_reward = { add_ideas = WFL_festlogistik_idee }
+    }
+    focus = {
+        id = WFL_schuetzenakademie
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_standardisierte_gewehre }
+        x = 12 y = 6 cost = 7
+        completion_reward = {
+            add_ideas = WFL_schuetzenakademie_idee
+            army_experience = 15
+        }
+    }
+    focus = {
+        id = WFL_vereinsdiplomatie
+        icon = GFX_goal_generic_improve_relations
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        x = 28 y = 2 cost = 5
+        completion_reward = { add_ideas = WFL_vereinsdiplomatie_idee }
+    }
+    focus = {
+        id = WFL_schuetzenolympiade
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_vereinsdiplomatie }
+        available = { has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+        x = 26 y = 3 cost = 5
+        completion_reward = { country_event = { id = wfl_community.2 days = 1 } }
+    }
+    focus = {
+        id = WFL_weltkongress_des_schuetzenwesens
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_schuetzenolympiade }
+        available = { has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+        x = 26 y = 4 cost = 7
+        completion_reward = { country_event = { id = wfl_community.5 days = 1 } }
+    }
+    focus = {
+        id = WFL_tag_der_offenen_labortuer
+        icon = GFX_goal_generic_scientific_exchange
+        prerequisite = { focus = WFL_zusaetzlicher_forschungsrat }
+        x = 2 y = 7 cost = 5
+        completion_reward = { country_event = { id = wfl_community.4 days = 1 } }
+    }
+    focus = {
+        id = WFL_rheinischer_forschungsbund
+        icon = GFX_goal_generic_scientific_exchange
+        prerequisite = { focus = WFL_tag_der_offenen_labortuer }
+        x = 2 y = 8 cost = 7
+        completion_reward = { add_ideas = WFL_rheinischer_forschungsbund_idee }
+    }
+    focus = {
+        id = WFL_jans_goldene_festordnung
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_bewaffnete_neutralitaet }
+        available = { has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+        x = 18 y = 5 cost = 7
+        completion_reward = {
+            if = {
+                limit = { has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes } }
+                add_stability = 0.05
+                add_political_power = 100
+            }
+            else = { add_political_power = 25 }
+        }
+    }
+    focus = {
+        id = WFL_buergerhalle_fuer_alle
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_forschungsgemeinschaft }
+        available = { has_government = democratic has_country_flag = WFL_republic_established }
+        x = 16 y = 9 cost = 7
+        completion_reward = {
+            if = {
+                limit = { has_government = democratic has_country_flag = WFL_republic_established }
+                add_stability = 0.10
+                add_political_power = 75
+            }
+            else = { add_political_power = 25 }
+        }
+    }
+    focus = {
+        id = WFL_schuetzenbund_am_niederrhein
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_niederrheinunion }
+        available = {
+            has_country_flag = WFL_union_proclaimed
+            has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+            has_war = no
+            51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+            57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+        }
+        x = 22 y = 8 cost = 7
+        completion_reward = {
+            if = {
+                limit = {
+                    has_country_flag = WFL_union_proclaimed
+                    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+                    has_war = no
+                    51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+                    57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT is_core_of = ROOT }
+                }
+                add_war_support = 0.10
+                army_experience = 25
+                add_political_power = 100
+            }
+            else = { add_political_power = 25 }
+        }
+    }
+
+    focus = {
+        id = WFL_rheinblockade
+        icon = GFX_goal_generic_trade
+        prerequisite = { focus = WFL_festlogistik }
+        x = 0 y = 6 cost = 7
+        completion_reward = {
+            # The positive economic spirit is independent of all foreign answers.
+            add_ideas = WFL_rheinblockade_idee
+            country_event = { id = wfl_beer.1 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_alkoholfreies_bier_verbieten
+        icon = GFX_goal_generic_army_doctrines
+        prerequisite = { focus = WFL_uebungsplatz_am_auesee }
+        x = 12 y = 4 cost = 5
+        completion_reward = { add_ideas = WFL_alkoholfreies_bier_verbot_idee }
+    }
+    focus = {
+        id = WFL_flachglas_ruestungsproduktion
+        icon = GFX_goal_generic_construct_mil_factory
+        prerequisite = { focus = WFL_ruestungswerkstatt }
+        available = {
+            has_capitulated = no
+            1082 = { is_owned_by = ROOT is_fully_controlled_by = ROOT }
+        }
+        x = 4 y = 6 cost = 7
+        completion_reward = {
+            if = {
+                limit = {
+                    has_capitulated = no
+                    1082 = {
+                        is_owned_by = ROOT is_fully_controlled_by = ROOT
+                        is_demilitarized_zone = no arms_factory < 18
+                    }
+                }
+                1082 = { add_extra_state_shared_building_slots = 3 }
+                if = {
+                    limit = {
+                        1082 = { free_building_slots = { building = arms_factory size > 2 include_locked = no } }
+                    }
+                    1082 = {
+                        add_building_construction = { type = arms_factory level = 3 instant_build = yes }
+                    }
+                }
+                else = { add_political_power = 150 }
+            }
+            else = { add_political_power = 150 }
+        }
+    }
+    focus = {
+        id = WFL_schuetzen_kriegswirtschaft
+        icon = GFX_goal_generic_production
+        prerequisite = { focus = WFL_flachglas_ruestungsproduktion }
+        x = 4 y = 7 cost = 7
+        completion_reward = {
+            if = {
+                limit = {
+                    NOT = { has_idea = war_economy }
+                    NOT = { has_idea = tot_economic_mobilisation }
+                }
+                add_ideas = war_economy
+            }
+            else = { add_political_power = 100 }
+        }
+    }
+    focus = {
+        id = WFL_anglo_bier_diplomatie
+        icon = GFX_goal_generic_improve_relations
+        prerequisite = { focus = WFL_vereinsdiplomatie }
+        available = { ENG = { exists = yes NOT = { has_war_with = ROOT } } }
+        x = 28 y = 3 cost = 5
+        completion_reward = {
+            if = {
+                limit = { ENG = { exists = yes NOT = { has_war_with = ROOT } } }
+                country_event = { id = wfl_beer.4 days = 1 }
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    focus = {
+        id = WFL_roemerwardt_ausbauen
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = WFL_uebungsplatz_am_auesee }
+        available = {
+            has_capitulated = no
+            1082 = { is_owned_by = ROOT is_fully_controlled_by = ROOT }
+        }
+        x = 8 y = 4 cost = 5
+        completion_reward = {
+            air_experience = 10
+            if = {
+                limit = {
+                    has_capitulated = no
+                    1082 = {
+                        is_owned_by = ROOT is_fully_controlled_by = ROOT
+                        is_demilitarized_zone = no
+                    }
+                }
+                1082 = {
+                    if = {
+                        limit = { air_base < 5 }
+                        set_building_level = { type = air_base level = 5 instant_build = yes }
+                    }
+                }
+            }
+            else = { add_political_power = 50 }
+        }
+    }
+    focus = {
+        id = WFL_roemerwardt_flugschule
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = WFL_roemerwardt_ausbauen }
+        x = 8 y = 5 cost = 5
+        completion_reward = {
+            air_experience = 35
+            add_ideas = WFL_roemerwardt_flugschule_idee
+        }
+    }
+    focus = {
+        id = WFL_roemerwardt_luftfahrtwerkstaetten
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = WFL_roemerwardt_flugschule }
+        x = 8 y = 6 cost = 7
+        completion_reward = {
+            air_experience = 25
+            add_ideas = WFL_roemerwardt_luftfahrtwerkstaetten_idee
+        }
+    }
+    focus = {
+        id = WFL_roemerwardt_luftwaffenakademie
+        icon = GFX_goal_generic_air_production
+        prerequisite = { focus = WFL_roemerwardt_luftfahrtwerkstaetten }
+        x = 8 y = 7 cost = 7
+        completion_reward = {
+            air_experience = 50
+            add_ideas = WFL_roemerwardt_luftwaffenakademie_idee
+        }
+    }
+    focus = {
+        id = WFL_reichspfandministerium
+        icon = GFX_goal_generic_production
+        prerequisite = { focus = WFL_rheinhandel_beleben }
+        x = 6 y = 4 cost = 5
+        completion_reward = { add_ideas = WFL_reichspfandministerium_idee }
+    }
+    focus = {
+        id = WFL_zapfhahnkrise
+        icon = GFX_goal_generic_improve_relations
+        prerequisite = { focus = WFL_anglo_bier_diplomatie }
+        x = 28 y = 4 cost = 5
+        completion_reward = {
+            if = {
+                limit = { NOT = { has_country_flag = WFL_zapfhahn_started } }
+                set_country_flag = WFL_zapfhahn_started
+                if = {
+                    limit = { ENG = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } } }
+                    set_country_flag = WFL_zapfhahn_pending
+                    country_event = { id = wfl_zapfhahn.1 days = 1 }
+                    country_event = { id = wfl_zapfhahn.4 days = 45 }
+                }
+                else = { set_country_flag = WFL_zapfhahn_resolved add_political_power = 50 }
+            }
+        }
+    }
+    focus = {
+        id = WFL_dorfkeller_diplomatie
+        icon = GFX_goal_generic_alliance
+        prerequisite = { focus = WFL_zapfhahnkrise }
+        available = {
+            WFL_can_join_allies = yes
+        }
+        bypass = {
+            is_in_faction_with = ENG
+            ENG = { exists = yes has_faction_template = faction_template_allies }
+        }
+        cancel_if_invalid = yes
+        x = 28 y = 5 cost = 5
+        completion_reward = {
+            custom_effect_tooltip = WFL_dorfkeller_beitritt_tt
+            hidden_effect = {
+                if = {
+                    limit = { NOT = { has_country_flag = WFL_dorfkeller_resolved } }
+                    set_country_flag = WFL_dorfkeller_resolved
+                    if = {
+                        limit = { WFL_can_join_allies = yes }
+                        ENG = { faction_leader = { add_to_faction = ROOT } }
+                        if = {
+                            limit = { is_in_faction_with = ENG }
+                            set_country_flag = WFL_dorfkeller_joined_allies
+                            country_event = { id = wfl_dorfkeller.1 days = 1 }
+                        }
+                        else = { add_political_power = 50 }
+                    }
+                    else = { add_political_power = 50 }
+                }
+            }
+        }
+    }
+    focus = {
+        id = WFL_iran_erbfolgekrise
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_vereinsdiplomatie }
+        available = { is_subject = no has_capitulated = no }
+        cancel_if_invalid = yes
+        x = 30 y = 3 cost = 5
+        completion_reward = {
+            add_political_power = 25
+            set_country_flag = WFL_iran_succession_opened
+            country_event = { id = wfl_iran_succession.1 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_iran_gesandtschaft
+        icon = GFX_goal_generic_improve_relations
+        prerequisite = { focus = WFL_iran_erbfolgekrise }
+        available = { is_subject = no has_capitulated = no }
+        cancel_if_invalid = yes
+        x = 30 y = 4 cost = 5
+        completion_reward = {
+            add_political_power = 25
+            set_country_flag = WFL_iran_embassy_arrived
+            country_event = { id = wfl_iran_succession.2 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_iran_hochzeit
+        icon = GFX_goal_generic_neutrality_focus
+        prerequisite = { focus = WFL_iran_gesandtschaft }
+        available = { is_subject = no has_capitulated = no }
+        cancel_if_invalid = yes
+        x = 30 y = 5 cost = 5
+        completion_reward = {
+            add_stability = 0.05
+            set_country_flag = WFL_iran_royal_wedding
+            country_event = { id = wfl_iran_succession.3 days = 1 }
+        }
+    }
+    focus = {
+        id = WFL_iran_treuevertrag
+        icon = GFX_goal_generic_demand_territory
+        prerequisite = { focus = WFL_iran_hochzeit }
+        available = { is_subject = no has_capitulated = no }
+        cancel_if_invalid = yes
+        x = 30 y = 6 cost = 5
+        completion_reward = {
+            custom_effect_tooltip = WFL_iran_treuevertrag_tt
+            hidden_effect = { WFL_establish_iranian_puppet_effect = yes }
+        }
+    }
+
+    # The Count's staff: three special seats and autonomous advisor focus branches.
+    focus = {
+        id = WFL_beraterstab_gruenden
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        x = 38 y = 1 cost = 5
+        available = { WFL_staff_leader_eligible = yes }
+        cancel_if_invalid = yes
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_system_tt
+        hidden_effect = {
+            if = {
+                limit = {
+                    WFL_staff_leader_eligible = yes
+                }
+                WFL_staff_initialize = yes
+                if = {
+                    limit = {
+                        NOT = { has_country_flag = WFL_staff_unlocked }
+                    }
+                    set_country_flag = WFL_staff_unlocked
+                    country_event = { id = wfl_staff.1 }
+                }
+            }
+        }
+        }
+    }
+    focus = {
+        id = WFL_staff_appoint_dante_grossy
+        icon = GFX_focus_WFL_staff_dante_grossy
+        prerequisite = { focus = WFL_beraterstab_gruenden }
+        x = 34 y = 2 cost = 2
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available = {
+            custom_trigger_tooltip = { tooltip = WFL_staff_leadership_tt WFL_staff_can_operate = yes }
+            custom_trigger_tooltip = { tooltip = WFL_staff_cooldown_tt check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals } }
+            custom_trigger_tooltip = { tooltip = WFL_staff_pending_tt NOT = { has_country_flag = WFL_staff_replacement_pending } }
+            NOT = { has_country_flag = WFL_staff_dante_grossy_active }
+        }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_appointment_tt
+            show_ideas_tooltip = WFL_staff_dante_grossy_0_idea
+            hidden_effect = {
+                WFL_staff_nominate_dante_grossy = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_dante_grossy_1
+        icon = GFX_focus_WFL_staff_dante_grossy
+        prerequisite = { focus = WFL_staff_appoint_dante_grossy }
+        x = 34 y = 3 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_dante_grossy_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_dante_grossy_1_idea
+            hidden_effect = {
+                WFL_staff_finish_dante_grossy_1 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_dante_grossy_2
+        icon = GFX_focus_WFL_staff_dante_grossy
+        prerequisite = { focus = WFL_staff_dante_grossy_1 }
+        x = 34 y = 4 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_dante_grossy_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_dante_grossy_2_idea
+            hidden_effect = {
+                WFL_staff_finish_dante_grossy_2 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_dante_grossy_3
+        icon = GFX_focus_WFL_staff_dante_grossy
+        prerequisite = { focus = WFL_staff_dante_grossy_2 }
+        x = 34 y = 5 cost = 40
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_dante_grossy_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_dante_grossy_3_idea
+            hidden_effect = {
+                WFL_staff_finish_dante_grossy_3 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_appoint_neal_foerster
+        icon = GFX_focus_WFL_staff_neal_foerster
+        prerequisite = { focus = WFL_beraterstab_gruenden }
+        x = 36 y = 2 cost = 2
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available = {
+            custom_trigger_tooltip = { tooltip = WFL_staff_leadership_tt WFL_staff_can_operate = yes }
+            custom_trigger_tooltip = { tooltip = WFL_staff_cooldown_tt check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals } }
+            custom_trigger_tooltip = { tooltip = WFL_staff_pending_tt NOT = { has_country_flag = WFL_staff_replacement_pending } }
+            NOT = { has_country_flag = WFL_staff_neal_foerster_active }
+        }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_appointment_tt
+            show_ideas_tooltip = WFL_staff_neal_foerster_0_idea
+            hidden_effect = {
+                WFL_staff_nominate_neal_foerster = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_neal_foerster_1
+        icon = GFX_focus_WFL_staff_neal_foerster
+        prerequisite = { focus = WFL_staff_appoint_neal_foerster }
+        x = 36 y = 3 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_neal_foerster_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_neal_foerster_1_idea
+            hidden_effect = {
+                WFL_staff_finish_neal_foerster_1 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_neal_foerster_2
+        icon = GFX_focus_WFL_staff_neal_foerster
+        prerequisite = { focus = WFL_staff_neal_foerster_1 }
+        x = 36 y = 4 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_neal_foerster_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_neal_foerster_2_idea
+            hidden_effect = {
+                WFL_staff_finish_neal_foerster_2 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_neal_foerster_3
+        icon = GFX_focus_WFL_staff_neal_foerster
+        prerequisite = { focus = WFL_staff_neal_foerster_2 }
+        x = 36 y = 5 cost = 40
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_neal_foerster_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_neal_foerster_3_idea
+            hidden_effect = {
+                WFL_staff_finish_neal_foerster_3 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_appoint_max_heinsch
+        icon = GFX_focus_WFL_staff_max_heinsch
+        prerequisite = { focus = WFL_beraterstab_gruenden }
+        x = 38 y = 2 cost = 2
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available = {
+            custom_trigger_tooltip = { tooltip = WFL_staff_leadership_tt WFL_staff_can_operate = yes }
+            custom_trigger_tooltip = { tooltip = WFL_staff_cooldown_tt check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals } }
+            custom_trigger_tooltip = { tooltip = WFL_staff_pending_tt NOT = { has_country_flag = WFL_staff_replacement_pending } }
+            NOT = { has_country_flag = WFL_staff_max_heinsch_active }
+        }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_appointment_tt
+            show_ideas_tooltip = WFL_staff_max_heinsch_0_idea
+            hidden_effect = {
+                WFL_staff_nominate_max_heinsch = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_heinsch_1
+        icon = GFX_focus_WFL_staff_max_heinsch
+        prerequisite = { focus = WFL_staff_appoint_max_heinsch }
+        x = 38 y = 3 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_heinsch_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_heinsch_1_idea
+            hidden_effect = {
+                WFL_staff_finish_max_heinsch_1 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_heinsch_2
+        icon = GFX_focus_WFL_staff_max_heinsch
+        prerequisite = { focus = WFL_staff_max_heinsch_1 }
+        x = 38 y = 4 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_heinsch_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_heinsch_2_idea
+            hidden_effect = {
+                WFL_staff_finish_max_heinsch_2 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_heinsch_3
+        icon = GFX_focus_WFL_staff_max_heinsch
+        prerequisite = { focus = WFL_staff_max_heinsch_2 }
+        x = 38 y = 5 cost = 40
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_heinsch_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_heinsch_3_idea
+            hidden_effect = {
+                WFL_staff_finish_max_heinsch_3 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_appoint_max_mueller
+        icon = GFX_focus_WFL_staff_max_mueller
+        prerequisite = { focus = WFL_beraterstab_gruenden }
+        x = 40 y = 2 cost = 2
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available = {
+            custom_trigger_tooltip = { tooltip = WFL_staff_leadership_tt WFL_staff_can_operate = yes }
+            custom_trigger_tooltip = { tooltip = WFL_staff_cooldown_tt check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals } }
+            custom_trigger_tooltip = { tooltip = WFL_staff_pending_tt NOT = { has_country_flag = WFL_staff_replacement_pending } }
+            NOT = { has_country_flag = WFL_staff_max_mueller_active }
+        }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_appointment_tt
+            show_ideas_tooltip = WFL_staff_max_mueller_0_idea
+            hidden_effect = {
+                WFL_staff_nominate_max_mueller = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_mueller_1
+        icon = GFX_focus_WFL_staff_max_mueller
+        prerequisite = { focus = WFL_staff_appoint_max_mueller }
+        x = 40 y = 3 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_mueller_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_mueller_1_idea
+            hidden_effect = {
+                WFL_staff_finish_max_mueller_1 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_mueller_2
+        icon = GFX_focus_WFL_staff_max_mueller
+        prerequisite = { focus = WFL_staff_max_mueller_1 }
+        x = 40 y = 4 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_mueller_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_mueller_2_idea
+            hidden_effect = {
+                WFL_staff_finish_max_mueller_2 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_max_mueller_3
+        icon = GFX_focus_WFL_staff_max_mueller
+        prerequisite = { focus = WFL_staff_max_mueller_2 }
+        x = 40 y = 5 cost = 40
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_max_mueller_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_max_mueller_3_idea
+            hidden_effect = {
+                WFL_staff_finish_max_mueller_3 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_appoint_till_hoehne
+        icon = GFX_focus_WFL_staff_till_hoehne
+        prerequisite = { focus = WFL_beraterstab_gruenden }
+        x = 42 y = 2 cost = 2
+        cancel_if_invalid = yes
+        continue_if_invalid = no
+        available = {
+            custom_trigger_tooltip = { tooltip = WFL_staff_leadership_tt WFL_staff_can_operate = yes }
+            custom_trigger_tooltip = { tooltip = WFL_staff_cooldown_tt check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals } }
+            custom_trigger_tooltip = { tooltip = WFL_staff_pending_tt NOT = { has_country_flag = WFL_staff_replacement_pending } }
+            NOT = { has_country_flag = WFL_staff_till_hoehne_active }
+        }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_appointment_tt
+            show_ideas_tooltip = WFL_staff_till_hoehne_0_idea
+            hidden_effect = {
+                WFL_staff_nominate_till_hoehne = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_till_hoehne_1
+        icon = GFX_focus_WFL_staff_till_hoehne
+        prerequisite = { focus = WFL_staff_appoint_till_hoehne }
+        x = 42 y = 3 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_till_hoehne_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_till_hoehne_1_idea
+            hidden_effect = {
+                WFL_staff_finish_till_hoehne_1 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_till_hoehne_2
+        icon = GFX_focus_WFL_staff_till_hoehne
+        prerequisite = { focus = WFL_staff_till_hoehne_1 }
+        x = 42 y = 4 cost = 20
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_till_hoehne_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_till_hoehne_2_idea
+            hidden_effect = {
+                WFL_staff_finish_till_hoehne_2 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_staff_till_hoehne_3
+        icon = GFX_focus_WFL_staff_till_hoehne
+        prerequisite = { focus = WFL_staff_till_hoehne_2 }
+        x = 42 y = 5 cost = 40
+        # Advisor work is deliberately never selectable as the player's national focus.
+        available = { custom_trigger_tooltip = { tooltip = WFL_staff_till_hoehne_autonomous_tt always = no } }
+        completion_reward = {
+            custom_effect_tooltip = WFL_staff_upgrade_tt
+            show_ideas_tooltip = WFL_staff_till_hoehne_3_idea
+            hidden_effect = {
+                WFL_staff_finish_till_hoehne_3 = yes
+            }
+        }
+    }
+    focus = {
+        id = WFL_geschaeftsordnung_bierdeckel
+        icon = GFX_goal_generic_political_pressure
+        prerequisite = { focus = WFL_rat_der_buergerhalle }
+        available = { WFL_assembly_can_operate = yes }
+        cancel_if_invalid = yes
+        x = 44 y = 1 cost = 5
+        completion_reward = {
+            custom_effect_tooltip = WFL_board_bierdeckel_rules_tt
+            set_country_flag = WFL_board_bierdeckel_rules
+        }
+    }
+    focus = {
+        id = WFL_aeltestenrat_tresen
+        icon = GFX_goal_generic_alliance
+        prerequisite = { focus = WFL_geschaeftsordnung_bierdeckel }
+        available = { WFL_assembly_can_operate = yes }
+        cancel_if_invalid = yes
+        x = 44 y = 2 cost = 5
+        completion_reward = {
+            custom_effect_tooltip = WFL_board_elders_unlocked_tt
+            set_country_flag = WFL_board_elders_unlocked
+        }
+    }
+    shortcut = {
+        name = WFL_staff_shortcut
+        target = WFL_beraterstab_gruenden
+        scroll_wheel_factor = 0.75
     }
 }

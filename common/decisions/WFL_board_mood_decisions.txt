@@ -1,0 +1,53 @@
+WFL_vorstand = {
+    WFL_board_kameradschaftsabend = {
+        icon = GFX_decision_generic_political_discourse
+        available = {
+            WFL_assembly_can_operate = yes
+            check_variable = { var = WFL_board_mood value = 100 compare = less_than }
+        }
+        cost = 35
+        days_re_enable = 30
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_assembly_can_operate = yes check_variable = { var = WFL_board_mood value = 100 compare = less_than } }
+                add_to_variable = { WFL_board_mood = 15 }
+                WFL_board_mood_refresh = yes
+            }
+        }
+    }
+    WFL_board_kassensturz = {
+        icon = GFX_decision_generic_political_discourse
+        available = {
+            WFL_assembly_can_operate = yes
+            check_variable = { var = WFL_board_mood value = 100 compare = less_than }
+        }
+        cost = 50
+        days_re_enable = 60
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_assembly_can_operate = yes check_variable = { var = WFL_board_mood value = 100 compare = less_than } }
+                add_to_variable = { WFL_board_mood = 25 }
+                WFL_board_mood_refresh = yes
+            }
+        }
+    }
+    WFL_board_versoehnungsgrillen = {
+        icon = GFX_decision_generic_political_discourse
+        available = {
+            WFL_assembly_can_operate = yes
+            check_variable = { var = WFL_board_mood value = 100 compare = less_than }
+        }
+        cost = 70
+        days_re_enable = 90
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_assembly_can_operate = yes check_variable = { var = WFL_board_mood value = 100 compare = less_than } }
+                add_to_variable = { WFL_board_mood = 35 }
+                WFL_board_mood_refresh = yes
+            }
+        }
+    }
+}

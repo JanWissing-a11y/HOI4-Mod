@@ -1,0 +1,32 @@
+ideas = {
+    country = {
+        WFL_reichspfandministerium_idee = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                local_resources_factor = 0.15
+                production_lack_of_resource_penalty_factor = -0.10
+                industrial_capacity_factory = 0.05
+            }
+        }
+        WFL_kuehlkettenkompromiss = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                production_speed_industrial_complex_factor = 0.10
+                industrial_capacity_factory = 0.05
+            }
+        }
+        WFL_trinkduell_der_freundschaft = {
+            picture = generic_army_war_college
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = {
+                stability_factor = 0.05
+                army_morale_factor = 0.10
+            }
+        }
+    }
+}

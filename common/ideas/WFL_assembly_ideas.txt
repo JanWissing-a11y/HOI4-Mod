@@ -1,0 +1,52 @@
+ideas = {
+    country = {
+        WFL_assembly_nils_meyer_idea = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { industrial_capacity_factory = 0.15 industrial_capacity_dockyard = 0.15 }
+        }
+        WFL_assembly_jannik_altenschmidt_idea = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { production_speed_industrial_complex_factor = 0.15 production_speed_arms_factory_factor = 0.15 }
+        }
+        WFL_assembly_tobias_gaertner_idea = {
+            picture = generic_army_war_college
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { army_attack_factor = 0.05 army_defence_factor = 0.05 army_org_factor = 0.05 }
+        }
+        WFL_assembly_finn_bielig_idea = {
+            picture = generic_fortify_the_borders
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { supply_consumption_factor = -0.10 training_time_army_factor = -0.10 }
+        }
+        WFL_assembly_max_gerwers_idea = {
+            picture = generic_research_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { research_speed_factor = 0.05 production_factory_efficiency_gain_factor = 0.10 }
+        }
+        WFL_assembly_tim_wissing_idea = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { political_power_gain = 0.15 stability_factor = 0.05 }
+        }
+        WFL_assembly_blockade_idea = {
+            picture = generic_constitutional_guarantees
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { stability_factor = -0.05 political_power_factor = -0.10 }
+        }
+        WFL_assembly_eklat_idea = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { industrial_capacity_factory = -0.10 production_speed_buildings_factor = -0.10 army_org_factor = -0.05 }
+        }
+    }
+}

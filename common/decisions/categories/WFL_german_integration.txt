@@ -1,0 +1,7 @@
+WFL_deutsche_einigung = {
+    allowed = { tag = WFL }
+    visible = {
+        tag = WFL
+        NOT = { has_country_flag = WFL_deutschland_vereint_done }
+    }
+}

@@ -1,0 +1,55 @@
+# All IDs below are present in the installed 1.19.4.1 data/documentation.
+# Nuclear bonuses target named projects; unrelated special projects are unchanged.
+ideas = {
+    country = {
+        WFL_auesee_atomoffensive = {
+            picture = generic_research_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            research_bonus = { nuclear = 3.0 }
+            modifier = {
+                sp_nuclear_reactor_speed_factor = 4.0
+                sp_nuclear_bomb_speed_factor = 4.0
+                sp_thermo_nuclear_bomb_speed_factor = 4.0
+                sp_nuclear_warheads_speed_factor = 4.0
+                production_speed_nuclear_facility_factor = 3.0
+                production_speed_nuclear_reactor_factor = 3.0
+                production_speed_nuclear_reactor_heavy_water_factor = 3.0
+                nuclear_production_factor = 2.0
+                thermonuclear_production_factor = 2.0
+            }
+        }
+        WFL_dreifache_flugzeugfertigung = {
+            picture = generic_industrial_concern_2
+            allowed = { tag = WFL }
+            removal_cost = -1
+            # Vanilla uses equipment_bonus/build_cost_ic for aircraft throughput.
+            # One third of base IC cost means three times as many aircraft at
+            # equal IC/efficiency. Other cost discounts stack additively.
+            # Base airframes plus all role/jet aliases match Vanilla SOV's pattern.
+            # Missiles, ammunition, tanks, infantry equipment and ships are excluded.
+            equipment_bonus = {
+                small_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                cv_small_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                medium_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                large_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                small_plane_cas_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                cv_small_plane_cas_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                small_plane_naval_bomber_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                cv_small_plane_naval_bomber_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                small_plane_suicide_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                cv_small_plane_suicide_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                medium_plane_fighter_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                medium_plane_scout_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                large_plane_maritime_patrol_plane_airframe = { instant = yes build_cost_ic = -0.666666667 }
+                jet_fighter_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                rocket_interceptor_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                jet_tac_bomber_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                jet_strat_bomber_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                transport_plane_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                strat_bomber_intercontinental_equipment = { instant = yes build_cost_ic = -0.666666667 }
+                mothership_equipment = { instant = yes build_cost_ic = -0.666666667 }
+            }
+        }
+    }
+}

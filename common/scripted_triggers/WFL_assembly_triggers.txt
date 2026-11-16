@@ -1,0 +1,32 @@
+# Country scope. The assembly remains a WFL institution under any government.
+WFL_assembly_can_operate = { tag = WFL exists = yes has_capitulated = no }
+WFL_board_can_lobby_nils_meyer = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_nils_meyer_used }
+    NOT = { has_country_flag = WFL_board_nils_meyer_angry }
+}
+WFL_board_can_lobby_jannik_altenschmidt = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_jannik_altenschmidt_used }
+    NOT = { has_country_flag = WFL_board_jannik_altenschmidt_angry }
+}
+WFL_board_can_lobby_tobias_gaertner = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_tobias_gaertner_used }
+    NOT = { has_country_flag = WFL_board_tobias_gaertner_angry }
+}
+WFL_board_can_lobby_finn_bielig = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_finn_bielig_used }
+    NOT = { has_country_flag = WFL_board_finn_bielig_angry }
+}
+WFL_board_can_lobby_max_gerwers = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_max_gerwers_used }
+    NOT = { has_country_flag = WFL_board_max_gerwers_angry }
+}
+WFL_board_can_lobby_tim_wissing = {
+    WFL_assembly_can_operate = yes
+    NOT = { has_country_flag = WFL_board_tim_wissing_used }
+    NOT = { has_country_flag = WFL_board_tim_wissing_angry }
+}

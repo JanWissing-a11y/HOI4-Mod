@@ -1,0 +1,35 @@
+{
+  "news": "Schützenversammlung im großen Vereinssaal.png",
+  "members": [
+    {
+      "id": "nils_meyer",
+      "name": "Nils Meyer",
+      "file": "Jubelnder Schütze mit Smartphone und Bierflasche.png"
+    },
+    {
+      "id": "jannik_altenschmidt",
+      "name": "Jannik Altenschmidt",
+      "file": "Fröhliches Porträt in grüner Schützenuniform.png"
+    },
+    {
+      "id": "tobias_gaertner",
+      "name": "Tobias Gärtner",
+      "file": "Porträt im grünen Schützenuniform-Look.png"
+    },
+    {
+      "id": "finn_bielig",
+      "name": "Finn Bielig",
+      "file": "Porträt mit Bratwurst und Trachtenhut.png"
+    },
+    {
+      "id": "max_gerwers",
+      "name": "Max Gerwers",
+      "file": "Porträt eines jungen Schützen in Tracht.png"
+    },
+    {
+      "id": "tim_wissing",
+      "name": "Tim Wissing",
+      "file": "Porträt eines fröhlichen Schützenvereinsmitglieds.png"
+    }
+  ]
+}

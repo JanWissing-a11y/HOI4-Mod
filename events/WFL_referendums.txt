@@ -1,0 +1,1463 @@
+# ROOT is the invited/current host country in .1/.2 and .11/.12.
+# All transfers recheck ownership, full control and sovereignty at the option click.
+# Each attempt has independent pending/approved/host/resolved flags.
+# Old options and 120-day watchdogs cannot act on a later attempt.
+# WFL-only delayed watchdogs close abandoned event chains without global polling.
+add_namespace = wfl_referendum
+
+country_event = {
+    id = wfl_referendum.1
+    title = wfl_referendum.1.t
+    desc = wfl_referendum.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+    option = {
+        name = wfl_referendum.1.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 25 modifier = { factor = 2 has_opinion = { target = WFL value > 25 } } modifier = { factor = 2 has_opinion = { target = WFL value > 50 } } modifier = { factor = 1.5 has_government = democratic } modifier = { factor = 0.5 has_opinion = { target = WFL value < 0 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_pending
+                    NOT = { has_country_flag = WFL_ref_51_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = { set_country_flag = WFL_ref_51_approved }
+            set_country_flag = WFL_ref_51_host
+            country_event = { id = wfl_referendum.2 days = 30 }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.1.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 75 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_pending
+                    NOT = { has_country_flag = WFL_ref_51_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.4 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.1.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.2
+    title = wfl_referendum.2.t
+    desc = wfl_referendum.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+    option = {
+        name = wfl_referendum.2.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_host
+            WFL = { has_country_flag = WFL_ref_51_approved }
+        }
+        ai_chance = { factor = 60 modifier = { factor = 1.5 has_opinion = { target = WFL value > 50 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_pending
+                    NOT = { has_country_flag = WFL_ref_51_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_51_host
+                WFL = { has_country_flag = WFL_ref_51_approved }
+            }
+            WFL = { transfer_state = 51 }
+            51 = { add_core_of = WFL }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                set_country_flag = WFL_ref_51_joined
+                country_event = { id = wfl_referendum.3 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_host
+    }
+    option = {
+        name = wfl_referendum.2.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_host
+            WFL = { has_country_flag = WFL_ref_51_approved }
+        }
+        ai_chance = { factor = 40 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_pending
+                    NOT = { has_country_flag = WFL_ref_51_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_51_host
+                WFL = { has_country_flag = WFL_ref_51_approved }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.4 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_host
+    }
+    option = {
+        name = wfl_referendum.2.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_pending
+                NOT = { has_country_flag = WFL_ref_51_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_host
+            WFL = { has_country_flag = WFL_ref_51_approved }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_pending
+                set_country_flag = WFL_ref_51_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_host
+    }
+}
+
+country_event = {
+    id = wfl_referendum.3
+    title = wfl_referendum.3.t
+    desc = wfl_referendum.3.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.3.a }
+}
+
+country_event = {
+    id = wfl_referendum.4
+    title = wfl_referendum.4.t
+    desc = wfl_referendum.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.4.a }
+}
+
+country_event = {
+    id = wfl_referendum.5
+    title = wfl_referendum.5.t
+    desc = wfl_referendum.5.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.5.a }
+}
+
+country_event = {
+    id = wfl_referendum.7
+    title = wfl_referendum.7.t
+    desc = wfl_referendum.7.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.7.a }
+}
+
+country_event = {
+    id = wfl_referendum.6
+    hidden = yes
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_ref_51_pending }
+    immediate = {
+        clr_country_flag = WFL_ref_51_pending
+        set_country_flag = WFL_ref_51_resolved
+        country_event = { id = wfl_referendum.5 hours = 1 }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.11
+    title = wfl_referendum.11.t
+    desc = wfl_referendum.11.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+    option = {
+        name = wfl_referendum.11.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 25 modifier = { factor = 2 has_opinion = { target = WFL value > 25 } } modifier = { factor = 2 has_opinion = { target = WFL value > 50 } } modifier = { factor = 1.5 has_government = democratic } modifier = { factor = 0.5 has_opinion = { target = WFL value < 0 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_pending
+                    NOT = { has_country_flag = WFL_ref_57_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = { set_country_flag = WFL_ref_57_approved }
+            set_country_flag = WFL_ref_57_host
+            country_event = { id = wfl_referendum.12 days = 30 }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.11.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 75 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_pending
+                    NOT = { has_country_flag = WFL_ref_57_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.14 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.11.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.12
+    title = wfl_referendum.12.t
+    desc = wfl_referendum.12.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+    option = {
+        name = wfl_referendum.12.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_host
+            WFL = { has_country_flag = WFL_ref_57_approved }
+        }
+        ai_chance = { factor = 60 modifier = { factor = 1.5 has_opinion = { target = WFL value > 50 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_pending
+                    NOT = { has_country_flag = WFL_ref_57_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_57_host
+                WFL = { has_country_flag = WFL_ref_57_approved }
+            }
+            WFL = { transfer_state = 57 }
+            57 = { add_core_of = WFL }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                set_country_flag = WFL_ref_57_joined
+                country_event = { id = wfl_referendum.13 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_host
+    }
+    option = {
+        name = wfl_referendum.12.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_host
+            WFL = { has_country_flag = WFL_ref_57_approved }
+        }
+        ai_chance = { factor = 40 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_pending
+                    NOT = { has_country_flag = WFL_ref_57_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_57_host
+                WFL = { has_country_flag = WFL_ref_57_approved }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.14 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_host
+    }
+    option = {
+        name = wfl_referendum.12.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_pending
+                NOT = { has_country_flag = WFL_ref_57_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_host
+            WFL = { has_country_flag = WFL_ref_57_approved }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_pending
+                set_country_flag = WFL_ref_57_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_host
+    }
+}
+
+country_event = {
+    id = wfl_referendum.13
+    title = wfl_referendum.13.t
+    desc = wfl_referendum.13.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.13.a }
+}
+
+country_event = {
+    id = wfl_referendum.14
+    title = wfl_referendum.14.t
+    desc = wfl_referendum.14.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.14.a }
+}
+
+country_event = {
+    id = wfl_referendum.15
+    title = wfl_referendum.15.t
+    desc = wfl_referendum.15.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.15.a }
+}
+
+country_event = {
+    id = wfl_referendum.17
+    title = wfl_referendum.17.t
+    desc = wfl_referendum.17.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL }
+    option = { name = wfl_referendum.17.a }
+}
+
+country_event = {
+    id = wfl_referendum.16
+    hidden = yes
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_ref_57_pending }
+    immediate = {
+        clr_country_flag = WFL_ref_57_pending
+        set_country_flag = WFL_ref_57_resolved
+        country_event = { id = wfl_referendum.15 hours = 1 }
+    }
+}
+
+
+country_event = {
+    id = wfl_referendum.21
+    title = wfl_referendum.21.t
+    desc = wfl_referendum.21.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+    option = {
+        name = wfl_referendum.21.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 25 modifier = { factor = 2 has_opinion = { target = WFL value > 25 } } modifier = { factor = 2 has_opinion = { target = WFL value > 50 } } modifier = { factor = 1.5 has_government = democratic } modifier = { factor = 0.5 has_opinion = { target = WFL value < 0 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_second_pending
+                    NOT = { has_country_flag = WFL_ref_51_second_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = { set_country_flag = WFL_ref_51_second_approved }
+            set_country_flag = WFL_ref_51_second_host
+            country_event = { id = wfl_referendum.22 days = 30 }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.21.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 75 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_second_pending
+                    NOT = { has_country_flag = WFL_ref_51_second_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.4 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.21.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.22
+    title = wfl_referendum.22.t
+    desc = wfl_referendum.22.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+    option = {
+        name = wfl_referendum.22.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_second_host
+            WFL = { has_country_flag = WFL_ref_51_second_approved }
+        }
+        ai_chance = { factor = 60 modifier = { factor = 1.5 has_opinion = { target = WFL value > 50 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_second_pending
+                    NOT = { has_country_flag = WFL_ref_51_second_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_51_second_host
+                WFL = { has_country_flag = WFL_ref_51_second_approved }
+            }
+            WFL = { transfer_state = 51 }
+            51 = { add_core_of = WFL }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                set_country_flag = WFL_ref_51_joined
+                country_event = { id = wfl_referendum.3 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_second_host
+    }
+    option = {
+        name = wfl_referendum.22.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_second_host
+            WFL = { has_country_flag = WFL_ref_51_second_approved }
+        }
+        ai_chance = { factor = 40 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_51_second_pending
+                    NOT = { has_country_flag = WFL_ref_51_second_resolved }
+                }
+                51 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_51_second_host
+                WFL = { has_country_flag = WFL_ref_51_second_approved }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.4 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_second_host
+    }
+    option = {
+        name = wfl_referendum.22.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_51_second_pending
+                NOT = { has_country_flag = WFL_ref_51_second_resolved }
+            }
+            51 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_51_second_host
+            WFL = { has_country_flag = WFL_ref_51_second_approved }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_51_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_51_second_pending
+                set_country_flag = WFL_ref_51_second_resolved
+                country_event = { id = wfl_referendum.5 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_51_second_host
+    }
+}
+
+country_event = {
+    id = wfl_referendum.26
+    hidden = yes
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_ref_51_second_pending }
+    immediate = {
+        clr_country_flag = WFL_ref_51_second_pending
+        set_country_flag = WFL_ref_51_second_resolved
+        country_event = { id = wfl_referendum.5 hours = 1 }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.31
+    title = wfl_referendum.31.t
+    desc = wfl_referendum.31.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+    option = {
+        name = wfl_referendum.31.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 25 modifier = { factor = 2 has_opinion = { target = WFL value > 25 } } modifier = { factor = 2 has_opinion = { target = WFL value > 50 } } modifier = { factor = 1.5 has_government = democratic } modifier = { factor = 0.5 has_opinion = { target = WFL value < 0 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_second_pending
+                    NOT = { has_country_flag = WFL_ref_57_second_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = { set_country_flag = WFL_ref_57_second_approved }
+            set_country_flag = WFL_ref_57_second_host
+            country_event = { id = wfl_referendum.32 days = 30 }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.31.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        }
+        ai_chance = { factor = 75 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_second_pending
+                    NOT = { has_country_flag = WFL_ref_57_second_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.14 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+    option = {
+        name = wfl_referendum.31.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_referendum.32
+    title = wfl_referendum.32.t
+    desc = wfl_referendum.32.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+    option = {
+        name = wfl_referendum.32.a
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_second_host
+            WFL = { has_country_flag = WFL_ref_57_second_approved }
+        }
+        ai_chance = { factor = 60 modifier = { factor = 1.5 has_opinion = { target = WFL value > 50 } } }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_second_pending
+                    NOT = { has_country_flag = WFL_ref_57_second_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_57_second_host
+                WFL = { has_country_flag = WFL_ref_57_second_approved }
+            }
+            WFL = { transfer_state = 57 }
+            57 = { add_core_of = WFL }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                set_country_flag = WFL_ref_57_joined
+                country_event = { id = wfl_referendum.13 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_second_host
+    }
+    option = {
+        name = wfl_referendum.32.b
+        trigger = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_second_host
+            WFL = { has_country_flag = WFL_ref_57_second_approved }
+        }
+        ai_chance = { factor = 40 }
+        if = {
+            limit = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                NOT = { tag = WFL }
+                WFL = {
+                    exists = yes
+                    has_war = no
+                    is_subject = no
+                    has_capitulated = no
+                    has_country_flag = WFL_ref_57_second_pending
+                    NOT = { has_country_flag = WFL_ref_57_second_resolved }
+                }
+                57 = {
+                    is_owned_by = ROOT
+                    is_fully_controlled_by = ROOT
+                    NOT = { is_core_of = WFL }
+                }
+                has_country_flag = WFL_ref_57_second_host
+                WFL = { has_country_flag = WFL_ref_57_second_approved }
+            }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.14 hours = 1 }
+            }
+        }
+        else_if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_second_host
+    }
+    option = {
+        name = wfl_referendum.32.c
+        trigger = { NOT = {
+            exists = yes
+            has_war = no
+            is_subject = no
+            has_capitulated = no
+            NOT = { tag = WFL }
+            WFL = {
+                exists = yes
+                has_war = no
+                is_subject = no
+                has_capitulated = no
+                has_country_flag = WFL_ref_57_second_pending
+                NOT = { has_country_flag = WFL_ref_57_second_resolved }
+            }
+            57 = {
+                is_owned_by = ROOT
+                is_fully_controlled_by = ROOT
+                NOT = { is_core_of = WFL }
+            }
+            has_country_flag = WFL_ref_57_second_host
+            WFL = { has_country_flag = WFL_ref_57_second_approved }
+        } }
+        ai_chance = { factor = 100 }
+        if = {
+            limit = { WFL = { exists = yes has_country_flag = WFL_ref_57_second_pending } }
+            WFL = {
+                clr_country_flag = WFL_ref_57_second_pending
+                set_country_flag = WFL_ref_57_second_resolved
+                country_event = { id = wfl_referendum.15 hours = 1 }
+            }
+        }
+        clr_country_flag = WFL_ref_57_second_host
+    }
+}
+
+country_event = {
+    id = wfl_referendum.36
+    hidden = yes
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_ref_57_second_pending }
+    immediate = {
+        clr_country_flag = WFL_ref_57_second_pending
+        set_country_flag = WFL_ref_57_second_resolved
+        country_event = { id = wfl_referendum.15 hours = 1 }
+    }
+}

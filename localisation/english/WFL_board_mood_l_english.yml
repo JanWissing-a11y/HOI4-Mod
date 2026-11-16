@@ -1,0 +1,11 @@
+﻿l_english:
+ WFL_board_mood_divided_idea:0 "A Divided Board"
+ WFL_board_mood_divided_idea_desc:0 "Board mood is below 40. -5 percentage points stability until mood recovers to at least 40. Without reconciliation the situation deteriorates further."
+ WFL_board_mood_hostile_idea:0 "Board on the Brink"
+ WFL_board_mood_hostile_idea_desc:0 "Board mood is below 20. -10 percentage points stability, replacing the smaller mood penalty. Recovery immediately updates this penalty."
+ WFL_board_kameradschaftsabend:0 "A Comradeship Evening without an Agenda"
+ WFL_board_kameradschaftsabend_desc:0 "Tim locks away the gavel and declares the evening free of resolutions. Anyone discussing politics must buy the next round. +15 board mood for 35 political power; available every 30 days. Mood is capped at 100. Already angry members keep their position on the next vote."
+ WFL_board_kassensturz:0 "Settle the Deposit Dispute with an Audit"
+ WFL_board_kassensturz_desc:0 "Jannik and Max count every deposit receipt. After three checks, the missing bottle turns out to be the flower vase. +25 board mood for 50 political power; available every 60 days. Mood is capped at 100. Individual anger remains."
+ WFL_board_versoehnungsgrillen:0 "A Reconciliation Barbecue with Diplomatic Mustard"
+ WFL_board_versoehnungsgrillen_desc:0 "Finn opens equal stations for mustard and ketchup. Tobias supervises the barbecue-tongs ceasefire; Nils takes the reconciliation photo. +35 board mood for 70 political power; available every 90 days. Mood is capped at 100. Promises and anger for the next vote remain unchanged."

@@ -1,0 +1,10 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_WFL_jan_graf_von_insel_i
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_jan_graf_von_insel_i.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_jan_graf_von_insel_i_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_jan_graf_von_insel_i_small.dds"
+    }
+}

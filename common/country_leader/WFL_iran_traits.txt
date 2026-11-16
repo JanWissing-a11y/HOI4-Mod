@@ -1,0 +1,7 @@
+leader_traits = {
+    WFL_PER_fluerentreuer_schah = {
+        random = no
+        political_power_factor = 0.05
+        stability_factor = 0.05
+    }
+}

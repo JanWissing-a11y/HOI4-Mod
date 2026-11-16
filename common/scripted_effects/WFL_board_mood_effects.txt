@@ -1,0 +1,78 @@
+# Persistent mood is distinct from individual promises and anger.
+WFL_board_lobby_mood_cost = {
+    if = {
+        limit = { has_country_flag = WFL_board_bierdeckel_rules }
+        subtract_from_variable = { WFL_board_mood = 9 }
+    }
+    else = { subtract_from_variable = { WFL_board_mood = 12 } }
+}
+WFL_board_collateral_mood_cost = {
+    if = {
+        limit = { has_country_flag = WFL_board_bierdeckel_rules }
+        subtract_from_variable = { WFL_board_mood = 4.5 }
+    }
+    else = { subtract_from_variable = { WFL_board_mood = 6 } }
+}
+WFL_board_self_mood_cost = {
+    if = {
+        limit = { has_country_flag = WFL_board_bierdeckel_rules }
+        subtract_from_variable = { WFL_board_mood = 6 }
+    }
+    else = { subtract_from_variable = { WFL_board_mood = 8 } }
+}
+WFL_board_mood_initialize = {
+    if = {
+        limit = { tag = WFL exists = yes NOT = { has_country_flag = WFL_board_mood_initialized } }
+        set_variable = { WFL_board_mood = 75 }
+        set_country_flag = WFL_board_mood_initialized
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_board_mood_refresh = {
+    if = {
+        limit = { check_variable = { var = WFL_board_mood value = 0 compare = less_than } }
+        set_variable = { WFL_board_mood = 0 }
+    }
+    if = {
+        limit = { check_variable = { var = WFL_board_mood value = 100 compare = greater_than } }
+        set_variable = { WFL_board_mood = 100 }
+    }
+    if = {
+        limit = { has_capitulated = yes }
+        remove_ideas = WFL_board_mood_divided_idea
+        remove_ideas = WFL_board_mood_hostile_idea
+    }
+    else_if = {
+        limit = { check_variable = { var = WFL_board_mood value = 20 compare = less_than } }
+        remove_ideas = WFL_board_mood_divided_idea
+        if = { limit = { NOT = { has_idea = WFL_board_mood_hostile_idea } } add_ideas = WFL_board_mood_hostile_idea }
+    }
+    else_if = {
+        limit = { check_variable = { var = WFL_board_mood value = 40 compare = less_than } }
+        remove_ideas = WFL_board_mood_hostile_idea
+        if = { limit = { NOT = { has_idea = WFL_board_mood_divided_idea } } add_ideas = WFL_board_mood_divided_idea }
+    }
+    else = {
+        remove_ideas = WFL_board_mood_divided_idea
+        remove_ideas = WFL_board_mood_hostile_idea
+    }
+}
+WFL_board_mood_monthly = {
+    if = {
+        limit = { WFL_assembly_can_operate = yes }
+        if = {
+            limit = { has_idea = WFL_assembly_eklat_idea }
+            subtract_from_variable = { WFL_board_mood = 5 }
+        }
+        else_if = {
+            limit = { has_idea = WFL_assembly_blockade_idea }
+            subtract_from_variable = { WFL_board_mood = 3 }
+        }
+        else_if = {
+            limit = { check_variable = { var = WFL_board_mood value = 40 compare = less_than } }
+            subtract_from_variable = { WFL_board_mood = 2 }
+        }
+        else = { add_to_variable = { WFL_board_mood = 2 } }
+        WFL_board_mood_refresh = yes
+    }
+}

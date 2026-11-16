@@ -1,0 +1,16 @@
+characters = {
+    WFL_PER_al_hoehne = {
+        name = WFL_PER_al_hoehne
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_PER_al_hoehne
+                small = GFX_portrait_WFL_PER_al_hoehne_small
+            }
+        }
+        country_leader = {
+            ideology = despotism
+            traits = { WFL_PER_fluerentreuer_schah }
+            expire = "1965.1.1.1"
+        }
+    }
+}

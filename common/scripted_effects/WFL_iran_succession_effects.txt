@@ -1,0 +1,99 @@
+# Country scope: WFL. Execute the treaty at focus completion, never in an AI option.
+# Local 1.19.4 engine documentation: transfer_state, end_puppet, puppet, set_autonomy.
+# ETH_scripted_effects.txt uses transfer_state in a dead country scope to restore it.
+WFL_establish_iranian_puppet_effect = {
+    if = {
+        limit = {
+            tag = WFL
+            is_subject = no
+            has_capitulated = no
+            NOT = { has_country_flag = WFL_iran_treaty_completed }
+        }
+
+        # An annexed Iran is restored directly from its cores, even if split
+        # between several owners or occupied. Do not annex the current owners.
+        if = {
+            limit = { PER = { exists = no } }
+            every_state = {
+                limit = { is_core_of = PER }
+                PER = { transfer_state = PREV }
+            }
+            # Other scripts may have removed every Iranian core. State 266 is
+            # the verified vanilla capital region; retain a deterministic anchor.
+            if = {
+                limit = { PER = { exists = no } }
+                266 = { add_core_of = PER }
+                PER = { transfer_state = 266 }
+            }
+        }
+
+        PER = {
+            # A restored country may retain an earlier overlord. Only detach PER.
+            if = {
+                limit = { is_subject = yes NOT = { is_subject_of = WFL } }
+                overlord = { end_puppet = PREV }
+            }
+            # A subject cannot lead a rival faction. Preserve WFL's own faction
+            # where possible; otherwise only dissolve the Iranian-led alliance.
+            if = {
+                limit = { is_faction_leader = yes }
+                if = {
+                    limit = { is_in_faction_with = WFL }
+                    WFL = { set_faction_leader = yes }
+                }
+                else = { dismantle_faction = yes }
+            }
+            if = {
+                limit = { is_in_faction = yes NOT = { is_in_faction_with = WFL } }
+                leave_faction = yes
+            }
+        }
+
+        # puppet is the vanilla fallback without the autonomy DLC; its explicit
+        # end_wars options also handle a war between WFL and the old Iran.
+        puppet = { target = PER end_wars = yes end_civil_wars = yes }
+        if = {
+            limit = { has_dlc = "Together for Victory" }
+            set_autonomy = {
+                target = PER
+                autonomy_state = autonomy_puppet
+                freedom_level = 0
+                end_wars = yes
+                end_civil_wars = yes
+            }
+        }
+
+        PER = {
+            # Restore actual control after occupations as well as ownership.
+            every_owned_state = { set_state_controller_to = PER }
+            if = {
+                # A runtime-created leader need not use the static name token
+                # as its character ID. The trait identifies an existing copy.
+                limit = { NOT = { any_character = { has_trait = WFL_PER_fluerentreuer_schah } } }
+                create_country_leader = {
+                    name = WFL_PER_al_hoehne
+                    picture = GFX_portrait_WFL_PER_al_hoehne
+                    ideology = despotism
+                    traits = { WFL_PER_fluerentreuer_schah }
+                    expire = "1965.1.1.1"
+                }
+            }
+            # Same promotion pattern as vanilla DEN_install_a_plenipotentiary:
+            # use the character scope returned by a unique-trait search.
+            every_character = {
+                limit = { has_trait = WFL_PER_fluerentreuer_schah }
+                set_portraits = {
+                    civilian = {
+                        large = GFX_portrait_WFL_PER_al_hoehne
+                        small = GFX_portrait_WFL_PER_al_hoehne_small
+                    }
+                }
+                promote_character = yes
+            }
+            set_politics = { ruling_party = neutrality elections_allowed = no }
+            set_country_flag = WFL_iran_al_hoehne_crowned
+        }
+        set_country_flag = WFL_iran_treaty_completed
+        country_event = { id = wfl_iran_succession.4 days = 1 }
+    }
+}

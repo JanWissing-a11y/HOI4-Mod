@@ -1,0 +1,1021 @@
+# German military advisor profiles; independent WFL characters with supplied photos.
+characters = {
+    WFL_staff_werner_von_blomberg = {
+        name = WFL_staff_werner_von_blomberg
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_werner_von_blomberg
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 150
+            traits = {
+                grand_battle_plan_expert
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_gerd_von_rundstedt = {
+        name = WFL_staff_gerd_von_rundstedt
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_gerd_von_rundstedt
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                army_regrouping_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_werner_von_fritsch = {
+        name = WFL_staff_werner_von_fritsch
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_werner_von_fritsch_high_command
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                army_logistics_2
+            }
+            available = {
+                not_already_hired_except_as = high_command
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_werner_von_fritsch_army_chief
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                army_chief_army_high_command
+            }
+            available = {
+                not_already_hired_except_as = army_chief
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_erwin_rommel = {
+        name = WFL_staff_erwin_rommel
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_erwin_rommel
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 200
+            traits = {
+                army_armored_3
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_erich_von_manstein = {
+        name = WFL_staff_erich_von_manstein
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_erich_von_manstein
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 150
+            traits = {
+                mobile_warfare_expert
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_heinz_guderian = {
+        name = WFL_staff_heinz_guderian
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_heinz_guderian
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 200
+            traits = {
+                blitzkrieg_theorist
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_kurt_student = {
+        name = WFL_staff_kurt_student
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_kurt_student
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_airborne_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_albert_kesselring = {
+        name = WFL_staff_albert_kesselring
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+        }
+        advisor = {
+            slot = air_chief
+            idea_token = WFL_staff_albert_kesselring
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                air_chief_reform_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_paul_von_lettow_vorbeck = {
+        name = WFL_staff_paul_von_lettow_vorbeck
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_paul_von_lettow_vorbeck
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 50
+            traits = {
+                army_concealment_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_karl_donitz = {
+        name = WFL_staff_karl_donitz
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+        }
+        advisor = {
+            slot = navy_chief
+            idea_token = WFL_staff_karl_donitz
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 200
+            traits = {
+                navy_chief_commerce_raiding_3
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_erich_raeder = {
+        name = WFL_staff_erich_raeder
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+        }
+        advisor = {
+            slot = navy_chief
+            idea_token = WFL_staff_erich_raeder
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                navy_chief_decisive_battle_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_alfred_saalwachter = {
+        name = WFL_staff_alfred_saalwachter
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_alfred_saalwachter
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = navy
+            cost = 150
+            traits = {
+                submarine_specialist
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_gunther_lutjens = {
+        name = WFL_staff_gunther_lutjens
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_14
+                small = GFX_portrait_WFL_advisor_14_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_14
+                small = GFX_portrait_WFL_advisor_14_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_gunther_lutjens
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = navy
+            cost = 100
+            traits = {
+                navy_fleet_logistics_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_wolfram_von_richthofen = {
+        name = WFL_staff_wolfram_von_richthofen
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_15
+                small = GFX_portrait_WFL_advisor_15_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_15
+                small = GFX_portrait_WFL_advisor_15_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_wolfram_von_richthofen
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 150
+            traits = {
+                close_air_support_proponent
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_walther_wever = {
+        name = WFL_staff_walther_wever
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_walther_wever
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_warfare_theorist
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_ernst_udet = {
+        name = WFL_staff_ernst_udet
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_ernst_udet
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                dive_bomber
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_otto_ciliax = {
+        name = WFL_staff_otto_ciliax
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+        }
+        advisor = {
+            slot = theorist
+            idea_token = WFL_staff_otto_ciliax
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = navy
+            cost = 100
+            traits = {
+                naval_theorist
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_ludwig_beck = {
+        name = WFL_staff_ludwig_beck
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_ludwig_beck
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                army_chief_organizational_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_wilhelm_keitel = {
+        name = WFL_staff_wilhelm_keitel
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_wilhelm_keitel
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                army_chief_drill_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_franz_halder = {
+        name = WFL_staff_franz_halder
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_franz_halder
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                army_chief_offensive_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_walther_von_brauchitsch = {
+        name = WFL_staff_walther_von_brauchitsch
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_walther_von_brauchitsch
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                army_chief_maneuver_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_rolf_carls = {
+        name = WFL_staff_rolf_carls
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+        }
+        advisor = {
+            slot = navy_chief
+            idea_token = WFL_staff_rolf_carls
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                navy_chief_maneuver_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_hermann_goring = {
+        name = WFL_staff_hermann_goring
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+        }
+        advisor = {
+            slot = air_chief
+            idea_token = WFL_staff_hermann_goring
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                GER_reich_marshal
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_ritter_von_greim = {
+        name = WFL_staff_ritter_von_greim
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+        }
+        advisor = {
+            slot = air_chief
+            idea_token = WFL_staff_ritter_von_greim
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                air_chief_all_weather_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_helmuth_wilberg = {
+        name = WFL_staff_helmuth_wilberg
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+        }
+        advisor = {
+            slot = air_chief
+            idea_token = WFL_staff_helmuth_wilberg
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                air_chief_ground_support_3
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_ferdinand_schorner = {
+        name = WFL_staff_ferdinand_schorner
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_ferdinand_schorner
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                army_infantry_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_erich_bey = {
+        name = WFL_staff_erich_bey
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_erich_bey
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = navy
+            cost = 100
+            traits = {
+                navy_naval_air_defense_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_viktor_schutze = {
+        name = WFL_staff_viktor_schutze
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_viktor_schutze
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = navy
+            cost = 50
+            traits = {
+                navy_submarine_1
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_hugo_sperrle = {
+        name = WFL_staff_hugo_sperrle
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_hugo_sperrle
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_close_air_support_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_erhard_milch = {
+        name = WFL_staff_erhard_milch
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_14
+                small = GFX_portrait_WFL_advisor_14_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_14
+                small = GFX_portrait_WFL_advisor_14_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_erhard_milch
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_tactical_bombing_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_robert_knauss = {
+        name = WFL_staff_robert_knauss
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_15
+                small = GFX_portrait_WFL_advisor_15_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_15
+                small = GFX_portrait_WFL_advisor_15_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_robert_knauss
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_strategic_bombing_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_josef_kammhuber = {
+        name = WFL_staff_josef_kammhuber
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_josef_kammhuber
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = air
+            cost = 100
+            traits = {
+                air_bomber_interception_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_alfred_becker = {
+        name = WFL_staff_alfred_becker
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_alfred_becker
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                GER_adaptive_engineer
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_walter_dornberger = {
+        name = WFL_staff_walter_dornberger
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_walter_dornberger
+            allowed = {
+                original_tag = WFL
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                GER_head_of_the_missile_department
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_wilhelm_gebauer = {
+        name = WFL_staff_wilhelm_gebauer
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = army_chief
+            idea_token = WFL_staff_wilhelm_gebauer
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 100
+            traits = {
+                army_chief_morale_3
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_staff_eugen_beyer = {
+        name = WFL_staff_eugen_beyer
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = high_command
+            idea_token = WFL_staff_eugen_beyer
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            ledger = army
+            cost = 100
+            traits = {
+                army_commando_2
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+}

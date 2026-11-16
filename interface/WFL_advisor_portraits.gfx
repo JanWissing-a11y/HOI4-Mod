@@ -1,0 +1,146 @@
+spriteTypes = {
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_01"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_01.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_01_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_01_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_02"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_02.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_02_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_02_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_03"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_03.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_03_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_03_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_04"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_04.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_04_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_04_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_05"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_05.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_05_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_05_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_06"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_06.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_06_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_06_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_07"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_07.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_07_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_07_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_08"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_08.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_08_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_08_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_09"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_09.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_09_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_09_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_10"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_10.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_10_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_10_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_11"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_11.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_11_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_11_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_12"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_12.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_12_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_12_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_13"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_13.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_13_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_13_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_14"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_14.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_14_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_14_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_15"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_15.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_15_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_15_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_16"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_16.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_16_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_16_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_17"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_17.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_17_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_17_small.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_18"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_18.dds"
+    }
+    spriteType = {
+        name = "GFX_portrait_WFL_advisor_18_small"
+        texturefile = "gfx/leaders/WFL/advisors/WFL_advisor_18_small.dds"
+    }
+}

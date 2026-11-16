@@ -13,3 +13,7 @@ Thumbs.db
 # Python-Prüfwerkzeuge
 __pycache__/
 *.pyc
+
+# Isolated installer/engine profiles and generated packages
+/.local-test/
+/dist/

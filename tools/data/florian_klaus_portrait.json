@@ -1,0 +1,19 @@
+{
+  "id": "WFL_florian_klaus",
+  "name": "Florian Klaus",
+  "source_file": "image.png",
+  "input_size": [
+    758,
+    827
+  ],
+  "crop": [
+    110,
+    15,
+    600,
+    807
+  ],
+  "output": "gfx/leaders/WFL/Portrait_WFL_florian_klaus.dds",
+  "small_output": "gfx/leaders/WFL/Portrait_WFL_florian_klaus_small.dds",
+  "preview": "gfx/leaders/WFL/Portrait_WFL_florian_klaus.png",
+  "description": "User-supplied portrait and name confirmed on 2026-11-05; original is read only."
+}

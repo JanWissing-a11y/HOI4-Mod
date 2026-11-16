@@ -1,0 +1,10 @@
+leader_traits = {
+    WFL_wirtschaftsstratege_mit_ruhiger_hand = {
+        random = no
+        sprite = 10
+        production_speed_industrial_complex_factor = 0.20
+        production_speed_arms_factory_factor = 0.20
+        industrial_capacity_factory = 0.15
+        stability_factor = 0.10
+    }
+}

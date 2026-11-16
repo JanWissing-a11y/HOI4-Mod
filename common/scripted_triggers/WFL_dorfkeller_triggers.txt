@@ -1,0 +1,25 @@
+# Country scope: WFL. Reused at selection and completion of the Allies focus.
+WFL_can_join_allies = {
+    tag = WFL
+    is_subject = no
+    has_capitulated = no
+    is_in_faction = no
+    # The completed prerequisite focus is sufficient, including older saves and
+    # a Tap Crisis resolved by its timeout. No invisible event-outcome gate.
+    ENG = {
+        exists = yes
+        has_faction_template = faction_template_allies
+        faction_leader = {
+            exists = yes
+            is_subject = no
+            has_capitulated = no
+        }
+        NOT = { has_war_with = ROOT }
+    }
+    NOT = {
+        any_country = {
+            is_in_faction_with = ENG
+            has_war_with = ROOT
+        }
+    }
+}

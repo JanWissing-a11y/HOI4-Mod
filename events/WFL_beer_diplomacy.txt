@@ -1,0 +1,233 @@
+# No embargo, state transfer, factory transfer or war declaration is performed.
+# Construction bonuses are guaranteed by the focus. Partner replies grant WFL
+# one 50-PP return each, even after refusal, changed conditions or a timeout.
+add_namespace = wfl_beer
+
+country_event = {
+    id = wfl_beer.1
+    title = wfl_beer.1.t
+    desc = wfl_beer.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_completed_focus = WFL_rheinblockade NOT = { has_country_flag = WFL_beer_rhine_started } }
+    option = {
+        name = wfl_beer.1.a
+        if = {
+            limit = { NOT = { has_country_flag = WFL_beer_rhine_started } }
+            set_country_flag = WFL_beer_rhine_started
+            if = {
+                limit = { GER = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } } }
+                set_country_flag = WFL_beer_ger_pending
+                GER = { country_event = { id = wfl_beer.2 days = 1 } }
+            }
+            else = { set_country_flag = WFL_beer_ger_resolved add_political_power = 50 }
+            if = {
+                limit = { HOL = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } } }
+                set_country_flag = WFL_beer_hol_pending
+                HOL = { country_event = { id = wfl_beer.3 days = 1 } }
+            }
+            else = { set_country_flag = WFL_beer_hol_resolved add_political_power = 50 }
+            country_event = { id = wfl_beer.7 days = 30 }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.2
+    title = wfl_beer.2.t
+    desc = wfl_beer.2.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = GER WFL = { has_country_flag = WFL_beer_ger_pending NOT = { has_country_flag = WFL_beer_ger_resolved } } }
+    option = {
+        name = wfl_beer.2.a
+        ai_chance = { factor = 65 }
+        if = {
+            limit = { WFL = { has_country_flag = WFL_beer_ger_pending NOT = { has_country_flag = WFL_beer_ger_resolved } } }
+            WFL = { clr_country_flag = WFL_beer_ger_pending set_country_flag = WFL_beer_ger_resolved add_political_power = 50 }
+            if = {
+                limit = {
+                    exists = yes has_capitulated = no has_political_power > 25
+                    NOT = { has_war_with = WFL }
+                    WFL = { exists = yes has_capitulated = no }
+                }
+                add_political_power = -25
+                add_opinion_modifier = { target = WFL modifier = WFL_rheinischer_festbeitrag }
+                WFL = { add_opinion_modifier = { target = GER modifier = WFL_rheinischer_festbeitrag } }
+            }
+        }
+    }
+    option = {
+        name = wfl_beer.2.b
+        ai_chance = { factor = 35 }
+        if = {
+            limit = { WFL = { has_country_flag = WFL_beer_ger_pending NOT = { has_country_flag = WFL_beer_ger_resolved } } }
+            WFL = { clr_country_flag = WFL_beer_ger_pending set_country_flag = WFL_beer_ger_resolved add_political_power = 50 }
+            if = {
+                limit = { exists = yes NOT = { has_war_with = WFL } WFL = { exists = yes } }
+                add_opinion_modifier = { target = WFL modifier = WFL_rheinischer_protest }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.3
+    title = wfl_beer.3.t
+    desc = wfl_beer.3.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = HOL WFL = { has_country_flag = WFL_beer_hol_pending NOT = { has_country_flag = WFL_beer_hol_resolved } } }
+    option = {
+        name = wfl_beer.3.a
+        ai_chance = { factor = 65 }
+        if = {
+            limit = { WFL = { has_country_flag = WFL_beer_hol_pending NOT = { has_country_flag = WFL_beer_hol_resolved } } }
+            WFL = { clr_country_flag = WFL_beer_hol_pending set_country_flag = WFL_beer_hol_resolved add_political_power = 50 }
+            if = {
+                limit = {
+                    exists = yes has_capitulated = no has_political_power > 25
+                    NOT = { has_war_with = WFL }
+                    WFL = { exists = yes has_capitulated = no }
+                }
+                add_political_power = -25
+                add_opinion_modifier = { target = WFL modifier = WFL_rheinischer_festbeitrag }
+                WFL = { add_opinion_modifier = { target = HOL modifier = WFL_rheinischer_festbeitrag } }
+            }
+        }
+    }
+    option = {
+        name = wfl_beer.3.b
+        ai_chance = { factor = 35 }
+        if = {
+            limit = { WFL = { has_country_flag = WFL_beer_hol_pending NOT = { has_country_flag = WFL_beer_hol_resolved } } }
+            WFL = { clr_country_flag = WFL_beer_hol_pending set_country_flag = WFL_beer_hol_resolved add_political_power = 50 }
+            if = {
+                limit = { exists = yes NOT = { has_war_with = WFL } WFL = { exists = yes } }
+                add_opinion_modifier = { target = WFL modifier = WFL_rheinischer_protest }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.4
+    title = wfl_beer.4.t
+    desc = wfl_beer.4.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_completed_focus = WFL_anglo_bier_diplomatie NOT = { has_country_flag = WFL_beer_eng_started } }
+    option = {
+        name = wfl_beer.4.a
+        if = {
+            limit = { NOT = { has_country_flag = WFL_beer_eng_started } }
+            set_country_flag = WFL_beer_eng_started
+            if = {
+                limit = {
+                    exists = yes has_capitulated = no
+                    ENG = { exists = yes has_capitulated = no NOT = { has_war_with = WFL } }
+                }
+                set_country_flag = WFL_beer_eng_pending
+                ENG = { country_event = { id = wfl_beer.5 days = 1 } }
+                country_event = { id = wfl_beer.8 days = 30 }
+            }
+            else = {
+                set_country_flag = WFL_beer_eng_resolved
+                add_political_power = 50
+                country_event = { id = wfl_beer.6 days = 1 }
+            }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.5
+    title = wfl_beer.5.t
+    desc = wfl_beer.5.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = ENG WFL = { has_country_flag = WFL_beer_eng_pending NOT = { has_country_flag = WFL_beer_eng_resolved } } }
+    option = {
+        name = wfl_beer.5.a
+        if = {
+            limit = { WFL = { has_country_flag = WFL_beer_eng_pending NOT = { has_country_flag = WFL_beer_eng_resolved } } }
+            WFL = { clr_country_flag = WFL_beer_eng_pending set_country_flag = WFL_beer_eng_resolved }
+            if = {
+                limit = {
+                    exists = yes has_capitulated = no
+                    NOT = { has_war_with = WFL }
+                    WFL = { exists = yes has_capitulated = no }
+                }
+                add_opinion_modifier = { target = WFL modifier = WFL_anglo_bierfreundschaft }
+                add_opinion_modifier = { target = WFL modifier = WFL_anglo_bierhandel }
+                WFL = {
+                    add_opinion_modifier = { target = ENG modifier = WFL_anglo_bierfreundschaft }
+                    add_opinion_modifier = { target = ENG modifier = WFL_anglo_bierhandel }
+                    set_country_flag = WFL_beer_eng_success
+                    add_political_power = 75
+                }
+            }
+            else = { WFL = { add_political_power = 50 } }
+            WFL = { country_event = { id = wfl_beer.6 days = 1 } }
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.6
+    title = wfl_beer.6.t
+    desc = {
+        trigger = { has_country_flag = WFL_beer_eng_success }
+        text = wfl_beer.6.d
+    }
+    desc = {
+        trigger = { NOT = { has_country_flag = WFL_beer_eng_success } }
+        text = wfl_beer.6.fallback
+    }
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_beer_eng_resolved NOT = { has_country_flag = WFL_beer_eng_report_read } }
+    option = { name = wfl_beer.6.a set_country_flag = WFL_beer_eng_report_read }
+}
+
+country_event = {
+    id = wfl_beer.7
+    hidden = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL OR = { has_country_flag = WFL_beer_ger_pending has_country_flag = WFL_beer_hol_pending } }
+    immediate = {
+        if = {
+            limit = { has_country_flag = WFL_beer_ger_pending NOT = { has_country_flag = WFL_beer_ger_resolved } }
+            clr_country_flag = WFL_beer_ger_pending
+            set_country_flag = WFL_beer_ger_resolved
+            add_political_power = 50
+        }
+        if = {
+            limit = { has_country_flag = WFL_beer_hol_pending NOT = { has_country_flag = WFL_beer_hol_resolved } }
+            clr_country_flag = WFL_beer_hol_pending
+            set_country_flag = WFL_beer_hol_resolved
+            add_political_power = 50
+        }
+    }
+}
+
+country_event = {
+    id = wfl_beer.8
+    hidden = yes
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_beer_eng_pending NOT = { has_country_flag = WFL_beer_eng_resolved } }
+    immediate = {
+        clr_country_flag = WFL_beer_eng_pending
+        set_country_flag = WFL_beer_eng_resolved
+        add_political_power = 50
+        country_event = { id = wfl_beer.6 days = 1 }
+    }
+}

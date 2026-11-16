@@ -1,0 +1,59 @@
+{
+  "description": "Confirmed by the user by visible motif on 2026-11-04; attachment ordering is not used. Original images are read only.",
+  "portraits": [
+    {
+      "id": "WFL_ian_jannis_foerster",
+      "name": "Ian Jannis Foerster",
+      "file": "Porträt eines festlichen Uniformträgers.png",
+      "crop": [
+        190,
+        20,
+        720,
+        969
+      ],
+      "input_size": [
+        1075,
+        1463
+      ],
+      "output": "gfx/leaders/WFL/Portrait_WFL_ian_jannis_foerster.dds",
+      "small_output": "gfx/leaders/WFL/Portrait_WFL_ian_jannis_foerster_small.dds",
+      "preview": "gfx/leaders/WFL/Portrait_WFL_ian_jannis_foerster.png"
+    },
+    {
+      "id": "WFL_nils_schapfeld_i",
+      "name": "Nils Schapfeld I.",
+      "file": "Feierliches Porträt im grünen Ordensornat.png",
+      "crop": [
+        190,
+        20,
+        720,
+        969
+      ],
+      "input_size": [
+        1075,
+        1463
+      ],
+      "output": "gfx/leaders/WFL/Portrait_WFL_nils_schapfeld_i.dds",
+      "small_output": "gfx/leaders/WFL/Portrait_WFL_nils_schapfeld_i_small.dds",
+      "preview": "gfx/leaders/WFL/Portrait_WFL_nils_schapfeld_i.png"
+    },
+    {
+      "id": "WFL_lars_stuewe",
+      "name": "Lars Stüwe",
+      "file": "Lächelnder Offizier im grünen Ehrenuniform-Look.png",
+      "crop": [
+        230,
+        80,
+        720,
+        969
+      ],
+      "input_size": [
+        1075,
+        1463
+      ],
+      "output": "gfx/leaders/WFL/Portrait_WFL_lars_stuewe.dds",
+      "small_output": "gfx/leaders/WFL/Portrait_WFL_lars_stuewe_small.dds",
+      "preview": "gfx/leaders/WFL/Portrait_WFL_lars_stuewe.png"
+    }
+  ]
+}

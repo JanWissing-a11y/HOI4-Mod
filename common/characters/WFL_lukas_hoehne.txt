@@ -1,0 +1,28 @@
+characters = {
+    WFL_lukas_hoehne_i = {
+        name = WFL_lukas_hoehne_i
+        portraits = {
+            army = {
+                large = GFX_portrait_WFL_lukas_hoehne_i
+                small = GFX_portrait_WFL_lukas_hoehne_i_small
+            }
+        }
+        field_marshal = {
+            # Deliberately exceptional starting commander, requested by the user.
+            skill = 9
+            attack_skill = 9
+            defense_skill = 9
+            planning_skill = 9
+            logistics_skill = 9
+            traits = {
+                brilliant_strategist
+                organizer
+                offensive_doctrine
+                logistics_wizard
+                thorough_planner
+                organisational_leader
+                inspirational_leader
+            }
+        }
+    }
+}

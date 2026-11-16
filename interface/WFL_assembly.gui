@@ -1,0 +1,428 @@
+# Decision-category extension; vanilla AST/RAJ examples use a 100% width root.
+# Six portrait cards stay in a centered 496-pixel area, above the normal decisions.
+guiTypes = {
+    containerWindowType = {
+        name = "WFL_vorstand_window"
+        position = { x = 0 y = 0 }
+        size = { width = 100% height = 620 }
+        clipping = no
+        instantTextBoxType = {
+            name = "WFL_board_ui_heading"
+            orientation = center_up
+            position = { x = -248 y = 2 }
+            font = "hoi_20b"
+            format = center
+            maxWidth = 496
+            maxHeight = 23
+            fixedsize = yes
+            text = "WFL_board_ui_title"
+        }
+        instantTextBoxType = {
+            name = "WFL_board_ui_clock"
+            orientation = center_up
+            position = { x = -248 y = 27 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 496
+            maxHeight = 23
+            fixedsize = yes
+            text = "WFL_board_ui_clock"
+        }
+        instantTextBoxType = {
+            name = "WFL_board_ui_mood"
+            orientation = center_up
+            position = { x = -248 y = 53 }
+            font = "hoi_20b"
+            format = center
+            maxWidth = 496
+            maxHeight = 25
+            fixedsize = yes
+            text = "WFL_board_ui_mood"
+            pdx_tooltip = "WFL_board_ui_mood_tooltip"
+        }
+        instantTextBoxType = {
+            name = "WFL_board_ui_mood_hint"
+            orientation = center_up
+            position = { x = -248 y = 82 }
+            font = "hoi_16mbs"
+            format = center
+            maxWidth = 496
+            maxHeight = 25
+            fixedsize = yes
+            text = "WFL_board_ui_mood_hint"
+            pdx_tooltip = "WFL_board_ui_mood_tooltip"
+        }
+        containerWindowType = {
+            name = "WFL_board_nils_meyer_card"
+            orientation = center_up
+            position = { x = -248 y = 112 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_nils_meyer_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_nils_meyer_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_nils_meyer"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_nils_meyer_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_nils_meyer_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_nils_meyer_name"
+                pdx_tooltip = "WFL_board_ui_nils_meyer_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_nils_meyer_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_nils_meyer_role"
+                pdx_tooltip = "WFL_board_ui_nils_meyer_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_nils_meyer_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_nils_meyer_bonus"
+                pdx_tooltip = "WFL_board_ui_nils_meyer_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_nils_meyer_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_nils_meyer_status"
+                pdx_tooltip = "WFL_board_ui_nils_meyer_tooltip"
+            }
+        }
+        containerWindowType = {
+            name = "WFL_board_jannik_altenschmidt_card"
+            orientation = center_up
+            position = { x = -80 y = 112 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_jannik_altenschmidt_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_jannik_altenschmidt_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_jannik_altenschmidt"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_jannik_altenschmidt_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_jannik_altenschmidt_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_jannik_altenschmidt_name"
+                pdx_tooltip = "WFL_board_ui_jannik_altenschmidt_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_jannik_altenschmidt_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_jannik_altenschmidt_role"
+                pdx_tooltip = "WFL_board_ui_jannik_altenschmidt_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_jannik_altenschmidt_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_jannik_altenschmidt_bonus"
+                pdx_tooltip = "WFL_board_ui_jannik_altenschmidt_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_jannik_altenschmidt_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_jannik_altenschmidt_status"
+                pdx_tooltip = "WFL_board_ui_jannik_altenschmidt_tooltip"
+            }
+        }
+        containerWindowType = {
+            name = "WFL_board_tobias_gaertner_card"
+            orientation = center_up
+            position = { x = 88 y = 112 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_tobias_gaertner_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_tobias_gaertner_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_tobias_gaertner"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_tobias_gaertner_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tobias_gaertner_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_tobias_gaertner_name"
+                pdx_tooltip = "WFL_board_ui_tobias_gaertner_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tobias_gaertner_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_tobias_gaertner_role"
+                pdx_tooltip = "WFL_board_ui_tobias_gaertner_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tobias_gaertner_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_tobias_gaertner_bonus"
+                pdx_tooltip = "WFL_board_ui_tobias_gaertner_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tobias_gaertner_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_tobias_gaertner_status"
+                pdx_tooltip = "WFL_board_ui_tobias_gaertner_tooltip"
+            }
+        }
+        containerWindowType = {
+            name = "WFL_board_finn_bielig_card"
+            orientation = center_up
+            position = { x = -248 y = 360 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_finn_bielig_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_finn_bielig_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_finn_bielig"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_finn_bielig_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_finn_bielig_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_finn_bielig_name"
+                pdx_tooltip = "WFL_board_ui_finn_bielig_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_finn_bielig_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_finn_bielig_role"
+                pdx_tooltip = "WFL_board_ui_finn_bielig_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_finn_bielig_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_finn_bielig_bonus"
+                pdx_tooltip = "WFL_board_ui_finn_bielig_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_finn_bielig_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_finn_bielig_status"
+                pdx_tooltip = "WFL_board_ui_finn_bielig_tooltip"
+            }
+        }
+        containerWindowType = {
+            name = "WFL_board_max_gerwers_card"
+            orientation = center_up
+            position = { x = -80 y = 360 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_max_gerwers_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_max_gerwers_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_max_gerwers"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_max_gerwers_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_max_gerwers_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_max_gerwers_name"
+                pdx_tooltip = "WFL_board_ui_max_gerwers_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_max_gerwers_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_max_gerwers_role"
+                pdx_tooltip = "WFL_board_ui_max_gerwers_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_max_gerwers_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_max_gerwers_bonus"
+                pdx_tooltip = "WFL_board_ui_max_gerwers_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_max_gerwers_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_max_gerwers_status"
+                pdx_tooltip = "WFL_board_ui_max_gerwers_tooltip"
+            }
+        }
+        containerWindowType = {
+            name = "WFL_board_tim_wissing_card"
+            orientation = center_up
+            position = { x = 88 y = 360 }
+            size = { width = 160 height = 240 }
+            clipping = no
+            background = {
+                name = "WFL_board_tim_wissing_background"
+                quadTextureSprite = "GFX_WFL_board_card"
+            }
+            iconType = {
+                name = "WFL_board_tim_wissing_portrait"
+                position = { x = 40 y = 5 }
+                spriteType = "GFX_WFL_board_tim_wissing"
+                scale = 0.625
+                pdx_tooltip = "WFL_board_ui_tim_wissing_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tim_wissing_name"
+                position = { x = 4 y = 88 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 22
+                fixedsize = yes
+                text = "WFL_board_ui_tim_wissing_name"
+                pdx_tooltip = "WFL_board_ui_tim_wissing_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tim_wissing_role"
+                position = { x = 4 y = 110 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 20
+                fixedsize = yes
+                text = "WFL_board_ui_tim_wissing_role"
+                pdx_tooltip = "WFL_board_ui_tim_wissing_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tim_wissing_bonus"
+                position = { x = 4 y = 138 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 64
+                fixedsize = yes
+                text = "WFL_board_ui_tim_wissing_bonus"
+                pdx_tooltip = "WFL_board_ui_tim_wissing_tooltip"
+            }
+            instantTextBoxType = {
+                name = "WFL_board_tim_wissing_status"
+                position = { x = 4 y = 207 }
+                font = "hoi_16mbs"
+                format = center
+                maxWidth = 152
+                maxHeight = 32
+                fixedsize = yes
+                text = "WFL_board_ui_tim_wissing_status"
+                pdx_tooltip = "WFL_board_ui_tim_wissing_tooltip"
+            }
+        }
+    }
+}

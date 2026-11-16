@@ -1,0 +1,410 @@
+# WFL-only pools, based on HOI4 1.19.4.1 portraits/00_portraits.txt
+# and portraits/998_scientist_portraits.txt. No global default/continent override.
+# Country-level male/female mirrors the native default fallback shape.
+# Selected photo crops fill the female (12) and male pools; no identities inferred.
+
+WFL = {
+    male = {
+        "GFX_portrait_WFL_advisor_01"
+        "GFX_portrait_WFL_advisor_02"
+        "GFX_portrait_WFL_advisor_03"
+        "GFX_portrait_WFL_advisor_04"
+        "GFX_portrait_WFL_advisor_05"
+        "GFX_portrait_WFL_advisor_06"
+        "GFX_portrait_WFL_advisor_07"
+        "GFX_portrait_WFL_advisor_08"
+        "GFX_portrait_WFL_advisor_09"
+        "GFX_portrait_WFL_advisor_10"
+        "GFX_portrait_WFL_advisor_11"
+        "GFX_portrait_WFL_advisor_13"
+        "GFX_portrait_WFL_advisor_14"
+        "GFX_portrait_WFL_advisor_15"
+        "GFX_portrait_WFL_advisor_16"
+        "GFX_portrait_WFL_advisor_17"
+        "GFX_portrait_WFL_advisor_18"
+    }
+    female = {
+        "GFX_portrait_WFL_advisor_12"
+    }
+    army = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    navy = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    operative = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    scientist = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    political = {
+        democratic = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        communism = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        fascism = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        neutrality = {
+            male = {
+                "GFX_portrait_WFL_jan_graf_von_insel_i"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+    }
+}
+
+WFL_KINGDOM = {
+    male = {
+        "GFX_portrait_WFL_advisor_01"
+        "GFX_portrait_WFL_advisor_02"
+        "GFX_portrait_WFL_advisor_03"
+        "GFX_portrait_WFL_advisor_04"
+        "GFX_portrait_WFL_advisor_05"
+        "GFX_portrait_WFL_advisor_06"
+        "GFX_portrait_WFL_advisor_07"
+        "GFX_portrait_WFL_advisor_08"
+        "GFX_portrait_WFL_advisor_09"
+        "GFX_portrait_WFL_advisor_10"
+        "GFX_portrait_WFL_advisor_11"
+        "GFX_portrait_WFL_advisor_13"
+        "GFX_portrait_WFL_advisor_14"
+        "GFX_portrait_WFL_advisor_15"
+        "GFX_portrait_WFL_advisor_16"
+        "GFX_portrait_WFL_advisor_17"
+        "GFX_portrait_WFL_advisor_18"
+    }
+    female = {
+        "GFX_portrait_WFL_advisor_12"
+    }
+    army = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    navy = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    operative = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    scientist = {
+        male = {
+            "GFX_portrait_WFL_advisor_01"
+            "GFX_portrait_WFL_advisor_02"
+            "GFX_portrait_WFL_advisor_03"
+            "GFX_portrait_WFL_advisor_04"
+            "GFX_portrait_WFL_advisor_05"
+            "GFX_portrait_WFL_advisor_06"
+            "GFX_portrait_WFL_advisor_07"
+            "GFX_portrait_WFL_advisor_08"
+            "GFX_portrait_WFL_advisor_09"
+            "GFX_portrait_WFL_advisor_10"
+            "GFX_portrait_WFL_advisor_11"
+            "GFX_portrait_WFL_advisor_13"
+            "GFX_portrait_WFL_advisor_14"
+            "GFX_portrait_WFL_advisor_15"
+            "GFX_portrait_WFL_advisor_16"
+            "GFX_portrait_WFL_advisor_17"
+            "GFX_portrait_WFL_advisor_18"
+        }
+        female = {
+            "GFX_portrait_WFL_advisor_12"
+        }
+    }
+    political = {
+        democratic = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        communism = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        fascism = {
+            male = {
+                "GFX_portrait_WFL_advisor_01"
+                "GFX_portrait_WFL_advisor_02"
+                "GFX_portrait_WFL_advisor_03"
+                "GFX_portrait_WFL_advisor_04"
+                "GFX_portrait_WFL_advisor_05"
+                "GFX_portrait_WFL_advisor_06"
+                "GFX_portrait_WFL_advisor_07"
+                "GFX_portrait_WFL_advisor_08"
+                "GFX_portrait_WFL_advisor_09"
+                "GFX_portrait_WFL_advisor_10"
+                "GFX_portrait_WFL_advisor_11"
+                "GFX_portrait_WFL_advisor_13"
+                "GFX_portrait_WFL_advisor_14"
+                "GFX_portrait_WFL_advisor_15"
+                "GFX_portrait_WFL_advisor_16"
+                "GFX_portrait_WFL_advisor_17"
+                "GFX_portrait_WFL_advisor_18"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+        neutrality = {
+            male = {
+                "GFX_portrait_WFL_jan_graf_von_insel_i"
+            }
+            female = {
+                "GFX_portrait_WFL_advisor_12"
+            }
+        }
+    }
+}

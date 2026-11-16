@@ -1,0 +1,27 @@
+# Fictional microstate, using existing vanilla province 3512 without redrawing the bitmap.
+state = {
+    id = 1082
+    name = STATE_1082
+    manpower = 240000
+    state_category = town
+    resources = {
+        steel = 2
+        coal = 4
+    }
+    history = {
+        owner = WFL
+        controller = WFL
+        add_core_of = WFL
+        add_core_of = GER
+        add_core_of = RHI
+        add_core_of = PRE
+        victory_points = { 3512 5 }
+        buildings = {
+            infrastructure = 3
+            industrial_complex = 2
+            arms_factory = 1
+        }
+    }
+    provinces = { 3512 }
+    local_supplies = 1.0
+}

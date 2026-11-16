@@ -1,14 +1,117 @@
 WFL_local_initiatives = {
     WFL_organisiertes_exerzieren = {
         visible = { has_completed_focus = WFL_uebungsplatz_am_auesee }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_joint_drill_done } }
         cost = 25
         fire_only_once = yes
-        complete_effect = { add_army_experience = 5 }
+        complete_effect = {
+            army_experience = 5
+            set_country_flag = WFL_joint_drill_done
+        }
     }
     WFL_rheinhandelsmesse = {
         visible = { has_completed_focus = WFL_rheinhandel_beleben }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_trade_fair_done } }
         cost = 35
         fire_only_once = yes
-        complete_effect = { add_stability = 0.03 }
+        complete_effect = {
+            add_stability = 0.03
+            set_country_flag = WFL_trade_fair_done
+        }
+    }
+    WFL_instandsetzungsdienst = {
+        visible = { has_completed_focus = WFL_gewerbehoefe }
+        available = { has_capitulated = no NOT = { has_idea = WFL_instandsetzungsdienst_idee } }
+        cost = 40
+        days_re_enable = 180
+        complete_effect = { add_timed_idea = { idea = WFL_instandsetzungsdienst_idee days = 90 } }
+    }
+    WFL_munitionsreserve = {
+        visible = { has_completed_focus = WFL_standardisierte_gewehre }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_equipment_reserve_done } }
+        cost = 50
+        fire_only_once = yes
+        complete_effect = {
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 150 producer = WFL }
+            set_country_flag = WFL_equipment_reserve_done
+        }
+    }
+    WFL_buergerforum = {
+        visible = { has_country_flag = WFL_republic_established }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_citizens_forum_done } }
+        cost = 35
+        fire_only_once = yes
+        complete_effect = {
+            add_stability = 0.05
+            set_country_flag = WFL_citizens_forum_done
+        }
+    }
+    WFL_ehrengarde = {
+        visible = { has_completed_focus = WFL_die_koenigsgarde }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_honour_guard_done } }
+        cost = 50
+        fire_only_once = yes
+        complete_effect = {
+            army_experience = 10
+            set_country_flag = WFL_honour_guard_done
+        }
+    }
+    WFL_freiwilligenreserve = {
+        visible = { has_completed_focus = WFL_mobilmachungsplan }
+        available = { has_capitulated = no NOT = { has_country_flag = WFL_volunteer_reserve_done } }
+        cost = 75
+        fire_only_once = yes
+        complete_effect = {
+            add_manpower = 1000
+            set_country_flag = WFL_volunteer_reserve_done
+        }
+    }
+    WFL_rheinland_integrieren = {
+        visible = {
+            has_completed_focus = WFL_rheinland_fordern
+            51 = { NOT = { is_core_of = ROOT } }
+        }
+        available = {
+            has_war = no
+            NOT = { has_country_flag = WFL_rhineland_integrated }
+            51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT NOT = { is_core_of = ROOT } }
+        }
+        cost = 100
+        fire_only_once = yes
+        complete_effect = {
+            if = {
+                limit = {
+                    has_war = no
+                    NOT = { has_country_flag = WFL_rhineland_integrated }
+                    51 = { is_owned_by = ROOT is_fully_controlled_by = ROOT NOT = { is_core_of = ROOT } }
+                }
+                add_state_core = 51
+                set_country_flag = WFL_rhineland_integrated
+            }
+        }
+    }
+    WFL_westfalen_integrieren = {
+        visible = {
+            has_completed_focus = WFL_westfalen_fordern
+            57 = { NOT = { is_core_of = ROOT } }
+        }
+        available = {
+            has_war = no
+            NOT = { has_country_flag = WFL_westphalia_integrated }
+            57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT NOT = { is_core_of = ROOT } }
+        }
+        cost = 150
+        fire_only_once = yes
+        complete_effect = {
+            if = {
+                limit = {
+                    has_war = no
+                    NOT = { has_country_flag = WFL_westphalia_integrated }
+                    57 = { is_owned_by = ROOT is_fully_controlled_by = ROOT NOT = { is_core_of = ROOT } }
+                }
+                add_state_core = 57
+                set_country_flag = WFL_westphalia_integrated
+            }
+        }
     }
 }

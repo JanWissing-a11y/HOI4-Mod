@@ -1,0 +1,42 @@
+WFL_vorstand = {
+    WFL_board_aeltestenrat_vermitteln = {
+        icon = GFX_decision_generic_political_discourse
+        visible = { has_country_flag = WFL_board_elders_unlocked }
+        available = { WFL_board_can_call_elders = yes }
+        cost = 50
+        days_re_enable = 30
+        ai_will_do = { base = 1 }
+        complete_effect = {
+            if = {
+                limit = { WFL_board_can_call_elders = yes }
+                # Deterministic portrait order, matching the displayed target.
+                if = {
+                    limit = { has_country_flag = WFL_board_nils_meyer_angry }
+                    clr_country_flag = WFL_board_nils_meyer_angry
+                }
+                else_if = {
+                    limit = { has_country_flag = WFL_board_jannik_altenschmidt_angry }
+                    clr_country_flag = WFL_board_jannik_altenschmidt_angry
+                }
+                else_if = {
+                    limit = { has_country_flag = WFL_board_tobias_gaertner_angry }
+                    clr_country_flag = WFL_board_tobias_gaertner_angry
+                }
+                else_if = {
+                    limit = { has_country_flag = WFL_board_finn_bielig_angry }
+                    clr_country_flag = WFL_board_finn_bielig_angry
+                }
+                else_if = {
+                    limit = { has_country_flag = WFL_board_max_gerwers_angry }
+                    clr_country_flag = WFL_board_max_gerwers_angry
+                }
+                else_if = {
+                    limit = { has_country_flag = WFL_board_tim_wissing_angry }
+                    clr_country_flag = WFL_board_tim_wissing_angry
+                }
+                add_to_variable = { WFL_board_mood = 10 }
+                WFL_board_mood_refresh = yes
+            }
+        }
+    }
+}

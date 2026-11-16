@@ -1,0 +1,7 @@
+WFL_royal_recruitment_festivals = {
+    allowed = { tag = WFL }
+    visible = {
+        tag = WFL
+        has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+    }
+}

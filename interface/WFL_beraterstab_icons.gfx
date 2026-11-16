@@ -1,0 +1,163 @@
+spriteTypes = {
+    spriteType = { name = GFX_focus_WFL_staff_dante_grossy texturefile = "gfx/interface/beraterstab/dante_grossy_focus.dds" }
+    spriteType = { name = GFX_WFL_staff_dante_grossy texturefile = "gfx/interface/beraterstab/dante_grossy_ui.dds" }
+    spriteType = {
+        name = GFX_focus_WFL_staff_dante_grossy_shine
+        texturefile = "gfx/interface/beraterstab/dante_grossy_focus.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/dante_grossy_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/dante_grossy_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = { name = GFX_focus_WFL_staff_neal_foerster texturefile = "gfx/interface/beraterstab/neal_foerster_focus.dds" }
+    spriteType = { name = GFX_WFL_staff_neal_foerster texturefile = "gfx/interface/beraterstab/neal_foerster_ui.dds" }
+    spriteType = {
+        name = GFX_focus_WFL_staff_neal_foerster_shine
+        texturefile = "gfx/interface/beraterstab/neal_foerster_focus.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/neal_foerster_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/neal_foerster_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = { name = GFX_focus_WFL_staff_max_heinsch texturefile = "gfx/interface/beraterstab/max_heinsch_focus.dds" }
+    spriteType = { name = GFX_WFL_staff_max_heinsch texturefile = "gfx/interface/beraterstab/max_heinsch_ui.dds" }
+    spriteType = {
+        name = GFX_focus_WFL_staff_max_heinsch_shine
+        texturefile = "gfx/interface/beraterstab/max_heinsch_focus.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/max_heinsch_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/max_heinsch_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = { name = GFX_focus_WFL_staff_max_mueller texturefile = "gfx/interface/beraterstab/max_mueller_focus.dds" }
+    spriteType = { name = GFX_WFL_staff_max_mueller texturefile = "gfx/interface/beraterstab/max_mueller_ui.dds" }
+    spriteType = {
+        name = GFX_focus_WFL_staff_max_mueller_shine
+        texturefile = "gfx/interface/beraterstab/max_mueller_focus.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/max_mueller_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/max_mueller_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = { name = GFX_focus_WFL_staff_till_hoehne texturefile = "gfx/interface/beraterstab/till_hoehne_focus.dds" }
+    spriteType = { name = GFX_WFL_staff_till_hoehne texturefile = "gfx/interface/beraterstab/till_hoehne_ui.dds" }
+    spriteType = {
+        name = GFX_focus_WFL_staff_till_hoehne_shine
+        texturefile = "gfx/interface/beraterstab/till_hoehne_focus.dds"
+        effectFile = "gfx/FX/buttonstate.lua"
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/till_hoehne_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = -90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        animation = {
+            animationmaskfile = "gfx/interface/beraterstab/till_hoehne_focus.dds"
+            animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+            animationrotation = 90.0
+            animationlooping = no
+            animationtime = 0.75
+            animationdelay = 0
+            animationblendmode = "add"
+            animationtype = "scrolling"
+            animationrotationoffset = { x = 0.0 y = 0.0 }
+            animationtexturescale = { x = 1.0 y = 1.0 }
+        }
+        legacy_lazy_load = no
+    }
+    spriteType = { name = GFX_WFL_staff_empty texturefile = "gfx/interface/beraterstab/empty.dds" }
+}

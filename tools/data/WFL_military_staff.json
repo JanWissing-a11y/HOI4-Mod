@@ -1,0 +1,2526 @@
+{
+  "source_version": "1.19.4.2",
+  "scope": "Military advisor roles explicitly allowed for GER, including two Austrian profiles in AUS.txt; FIN-only Falkenhorst is excluded.",
+  "default_military_advisor_cost": 50,
+  "staff": [
+    {
+      "id": "WFL_staff_werner_von_blomberg",
+      "source_character": "GER_werner_von_blomberg",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Werner von Blomberg",
+        "english": "Werner von Blomberg"
+      },
+      "portrait": "01",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_werner_von_blomberg",
+          "source_idea_token": "GER_werner_von_blomberg",
+          "ledger": "army",
+          "base_cost": 150,
+          "traits": [
+            "grand_battle_plan_expert"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "grand_battle_plan_expert": {
+              "key": "grand_battle_plan_expert",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "grand_battleplan_mastery_gain_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_gerd_von_rundstedt",
+      "source_character": "GER_gerd_von_rundstedt",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Gerd von Rundstedt",
+        "english": "Gerd von Rundstedt"
+      },
+      "portrait": "02",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_gerd_von_rundstedt",
+          "source_idea_token": "gerd_von_rundstedt",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "army_regrouping_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_regrouping_2": {
+              "key": "army_regrouping_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "army_morale_factor",
+                  "value": "0.08"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_werner_von_fritsch",
+      "source_character": "GER_werner_von_fritsch",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Werner von Fritsch",
+        "english": "Werner von Fritsch"
+      },
+      "portrait": "03",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_werner_von_fritsch_high_command",
+          "source_idea_token": "werner_von_fritsch_high_command",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "army_logistics_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_logistics_2": {
+              "key": "army_logistics_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "6"
+                },
+                {
+                  "key": "attrition",
+                  "value": "-0.08"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_werner_von_fritsch_army_chief",
+          "source_idea_token": "werner_von_fritsch_army_chief",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "army_chief_army_high_command"
+          ],
+          "required_dlc": [
+            "Gotterdammerung"
+          ],
+          "trait_definitions": {
+            "army_chief_army_high_command": {
+              "key": "army_chief_army_high_command",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "16"
+                },
+                {
+                  "key": "army_artillery_attack_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "army_artillery_defence_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "max_planning_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_erwin_rommel",
+      "source_character": "GER_erwin_rommel",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Erwin Rommel",
+        "english": "Erwin Rommel"
+      },
+      "portrait": "04",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_erwin_rommel",
+          "source_idea_token": "erwin_rommel",
+          "ledger": "army",
+          "base_cost": 200,
+          "traits": [
+            "army_armored_3"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_armored_3": {
+              "key": "army_armored_3",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "8"
+                },
+                {
+                  "key": "army_armor_attack_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "army_armor_defence_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier3_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier3_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_3"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier3_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_erich_von_manstein",
+      "source_character": "GER_erich_von_manstein",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Erich von Manstein",
+        "english": "Erich von Manstein"
+      },
+      "portrait": "05",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_erich_von_manstein",
+          "source_idea_token": "manstein",
+          "ledger": "army",
+          "base_cost": 150,
+          "traits": [
+            "mobile_warfare_expert"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "mobile_warfare_expert": {
+              "key": "mobile_warfare_expert",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "new_mobile_warfare_mastery_gain_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_heinz_guderian",
+      "source_character": "GER_heinz_guderian",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Heinz Guderian",
+        "english": "Heinz Guderian"
+      },
+      "portrait": "06",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_heinz_guderian",
+          "source_idea_token": "heinz_guderian",
+          "ledger": "army",
+          "base_cost": 200,
+          "traits": [
+            "blitzkrieg_theorist"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "blitzkrieg_theorist": {
+              "key": "blitzkrieg_theorist",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "equipment_bonus",
+                  "value": [
+                    {
+                      "key": "armor",
+                      "value": [
+                        {
+                          "key": "instant",
+                          "value": "yes"
+                        },
+                        {
+                          "key": "maximum_speed",
+                          "value": "0.10"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "key": "new_mobile_warfare_mastery_gain_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "5"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_kurt_student",
+      "source_character": "GER_kurt_student",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Kurt Student",
+        "english": "Kurt Student"
+      },
+      "portrait": "07",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_kurt_student",
+          "source_idea_token": "kurt_student",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_airborne_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_airborne_2": {
+              "key": "air_airborne_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "1"
+                },
+                {
+                  "key": "paradrop_organization_factor",
+                  "value": "1.80"
+                },
+                {
+                  "key": "paratrooper_aa_defense",
+                  "value": "0.15"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_albert_kesselring",
+      "source_character": "GER_albert_kesselring",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Albert Kesselring",
+        "english": "Albert Kesselring"
+      },
+      "portrait": "08",
+      "roles": [
+        {
+          "slot": "air_chief",
+          "idea_token": "WFL_staff_albert_kesselring",
+          "source_idea_token": "albert_kesselring",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "air_chief_reform_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_chief_reform_2": {
+              "key": "air_chief_reform_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "1"
+                },
+                {
+                  "key": "experience_gain_air",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "experience_gain_air_factor",
+                  "value": "0.10"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_paul_von_lettow_vorbeck",
+      "source_character": "GER_paul_von_lettow_vorbeck",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Paul von Lettow-Vorbeck",
+        "english": "Paul von Lettow-Vorbeck"
+      },
+      "portrait": "09",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_paul_von_lettow_vorbeck",
+          "source_idea_token": "GER_paul_von_lettow_vorbeck",
+          "ledger": null,
+          "base_cost": 50,
+          "traits": [
+            "army_concealment_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_concealment_2": {
+              "key": "army_concealment_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "9"
+                },
+                {
+                  "key": "enemy_army_bonus_air_superiority_factor",
+                  "value": "-0.10"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_karl_donitz",
+      "source_character": "GER_karl_donitz",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Karl Dönitz",
+        "english": "Karl Dönitz"
+      },
+      "portrait": "10",
+      "roles": [
+        {
+          "slot": "navy_chief",
+          "idea_token": "WFL_staff_karl_donitz",
+          "source_idea_token": "donitz",
+          "ledger": null,
+          "base_cost": 200,
+          "traits": [
+            "navy_chief_commerce_raiding_3"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_chief_commerce_raiding_3": {
+              "key": "navy_chief_commerce_raiding_3",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "3"
+                },
+                {
+                  "key": "convoy_raiding_efficiency_factor",
+                  "value": "0.2"
+                },
+                {
+                  "key": "experience_gain_navy",
+                  "value": "@chief_experience_gain_high"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier3_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier3_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_chief_factor_3"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier3_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_erich_raeder",
+      "source_character": "GER_erich_raeder",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Erich Raeder",
+        "english": "Erich Raeder"
+      },
+      "portrait": "11",
+      "roles": [
+        {
+          "slot": "navy_chief",
+          "idea_token": "WFL_staff_erich_raeder",
+          "source_idea_token": "raeder",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "navy_chief_decisive_battle_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_chief_decisive_battle_2": {
+              "key": "navy_chief_decisive_battle_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "3"
+                },
+                {
+                  "key": "navy_capital_ship_attack_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "navy_capital_ship_defence_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "navy_screen_attack_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "navy_screen_defence_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "experience_gain_navy",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_alfred_saalwachter",
+      "source_character": "GER_alfred_saalwachter",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Alfred Saalwächter",
+        "english": "Alfred Saalwächter"
+      },
+      "portrait": "13",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_alfred_saalwachter",
+          "source_idea_token": "alfred_saalwachter",
+          "ledger": "navy",
+          "base_cost": 150,
+          "traits": [
+            "submarine_specialist"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "submarine_specialist": {
+              "key": "submarine_specialist",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "new_convoy_raiding_mastery_gain_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_gunther_lutjens",
+      "source_character": "GER_gunther_lutjens",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Günther Lütjens",
+        "english": "Günther Lütjens"
+      },
+      "portrait": "14",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_gunther_lutjens",
+          "source_idea_token": "gunther_lutjens",
+          "ledger": "navy",
+          "base_cost": 100,
+          "traits": [
+            "navy_fleet_logistics_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_fleet_logistics_2": {
+              "key": "navy_fleet_logistics_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "6"
+                },
+                {
+                  "key": "navy_max_range_factor",
+                  "value": "0.10"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_wolfram_von_richthofen",
+      "source_character": "GER_wolfram_von_richthofen",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "W. von Richthofen",
+        "english": "W. von Richthofen"
+      },
+      "portrait": "15",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_wolfram_von_richthofen",
+          "source_idea_token": "wolfram_von_richthofen",
+          "ledger": "air",
+          "base_cost": 150,
+          "traits": [
+            "close_air_support_proponent"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "close_air_support_proponent": {
+              "key": "close_air_support_proponent",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "new_battlefield_support_mastery_gain_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_walther_wever",
+      "source_character": "GER_walther_wever",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Walther Wever",
+        "english": "Walther Wever"
+      },
+      "portrait": "16",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_walther_wever",
+          "source_idea_token": "walther_wever",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_warfare_theorist"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_warfare_theorist": {
+              "key": "air_warfare_theorist",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "air_doctrine_cost_factor",
+                  "value": "-0.1"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_ernst_udet",
+      "source_character": "GER_ernst_udet",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Ernst Udet",
+        "english": "Ernst Udet"
+      },
+      "portrait": "17",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_ernst_udet",
+          "source_idea_token": "ernst_udet",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "dive_bomber"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "dive_bomber": {
+              "key": "dive_bomber",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "equipment_bonus",
+                  "value": [
+                    {
+                      "key": "small_plane_cas_airframe",
+                      "value": [
+                        {
+                          "key": "instant",
+                          "value": "yes"
+                        },
+                        {
+                          "key": "air_ground_attack",
+                          "value": "0.1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "key": "air_doctrine_cost_factor",
+                  "value": "-0.10"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_otto_ciliax",
+      "source_character": "GER_otto_ciliax",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Otto Ciliax",
+        "english": "Otto Ciliax"
+      },
+      "portrait": "18",
+      "roles": [
+        {
+          "slot": "theorist",
+          "idea_token": "WFL_staff_otto_ciliax",
+          "source_idea_token": "otto_ciliax",
+          "ledger": "navy",
+          "base_cost": 100,
+          "traits": [
+            "naval_theorist"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "naval_theorist": {
+              "key": "naval_theorist",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "14"
+                },
+                {
+                  "key": "naval_doctrine_cost_factor",
+                  "value": "-0.1"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_ludwig_beck",
+      "source_character": "GER_ludwig_beck",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Ludwig Beck",
+        "english": "Ludwig Beck"
+      },
+      "portrait": "01",
+      "roles": [
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_ludwig_beck",
+          "source_idea_token": "ludwig_beck",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "army_chief_organizational_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_chief_organizational_2": {
+              "key": "army_chief_organizational_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "army_org_factor",
+                  "value": "0.08"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_wilhelm_keitel",
+      "source_character": "GER_wilhelm_keitel",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Wilhelm Keitel",
+        "english": "Wilhelm Keitel"
+      },
+      "portrait": "02",
+      "roles": [
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_wilhelm_keitel",
+          "source_idea_token": "wilhelm_keitel",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "army_chief_drill_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_chief_drill_2": {
+              "key": "army_chief_drill_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "training_time_army_factor",
+                  "value": "-0.1"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_franz_halder",
+      "source_character": "GER_franz_halder",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Franz Halder",
+        "english": "Franz Halder"
+      },
+      "portrait": "03",
+      "roles": [
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_franz_halder",
+          "source_idea_token": "franz_halder",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "army_chief_offensive_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_chief_offensive_2": {
+              "key": "army_chief_offensive_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "7"
+                },
+                {
+                  "key": "army_attack_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_walther_von_brauchitsch",
+      "source_character": "GER_walther_von_brauchitsch",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "W. von Brauchitsch",
+        "english": "W. von Brauchitsch"
+      },
+      "portrait": "04",
+      "roles": [
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_walther_von_brauchitsch",
+          "source_idea_token": "walther_von_brauchitsch",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "army_chief_maneuver_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_chief_maneuver_2": {
+              "key": "army_chief_maneuver_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "army_speed_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_1"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_rolf_carls",
+      "source_character": "GER_rolf_carls",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Rolf Carls",
+        "english": "Rolf Carls"
+      },
+      "portrait": "05",
+      "roles": [
+        {
+          "slot": "navy_chief",
+          "idea_token": "WFL_staff_rolf_carls",
+          "source_idea_token": "GER_rolf_carls",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "navy_chief_maneuver_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_chief_maneuver_2": {
+              "key": "navy_chief_maneuver_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "3"
+                },
+                {
+                  "key": "naval_speed_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "experience_gain_navy",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_hermann_goring",
+      "source_character": "GER_hermann_goring",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Hermann Göring",
+        "english": "Hermann Göring"
+      },
+      "portrait": "06",
+      "roles": [
+        {
+          "slot": "air_chief",
+          "idea_token": "WFL_staff_hermann_goring",
+          "source_idea_token": "goering",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "GER_reich_marshal"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "GER_reich_marshal": {
+              "key": "GER_reich_marshal",
+              "value": [
+                {
+                  "key": "random",
+                  "value": "no"
+                },
+                {
+                  "key": "sprite",
+                  "value": "2"
+                },
+                {
+                  "key": "army_bonus_air_superiority_factor",
+                  "value": "0.05"
+                },
+                {
+                  "key": "experience_gain_air",
+                  "value": "@chief_experience_gain_low"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier1_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier1_cp_cost"
+                },
+                {
+                  "key": "equipment_bonus",
+                  "value": [
+                    {
+                      "key": "medium_plane_airframe",
+                      "value": [
+                        {
+                          "key": "build_cost_ic",
+                          "value": "-0.025"
+                        },
+                        {
+                          "key": "instant",
+                          "value": "yes"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "large_plane_airframe",
+                      "value": [
+                        {
+                          "key": "build_cost_ic",
+                          "value": "-0.025"
+                        },
+                        {
+                          "key": "instant",
+                          "value": "yes"
+                        }
+                      ]
+                    },
+                    {
+                      "key": "small_plane_airframe",
+                      "value": [
+                        {
+                          "key": "build_cost_ic",
+                          "value": "-0.025"
+                        },
+                        {
+                          "key": "instant",
+                          "value": "yes"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "1"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier1_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_ritter_von_greim",
+      "source_character": "GER_ritter_von_greim",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Ritter von Greim",
+        "english": "Ritter von Greim"
+      },
+      "portrait": "07",
+      "roles": [
+        {
+          "slot": "air_chief",
+          "idea_token": "WFL_staff_ritter_von_greim",
+          "source_idea_token": "ritter_von_greim",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "air_chief_all_weather_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_chief_all_weather_2": {
+              "key": "air_chief_all_weather_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "1"
+                },
+                {
+                  "key": "air_weather_penalty",
+                  "value": "-0.2"
+                },
+                {
+                  "key": "experience_gain_air",
+                  "value": "@chief_experience_gain_medium"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_chief_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_helmuth_wilberg",
+      "source_character": "GER_helmuth_wilberg",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Helmuth Wilberg",
+        "english": "Helmuth Wilberg"
+      },
+      "portrait": "08",
+      "roles": [
+        {
+          "slot": "air_chief",
+          "idea_token": "WFL_staff_helmuth_wilberg",
+          "source_idea_token": "GER_helmuth_wilberg",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "air_chief_ground_support_3"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_chief_ground_support_3": {
+              "key": "air_chief_ground_support_3",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "2"
+                },
+                {
+                  "key": "army_bonus_air_superiority_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "experience_gain_air",
+                  "value": "@chief_experience_gain_high"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier3_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier3_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_chief_factor_3"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier3_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_ferdinand_schorner",
+      "source_character": "GER_ferdinand_schorner",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Ferdinand Schörner",
+        "english": "Ferdinand Schörner"
+      },
+      "portrait": "09",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_ferdinand_schorner",
+          "source_idea_token": "ferdinand_schorner",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "army_infantry_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_infantry_2": {
+              "key": "army_infantry_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "army_infantry_attack_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "army_infantry_defence_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_3"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_erich_bey",
+      "source_character": "GER_erich_bey",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Erich Bey",
+        "english": "Erich Bey"
+      },
+      "portrait": "10",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_erich_bey",
+          "source_idea_token": "erich_bey",
+          "ledger": "navy",
+          "base_cost": 100,
+          "traits": [
+            "navy_naval_air_defense_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_naval_air_defense_2": {
+              "key": "navy_naval_air_defense_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "3"
+                },
+                {
+                  "key": "navy_anti_air_attack_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_viktor_schutze",
+      "source_character": "GER_viktor_schutze",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Viktor Schütze",
+        "english": "Viktor Schütze"
+      },
+      "portrait": "11",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_viktor_schutze",
+          "source_idea_token": "viktor_schutze",
+          "ledger": "navy",
+          "base_cost": 50,
+          "traits": [
+            "navy_submarine_1"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "navy_submarine_1": {
+              "key": "navy_submarine_1",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "4"
+                },
+                {
+                  "key": "navy_submarine_attack_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "navy_submarine_defence_factor",
+                  "value": "0.05"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier1_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier1_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@navy_command_factor_1"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier1_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_hugo_sperrle",
+      "source_character": "GER_hugo_sperrle",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Hugo Sperrle",
+        "english": "Hugo Sperrle"
+      },
+      "portrait": "13",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_hugo_sperrle",
+          "source_idea_token": "hugo_sperrle",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_close_air_support_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_close_air_support_2": {
+              "key": "air_close_air_support_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "1"
+                },
+                {
+                  "key": "air_cas_efficiency",
+                  "value": "0.1"
+                },
+                {
+                  "key": "ground_attack_factor",
+                  "value": "0.05"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_erhard_milch",
+      "source_character": "GER_erhard_milch",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Erhard Milch",
+        "english": "Erhard Milch"
+      },
+      "portrait": "14",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_erhard_milch",
+          "source_idea_token": "erhard_milch",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_tactical_bombing_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_tactical_bombing_2": {
+              "key": "air_tactical_bombing_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "2"
+                },
+                {
+                  "key": "air_cas_present_factor",
+                  "value": "0.15"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_robert_knauss",
+      "source_character": "GER_robert_knauss",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Robert Knauss",
+        "english": "Robert Knauss"
+      },
+      "portrait": "15",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_robert_knauss",
+          "source_idea_token": "GER_robert_knauss",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_strategic_bombing_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_strategic_bombing_2": {
+              "key": "air_strategic_bombing_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "2"
+                },
+                {
+                  "key": "air_strategic_bomber_defence_factor",
+                  "value": "0.02"
+                },
+                {
+                  "key": "air_strategic_bomber_bombing_factor",
+                  "value": "0.05"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_josef_kammhuber",
+      "source_character": "GER_josef_kammhuber",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Josef Kammhuber",
+        "english": "Josef Kammhuber"
+      },
+      "portrait": "16",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_josef_kammhuber",
+          "source_idea_token": "GER_josef_kammhuber",
+          "ledger": "air",
+          "base_cost": 100,
+          "traits": [
+            "air_bomber_interception_2"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "air_bomber_interception_2": {
+              "key": "air_bomber_interception_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "1"
+                },
+                {
+                  "key": "air_intercept_efficiency",
+                  "value": "0.10"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@air_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_alfred_becker",
+      "source_character": "GER_alfred_becker",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Alfred Becker",
+        "english": "Alfred Becker"
+      },
+      "portrait": "17",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_alfred_becker",
+          "source_idea_token": "GER_alfred_becker",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "GER_adaptive_engineer"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "GER_adaptive_engineer": {
+              "key": "GER_adaptive_engineer",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "10"
+                },
+                {
+                  "key": "random",
+                  "value": "no"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "equipment_conversion_speed",
+                  "value": "0.1"
+                },
+                {
+                  "key": "equipment_capture_factor",
+                  "value": "0.05"
+                },
+                {
+                  "key": "conversion_cost_civ_to_mil_factor",
+                  "value": "-0.15"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_walter_dornberger",
+      "source_character": "GER_walter_dornberger",
+      "source_file": "common/characters/GER.txt",
+      "names": {
+        "german": "Walter Dornberger",
+        "english": "Walter Dornberger"
+      },
+      "portrait": "18",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_walter_dornberger",
+          "source_idea_token": "GER_walter_dornberger",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "GER_head_of_the_missile_department"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "GER_head_of_the_missile_department": {
+              "key": "GER_head_of_the_missile_department",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "2"
+                },
+                {
+                  "key": "random",
+                  "value": "no"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "specialization_air_speed_factor",
+                  "value": "0.1"
+                },
+                {
+                  "key": "specialization_land_speed_factor",
+                  "value": "0.1"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_wilhelm_gebauer",
+      "source_character": "AUS_wilhelm_gebauer",
+      "source_file": "common/characters/AUS.txt",
+      "names": {
+        "german": "Wilhelm Gebauer",
+        "english": "Wilhelm Gebauer"
+      },
+      "portrait": "01",
+      "roles": [
+        {
+          "slot": "army_chief",
+          "idea_token": "WFL_staff_wilhelm_gebauer",
+          "source_idea_token": "AUS_wilhelm_gebauer",
+          "ledger": null,
+          "base_cost": 100,
+          "traits": [
+            "army_chief_morale_3"
+          ],
+          "required_dlc": [],
+          "trait_definitions": {
+            "army_chief_morale_3": {
+              "key": "army_chief_morale_3",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "out_of_supply_factor",
+                  "value": "-0.09"
+                },
+                {
+                  "key": "experience_gain_army",
+                  "value": "@chief_experience_gain_high"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier3_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier3_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_chief_factor_3"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier3_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "WFL_staff_eugen_beyer",
+      "source_character": "AUS_eugen_beyer",
+      "source_file": "common/characters/AUS.txt",
+      "names": {
+        "german": "Eugen Beyer",
+        "english": "Eugen Beyer"
+      },
+      "portrait": "02",
+      "roles": [
+        {
+          "slot": "high_command",
+          "idea_token": "WFL_staff_eugen_beyer",
+          "source_idea_token": "AUS_eugen_beyer",
+          "ledger": "army",
+          "base_cost": 100,
+          "traits": [
+            "army_commando_2"
+          ],
+          "required_dlc": [
+            "Gotterdammerung"
+          ],
+          "trait_definitions": {
+            "army_commando_2": {
+              "key": "army_commando_2",
+              "value": [
+                {
+                  "key": "sprite",
+                  "value": "5"
+                },
+                {
+                  "key": "special_forces_attack_factor",
+                  "value": "0.10"
+                },
+                {
+                  "key": "special_forces_cap_flat",
+                  "value": "6"
+                },
+                {
+                  "key": "command_cap_increase",
+                  "value": "@tier2_cp_cap_increase"
+                },
+                {
+                  "key": "command_power",
+                  "value": "@tier2_cp_cost"
+                },
+                {
+                  "key": "ai_will_do",
+                  "value": [
+                    {
+                      "key": "factor",
+                      "value": "@army_command_factor_2"
+                    },
+                    {
+                      "key": "modifier",
+                      "value": [
+                        {
+                          "key": "factor",
+                          "value": "0"
+                        },
+                        {
+                          "key": "command_power",
+                          "value": "@tier2_cp_cost"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "role_counts": {
+    "air_chief": 4,
+    "army_chief": 6,
+    "high_command": 16,
+    "navy_chief": 3,
+    "theorist": 8
+  },
+  "sources": {
+    "common/characters/AUS.txt": "de46a87db9ec25196a80c1d20175ea3fcdaeb2086dc0d17bd8be900ac26aa19f",
+    "common/characters/GER.txt": "c0c860d5fcd6deefa47ad3b5e6188b49ece86357f4729d75a2635e2bd93c399f",
+    "common/country_leader/00_traits.txt": "04381ba8c16bdb0fad18adaedf7d5dad6a8e67bc54c51d1900fcce75fd4e2923",
+    "common/defines/00_defines.lua": "727ac0522ac7e55313dd249c819f273a248c4a438c5e4ce21c867923f9dd0767",
+    "localisation/english/ideas_l_english.yml": "c61f219c01fbbd9d9b7b7220211ad0de82f1ddd1e0d73d4e058357c6918b00b8",
+    "localisation/english/nsb_characters_l_english.yml": "187eda0e8bcff2c8d9a98657a7e45418deeabca5ae28ad7d943dfe951486e9a9",
+    "localisation/english/WUW_characters_l_english.yml": "3d760b484b4df1f36924ba3f43756669b4d9a2bc4c68ae3ef34680782e14f4c3",
+    "localisation/german/ideas_l_german.yml": "546dbddaf2317d62f0282fbafd66caa40d91e9d34092df50c9c974536468cec5",
+    "localisation/german/nsb_characters_l_german.yml": "988e680545fa5853f6cb68d521942b3a01efdfb3859b23e627b723dcc4035570",
+    "localisation/german/WUW_characters_l_german.yml": "ca09c7b725fa66de63aa2a6de5273680c24ce33bccbf7ddb9821f455e6ba2f1d"
+  }
+}

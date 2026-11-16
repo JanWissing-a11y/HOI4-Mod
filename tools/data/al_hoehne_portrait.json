@@ -1,0 +1,11 @@
+{
+  "id": "WFL_PER_al_hoehne",
+  "name": "Al Höhne",
+  "source_file": "Selbstbewusster Offizier mit Zigarre.png",
+  "input_size": [1122, 1402],
+  "crop": [280, 0, 600, 808],
+  "output": "gfx/leaders/PER/Portrait_PER_al_hoehne.dds",
+  "small_output": "gfx/leaders/PER/Portrait_PER_al_hoehne_small.dds",
+  "preview": "gfx/leaders/PER/Portrait_PER_al_hoehne.png",
+  "description": "User-supplied portrait for Lukas Höhne's Iranian ruler role on 2026-11-05; original is read only."
+}

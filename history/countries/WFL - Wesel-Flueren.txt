@@ -1,6 +1,56 @@
-# Entwicklungsstand: Hauptstadt, Technologien und OOB folgen nach Vanilla-Prüfung.
-# Ohne zugewiesenes Startgebiet ist WFL noch nicht auswählbar.
+# Prototype for the verified local vanilla map, 1.19.4.1.
+# A single existing map province approximates Wesel/Flueren; see docs/KARTENPRUEFUNG.md.
+capital = 1082
+oob = "WFL_1936"
+
+set_research_slots = 2
+set_technology = {
+    infantry_weapons = 1
+    infantry_weapons1 = 1
+    tech_support = 1
+    tech_engineers = 1
+    paratroopers = 1
+    gw_artillery = 1
+    tech_trucks = 1
+    basic_train = 1
+}
+# 1936 light aircraft and light machine guns; the designer also needs engines.
+# Technology IDs match the installed vanilla GER history, not equipment IDs.
+if = {
+    limit = { has_dlc = "By Blood Alone" }
+    set_technology = {
+        iw_small_airframe = 1
+        basic_small_airframe = 1
+        aa_lmg = 1
+        engines_1 = 1
+        engines_2 = 1
+    }
+}
+if = {
+    limit = { NOT = { has_dlc = "By Blood Alone" } }
+    set_technology = {
+        early_fighter = 1
+        fighter1 = 1
+    }
+}
+set_grand_doctrine = grand_battleplan
+
+add_ideas = {
+    volunteer_only
+    civilian_economy
+    export_focus
+}
 recruit_character = WFL_buergerrat
+recruit_character = WFL_buergerpraesidium
+recruit_character = WFL_schuetzenkoenig
+recruit_character = WFL_direktorium
+recruit_character = WFL_lukas_hoehne_i
+recruit_character = WFL_ian_jannis_foerster
+recruit_character = WFL_nils_schapfeld_i
+recruit_character = WFL_lars_stuewe
+recruit_character = WFL_florian_klaus
+# Jan is the only authoritarian party leader; civic bodies remain supporting characters.
+promote_character = WFL_schuetzenkoenig
 set_politics = {
     ruling_party = neutrality
     elections_allowed = no
@@ -14,3 +64,96 @@ set_popularities = {
 set_stability = 0.55
 set_war_support = 0.10
 add_ideas = WFL_kleine_verwaltung
+add_ideas = WFL_volk_unter_schuetzenhut
+add_political_power = 50
+# A small reserve, in addition to the equipment assigned by the OOB.
+add_equipment_to_stockpile = {
+    type = infantry_equipment_1
+    amount = 200
+    producer = WFL
+}
+
+# BEGIN WFL POLITICAL ADVISORS
+# Available for normal paid hiring; no advisors are hired for free.
+recruit_character = WFL_advisor_01
+recruit_character = WFL_advisor_02
+recruit_character = WFL_advisor_03
+recruit_character = WFL_advisor_04
+recruit_character = WFL_advisor_05
+recruit_character = WFL_advisor_06
+recruit_character = WFL_advisor_07
+recruit_character = WFL_advisor_08
+recruit_character = WFL_advisor_09
+recruit_character = WFL_advisor_10
+recruit_character = WFL_advisor_11
+recruit_character = WFL_advisor_12
+recruit_character = WFL_advisor_13
+recruit_character = WFL_advisor_14
+recruit_character = WFL_advisor_15
+recruit_character = WFL_advisor_16
+recruit_character = WFL_advisor_17
+recruit_character = WFL_advisor_18
+recruit_character = WFL_advisor_19
+recruit_character = WFL_advisor_20
+recruit_character = WFL_advisor_21
+recruit_character = WFL_advisor_22
+recruit_character = WFL_advisor_23
+recruit_character = WFL_advisor_24
+recruit_character = WFL_advisor_25
+recruit_character = WFL_advisor_26
+recruit_character = WFL_advisor_27
+recruit_character = WFL_advisor_28
+recruit_character = WFL_advisor_29
+recruit_character = WFL_advisor_30
+recruit_character = WFL_advisor_31
+recruit_character = WFL_advisor_32
+recruit_character = WFL_advisor_33
+recruit_character = WFL_advisor_34
+recruit_character = WFL_advisor_35
+recruit_character = WFL_advisor_36
+recruit_character = WFL_advisor_37
+# END WFL POLITICAL ADVISORS
+
+recruit_character = WFL_manufacturer_porsche_scientist
+
+recruit_character = WFL_manufacturer_henschel_scientist
+
+# BEGIN WFL MILITARY STAFF
+# Available for normal paid hiring; no military advisors are hired for free.
+recruit_character = WFL_staff_werner_von_blomberg
+recruit_character = WFL_staff_gerd_von_rundstedt
+recruit_character = WFL_staff_werner_von_fritsch
+recruit_character = WFL_staff_erwin_rommel
+recruit_character = WFL_staff_erich_von_manstein
+recruit_character = WFL_staff_heinz_guderian
+recruit_character = WFL_staff_kurt_student
+recruit_character = WFL_staff_albert_kesselring
+recruit_character = WFL_staff_paul_von_lettow_vorbeck
+recruit_character = WFL_staff_karl_donitz
+recruit_character = WFL_staff_erich_raeder
+recruit_character = WFL_staff_alfred_saalwachter
+recruit_character = WFL_staff_gunther_lutjens
+recruit_character = WFL_staff_wolfram_von_richthofen
+recruit_character = WFL_staff_walther_wever
+recruit_character = WFL_staff_ernst_udet
+recruit_character = WFL_staff_otto_ciliax
+recruit_character = WFL_staff_ludwig_beck
+recruit_character = WFL_staff_wilhelm_keitel
+recruit_character = WFL_staff_franz_halder
+recruit_character = WFL_staff_walther_von_brauchitsch
+recruit_character = WFL_staff_rolf_carls
+recruit_character = WFL_staff_hermann_goring
+recruit_character = WFL_staff_ritter_von_greim
+recruit_character = WFL_staff_helmuth_wilberg
+recruit_character = WFL_staff_ferdinand_schorner
+recruit_character = WFL_staff_erich_bey
+recruit_character = WFL_staff_viktor_schutze
+recruit_character = WFL_staff_hugo_sperrle
+recruit_character = WFL_staff_erhard_milch
+recruit_character = WFL_staff_robert_knauss
+recruit_character = WFL_staff_josef_kammhuber
+recruit_character = WFL_staff_alfred_becker
+recruit_character = WFL_staff_walter_dornberger
+recruit_character = WFL_staff_wilhelm_gebauer
+recruit_character = WFL_staff_eugen_beyer
+# END WFL MILITARY STAFF

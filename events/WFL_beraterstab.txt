@@ -1,0 +1,47 @@
+add_namespace = wfl_staff
+
+country_event = {
+    id = wfl_staff.1
+    title = wfl_staff.1.t
+    desc = wfl_staff.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = { tag = WFL has_country_flag = WFL_staff_unlocked }
+    option = { name = wfl_staff.1.a }
+}
+
+country_event = {
+    id = wfl_staff.2
+    title = wfl_staff.2.t
+    desc = wfl_staff.2.desc
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    trigger = { tag = WFL has_country_flag = WFL_staff_replacement_pending }
+    option = {
+        name = wfl_staff.2.a
+        trigger = { WFL_staff_can_operate = yes WFL_staff_has_valid_nominee = yes }
+        ai_chance = { factor = 1 }
+        WFL_staff_replace_slot_1 = yes
+    }
+
+    option = {
+        name = wfl_staff.2.b
+        trigger = { WFL_staff_can_operate = yes WFL_staff_has_valid_nominee = yes }
+        ai_chance = { factor = 1 }
+        WFL_staff_replace_slot_2 = yes
+    }
+
+    option = {
+        name = wfl_staff.2.c
+        trigger = { WFL_staff_can_operate = yes WFL_staff_has_valid_nominee = yes }
+        ai_chance = { factor = 1 }
+        WFL_staff_replace_slot_3 = yes
+    }
+
+    option = {
+        name = wfl_staff.2.d
+        ai_chance = { factor = 0 }
+        WFL_staff_cancel_nomination = yes
+    }
+}

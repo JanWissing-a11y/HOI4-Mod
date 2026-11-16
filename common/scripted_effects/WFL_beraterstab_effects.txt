@@ -1,0 +1,2054 @@
+# Country scope only. A daily countdown, not delayed completion events, owns every task.
+# Removal resets its countdown, so reappointment cannot revive an old scheduled reward.
+
+WFL_staff_initialize = {
+    if = {
+        limit = {
+            NOT = { has_country_flag = WFL_staff_initialized }
+        }
+        set_country_flag = WFL_staff_initialized
+        set_variable = { WFL_staff_cooldown = 0 }
+        set_variable = { WFL_staff_nominee = 0 }
+        set_variable = { WFL_staff_slot_1 = 0 }
+        set_variable = { WFL_staff_slot_2 = 0 }
+        set_variable = { WFL_staff_slot_3 = 0 }
+        set_variable = { WFL_staff_dante_grossy_rank = 0 }
+        set_variable = { WFL_staff_dante_grossy_phase = 0 }
+        set_variable = { WFL_staff_dante_grossy_days = 0 }
+        set_variable = { WFL_staff_dante_grossy_duration = 0 }
+        set_variable = { WFL_staff_dante_grossy_progress = 0 }
+        set_variable = { WFL_staff_neal_foerster_rank = 0 }
+        set_variable = { WFL_staff_neal_foerster_phase = 0 }
+        set_variable = { WFL_staff_neal_foerster_days = 0 }
+        set_variable = { WFL_staff_neal_foerster_duration = 0 }
+        set_variable = { WFL_staff_neal_foerster_progress = 0 }
+        set_variable = { WFL_staff_max_heinsch_rank = 0 }
+        set_variable = { WFL_staff_max_heinsch_phase = 0 }
+        set_variable = { WFL_staff_max_heinsch_days = 0 }
+        set_variable = { WFL_staff_max_heinsch_duration = 0 }
+        set_variable = { WFL_staff_max_heinsch_progress = 0 }
+        set_variable = { WFL_staff_max_mueller_rank = 0 }
+        set_variable = { WFL_staff_max_mueller_phase = 0 }
+        set_variable = { WFL_staff_max_mueller_days = 0 }
+        set_variable = { WFL_staff_max_mueller_duration = 0 }
+        set_variable = { WFL_staff_max_mueller_progress = 0 }
+        set_variable = { WFL_staff_till_hoehne_rank = 0 }
+        set_variable = { WFL_staff_till_hoehne_phase = 0 }
+        set_variable = { WFL_staff_till_hoehne_days = 0 }
+        set_variable = { WFL_staff_till_hoehne_duration = 0 }
+        set_variable = { WFL_staff_till_hoehne_progress = 0 }
+    }
+}
+
+WFL_staff_refresh_dante_grossy = {
+    remove_ideas = WFL_staff_dante_grossy_0_idea
+    remove_ideas = WFL_staff_dante_grossy_1_idea
+    remove_ideas = WFL_staff_dante_grossy_2_idea
+    remove_ideas = WFL_staff_dante_grossy_3_idea
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 3 compare = equals }
+            }
+            add_ideas = WFL_staff_dante_grossy_3_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 2 compare = equals }
+            }
+            add_ideas = WFL_staff_dante_grossy_2_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 1 compare = equals }
+            }
+            add_ideas = WFL_staff_dante_grossy_1_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 0 compare = equals }
+            }
+            add_ideas = WFL_staff_dante_grossy_0_idea
+        }
+    }
+}
+
+WFL_staff_prepare_dante_grossy = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { var = WFL_staff_dante_grossy_rank value = 3 compare = less_than }
+        }
+        set_variable = { WFL_staff_dante_grossy_progress = 0 }
+        set_variable = { WFL_staff_dante_grossy_phase = 1 }
+        set_variable_to_random = { var = WFL_staff_dante_grossy_days min = 75 max = 121 integer = yes }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 2 compare = equals }
+            }
+            set_variable = { WFL_staff_dante_grossy_duration = 280 }
+        }
+        else = { set_variable = { WFL_staff_dante_grossy_duration = 140 } }
+    }
+    else = { set_variable = { WFL_staff_dante_grossy_phase = 0 } set_variable = { WFL_staff_dante_grossy_days = 0 } }
+}
+
+WFL_staff_add_dante_grossy = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            NOT = { has_country_flag = WFL_staff_dante_grossy_active }
+            OR = {
+                check_variable = { var = WFL_staff_slot_1 value = 1 compare = equals }
+                check_variable = { var = WFL_staff_slot_2 value = 1 compare = equals }
+                check_variable = { var = WFL_staff_slot_3 value = 1 compare = equals }
+            }
+        }
+        set_country_flag = WFL_staff_dante_grossy_active
+        WFL_staff_refresh_dante_grossy = yes
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_rank value = 3 compare = less_than }
+            }
+            WFL_staff_prepare_dante_grossy = yes
+        }
+        else = { set_variable = { WFL_staff_dante_grossy_phase = 0 } set_variable = { WFL_staff_dante_grossy_days = 0 } set_variable = { WFL_staff_dante_grossy_progress = 1 } }
+    }
+}
+
+WFL_staff_remove_dante_grossy = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_dante_grossy_active
+        }
+        clr_country_flag = WFL_staff_dante_grossy_active
+        if = {
+            limit = {
+                has_completed_focus = WFL_staff_appoint_dante_grossy
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_dante_grossy uncomplete_children = no refund_political_power = no }
+        }
+    }
+    remove_ideas = WFL_staff_dante_grossy_0_idea
+    remove_ideas = WFL_staff_dante_grossy_1_idea
+    remove_ideas = WFL_staff_dante_grossy_2_idea
+    remove_ideas = WFL_staff_dante_grossy_3_idea
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_dante_grossy_1
+        }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_1
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_dante_grossy_2
+        }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_2
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_dante_grossy_3
+        }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_3
+    }
+    set_variable = { WFL_staff_dante_grossy_phase = 0 }
+    set_variable = { WFL_staff_dante_grossy_days = 0 }
+    set_variable = { WFL_staff_dante_grossy_duration = 0 }
+    set_variable = { WFL_staff_dante_grossy_progress = 0 }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_1 value = 1 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_1 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_2 value = 1 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_2 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_3 value = 1 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_3 = 0 }
+    }
+}
+
+WFL_staff_nominate_dante_grossy = {
+    if = {
+        limit = {
+            WFL_staff_can_appoint = yes
+            NOT = { has_country_flag = WFL_staff_dante_grossy_active }
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_1 = 1 }
+            WFL_staff_add_dante_grossy = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_2 = 1 }
+            WFL_staff_add_dante_grossy = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_3 = 1 }
+            WFL_staff_add_dante_grossy = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else = {
+            set_variable = { WFL_staff_nominee = 1 }
+            set_country_flag = WFL_staff_replacement_pending
+            country_event = { id = wfl_staff.2 }
+        }
+    }
+}
+
+WFL_staff_finish_dante_grossy_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { var = WFL_staff_dante_grossy_rank value = 0 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_dante_grossy_1_rewarded }
+        }
+        set_country_flag = WFL_staff_dante_grossy_1_rewarded
+        set_variable = { WFL_staff_dante_grossy_rank = 1 }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_1
+        WFL_staff_refresh_dante_grossy = yes
+        WFL_staff_prepare_dante_grossy = yes
+    }
+}
+
+WFL_staff_finish_dante_grossy_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { var = WFL_staff_dante_grossy_rank value = 1 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_dante_grossy_2_rewarded }
+        }
+        set_country_flag = WFL_staff_dante_grossy_2_rewarded
+        set_variable = { WFL_staff_dante_grossy_rank = 2 }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_2
+        WFL_staff_refresh_dante_grossy = yes
+        WFL_staff_prepare_dante_grossy = yes
+    }
+}
+
+WFL_staff_finish_dante_grossy_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+            check_variable = { var = WFL_staff_dante_grossy_rank value = 2 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_dante_grossy_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_dante_grossy_3_rewarded }
+        }
+        set_country_flag = WFL_staff_dante_grossy_3_rewarded
+        set_variable = { WFL_staff_dante_grossy_rank = 3 }
+        deactivate_shine_on_focus = WFL_staff_dante_grossy_3
+        WFL_staff_refresh_dante_grossy = yes
+        set_variable = { WFL_staff_dante_grossy_phase = 0 }
+        set_variable = { WFL_staff_dante_grossy_days = 0 }
+        set_variable = { WFL_staff_dante_grossy_progress = 1 }
+    }
+}
+
+WFL_staff_tick_dante_grossy = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_dante_grossy_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_phase value = 1 compare = equals }
+            }
+            add_to_variable = { WFL_staff_dante_grossy_days = -1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_dante_grossy_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 0 compare = equals }
+                    }
+                    set_variable = { WFL_staff_dante_grossy_phase = 2 }
+                    set_variable = { WFL_staff_dante_grossy_days = WFL_staff_dante_grossy_duration }
+                    set_variable = { WFL_staff_dante_grossy_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_dante_grossy_1
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 1 compare = equals }
+                    }
+                    set_variable = { WFL_staff_dante_grossy_phase = 2 }
+                    set_variable = { WFL_staff_dante_grossy_days = WFL_staff_dante_grossy_duration }
+                    set_variable = { WFL_staff_dante_grossy_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_dante_grossy_2
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 2 compare = equals }
+                    }
+                    set_variable = { WFL_staff_dante_grossy_phase = 2 }
+                    set_variable = { WFL_staff_dante_grossy_days = WFL_staff_dante_grossy_duration }
+                    set_variable = { WFL_staff_dante_grossy_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_dante_grossy_3
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_dante_grossy_phase value = 2 compare = equals }
+            }
+            add_to_variable = { WFL_staff_dante_grossy_days = -1 }
+            set_variable = { WFL_staff_dante_grossy_progress = WFL_staff_dante_grossy_duration }
+            subtract_from_variable = { WFL_staff_dante_grossy_progress = WFL_staff_dante_grossy_days }
+            divide_variable = { WFL_staff_dante_grossy_progress = WFL_staff_dante_grossy_duration }
+            clamp_variable = { var = WFL_staff_dante_grossy_progress min = 0 max = 1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_dante_grossy_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 0 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_dante_grossy_1 use_side_message = yes originator_name = WFL_staff_dante_grossy_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_dante_grossy_1 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 1 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_dante_grossy_2 use_side_message = yes originator_name = WFL_staff_dante_grossy_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_dante_grossy_2 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_dante_grossy_rank value = 2 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_dante_grossy_3 use_side_message = yes originator_name = WFL_staff_dante_grossy_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_dante_grossy_3 = yes
+                }
+            }
+        }
+    }
+}
+
+WFL_staff_refresh_neal_foerster = {
+    remove_ideas = WFL_staff_neal_foerster_0_idea
+    remove_ideas = WFL_staff_neal_foerster_1_idea
+    remove_ideas = WFL_staff_neal_foerster_2_idea
+    remove_ideas = WFL_staff_neal_foerster_3_idea
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 3 compare = equals }
+            }
+            add_ideas = WFL_staff_neal_foerster_3_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 2 compare = equals }
+            }
+            add_ideas = WFL_staff_neal_foerster_2_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 1 compare = equals }
+            }
+            add_ideas = WFL_staff_neal_foerster_1_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 0 compare = equals }
+            }
+            add_ideas = WFL_staff_neal_foerster_0_idea
+        }
+    }
+}
+
+WFL_staff_prepare_neal_foerster = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { var = WFL_staff_neal_foerster_rank value = 3 compare = less_than }
+        }
+        set_variable = { WFL_staff_neal_foerster_progress = 0 }
+        set_variable = { WFL_staff_neal_foerster_phase = 1 }
+        set_variable_to_random = { var = WFL_staff_neal_foerster_days min = 75 max = 121 integer = yes }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 2 compare = equals }
+            }
+            set_variable = { WFL_staff_neal_foerster_duration = 280 }
+        }
+        else = { set_variable = { WFL_staff_neal_foerster_duration = 140 } }
+    }
+    else = { set_variable = { WFL_staff_neal_foerster_phase = 0 } set_variable = { WFL_staff_neal_foerster_days = 0 } }
+}
+
+WFL_staff_add_neal_foerster = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            NOT = { has_country_flag = WFL_staff_neal_foerster_active }
+            OR = {
+                check_variable = { var = WFL_staff_slot_1 value = 2 compare = equals }
+                check_variable = { var = WFL_staff_slot_2 value = 2 compare = equals }
+                check_variable = { var = WFL_staff_slot_3 value = 2 compare = equals }
+            }
+        }
+        set_country_flag = WFL_staff_neal_foerster_active
+        WFL_staff_refresh_neal_foerster = yes
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_rank value = 3 compare = less_than }
+            }
+            WFL_staff_prepare_neal_foerster = yes
+        }
+        else = { set_variable = { WFL_staff_neal_foerster_phase = 0 } set_variable = { WFL_staff_neal_foerster_days = 0 } set_variable = { WFL_staff_neal_foerster_progress = 1 } }
+    }
+}
+
+WFL_staff_remove_neal_foerster = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_neal_foerster_active
+        }
+        clr_country_flag = WFL_staff_neal_foerster_active
+        if = {
+            limit = {
+                has_completed_focus = WFL_staff_appoint_neal_foerster
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_neal_foerster uncomplete_children = no refund_political_power = no }
+        }
+    }
+    remove_ideas = WFL_staff_neal_foerster_0_idea
+    remove_ideas = WFL_staff_neal_foerster_1_idea
+    remove_ideas = WFL_staff_neal_foerster_2_idea
+    remove_ideas = WFL_staff_neal_foerster_3_idea
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_neal_foerster_1
+        }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_1
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_neal_foerster_2
+        }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_2
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_neal_foerster_3
+        }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_3
+    }
+    set_variable = { WFL_staff_neal_foerster_phase = 0 }
+    set_variable = { WFL_staff_neal_foerster_days = 0 }
+    set_variable = { WFL_staff_neal_foerster_duration = 0 }
+    set_variable = { WFL_staff_neal_foerster_progress = 0 }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_1 value = 2 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_1 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_2 value = 2 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_2 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_3 value = 2 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_3 = 0 }
+    }
+}
+
+WFL_staff_nominate_neal_foerster = {
+    if = {
+        limit = {
+            WFL_staff_can_appoint = yes
+            NOT = { has_country_flag = WFL_staff_neal_foerster_active }
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_1 = 2 }
+            WFL_staff_add_neal_foerster = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_2 = 2 }
+            WFL_staff_add_neal_foerster = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_3 = 2 }
+            WFL_staff_add_neal_foerster = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else = {
+            set_variable = { WFL_staff_nominee = 2 }
+            set_country_flag = WFL_staff_replacement_pending
+            country_event = { id = wfl_staff.2 }
+        }
+    }
+}
+
+WFL_staff_finish_neal_foerster_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { var = WFL_staff_neal_foerster_rank value = 0 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_neal_foerster_1_rewarded }
+        }
+        set_country_flag = WFL_staff_neal_foerster_1_rewarded
+        set_variable = { WFL_staff_neal_foerster_rank = 1 }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_1
+        WFL_staff_refresh_neal_foerster = yes
+        WFL_staff_prepare_neal_foerster = yes
+    }
+}
+
+WFL_staff_finish_neal_foerster_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { var = WFL_staff_neal_foerster_rank value = 1 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_neal_foerster_2_rewarded }
+        }
+        set_country_flag = WFL_staff_neal_foerster_2_rewarded
+        set_variable = { WFL_staff_neal_foerster_rank = 2 }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_2
+        WFL_staff_refresh_neal_foerster = yes
+        WFL_staff_prepare_neal_foerster = yes
+    }
+}
+
+WFL_staff_finish_neal_foerster_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+            check_variable = { var = WFL_staff_neal_foerster_rank value = 2 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_neal_foerster_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_neal_foerster_3_rewarded }
+        }
+        set_country_flag = WFL_staff_neal_foerster_3_rewarded
+        set_variable = { WFL_staff_neal_foerster_rank = 3 }
+        deactivate_shine_on_focus = WFL_staff_neal_foerster_3
+        WFL_staff_refresh_neal_foerster = yes
+        set_variable = { WFL_staff_neal_foerster_phase = 0 }
+        set_variable = { WFL_staff_neal_foerster_days = 0 }
+        set_variable = { WFL_staff_neal_foerster_progress = 1 }
+    }
+}
+
+WFL_staff_tick_neal_foerster = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_neal_foerster_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_phase value = 1 compare = equals }
+            }
+            add_to_variable = { WFL_staff_neal_foerster_days = -1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_neal_foerster_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 0 compare = equals }
+                    }
+                    set_variable = { WFL_staff_neal_foerster_phase = 2 }
+                    set_variable = { WFL_staff_neal_foerster_days = WFL_staff_neal_foerster_duration }
+                    set_variable = { WFL_staff_neal_foerster_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_neal_foerster_1
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 1 compare = equals }
+                    }
+                    set_variable = { WFL_staff_neal_foerster_phase = 2 }
+                    set_variable = { WFL_staff_neal_foerster_days = WFL_staff_neal_foerster_duration }
+                    set_variable = { WFL_staff_neal_foerster_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_neal_foerster_2
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 2 compare = equals }
+                    }
+                    set_variable = { WFL_staff_neal_foerster_phase = 2 }
+                    set_variable = { WFL_staff_neal_foerster_days = WFL_staff_neal_foerster_duration }
+                    set_variable = { WFL_staff_neal_foerster_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_neal_foerster_3
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_neal_foerster_phase value = 2 compare = equals }
+            }
+            add_to_variable = { WFL_staff_neal_foerster_days = -1 }
+            set_variable = { WFL_staff_neal_foerster_progress = WFL_staff_neal_foerster_duration }
+            subtract_from_variable = { WFL_staff_neal_foerster_progress = WFL_staff_neal_foerster_days }
+            divide_variable = { WFL_staff_neal_foerster_progress = WFL_staff_neal_foerster_duration }
+            clamp_variable = { var = WFL_staff_neal_foerster_progress min = 0 max = 1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_neal_foerster_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 0 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_neal_foerster_1 use_side_message = yes originator_name = WFL_staff_neal_foerster_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_neal_foerster_1 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 1 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_neal_foerster_2 use_side_message = yes originator_name = WFL_staff_neal_foerster_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_neal_foerster_2 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_neal_foerster_rank value = 2 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_neal_foerster_3 use_side_message = yes originator_name = WFL_staff_neal_foerster_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_neal_foerster_3 = yes
+                }
+            }
+        }
+    }
+}
+
+WFL_staff_refresh_max_heinsch = {
+    remove_ideas = WFL_staff_max_heinsch_0_idea
+    remove_ideas = WFL_staff_max_heinsch_1_idea
+    remove_ideas = WFL_staff_max_heinsch_2_idea
+    remove_ideas = WFL_staff_max_heinsch_3_idea
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 3 compare = equals }
+            }
+            add_ideas = WFL_staff_max_heinsch_3_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 2 compare = equals }
+            }
+            add_ideas = WFL_staff_max_heinsch_2_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 1 compare = equals }
+            }
+            add_ideas = WFL_staff_max_heinsch_1_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 0 compare = equals }
+            }
+            add_ideas = WFL_staff_max_heinsch_0_idea
+        }
+    }
+}
+
+WFL_staff_prepare_max_heinsch = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { var = WFL_staff_max_heinsch_rank value = 3 compare = less_than }
+        }
+        set_variable = { WFL_staff_max_heinsch_progress = 0 }
+        set_variable = { WFL_staff_max_heinsch_phase = 1 }
+        set_variable_to_random = { var = WFL_staff_max_heinsch_days min = 75 max = 121 integer = yes }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 2 compare = equals }
+            }
+            set_variable = { WFL_staff_max_heinsch_duration = 280 }
+        }
+        else = { set_variable = { WFL_staff_max_heinsch_duration = 140 } }
+    }
+    else = { set_variable = { WFL_staff_max_heinsch_phase = 0 } set_variable = { WFL_staff_max_heinsch_days = 0 } }
+}
+
+WFL_staff_add_max_heinsch = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            NOT = { has_country_flag = WFL_staff_max_heinsch_active }
+            OR = {
+                check_variable = { var = WFL_staff_slot_1 value = 3 compare = equals }
+                check_variable = { var = WFL_staff_slot_2 value = 3 compare = equals }
+                check_variable = { var = WFL_staff_slot_3 value = 3 compare = equals }
+            }
+        }
+        set_country_flag = WFL_staff_max_heinsch_active
+        WFL_staff_refresh_max_heinsch = yes
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_rank value = 3 compare = less_than }
+            }
+            WFL_staff_prepare_max_heinsch = yes
+        }
+        else = { set_variable = { WFL_staff_max_heinsch_phase = 0 } set_variable = { WFL_staff_max_heinsch_days = 0 } set_variable = { WFL_staff_max_heinsch_progress = 1 } }
+    }
+}
+
+WFL_staff_remove_max_heinsch = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_max_heinsch_active
+        }
+        clr_country_flag = WFL_staff_max_heinsch_active
+        if = {
+            limit = {
+                has_completed_focus = WFL_staff_appoint_max_heinsch
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_heinsch uncomplete_children = no refund_political_power = no }
+        }
+    }
+    remove_ideas = WFL_staff_max_heinsch_0_idea
+    remove_ideas = WFL_staff_max_heinsch_1_idea
+    remove_ideas = WFL_staff_max_heinsch_2_idea
+    remove_ideas = WFL_staff_max_heinsch_3_idea
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_heinsch_1
+        }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_1
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_heinsch_2
+        }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_2
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_heinsch_3
+        }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_3
+    }
+    set_variable = { WFL_staff_max_heinsch_phase = 0 }
+    set_variable = { WFL_staff_max_heinsch_days = 0 }
+    set_variable = { WFL_staff_max_heinsch_duration = 0 }
+    set_variable = { WFL_staff_max_heinsch_progress = 0 }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_1 value = 3 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_1 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_2 value = 3 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_2 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_3 value = 3 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_3 = 0 }
+    }
+}
+
+WFL_staff_nominate_max_heinsch = {
+    if = {
+        limit = {
+            WFL_staff_can_appoint = yes
+            NOT = { has_country_flag = WFL_staff_max_heinsch_active }
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_1 = 3 }
+            WFL_staff_add_max_heinsch = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_2 = 3 }
+            WFL_staff_add_max_heinsch = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_3 = 3 }
+            WFL_staff_add_max_heinsch = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else = {
+            set_variable = { WFL_staff_nominee = 3 }
+            set_country_flag = WFL_staff_replacement_pending
+            country_event = { id = wfl_staff.2 }
+        }
+    }
+}
+
+WFL_staff_finish_max_heinsch_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { var = WFL_staff_max_heinsch_rank value = 0 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_heinsch_1_rewarded }
+        }
+        set_country_flag = WFL_staff_max_heinsch_1_rewarded
+        set_variable = { WFL_staff_max_heinsch_rank = 1 }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_1
+        WFL_staff_refresh_max_heinsch = yes
+        WFL_staff_prepare_max_heinsch = yes
+    }
+}
+
+WFL_staff_finish_max_heinsch_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { var = WFL_staff_max_heinsch_rank value = 1 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_heinsch_2_rewarded }
+        }
+        set_country_flag = WFL_staff_max_heinsch_2_rewarded
+        set_variable = { WFL_staff_max_heinsch_rank = 2 }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_2
+        WFL_staff_refresh_max_heinsch = yes
+        WFL_staff_prepare_max_heinsch = yes
+    }
+}
+
+WFL_staff_finish_max_heinsch_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+            check_variable = { var = WFL_staff_max_heinsch_rank value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_heinsch_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_heinsch_3_rewarded }
+        }
+        set_country_flag = WFL_staff_max_heinsch_3_rewarded
+        set_variable = { WFL_staff_max_heinsch_rank = 3 }
+        deactivate_shine_on_focus = WFL_staff_max_heinsch_3
+        WFL_staff_refresh_max_heinsch = yes
+        set_variable = { WFL_staff_max_heinsch_phase = 0 }
+        set_variable = { WFL_staff_max_heinsch_days = 0 }
+        set_variable = { WFL_staff_max_heinsch_progress = 1 }
+    }
+}
+
+WFL_staff_tick_max_heinsch = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_heinsch_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_phase value = 1 compare = equals }
+            }
+            add_to_variable = { WFL_staff_max_heinsch_days = -1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_max_heinsch_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 0 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_heinsch_phase = 2 }
+                    set_variable = { WFL_staff_max_heinsch_days = WFL_staff_max_heinsch_duration }
+                    set_variable = { WFL_staff_max_heinsch_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_heinsch_1
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 1 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_heinsch_phase = 2 }
+                    set_variable = { WFL_staff_max_heinsch_days = WFL_staff_max_heinsch_duration }
+                    set_variable = { WFL_staff_max_heinsch_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_heinsch_2
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 2 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_heinsch_phase = 2 }
+                    set_variable = { WFL_staff_max_heinsch_days = WFL_staff_max_heinsch_duration }
+                    set_variable = { WFL_staff_max_heinsch_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_heinsch_3
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_heinsch_phase value = 2 compare = equals }
+            }
+            add_to_variable = { WFL_staff_max_heinsch_days = -1 }
+            set_variable = { WFL_staff_max_heinsch_progress = WFL_staff_max_heinsch_duration }
+            subtract_from_variable = { WFL_staff_max_heinsch_progress = WFL_staff_max_heinsch_days }
+            divide_variable = { WFL_staff_max_heinsch_progress = WFL_staff_max_heinsch_duration }
+            clamp_variable = { var = WFL_staff_max_heinsch_progress min = 0 max = 1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_max_heinsch_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 0 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_heinsch_1 use_side_message = yes originator_name = WFL_staff_max_heinsch_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_heinsch_1 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 1 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_heinsch_2 use_side_message = yes originator_name = WFL_staff_max_heinsch_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_heinsch_2 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_heinsch_rank value = 2 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_heinsch_3 use_side_message = yes originator_name = WFL_staff_max_heinsch_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_heinsch_3 = yes
+                }
+            }
+        }
+    }
+}
+
+WFL_staff_refresh_max_mueller = {
+    remove_ideas = WFL_staff_max_mueller_0_idea
+    remove_ideas = WFL_staff_max_mueller_1_idea
+    remove_ideas = WFL_staff_max_mueller_2_idea
+    remove_ideas = WFL_staff_max_mueller_3_idea
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 3 compare = equals }
+            }
+            add_ideas = WFL_staff_max_mueller_3_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 2 compare = equals }
+            }
+            add_ideas = WFL_staff_max_mueller_2_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 1 compare = equals }
+            }
+            add_ideas = WFL_staff_max_mueller_1_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 0 compare = equals }
+            }
+            add_ideas = WFL_staff_max_mueller_0_idea
+        }
+    }
+}
+
+WFL_staff_prepare_max_mueller = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { var = WFL_staff_max_mueller_rank value = 3 compare = less_than }
+        }
+        set_variable = { WFL_staff_max_mueller_progress = 0 }
+        set_variable = { WFL_staff_max_mueller_phase = 1 }
+        set_variable_to_random = { var = WFL_staff_max_mueller_days min = 75 max = 121 integer = yes }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 2 compare = equals }
+            }
+            set_variable = { WFL_staff_max_mueller_duration = 280 }
+        }
+        else = { set_variable = { WFL_staff_max_mueller_duration = 140 } }
+    }
+    else = { set_variable = { WFL_staff_max_mueller_phase = 0 } set_variable = { WFL_staff_max_mueller_days = 0 } }
+}
+
+WFL_staff_add_max_mueller = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            NOT = { has_country_flag = WFL_staff_max_mueller_active }
+            OR = {
+                check_variable = { var = WFL_staff_slot_1 value = 4 compare = equals }
+                check_variable = { var = WFL_staff_slot_2 value = 4 compare = equals }
+                check_variable = { var = WFL_staff_slot_3 value = 4 compare = equals }
+            }
+        }
+        set_country_flag = WFL_staff_max_mueller_active
+        WFL_staff_refresh_max_mueller = yes
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_rank value = 3 compare = less_than }
+            }
+            WFL_staff_prepare_max_mueller = yes
+        }
+        else = { set_variable = { WFL_staff_max_mueller_phase = 0 } set_variable = { WFL_staff_max_mueller_days = 0 } set_variable = { WFL_staff_max_mueller_progress = 1 } }
+    }
+}
+
+WFL_staff_remove_max_mueller = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_max_mueller_active
+        }
+        clr_country_flag = WFL_staff_max_mueller_active
+        if = {
+            limit = {
+                has_completed_focus = WFL_staff_appoint_max_mueller
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_mueller uncomplete_children = no refund_political_power = no }
+        }
+    }
+    remove_ideas = WFL_staff_max_mueller_0_idea
+    remove_ideas = WFL_staff_max_mueller_1_idea
+    remove_ideas = WFL_staff_max_mueller_2_idea
+    remove_ideas = WFL_staff_max_mueller_3_idea
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_mueller_1
+        }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_1
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_mueller_2
+        }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_2
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_max_mueller_3
+        }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_3
+    }
+    set_variable = { WFL_staff_max_mueller_phase = 0 }
+    set_variable = { WFL_staff_max_mueller_days = 0 }
+    set_variable = { WFL_staff_max_mueller_duration = 0 }
+    set_variable = { WFL_staff_max_mueller_progress = 0 }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_1 value = 4 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_1 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_2 value = 4 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_2 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_3 value = 4 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_3 = 0 }
+    }
+}
+
+WFL_staff_nominate_max_mueller = {
+    if = {
+        limit = {
+            WFL_staff_can_appoint = yes
+            NOT = { has_country_flag = WFL_staff_max_mueller_active }
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_1 = 4 }
+            WFL_staff_add_max_mueller = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_2 = 4 }
+            WFL_staff_add_max_mueller = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_3 = 4 }
+            WFL_staff_add_max_mueller = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else = {
+            set_variable = { WFL_staff_nominee = 4 }
+            set_country_flag = WFL_staff_replacement_pending
+            country_event = { id = wfl_staff.2 }
+        }
+    }
+}
+
+WFL_staff_finish_max_mueller_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { var = WFL_staff_max_mueller_rank value = 0 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_mueller_1_rewarded }
+        }
+        set_country_flag = WFL_staff_max_mueller_1_rewarded
+        set_variable = { WFL_staff_max_mueller_rank = 1 }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_1
+        WFL_staff_refresh_max_mueller = yes
+        WFL_staff_prepare_max_mueller = yes
+    }
+}
+
+WFL_staff_finish_max_mueller_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { var = WFL_staff_max_mueller_rank value = 1 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_mueller_2_rewarded }
+        }
+        set_country_flag = WFL_staff_max_mueller_2_rewarded
+        set_variable = { WFL_staff_max_mueller_rank = 2 }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_2
+        WFL_staff_refresh_max_mueller = yes
+        WFL_staff_prepare_max_mueller = yes
+    }
+}
+
+WFL_staff_finish_max_mueller_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+            check_variable = { var = WFL_staff_max_mueller_rank value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_max_mueller_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_max_mueller_3_rewarded }
+        }
+        set_country_flag = WFL_staff_max_mueller_3_rewarded
+        set_variable = { WFL_staff_max_mueller_rank = 3 }
+        deactivate_shine_on_focus = WFL_staff_max_mueller_3
+        WFL_staff_refresh_max_mueller = yes
+        set_variable = { WFL_staff_max_mueller_phase = 0 }
+        set_variable = { WFL_staff_max_mueller_days = 0 }
+        set_variable = { WFL_staff_max_mueller_progress = 1 }
+    }
+}
+
+WFL_staff_tick_max_mueller = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_max_mueller_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_phase value = 1 compare = equals }
+            }
+            add_to_variable = { WFL_staff_max_mueller_days = -1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_max_mueller_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 0 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_mueller_phase = 2 }
+                    set_variable = { WFL_staff_max_mueller_days = WFL_staff_max_mueller_duration }
+                    set_variable = { WFL_staff_max_mueller_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_mueller_1
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 1 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_mueller_phase = 2 }
+                    set_variable = { WFL_staff_max_mueller_days = WFL_staff_max_mueller_duration }
+                    set_variable = { WFL_staff_max_mueller_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_mueller_2
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 2 compare = equals }
+                    }
+                    set_variable = { WFL_staff_max_mueller_phase = 2 }
+                    set_variable = { WFL_staff_max_mueller_days = WFL_staff_max_mueller_duration }
+                    set_variable = { WFL_staff_max_mueller_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_max_mueller_3
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_max_mueller_phase value = 2 compare = equals }
+            }
+            add_to_variable = { WFL_staff_max_mueller_days = -1 }
+            set_variable = { WFL_staff_max_mueller_progress = WFL_staff_max_mueller_duration }
+            subtract_from_variable = { WFL_staff_max_mueller_progress = WFL_staff_max_mueller_days }
+            divide_variable = { WFL_staff_max_mueller_progress = WFL_staff_max_mueller_duration }
+            clamp_variable = { var = WFL_staff_max_mueller_progress min = 0 max = 1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_max_mueller_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 0 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_mueller_1 use_side_message = yes originator_name = WFL_staff_max_mueller_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_mueller_1 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 1 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_mueller_2 use_side_message = yes originator_name = WFL_staff_max_mueller_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_mueller_2 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_max_mueller_rank value = 2 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_max_mueller_3 use_side_message = yes originator_name = WFL_staff_max_mueller_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_max_mueller_3 = yes
+                }
+            }
+        }
+    }
+}
+
+WFL_staff_refresh_till_hoehne = {
+    remove_ideas = WFL_staff_till_hoehne_0_idea
+    remove_ideas = WFL_staff_till_hoehne_1_idea
+    remove_ideas = WFL_staff_till_hoehne_2_idea
+    remove_ideas = WFL_staff_till_hoehne_3_idea
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 3 compare = equals }
+            }
+            add_ideas = WFL_staff_till_hoehne_3_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 2 compare = equals }
+            }
+            add_ideas = WFL_staff_till_hoehne_2_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 1 compare = equals }
+            }
+            add_ideas = WFL_staff_till_hoehne_1_idea
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 0 compare = equals }
+            }
+            add_ideas = WFL_staff_till_hoehne_0_idea
+        }
+    }
+}
+
+WFL_staff_prepare_till_hoehne = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { var = WFL_staff_till_hoehne_rank value = 3 compare = less_than }
+        }
+        set_variable = { WFL_staff_till_hoehne_progress = 0 }
+        set_variable = { WFL_staff_till_hoehne_phase = 1 }
+        set_variable_to_random = { var = WFL_staff_till_hoehne_days min = 75 max = 121 integer = yes }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 2 compare = equals }
+            }
+            set_variable = { WFL_staff_till_hoehne_duration = 280 }
+        }
+        else = { set_variable = { WFL_staff_till_hoehne_duration = 140 } }
+    }
+    else = { set_variable = { WFL_staff_till_hoehne_phase = 0 } set_variable = { WFL_staff_till_hoehne_days = 0 } }
+}
+
+WFL_staff_add_till_hoehne = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            NOT = { has_country_flag = WFL_staff_till_hoehne_active }
+            OR = {
+                check_variable = { var = WFL_staff_slot_1 value = 5 compare = equals }
+                check_variable = { var = WFL_staff_slot_2 value = 5 compare = equals }
+                check_variable = { var = WFL_staff_slot_3 value = 5 compare = equals }
+            }
+        }
+        set_country_flag = WFL_staff_till_hoehne_active
+        WFL_staff_refresh_till_hoehne = yes
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_rank value = 3 compare = less_than }
+            }
+            WFL_staff_prepare_till_hoehne = yes
+        }
+        else = { set_variable = { WFL_staff_till_hoehne_phase = 0 } set_variable = { WFL_staff_till_hoehne_days = 0 } set_variable = { WFL_staff_till_hoehne_progress = 1 } }
+    }
+}
+
+WFL_staff_remove_till_hoehne = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_till_hoehne_active
+        }
+        clr_country_flag = WFL_staff_till_hoehne_active
+        if = {
+            limit = {
+                has_completed_focus = WFL_staff_appoint_till_hoehne
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_till_hoehne uncomplete_children = no refund_political_power = no }
+        }
+    }
+    remove_ideas = WFL_staff_till_hoehne_0_idea
+    remove_ideas = WFL_staff_till_hoehne_1_idea
+    remove_ideas = WFL_staff_till_hoehne_2_idea
+    remove_ideas = WFL_staff_till_hoehne_3_idea
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_till_hoehne_1
+        }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_1
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_till_hoehne_2
+        }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_2
+    }
+    if = {
+        limit = {
+            has_shine_effect_on_focus = WFL_staff_till_hoehne_3
+        }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_3
+    }
+    set_variable = { WFL_staff_till_hoehne_phase = 0 }
+    set_variable = { WFL_staff_till_hoehne_days = 0 }
+    set_variable = { WFL_staff_till_hoehne_duration = 0 }
+    set_variable = { WFL_staff_till_hoehne_progress = 0 }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_1 value = 5 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_1 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_2 value = 5 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_2 = 0 }
+    }
+    if = {
+        limit = {
+            check_variable = { var = WFL_staff_slot_3 value = 5 compare = equals }
+        }
+        set_variable = { WFL_staff_slot_3 = 0 }
+    }
+}
+
+WFL_staff_nominate_till_hoehne = {
+    if = {
+        limit = {
+            WFL_staff_can_appoint = yes
+            NOT = { has_country_flag = WFL_staff_till_hoehne_active }
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_1 = 5 }
+            WFL_staff_add_till_hoehne = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_2 = 5 }
+            WFL_staff_add_till_hoehne = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 0 compare = equals }
+            }
+            set_variable = { WFL_staff_slot_3 = 5 }
+            WFL_staff_add_till_hoehne = yes
+            set_variable = { WFL_staff_cooldown = 175 }
+        }
+
+        else = {
+            set_variable = { WFL_staff_nominee = 5 }
+            set_country_flag = WFL_staff_replacement_pending
+            country_event = { id = wfl_staff.2 }
+        }
+    }
+}
+
+WFL_staff_finish_till_hoehne_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { var = WFL_staff_till_hoehne_rank value = 0 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_till_hoehne_1_rewarded }
+        }
+        set_country_flag = WFL_staff_till_hoehne_1_rewarded
+        set_variable = { WFL_staff_till_hoehne_rank = 1 }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_1
+        WFL_staff_refresh_till_hoehne = yes
+        WFL_staff_prepare_till_hoehne = yes
+    }
+}
+
+WFL_staff_finish_till_hoehne_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { var = WFL_staff_till_hoehne_rank value = 1 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_till_hoehne_2_rewarded }
+        }
+        set_country_flag = WFL_staff_till_hoehne_2_rewarded
+        set_variable = { WFL_staff_till_hoehne_rank = 2 }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_2
+        WFL_staff_refresh_till_hoehne = yes
+        WFL_staff_prepare_till_hoehne = yes
+    }
+}
+
+WFL_staff_finish_till_hoehne_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+            check_variable = { var = WFL_staff_till_hoehne_rank value = 2 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_phase value = 2 compare = equals }
+            check_variable = { var = WFL_staff_till_hoehne_days value = 0 compare = less_than_or_equals }
+            NOT = { has_country_flag = WFL_staff_till_hoehne_3_rewarded }
+        }
+        set_country_flag = WFL_staff_till_hoehne_3_rewarded
+        set_variable = { WFL_staff_till_hoehne_rank = 3 }
+        deactivate_shine_on_focus = WFL_staff_till_hoehne_3
+        WFL_staff_refresh_till_hoehne = yes
+        set_variable = { WFL_staff_till_hoehne_phase = 0 }
+        set_variable = { WFL_staff_till_hoehne_days = 0 }
+        set_variable = { WFL_staff_till_hoehne_progress = 1 }
+    }
+}
+
+WFL_staff_tick_till_hoehne = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            has_country_flag = WFL_staff_till_hoehne_active
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_phase value = 1 compare = equals }
+            }
+            add_to_variable = { WFL_staff_till_hoehne_days = -1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_till_hoehne_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 0 compare = equals }
+                    }
+                    set_variable = { WFL_staff_till_hoehne_phase = 2 }
+                    set_variable = { WFL_staff_till_hoehne_days = WFL_staff_till_hoehne_duration }
+                    set_variable = { WFL_staff_till_hoehne_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_till_hoehne_1
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 1 compare = equals }
+                    }
+                    set_variable = { WFL_staff_till_hoehne_phase = 2 }
+                    set_variable = { WFL_staff_till_hoehne_days = WFL_staff_till_hoehne_duration }
+                    set_variable = { WFL_staff_till_hoehne_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_till_hoehne_2
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 2 compare = equals }
+                    }
+                    set_variable = { WFL_staff_till_hoehne_phase = 2 }
+                    set_variable = { WFL_staff_till_hoehne_days = WFL_staff_till_hoehne_duration }
+                    set_variable = { WFL_staff_till_hoehne_progress = 0 }
+                    activate_shine_on_focus = WFL_staff_till_hoehne_3
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_till_hoehne_phase value = 2 compare = equals }
+            }
+            add_to_variable = { WFL_staff_till_hoehne_days = -1 }
+            set_variable = { WFL_staff_till_hoehne_progress = WFL_staff_till_hoehne_duration }
+            subtract_from_variable = { WFL_staff_till_hoehne_progress = WFL_staff_till_hoehne_days }
+            divide_variable = { WFL_staff_till_hoehne_progress = WFL_staff_till_hoehne_duration }
+            clamp_variable = { var = WFL_staff_till_hoehne_progress min = 0 max = 1 }
+            if = {
+                limit = {
+                    check_variable = { var = WFL_staff_till_hoehne_days value = 0 compare = less_than_or_equals }
+                }
+                if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 0 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_till_hoehne_1 use_side_message = yes originator_name = WFL_staff_till_hoehne_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_till_hoehne_1 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 1 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_till_hoehne_2 use_side_message = yes originator_name = WFL_staff_till_hoehne_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_till_hoehne_2 = yes
+                }
+
+                else_if = {
+                    limit = {
+                        check_variable = { var = WFL_staff_till_hoehne_rank value = 2 compare = equals }
+                    }
+                    complete_national_focus = { focus = WFL_staff_till_hoehne_3 use_side_message = yes originator_name = WFL_staff_till_hoehne_name }
+                    # Idempotent fallback if an external script already marked this focus complete.
+                    WFL_staff_finish_till_hoehne_3 = yes
+                }
+            }
+        }
+    }
+}
+
+WFL_staff_cleanup = {
+    # Permanently invalidate an already open dialog on loss of the mandate.
+    # Keep its pending lock until the player dismisses that same dialog, so a
+    # stale option cannot act on a newer nominee after Jan returns.
+    if = {
+        limit = { has_country_flag = WFL_staff_replacement_pending }
+        if = {
+            limit = { check_variable = { var = WFL_staff_nominee value = 1 compare = equals } }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_dante_grossy uncomplete_children = no refund_political_power = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = WFL_staff_nominee value = 2 compare = equals } }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_neal_foerster uncomplete_children = no refund_political_power = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = WFL_staff_nominee value = 3 compare = equals } }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_heinsch uncomplete_children = no refund_political_power = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = WFL_staff_nominee value = 4 compare = equals } }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_mueller uncomplete_children = no refund_political_power = no }
+        }
+        else_if = {
+            limit = { check_variable = { var = WFL_staff_nominee value = 5 compare = equals } }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_till_hoehne uncomplete_children = no refund_political_power = no }
+        }
+        set_variable = { WFL_staff_nominee = 0 }
+    }
+    WFL_staff_remove_dante_grossy = yes
+    WFL_staff_remove_neal_foerster = yes
+    WFL_staff_remove_max_heinsch = yes
+    WFL_staff_remove_max_mueller = yes
+    WFL_staff_remove_till_hoehne = yes
+    set_variable = { WFL_staff_cooldown = 0 }
+    # Keep an outstanding nomination locked until its own dialog is accepted/aborted.
+    # This prevents an old open dialog from acting on a different, newer nomination.
+}
+
+WFL_staff_cancel_nomination = {
+    if = {
+        limit = {
+            has_country_flag = WFL_staff_replacement_pending
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 1 compare = equals }
+                NOT = { has_country_flag = WFL_staff_dante_grossy_active }
+                has_completed_focus = WFL_staff_appoint_dante_grossy
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_dante_grossy uncomplete_children = no refund_political_power = no }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 2 compare = equals }
+                NOT = { has_country_flag = WFL_staff_neal_foerster_active }
+                has_completed_focus = WFL_staff_appoint_neal_foerster
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_neal_foerster uncomplete_children = no refund_political_power = no }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 3 compare = equals }
+                NOT = { has_country_flag = WFL_staff_max_heinsch_active }
+                has_completed_focus = WFL_staff_appoint_max_heinsch
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_heinsch uncomplete_children = no refund_political_power = no }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 4 compare = equals }
+                NOT = { has_country_flag = WFL_staff_max_mueller_active }
+                has_completed_focus = WFL_staff_appoint_max_mueller
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_max_mueller uncomplete_children = no refund_political_power = no }
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 5 compare = equals }
+                NOT = { has_country_flag = WFL_staff_till_hoehne_active }
+                has_completed_focus = WFL_staff_appoint_till_hoehne
+            }
+            uncomplete_national_focus = { focus = WFL_staff_appoint_till_hoehne uncomplete_children = no refund_political_power = no }
+        }
+
+        clr_country_flag = WFL_staff_replacement_pending
+        set_variable = { WFL_staff_nominee = 0 }
+        set_variable = { WFL_staff_cooldown = 0 }
+    }
+}
+
+WFL_staff_replace_slot_1 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            WFL_staff_has_valid_nominee = yes
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 1 compare = equals }
+            }
+            WFL_staff_remove_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 2 compare = equals }
+            }
+            WFL_staff_remove_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 3 compare = equals }
+            }
+            WFL_staff_remove_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 4 compare = equals }
+            }
+            WFL_staff_remove_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_1 value = 5 compare = equals }
+            }
+            WFL_staff_remove_till_hoehne = yes
+        }
+
+        set_variable = { WFL_staff_slot_1 = WFL_staff_nominee }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 1 compare = equals }
+            }
+            WFL_staff_add_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 2 compare = equals }
+            }
+            WFL_staff_add_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 3 compare = equals }
+            }
+            WFL_staff_add_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 4 compare = equals }
+            }
+            WFL_staff_add_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 5 compare = equals }
+            }
+            WFL_staff_add_till_hoehne = yes
+        }
+
+        clr_country_flag = WFL_staff_replacement_pending
+        set_variable = { WFL_staff_nominee = 0 }
+        set_variable = { WFL_staff_cooldown = 175 }
+    }
+}
+
+WFL_staff_replace_slot_2 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            WFL_staff_has_valid_nominee = yes
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 1 compare = equals }
+            }
+            WFL_staff_remove_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 2 compare = equals }
+            }
+            WFL_staff_remove_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 3 compare = equals }
+            }
+            WFL_staff_remove_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 4 compare = equals }
+            }
+            WFL_staff_remove_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_2 value = 5 compare = equals }
+            }
+            WFL_staff_remove_till_hoehne = yes
+        }
+
+        set_variable = { WFL_staff_slot_2 = WFL_staff_nominee }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 1 compare = equals }
+            }
+            WFL_staff_add_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 2 compare = equals }
+            }
+            WFL_staff_add_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 3 compare = equals }
+            }
+            WFL_staff_add_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 4 compare = equals }
+            }
+            WFL_staff_add_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 5 compare = equals }
+            }
+            WFL_staff_add_till_hoehne = yes
+        }
+
+        clr_country_flag = WFL_staff_replacement_pending
+        set_variable = { WFL_staff_nominee = 0 }
+        set_variable = { WFL_staff_cooldown = 175 }
+    }
+}
+
+WFL_staff_replace_slot_3 = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+            WFL_staff_has_valid_nominee = yes
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 1 compare = equals }
+            }
+            WFL_staff_remove_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 2 compare = equals }
+            }
+            WFL_staff_remove_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 3 compare = equals }
+            }
+            WFL_staff_remove_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 4 compare = equals }
+            }
+            WFL_staff_remove_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_slot_3 value = 5 compare = equals }
+            }
+            WFL_staff_remove_till_hoehne = yes
+        }
+
+        set_variable = { WFL_staff_slot_3 = WFL_staff_nominee }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 1 compare = equals }
+            }
+            WFL_staff_add_dante_grossy = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 2 compare = equals }
+            }
+            WFL_staff_add_neal_foerster = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 3 compare = equals }
+            }
+            WFL_staff_add_max_heinsch = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 4 compare = equals }
+            }
+            WFL_staff_add_max_mueller = yes
+        }
+
+        else_if = {
+            limit = {
+                check_variable = { var = WFL_staff_nominee value = 5 compare = equals }
+            }
+            WFL_staff_add_till_hoehne = yes
+        }
+
+        clr_country_flag = WFL_staff_replacement_pending
+        set_variable = { WFL_staff_nominee = 0 }
+        set_variable = { WFL_staff_cooldown = 175 }
+    }
+}
+
+WFL_staff_daily_tick = {
+    if = {
+        limit = {
+            WFL_staff_can_operate = yes
+        }
+        if = {
+            limit = {
+                check_variable = { var = WFL_staff_cooldown value = 0 compare = greater_than }
+            }
+            add_to_variable = { WFL_staff_cooldown = -1 }
+        }
+        WFL_staff_tick_dante_grossy = yes
+        WFL_staff_tick_neal_foerster = yes
+        WFL_staff_tick_max_heinsch = yes
+        WFL_staff_tick_max_mueller = yes
+        WFL_staff_tick_till_hoehne = yes
+    }
+    else = { WFL_staff_cleanup = yes }
+}

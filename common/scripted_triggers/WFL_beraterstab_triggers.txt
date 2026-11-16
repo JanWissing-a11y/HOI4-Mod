@@ -1,0 +1,51 @@
+# Country scope: the five councillors occupy three special seats.
+
+WFL_staff_leader_eligible = {
+    tag = WFL
+    exists = yes
+    has_government = neutrality
+    has_capitulated = no
+    has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+}
+
+WFL_staff_can_operate = {
+    WFL_staff_leader_eligible = yes
+    has_country_flag = WFL_staff_unlocked
+    has_completed_focus = WFL_beraterstab_gruenden
+}
+
+WFL_staff_can_appoint = {
+    WFL_staff_can_operate = yes
+    check_variable = { var = WFL_staff_cooldown value = 0 compare = less_than_or_equals }
+    NOT = { has_country_flag = WFL_staff_replacement_pending }
+}
+
+WFL_staff_has_valid_nominee = {
+    has_country_flag = WFL_staff_replacement_pending
+    OR = {
+        AND = {
+            check_variable = { var = WFL_staff_nominee value = 1 compare = equals }
+            NOT = { has_country_flag = WFL_staff_dante_grossy_active }
+        }
+
+        AND = {
+            check_variable = { var = WFL_staff_nominee value = 2 compare = equals }
+            NOT = { has_country_flag = WFL_staff_neal_foerster_active }
+        }
+
+        AND = {
+            check_variable = { var = WFL_staff_nominee value = 3 compare = equals }
+            NOT = { has_country_flag = WFL_staff_max_heinsch_active }
+        }
+
+        AND = {
+            check_variable = { var = WFL_staff_nominee value = 4 compare = equals }
+            NOT = { has_country_flag = WFL_staff_max_mueller_active }
+        }
+
+        AND = {
+            check_variable = { var = WFL_staff_nominee value = 5 compare = equals }
+            NOT = { has_country_flag = WFL_staff_till_hoehne_active }
+        }
+    }
+}

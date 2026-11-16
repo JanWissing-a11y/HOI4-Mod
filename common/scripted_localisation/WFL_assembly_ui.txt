@@ -1,0 +1,125 @@
+defined_text = {
+    name = WFLBoardInfluenceMoodRules
+    text = { trigger = { has_country_flag = WFL_board_bierdeckel_rules } localization_key = WFL_board_ui_influence_rules_reduced }
+    text = { localization_key = WFL_board_ui_influence_rules_normal }
+}
+defined_text = {
+    name = WFLBoardInfluenceMoodCost
+    text = { trigger = { has_country_flag = WFL_board_bierdeckel_rules } localization_key = WFL_board_ui_influence_cost_reduced }
+    text = { localization_key = WFL_board_ui_influence_cost_normal }
+}
+defined_text = {
+    name = WFLBoardEldersTarget
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_angry } localization_key = WFL_board_ui_nils_meyer_name }
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_angry } localization_key = WFL_board_ui_jannik_altenschmidt_name }
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_angry } localization_key = WFL_board_ui_tobias_gaertner_name }
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_angry } localization_key = WFL_board_ui_finn_bielig_name }
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_angry } localization_key = WFL_board_ui_max_gerwers_name }
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_angry } localization_key = WFL_board_ui_tim_wissing_name }
+    text = { localization_key = WFL_board_ui_elders_no_target }
+}
+
+defined_text = {
+    name = WFLBoardMoodLabel
+    text = { trigger = { check_variable = { var = WFL_board_mood value = 80 compare = greater_than_or_equals } } localization_key = WFL_board_ui_mood_harmonious }
+    text = { trigger = { check_variable = { var = WFL_board_mood value = 60 compare = greater_than_or_equals } } localization_key = WFL_board_ui_mood_calm }
+    text = { trigger = { check_variable = { var = WFL_board_mood value = 40 compare = greater_than_or_equals } } localization_key = WFL_board_ui_mood_tense }
+    text = { trigger = { check_variable = { var = WFL_board_mood value = 20 compare = greater_than_or_equals } } localization_key = WFL_board_ui_mood_divided }
+    text = { localization_key = WFL_board_ui_mood_hostile }
+}
+
+defined_text = {
+    name = WFLBoardClock
+    text = { trigger = { has_capitulated = yes } localization_key = WFL_board_ui_paused }
+    text = { localization_key = WFL_board_ui_clock_text }
+}
+
+defined_text = {
+    name = WFLBoardNilsMeyerStatus
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardNilsMeyerLastResult
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_nils_meyer_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}
+
+defined_text = {
+    name = WFLBoardJannikAltenschmidtStatus
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardJannikAltenschmidtLastResult
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_jannik_altenschmidt_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}
+
+defined_text = {
+    name = WFLBoardTobiasGaertnerStatus
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardTobiasGaertnerLastResult
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_tobias_gaertner_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}
+
+defined_text = {
+    name = WFLBoardFinnBieligStatus
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardFinnBieligLastResult
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_finn_bielig_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}
+
+defined_text = {
+    name = WFLBoardMaxGerwersStatus
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardMaxGerwersLastResult
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_max_gerwers_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}
+
+defined_text = {
+    name = WFLBoardTimWissingStatus
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_angry } localization_key = WFL_board_ui_angry }
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_backed } localization_key = WFL_board_ui_backed }
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_used } localization_key = WFL_board_ui_failed }
+    text = { localization_key = WFL_board_ui_open }
+}
+defined_text = {
+    name = WFLBoardTimWissingLastResult
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_last_approved } localization_key = WFL_board_ui_last_approved }
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_last_angry } localization_key = WFL_board_ui_last_angry }
+    text = { trigger = { has_country_flag = WFL_board_tim_wissing_last_rejected } localization_key = WFL_board_ui_last_rejected }
+    text = { localization_key = WFL_board_ui_last_none }
+}

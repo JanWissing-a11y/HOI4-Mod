@@ -1,0 +1,10 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_WFL_florian_klaus
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_florian_klaus.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_florian_klaus_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_florian_klaus_small.dds"
+    }
+}

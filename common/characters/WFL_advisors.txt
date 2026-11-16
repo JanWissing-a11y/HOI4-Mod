@@ -1,0 +1,1005 @@
+# Fictional characters; numerical profiles from the installed German catalog.
+characters = {
+    WFL_advisor_01 = {
+        name = WFL_advisor_01
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_01
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_01
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_02 = {
+        name = WFL_advisor_02
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_02
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_02
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_03 = {
+        name = WFL_advisor_03
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_03
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 50
+            traits = {
+                WFL_advisor_skill_03
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_04 = {
+        name = WFL_advisor_04
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_04
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 50
+            traits = {
+                WFL_advisor_skill_04
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_05 = {
+        name = WFL_advisor_05
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_05
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_05
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_06 = {
+        name = WFL_advisor_06
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_06
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_06
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_07 = {
+        name = WFL_advisor_07
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_07
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 75
+            traits = {
+                WFL_advisor_skill_07
+            }
+            available = {
+                WFL_advisor_08 = {
+                    is_hired_as_advisor = no
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_08 = {
+        name = WFL_advisor_08
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_08
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_08
+            }
+            available = {
+                WFL_advisor_07 = {
+                    is_hired_as_advisor = no
+                }
+                WFL_advisor_25 = {
+                    is_hired_as_advisor = no
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_09 = {
+        name = WFL_advisor_09
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_09
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_09
+            }
+            do_effect = {
+                NOT = {
+                    has_government = fascism
+                }
+            }
+            available = {
+                if = {
+                    limit = {
+                        has_dlc = "Man the Guns"
+                    }
+                    NOT = {
+                        has_autonomy_state = autonomy_supervised_state
+                    }
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_10 = {
+        name = WFL_advisor_10
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_10
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_10
+            }
+            available = {
+                WFL_advisor_12 = {
+                    is_hired_as_advisor = no
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_11 = {
+        name = WFL_advisor_11
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_11
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_11
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_12 = {
+        name = WFL_advisor_12
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_12
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_12
+            }
+            available = {
+                WFL_advisor_10 = {
+                    is_hired_as_advisor = no
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_13 = {
+        name = WFL_advisor_13
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_12
+                small = GFX_portrait_WFL_advisor_12_small
+            }
+        }
+        gender = female
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_13
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_13
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_14 = {
+        name = WFL_advisor_14
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_15
+                small = GFX_portrait_WFL_advisor_15_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_14
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_14
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_15 = {
+        name = WFL_advisor_15
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_15
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_15
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_16 = {
+        instance = {
+            allowed = {
+                has_dlc = "La Resistance"
+            }
+            name = WFL_advisor_16
+            portraits = {
+                civilian = {
+                    large = GFX_portrait_WFL_advisor_17
+                    small = GFX_portrait_WFL_advisor_17_small
+                }
+            }
+            advisor = {
+                slot = political_advisor
+                idea_token = WFL_advisor_16
+                allowed = {
+                    original_tag = WFL
+                }
+                cost = 150
+                traits = {
+                    WFL_advisor_skill_16
+                }
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+        instance = {
+            allowed = {
+                NOT = {
+                    has_dlc = "La Resistance"
+                }
+            }
+            name = WFL_advisor_16
+            portraits = {
+                civilian = {
+                    large = GFX_portrait_WFL_advisor_17
+                    small = GFX_portrait_WFL_advisor_17_small
+                }
+            }
+            advisor = {
+                slot = political_advisor
+                idea_token = WFL_advisor_16
+                allowed = {
+                    original_tag = WFL
+                }
+                cost = 150
+                traits = {
+                    WFL_advisor_skill_17
+                }
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    WFL_advisor_17 = {
+        name = WFL_advisor_17
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_17
+            allowed = {
+                original_tag = WFL
+                has_dlc = "La Resistance"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_18
+            }
+            available = {
+                has_intelligence_agency = yes
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_18 = {
+        name = WFL_advisor_18
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_18
+            allowed = {
+                original_tag = WFL
+                has_dlc = "Waking the Tiger"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_19
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_19 = {
+        name = WFL_advisor_19
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_19
+            allowed = {
+                original_tag = WFL
+                has_dlc = "Waking the Tiger"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_20
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_20 = {
+        name = WFL_advisor_20
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_20
+            allowed = {
+                original_tag = WFL
+                has_dlc = "Waking the Tiger"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_21
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_21 = {
+        name = WFL_advisor_21
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_04
+                small = GFX_portrait_WFL_advisor_04_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_21
+            allowed = {
+                original_tag = WFL
+                has_dlc = "Waking the Tiger"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_22
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_22 = {
+        name = WFL_advisor_22
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_05
+                small = GFX_portrait_WFL_advisor_05_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_22
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_23
+            }
+            do_effect = {
+                NOT = {
+                    has_government = democratic
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_23 = {
+        name = WFL_advisor_23
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_06
+                small = GFX_portrait_WFL_advisor_06_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_23
+            allowed = {
+                original_tag = WFL
+                has_dlc = "Waking the Tiger"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_24
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_24 = {
+        name = WFL_advisor_24
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_07
+                small = GFX_portrait_WFL_advisor_07_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_24
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_25
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_25 = {
+        name = WFL_advisor_25
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_08
+                small = GFX_portrait_WFL_advisor_08_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_25
+            allowed = {
+                original_tag = WFL
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_26
+            }
+            available = {
+                WFL_advisor_08 = {
+                    is_hired_as_advisor = no
+                }
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_26 = {
+        name = WFL_advisor_26
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_09
+                small = GFX_portrait_WFL_advisor_09_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_26
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_27
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_27 = {
+        name = WFL_advisor_27
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_10
+                small = GFX_portrait_WFL_advisor_10_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_27
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_28
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_28 = {
+        name = WFL_advisor_28
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_11
+                small = GFX_portrait_WFL_advisor_11_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_28
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_29
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_29 = {
+        name = WFL_advisor_29
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_13
+                small = GFX_portrait_WFL_advisor_13_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_29
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_30
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_30 = {
+        name = WFL_advisor_30
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_14
+                small = GFX_portrait_WFL_advisor_14_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_30
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_31
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_31 = {
+        instance = {
+            allowed = {
+                NOT = {
+                    has_dlc = Gotterdammerung
+                }
+            }
+            name = WFL_advisor_31
+            portraits = {
+                civilian = {
+                    large = GFX_portrait_WFL_advisor_15
+                    small = GFX_portrait_WFL_advisor_15_small
+                }
+            }
+            advisor = {
+                slot = political_advisor
+                idea_token = WFL_advisor_31
+                allowed = {
+                    original_tag = WFL
+                }
+                cost = 150
+                traits = {
+                    WFL_advisor_skill_32
+                }
+                do_effect = {
+                    NOT = {
+                        has_government = communism
+                    }
+                }
+                available = {
+                    if = {
+                        limit = {
+                            has_dlc = "Man the Guns"
+                        }
+                        NOT = {
+                            has_autonomy_state = autonomy_supervised_state
+                        }
+                    }
+                }
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+        instance = {
+            allowed = {
+                has_dlc = Gotterdammerung
+            }
+            name = WFL_advisor_31
+            portraits = {
+                civilian = {
+                    large = GFX_portrait_WFL_advisor_15
+                    small = GFX_portrait_WFL_advisor_15_small
+                }
+            }
+            advisor = {
+                slot = political_advisor
+                idea_token = WFL_advisor_31
+                allowed = {
+                    original_tag = WFL
+                }
+                cost = 150
+                traits = {
+                    WFL_advisor_skill_33
+                }
+                ai_will_do = {
+                    factor = 1
+                }
+            }
+        }
+    }
+    WFL_advisor_32 = {
+        name = WFL_advisor_32
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_16
+                small = GFX_portrait_WFL_advisor_16_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_32
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_34
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_33 = {
+        name = WFL_advisor_33
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_17
+                small = GFX_portrait_WFL_advisor_17_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_33
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+                has_dlc = "La Resistance"
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_35
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_34 = {
+        name = WFL_advisor_34
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_18
+                small = GFX_portrait_WFL_advisor_18_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_34
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_36
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_35 = {
+        name = WFL_advisor_35
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_01
+                small = GFX_portrait_WFL_advisor_01_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_35
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_37
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_36 = {
+        name = WFL_advisor_36
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_02
+                small = GFX_portrait_WFL_advisor_02_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_36
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_38
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+    WFL_advisor_37 = {
+        name = WFL_advisor_37
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_advisor_03
+                small = GFX_portrait_WFL_advisor_03_small
+            }
+        }
+        advisor = {
+            slot = political_advisor
+            idea_token = WFL_advisor_37
+            allowed = {
+                original_tag = WFL
+                has_dlc = Gotterdammerung
+            }
+            cost = 150
+            traits = {
+                WFL_advisor_skill_39
+            }
+            ai_will_do = {
+                factor = 1
+            }
+        }
+    }
+}

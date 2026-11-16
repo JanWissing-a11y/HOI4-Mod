@@ -1,0 +1,453 @@
+# Country-scoped persistent calendar. No delayed effect events own rewards.
+WFL_assembly_initialize = {
+    WFL_board_mood_initialize = yes
+    if = {
+        limit = { NOT = { has_country_flag = WFL_assembly_initialized } }
+        set_country_flag = WFL_assembly_initialized
+        set_variable = { WFL_assembly_months_left = 6 }
+        set_variable = { WFL_assembly_number = 0 }
+        set_variable = { WFL_assembly_story = 0 }
+        set_variable = { WFL_board_angry_count = 0 }
+    }
+}
+WFL_assembly_clear_ideas = {
+    remove_ideas = WFL_assembly_nils_meyer_idea
+    remove_ideas = WFL_assembly_jannik_altenschmidt_idea
+    remove_ideas = WFL_assembly_tobias_gaertner_idea
+    remove_ideas = WFL_assembly_finn_bielig_idea
+    remove_ideas = WFL_assembly_max_gerwers_idea
+    remove_ideas = WFL_assembly_tim_wissing_idea
+    remove_ideas = WFL_assembly_blockade_idea
+    remove_ideas = WFL_assembly_eklat_idea
+}
+WFL_board_lobby_nils_meyer_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_nils_meyer_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_nils_meyer_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_nils_meyer_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_jannik_altenschmidt_angry }
+                20 = { set_country_flag = WFL_board_tobias_gaertner_angry }
+                20 = { set_country_flag = WFL_board_finn_bielig_angry }
+                20 = { set_country_flag = WFL_board_max_gerwers_angry }
+                20 = { set_country_flag = WFL_board_tim_wissing_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_nils_meyer_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_nils_meyer = {
+    if = {
+        limit = { has_country_flag = WFL_board_nils_meyer_angry }
+        set_country_flag = WFL_board_nils_meyer_last_angry
+        set_country_flag = WFL_board_nils_meyer_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_nils_meyer_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_nils_meyer_idea
+                set_country_flag = WFL_board_nils_meyer_last_approved
+            }
+            15 = { set_country_flag = WFL_board_nils_meyer_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_nils_meyer_idea
+                set_country_flag = WFL_board_nils_meyer_last_approved
+            }
+            65 = { set_country_flag = WFL_board_nils_meyer_last_rejected }
+        }
+    }
+}
+WFL_board_lobby_jannik_altenschmidt_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_jannik_altenschmidt_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_jannik_altenschmidt_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_jannik_altenschmidt_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_nils_meyer_angry }
+                20 = { set_country_flag = WFL_board_tobias_gaertner_angry }
+                20 = { set_country_flag = WFL_board_finn_bielig_angry }
+                20 = { set_country_flag = WFL_board_max_gerwers_angry }
+                20 = { set_country_flag = WFL_board_tim_wissing_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_jannik_altenschmidt_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_jannik_altenschmidt = {
+    if = {
+        limit = { has_country_flag = WFL_board_jannik_altenschmidt_angry }
+        set_country_flag = WFL_board_jannik_altenschmidt_last_angry
+        set_country_flag = WFL_board_jannik_altenschmidt_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_jannik_altenschmidt_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_jannik_altenschmidt_idea
+                set_country_flag = WFL_board_jannik_altenschmidt_last_approved
+            }
+            15 = { set_country_flag = WFL_board_jannik_altenschmidt_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_jannik_altenschmidt_idea
+                set_country_flag = WFL_board_jannik_altenschmidt_last_approved
+            }
+            65 = { set_country_flag = WFL_board_jannik_altenschmidt_last_rejected }
+        }
+    }
+}
+WFL_board_lobby_tobias_gaertner_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_tobias_gaertner_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_tobias_gaertner_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_tobias_gaertner_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_nils_meyer_angry }
+                20 = { set_country_flag = WFL_board_jannik_altenschmidt_angry }
+                20 = { set_country_flag = WFL_board_finn_bielig_angry }
+                20 = { set_country_flag = WFL_board_max_gerwers_angry }
+                20 = { set_country_flag = WFL_board_tim_wissing_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_tobias_gaertner_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_tobias_gaertner = {
+    if = {
+        limit = { has_country_flag = WFL_board_tobias_gaertner_angry }
+        set_country_flag = WFL_board_tobias_gaertner_last_angry
+        set_country_flag = WFL_board_tobias_gaertner_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_tobias_gaertner_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_tobias_gaertner_idea
+                set_country_flag = WFL_board_tobias_gaertner_last_approved
+            }
+            15 = { set_country_flag = WFL_board_tobias_gaertner_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_tobias_gaertner_idea
+                set_country_flag = WFL_board_tobias_gaertner_last_approved
+            }
+            65 = { set_country_flag = WFL_board_tobias_gaertner_last_rejected }
+        }
+    }
+}
+WFL_board_lobby_finn_bielig_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_finn_bielig_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_finn_bielig_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_finn_bielig_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_nils_meyer_angry }
+                20 = { set_country_flag = WFL_board_jannik_altenschmidt_angry }
+                20 = { set_country_flag = WFL_board_tobias_gaertner_angry }
+                20 = { set_country_flag = WFL_board_max_gerwers_angry }
+                20 = { set_country_flag = WFL_board_tim_wissing_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_finn_bielig_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_finn_bielig = {
+    if = {
+        limit = { has_country_flag = WFL_board_finn_bielig_angry }
+        set_country_flag = WFL_board_finn_bielig_last_angry
+        set_country_flag = WFL_board_finn_bielig_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_finn_bielig_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_finn_bielig_idea
+                set_country_flag = WFL_board_finn_bielig_last_approved
+            }
+            15 = { set_country_flag = WFL_board_finn_bielig_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_finn_bielig_idea
+                set_country_flag = WFL_board_finn_bielig_last_approved
+            }
+            65 = { set_country_flag = WFL_board_finn_bielig_last_rejected }
+        }
+    }
+}
+WFL_board_lobby_max_gerwers_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_max_gerwers_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_max_gerwers_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_max_gerwers_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_nils_meyer_angry }
+                20 = { set_country_flag = WFL_board_jannik_altenschmidt_angry }
+                20 = { set_country_flag = WFL_board_tobias_gaertner_angry }
+                20 = { set_country_flag = WFL_board_finn_bielig_angry }
+                20 = { set_country_flag = WFL_board_tim_wissing_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_max_gerwers_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_max_gerwers = {
+    if = {
+        limit = { has_country_flag = WFL_board_max_gerwers_angry }
+        set_country_flag = WFL_board_max_gerwers_last_angry
+        set_country_flag = WFL_board_max_gerwers_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_max_gerwers_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_max_gerwers_idea
+                set_country_flag = WFL_board_max_gerwers_last_approved
+            }
+            15 = { set_country_flag = WFL_board_max_gerwers_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_max_gerwers_idea
+                set_country_flag = WFL_board_max_gerwers_last_approved
+            }
+            65 = { set_country_flag = WFL_board_max_gerwers_last_rejected }
+        }
+    }
+}
+WFL_board_lobby_tim_wissing_effect = {
+    WFL_board_lobby_mood_cost = yes
+    set_country_flag = WFL_board_tim_wissing_used
+    random_list = {
+        85 = { set_country_flag = WFL_board_tim_wissing_backed }
+        10 = {
+            WFL_board_collateral_mood_cost = yes
+            set_country_flag = WFL_board_tim_wissing_backed
+            random_list = {
+                20 = { set_country_flag = WFL_board_nils_meyer_angry }
+                20 = { set_country_flag = WFL_board_jannik_altenschmidt_angry }
+                20 = { set_country_flag = WFL_board_tobias_gaertner_angry }
+                20 = { set_country_flag = WFL_board_finn_bielig_angry }
+                20 = { set_country_flag = WFL_board_max_gerwers_angry }
+            }
+        }
+        5 = { WFL_board_self_mood_cost = yes set_country_flag = WFL_board_tim_wissing_angry }
+    }
+    WFL_board_mood_refresh = yes
+}
+WFL_assembly_vote_tim_wissing = {
+    if = {
+        limit = { has_country_flag = WFL_board_tim_wissing_angry }
+        set_country_flag = WFL_board_tim_wissing_last_angry
+        set_country_flag = WFL_board_tim_wissing_last_rejected
+    }
+    else_if = {
+        limit = { has_country_flag = WFL_board_tim_wissing_backed }
+        random_list = {
+            85 = {
+                add_ideas = WFL_assembly_tim_wissing_idea
+                set_country_flag = WFL_board_tim_wissing_last_approved
+            }
+            15 = { set_country_flag = WFL_board_tim_wissing_last_rejected }
+        }
+    }
+    else = {
+        random_list = {
+            35 = {
+                add_ideas = WFL_assembly_tim_wissing_idea
+                set_country_flag = WFL_board_tim_wissing_last_approved
+            }
+            65 = { set_country_flag = WFL_board_tim_wissing_last_rejected }
+        }
+    }
+}
+WFL_assembly_resolve = {
+    # Shared guard also protects manual/duplicate calls after capitulation.
+    if = {
+        limit = { WFL_assembly_can_operate = yes }
+        WFL_assembly_clear_ideas = yes
+        clr_country_flag = WFL_assembly_last_blockade
+        clr_country_flag = WFL_assembly_last_eklat
+        set_variable = { WFL_board_angry_count = 0 }
+        clr_country_flag = WFL_board_nils_meyer_last_approved
+        clr_country_flag = WFL_board_nils_meyer_last_rejected
+        clr_country_flag = WFL_board_nils_meyer_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_nils_meyer_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        clr_country_flag = WFL_board_jannik_altenschmidt_last_approved
+        clr_country_flag = WFL_board_jannik_altenschmidt_last_rejected
+        clr_country_flag = WFL_board_jannik_altenschmidt_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_jannik_altenschmidt_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        clr_country_flag = WFL_board_tobias_gaertner_last_approved
+        clr_country_flag = WFL_board_tobias_gaertner_last_rejected
+        clr_country_flag = WFL_board_tobias_gaertner_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_tobias_gaertner_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        clr_country_flag = WFL_board_finn_bielig_last_approved
+        clr_country_flag = WFL_board_finn_bielig_last_rejected
+        clr_country_flag = WFL_board_finn_bielig_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_finn_bielig_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        clr_country_flag = WFL_board_max_gerwers_last_approved
+        clr_country_flag = WFL_board_max_gerwers_last_rejected
+        clr_country_flag = WFL_board_max_gerwers_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_max_gerwers_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        clr_country_flag = WFL_board_tim_wissing_last_approved
+        clr_country_flag = WFL_board_tim_wissing_last_rejected
+        clr_country_flag = WFL_board_tim_wissing_last_angry
+        if = {
+            limit = { has_country_flag = WFL_board_tim_wissing_angry }
+            add_to_variable = { WFL_board_angry_count = 1 }
+        }
+        if = {
+            limit = { check_variable = { var = WFL_board_angry_count value = 2 compare = greater_than_or_equals } }
+            random_list = {
+                70 = { }
+                20 = {
+                    subtract_from_variable = { WFL_board_mood = 10 }
+                    set_country_flag = WFL_assembly_last_blockade
+                    add_ideas = WFL_assembly_blockade_idea
+                }
+                10 = {
+                    subtract_from_variable = { WFL_board_mood = 20 }
+                    set_country_flag = WFL_assembly_last_eklat
+                    add_ideas = WFL_assembly_eklat_idea
+                }
+            }
+        }
+        if = {
+            limit = { has_country_flag = WFL_assembly_last_eklat }
+            set_country_flag = WFL_board_nils_meyer_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_nils_meyer_angry }
+                set_country_flag = WFL_board_nils_meyer_last_angry
+            }
+            set_country_flag = WFL_board_jannik_altenschmidt_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_jannik_altenschmidt_angry }
+                set_country_flag = WFL_board_jannik_altenschmidt_last_angry
+            }
+            set_country_flag = WFL_board_tobias_gaertner_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_tobias_gaertner_angry }
+                set_country_flag = WFL_board_tobias_gaertner_last_angry
+            }
+            set_country_flag = WFL_board_finn_bielig_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_finn_bielig_angry }
+                set_country_flag = WFL_board_finn_bielig_last_angry
+            }
+            set_country_flag = WFL_board_max_gerwers_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_max_gerwers_angry }
+                set_country_flag = WFL_board_max_gerwers_last_angry
+            }
+            set_country_flag = WFL_board_tim_wissing_last_rejected
+            if = {
+                limit = { has_country_flag = WFL_board_tim_wissing_angry }
+                set_country_flag = WFL_board_tim_wissing_last_angry
+            }
+        }
+        else = {
+            WFL_assembly_vote_nils_meyer = yes
+            WFL_assembly_vote_jannik_altenschmidt = yes
+            WFL_assembly_vote_tobias_gaertner = yes
+            WFL_assembly_vote_finn_bielig = yes
+            WFL_assembly_vote_max_gerwers = yes
+            WFL_assembly_vote_tim_wissing = yes
+        }
+        clr_country_flag = WFL_board_nils_meyer_used
+        clr_country_flag = WFL_board_nils_meyer_backed
+        clr_country_flag = WFL_board_nils_meyer_angry
+        clr_country_flag = WFL_board_jannik_altenschmidt_used
+        clr_country_flag = WFL_board_jannik_altenschmidt_backed
+        clr_country_flag = WFL_board_jannik_altenschmidt_angry
+        clr_country_flag = WFL_board_tobias_gaertner_used
+        clr_country_flag = WFL_board_tobias_gaertner_backed
+        clr_country_flag = WFL_board_tobias_gaertner_angry
+        clr_country_flag = WFL_board_finn_bielig_used
+        clr_country_flag = WFL_board_finn_bielig_backed
+        clr_country_flag = WFL_board_finn_bielig_angry
+        clr_country_flag = WFL_board_max_gerwers_used
+        clr_country_flag = WFL_board_max_gerwers_backed
+        clr_country_flag = WFL_board_max_gerwers_angry
+        clr_country_flag = WFL_board_tim_wissing_used
+        clr_country_flag = WFL_board_tim_wissing_backed
+        clr_country_flag = WFL_board_tim_wissing_angry
+        set_country_flag = WFL_assembly_held
+        add_to_variable = { WFL_assembly_number = 1 }
+        add_to_variable = { WFL_assembly_story = 1 }
+        if = {
+            limit = { check_variable = { var = WFL_assembly_story value = 3 compare = greater_than } }
+            set_variable = { WFL_assembly_story = 1 }
+        }
+        set_variable = { WFL_assembly_months_left = 6 }
+        # Resolve before opening the news. Clicking its option grants nothing.
+        WFL_board_mood_refresh = yes
+        news_event = { id = wfl_assembly.1 }
+    }
+}
+WFL_assembly_monthly_tick = {
+    WFL_assembly_initialize = yes
+    # If startup/daily initialization occurs today (e.g. 1936.1.1), do not
+    # consume a calendar month on that same date. Existing saves keep the clock.
+    if = {
+        limit = {
+            WFL_assembly_can_operate = yes
+            has_country_flag = { flag = WFL_assembly_initialized days > 0 }
+        }
+        WFL_board_mood_monthly = yes
+        subtract_from_variable = { WFL_assembly_months_left = 1 }
+        if = {
+            limit = { check_variable = { var = WFL_assembly_months_left value = 0 compare = less_than_or_equals } }
+            WFL_assembly_resolve = yes
+        }
+    }
+}

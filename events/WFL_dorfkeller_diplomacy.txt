@@ -1,0 +1,17 @@
+# The focus joins the Allies immediately; this window only tells the story.
+add_namespace = wfl_dorfkeller
+country_event = {
+    id = wfl_dorfkeller.1
+    title = wfl_dorfkeller.1.t
+    desc = wfl_dorfkeller.1.d
+    picture = GFX_report_event_generic_parliament
+    is_triggered_only = yes
+    fire_only_once = yes
+    trigger = {
+        tag = WFL
+        has_country_flag = WFL_dorfkeller_joined_allies
+        is_in_faction_with = ENG
+        ENG = { has_faction_template = faction_template_allies }
+    }
+    option = { name = wfl_dorfkeller.1.a }
+}

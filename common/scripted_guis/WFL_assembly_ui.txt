@@ -1,0 +1,6 @@
+scripted_gui = {
+    WFL_vorstand_ui = {
+        context_type = decision_category
+        window_name = "WFL_vorstand_window"
+    }
+}

@@ -1,0 +1,5 @@
+opinion_modifiers = {
+    WFL_zapfhahn_handelsfreundschaft = { value = 35 }
+    WFL_zapfhahn_kuehlhandel = { value = 30 trade = yes }
+    WFL_zapfhahn_trinkfreundschaft = { value = 50 }
+}

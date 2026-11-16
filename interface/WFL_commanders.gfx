@@ -1,0 +1,34 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_portrait_WFL_lukas_hoehne_i
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_lukas_hoehne_i.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_lukas_hoehne_i_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_lukas_hoehne_i_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_ian_jannis_foerster
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_ian_jannis_foerster.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_ian_jannis_foerster_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_ian_jannis_foerster_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_nils_schapfeld_i
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_nils_schapfeld_i.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_nils_schapfeld_i_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_nils_schapfeld_i_small.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_lars_stuewe
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_lars_stuewe.dds"
+    }
+    spriteType = {
+        name = GFX_portrait_WFL_lars_stuewe_small
+        texturefile = "gfx/leaders/WFL/Portrait_WFL_lars_stuewe_small.dds"
+    }
+}

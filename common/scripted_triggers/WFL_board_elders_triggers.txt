@@ -1,0 +1,13 @@
+# Same guard at selection and execution; individual anger is never rerolled.
+WFL_board_can_call_elders = {
+    WFL_assembly_can_operate = yes
+    has_country_flag = WFL_board_elders_unlocked
+    OR = {
+        has_country_flag = WFL_board_nils_meyer_angry
+        has_country_flag = WFL_board_jannik_altenschmidt_angry
+        has_country_flag = WFL_board_tobias_gaertner_angry
+        has_country_flag = WFL_board_finn_bielig_angry
+        has_country_flag = WFL_board_max_gerwers_angry
+        has_country_flag = WFL_board_tim_wissing_angry
+    }
+}

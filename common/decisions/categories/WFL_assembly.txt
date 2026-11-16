@@ -1,0 +1,5 @@
+WFL_vorstand = {
+    allowed = { tag = WFL }
+    visible = { tag = WFL }
+    scripted_gui = WFL_vorstand_ui
+}

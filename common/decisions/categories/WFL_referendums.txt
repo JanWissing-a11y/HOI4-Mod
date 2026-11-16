@@ -1,0 +1,4 @@
+WFL_schuetzenreferenden = {
+    allowed = { tag = WFL }
+    visible = { tag = WFL has_completed_focus = WFL_schuetzen_zu_soldaten }
+}

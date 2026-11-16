@@ -1,0 +1,67 @@
+# Generic focus-inlay API; no GER country variables, characters or artwork.
+WFL_beraterstab_inlay = {
+    window_name = WFL_beraterstab_window
+    internal = yes
+    visible = {
+        tag = WFL
+        has_country_flag = WFL_staff_unlocked
+        has_government = neutrality
+        has_country_leader = { character = WFL_schuetzenkoenig ruling_only = yes }
+    }
+    scripted_images = {
+        WFL_staff_slot_1_portrait = {
+            GFX_WFL_staff_dante_grossy = {
+                check_variable = { WFL_staff_slot_1 = 1 }
+            }
+            GFX_WFL_staff_neal_foerster = {
+                check_variable = { WFL_staff_slot_1 = 2 }
+            }
+            GFX_WFL_staff_max_heinsch = {
+                check_variable = { WFL_staff_slot_1 = 3 }
+            }
+            GFX_WFL_staff_max_mueller = {
+                check_variable = { WFL_staff_slot_1 = 4 }
+            }
+            GFX_WFL_staff_till_hoehne = {
+                check_variable = { WFL_staff_slot_1 = 5 }
+            }
+            GFX_WFL_staff_empty = yes
+        }
+        WFL_staff_slot_2_portrait = {
+            GFX_WFL_staff_dante_grossy = {
+                check_variable = { WFL_staff_slot_2 = 1 }
+            }
+            GFX_WFL_staff_neal_foerster = {
+                check_variable = { WFL_staff_slot_2 = 2 }
+            }
+            GFX_WFL_staff_max_heinsch = {
+                check_variable = { WFL_staff_slot_2 = 3 }
+            }
+            GFX_WFL_staff_max_mueller = {
+                check_variable = { WFL_staff_slot_2 = 4 }
+            }
+            GFX_WFL_staff_till_hoehne = {
+                check_variable = { WFL_staff_slot_2 = 5 }
+            }
+            GFX_WFL_staff_empty = yes
+        }
+        WFL_staff_slot_3_portrait = {
+            GFX_WFL_staff_dante_grossy = {
+                check_variable = { WFL_staff_slot_3 = 1 }
+            }
+            GFX_WFL_staff_neal_foerster = {
+                check_variable = { WFL_staff_slot_3 = 2 }
+            }
+            GFX_WFL_staff_max_heinsch = {
+                check_variable = { WFL_staff_slot_3 = 3 }
+            }
+            GFX_WFL_staff_max_mueller = {
+                check_variable = { WFL_staff_slot_3 = 4 }
+            }
+            GFX_WFL_staff_till_hoehne = {
+                check_variable = { WFL_staff_slot_3 = 5 }
+            }
+            GFX_WFL_staff_empty = yes
+        }
+    }
+}

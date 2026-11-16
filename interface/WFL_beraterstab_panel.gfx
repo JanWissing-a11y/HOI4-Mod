@@ -1,0 +1,6 @@
+spriteTypes = {
+    spriteType = {
+        name = GFX_WFL_staff_panel
+        texturefile = "gfx/interface/beraterstab/staff_panel.dds"
+    }
+}

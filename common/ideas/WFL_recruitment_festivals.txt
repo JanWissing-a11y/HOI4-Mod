@@ -1,0 +1,28 @@
+ideas = {
+    country = {
+        WFL_freibierfreiwillige = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { non_core_manpower = 0.05 }
+        }
+        WFL_kartoffelsalat_kameraden = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { non_core_manpower = 0.05 }
+        }
+        WFL_blasmusik_bataillone = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { non_core_manpower = 0.05 }
+        }
+        WFL_schuetzenpass_freiwillige = {
+            picture = generic_manpower_bonus
+            allowed = { tag = WFL }
+            removal_cost = -1
+            modifier = { non_core_manpower = 0.05 }
+        }
+    }
+}

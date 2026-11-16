@@ -1,0 +1,281 @@
+# Imported numerical effects; German event and AI hooks are not imported.
+leader_traits = {
+    WFL_advisor_skill_01 = {
+        random = no
+        sprite = 13
+        fascism_drift = 0.12
+        war_support_factor = 0.05
+    }
+    WFL_advisor_skill_02 = {
+        sprite = 10
+        random = no
+        local_resources_factor = 0.05
+        political_power_factor = 0.05
+    }
+    WFL_advisor_skill_03 = {
+        random = no
+        sprite = 13
+        subversive_activites_upkeep = -0.25
+        drift_defence_factor = 0.25
+        justify_war_goal_time = -0.15
+        faction_trade_opinion_factor = 0.1
+        opinion_gain_monthly_same_ideology = 5
+    }
+    WFL_advisor_skill_04 = {
+        random = no
+        sprite = 13
+        improve_relations_maintain_cost_factor = -0.5
+        trade_opinion_factor = 0.10
+        subjects_autonomy_gain = -0.1
+        compliance_growth = 0.01
+        foreign_subversive_activites = -0.25
+    }
+    WFL_advisor_skill_05 = {
+        sprite = 10
+        random = no
+        production_speed_industrial_complex_factor = 0.1
+        production_speed_infrastructure_factor = 0.1
+        production_speed_rail_way_factor = 0.1
+    }
+    WFL_advisor_skill_06 = {
+        sprite = 10
+        random = no
+        production_speed_buildings_factor = 0.05
+        fascism_drift = 0.01
+    }
+    WFL_advisor_skill_07 = {
+        sprite = 10
+        random = no
+        production_speed_arms_factory_factor = 0.1
+        production_speed_dockyard_factor = 0.1
+        consumer_goods_factor = -0.1
+    }
+    WFL_advisor_skill_08 = {
+        sprite = 10
+        random = no
+        consumer_goods_factor = -0.1
+        production_speed_supply_node_factor = 0.15
+        production_lack_of_resource_penalty_factor = -0.05
+        industry_free_repair_factor = 0.15
+    }
+    WFL_advisor_skill_09 = {
+        sprite = 13
+        random = no
+        war_support_factor = 0.05
+        fascism_drift = 0.1
+    }
+    WFL_advisor_skill_10 = {
+        sprite = 13
+        random = no
+        opinion_gain_monthly_same_ideology_factor = 1
+        political_power_factor = 0.1
+    }
+    WFL_advisor_skill_11 = {
+        sprite = 13
+        resistance_damage_to_garrison = -0.25
+        foreign_subversive_activites = -0.3
+        non_core_manpower = 0.02
+        random = no
+    }
+    WFL_advisor_skill_12 = {
+        sprite = 13
+        random = no
+        political_advisor_cost_factor = -0.1
+        political_power_factor = 0.1
+    }
+    WFL_advisor_skill_13 = {
+        sprite = 13
+        random = no
+        weekly_casualties_war_support = 0.001
+        offensive_war_stability_factor = 0.05
+        defensive_war_stability_factor = 0.05
+        drift_defence_factor = 0.15
+    }
+    WFL_advisor_skill_14 = {
+        sprite = 13
+        random = no
+        stability_factor = -0.05
+        compliance_growth = -0.01
+        resistance_growth = 0.03
+        industrial_capacity_factory = 0.025
+        industrial_capacity_dockyard = 0.025
+        production_factory_efficiency_gain_factor = 0.025
+        production_factory_start_efficiency_factor = 0.025
+    }
+    WFL_advisor_skill_15 = {
+        sprite = 13
+        random = no
+        political_power_factor = 0.05
+        party_popularity_stability_factor = 0.1
+        resistance_growth = -0.025
+        research_speed_factor = -0.025
+        weekly_bombing_war_support = 0.002
+    }
+    WFL_advisor_skill_16 = {
+        sprite = 15
+        random = no
+        resistance_growth = -0.05
+        civilian_intel_to_others = -0.2
+        army_intel_to_others = -0.2
+        operative_slot = 1
+    }
+    WFL_advisor_skill_17 = {
+        sprite = 15
+        random = no
+        resistance_growth = -0.05
+        army_core_defence_factor = 0.02
+        foreign_subversive_activites = -0.25
+    }
+    WFL_advisor_skill_18 = {
+        random = no
+        sprite = 15
+        operative_slot = 1
+        agency_upgrade_time = -0.2
+    }
+    WFL_advisor_skill_19 = {
+        sprite = 13
+        random = no
+        fascism_drift = -0.05
+        stability_factor = 0.1
+    }
+    WFL_advisor_skill_20 = {
+        sprite = 13
+        random = no
+        neutrality_drift = 0.1
+        war_stability_factor = 0.1
+    }
+    WFL_advisor_skill_21 = {
+        random = no
+        sprite = 10
+        production_lack_of_resource_penalty_factor = -0.05
+        local_resources_factor = 0.05
+        trade_opinion_factor = 0.15
+        consumer_goods_factor = -0.05
+    }
+    WFL_advisor_skill_22 = {
+        sprite = 13
+        random = no
+        political_power_factor = 0.05
+        stability_factor = 0.05
+        drift_defence_factor = 0.15
+    }
+    WFL_advisor_skill_23 = {
+        random = no
+        sprite = 13
+        democratic_drift = 0.1
+    }
+    WFL_advisor_skill_24 = {
+        sprite = 13
+        random = no
+        democratic_drift = 0.05
+        political_power_factor = 0.1
+    }
+    WFL_advisor_skill_25 = {
+        random = no
+        sprite = 10
+        production_speed_infrastructure_factor = 0.1
+        production_speed_industrial_complex_factor = 0.1
+        consumer_goods_factor = -0.1
+    }
+    WFL_advisor_skill_26 = {
+        sprite = 13
+        random = no
+        trade_laws_cost_factor = -0.33
+        economy_cost_factor = -0.33
+        consumer_goods_factor = -0.15
+    }
+    WFL_advisor_skill_27 = {
+        random = no
+        sprite = 5
+        conscription_factor = 0.03
+        modifier_army_sub_unit_militia_defence_factor = 0.05
+        modifier_army_sub_unit_militia_attack_factor = 0.05
+        modifier_army_sub_unit_militia_max_org_factor = 0.05
+        drift_defence_factor = 0.15
+    }
+    WFL_advisor_skill_28 = {
+        random = no
+        sprite = 13
+        political_power_factor = 0.05
+        non_core_manpower = 0.02
+        resistance_garrison_penetration_chance = -0.1
+    }
+    WFL_advisor_skill_29 = {
+        random = no
+        sprite = 13
+        political_power_factor = 0.05
+        stability_factor = 0.05
+        weekly_casualties_war_support = 0.001
+        offensive_war_stability_factor = 0.05
+        defensive_war_stability_factor = 0.05
+    }
+    WFL_advisor_skill_30 = {
+        random = no
+        sprite = 13
+        out_of_supply_factor = -0.1
+        monthly_population = 0.1
+        industrial_capacity_factory = 0.05
+        industrial_capacity_dockyard = 0.05
+    }
+    WFL_advisor_skill_31 = {
+        random = no
+        sprite = 13
+        political_power_factor = 0.05
+        party_popularity_stability_factor = 0.1
+        resistance_growth = -0.03
+        fascism_drift = -0.05
+        communism_drift = -0.03
+        communism_acceptance = -25
+        fascism_acceptance = -50
+    }
+    WFL_advisor_skill_32 = {
+        random = no
+        sprite = 13
+        communism_drift = 0.1
+    }
+    WFL_advisor_skill_33 = {
+        random = no
+        sprite = 13
+        communism_drift = 0.1
+        political_power_factor = 0.05
+    }
+    WFL_advisor_skill_34 = {
+        random = no
+        sprite = 13
+        communism_drift = 0.05
+        political_power_factor = 0.1
+    }
+    WFL_advisor_skill_35 = {
+        random = no
+        sprite = 15
+        operative_slot = 1
+        agency_upgrade_time = -0.2
+    }
+    WFL_advisor_skill_36 = {
+        random = no
+        sprite = 13
+        communism_drift = 0.05
+        political_power_factor = 0.1
+        research_speed_factor = 0.05
+    }
+    WFL_advisor_skill_37 = {
+        random = no
+        sprite = 13
+        compliance_gain = 0.05
+        production_factory_efficiency_gain_factor = 0.05
+        line_change_production_efficiency_factor = 0.05
+    }
+    WFL_advisor_skill_38 = {
+        random = no
+        sprite = 10
+        industrial_capacity_factory = 0.05
+        local_resources_factor = 0.05
+        production_lack_of_resource_penalty_factor = -0.05
+    }
+    WFL_advisor_skill_39 = {
+        random = no
+        sprite = 13
+        army_core_defence_factor = 0.05
+        conscription_factor = 0.05
+    }
+}

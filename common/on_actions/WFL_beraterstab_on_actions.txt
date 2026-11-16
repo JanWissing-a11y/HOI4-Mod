@@ -1,0 +1,42 @@
+# on_daily_TAG is a country-scoped vanilla hook; no global polling or delayed task events.
+on_actions = {
+    on_startup = {
+        effect = {
+            WFL = {
+                if = {
+                    limit = { exists = yes }
+                    WFL_staff_initialize = yes
+                    if = {
+                        limit = { has_completed_focus = WFL_beraterstab_gruenden }
+                        set_country_flag = WFL_staff_unlocked
+                        if = { limit = { NOT = { WFL_staff_can_operate = yes } } WFL_staff_cleanup = yes }
+                    }
+                }
+            }
+        }
+    }
+    on_daily_WFL = {
+        effect = {
+            # Also initializes a newly released/restored WFL country. The effect
+            # is guarded and never resets an existing staff or achieved rank.
+            WFL_staff_initialize = yes
+            if = { limit = { has_country_flag = WFL_staff_initialized } WFL_staff_daily_tick = yes }
+        }
+    }
+    on_government_change = {
+        effect = {
+            if = {
+                limit = { tag = WFL has_country_flag = WFL_staff_initialized NOT = { WFL_staff_can_operate = yes } }
+                WFL_staff_cleanup = yes
+            }
+        }
+    }
+    on_ruling_party_change = {
+        effect = {
+            if = {
+                limit = { tag = WFL has_country_flag = WFL_staff_initialized NOT = { WFL_staff_can_operate = yes } }
+                WFL_staff_cleanup = yes
+            }
+        }
+    }
+}

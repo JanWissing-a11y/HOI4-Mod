@@ -1,0 +1,99 @@
+WFL_deutsche_einigung = {
+    WFL_deutschland_unter_schuetzenhut_vereinen = {
+        icon = GFX_decision_generic_political_discourse
+        visible = {
+            tag = WFL
+            NOT = { has_country_flag = WFL_deutschland_vereint_done }
+        }
+        available = {
+            tag = WFL
+            NOT = { has_country_flag = WFL_deutschland_vereint_done }
+            WFL_controls_germany_1936 = yes
+        }
+        cost = 0
+        ai_will_do = { base = 1 }
+        # Failed/raced execution remains retryable; success is once-only.
+        complete_effect = {
+            if = {
+                limit = {
+                    tag = WFL
+                    NOT = { has_country_flag = WFL_deutschland_vereint_done }
+                    WFL_controls_germany_1936 = yes
+                }
+                # Always core the fixed 1936 territory, even if GER lost a core.
+                5 = { add_core_of = WFL }
+                42 = { add_core_of = WFL }
+                50 = { add_core_of = WFL }
+                51 = { add_core_of = WFL }
+                52 = { add_core_of = WFL }
+                53 = { add_core_of = WFL }
+                54 = { add_core_of = WFL }
+                55 = { add_core_of = WFL }
+                56 = { add_core_of = WFL }
+                57 = { add_core_of = WFL }
+                58 = { add_core_of = WFL }
+                59 = { add_core_of = WFL }
+                60 = { add_core_of = WFL }
+                61 = { add_core_of = WFL }
+                62 = { add_core_of = WFL }
+                63 = { add_core_of = WFL }
+                64 = { add_core_of = WFL }
+                65 = { add_core_of = WFL }
+                66 = { add_core_of = WFL }
+                67 = { add_core_of = WFL }
+                68 = { add_core_of = WFL }
+                763 = { add_core_of = WFL }
+                909 = { add_core_of = WFL }
+                978 = { add_core_of = WFL }
+                1082 = { add_core_of = WFL }
+                # Later German cores are optional, never an extra requirement.
+                every_state = {
+                    limit = {
+                        is_core_of = GER
+                        is_owned_by = ROOT
+                        is_fully_controlled_by = ROOT
+                    }
+                    add_core_of = WFL
+                }
+                every_state = {
+                    limit = { is_core_of = GER NOT = { is_owned_by = ROOT } }
+                    add_claim_by = WFL
+                }
+                # Vanilla GER_reassert_eastern_claims: Danzig, Memel, Gdynia,
+                # Poznan and Katowice (state 762).
+                85 = {
+                    if = {
+                        limit = { NOT = { is_owned_by = ROOT } }
+                        add_claim_by = WFL
+                    }
+                }
+                188 = {
+                    if = {
+                        limit = { NOT = { is_owned_by = ROOT } }
+                        add_claim_by = WFL
+                    }
+                }
+                807 = {
+                    if = {
+                        limit = { NOT = { is_owned_by = ROOT } }
+                        add_claim_by = WFL
+                    }
+                }
+                86 = {
+                    if = {
+                        limit = { NOT = { is_owned_by = ROOT } }
+                        add_claim_by = WFL
+                    }
+                }
+                762 = {
+                    if = {
+                        limit = { NOT = { is_owned_by = ROOT } }
+                        add_claim_by = WFL
+                    }
+                }
+                remove_ideas = WFL_volk_unter_schuetzenhut
+                set_country_flag = WFL_deutschland_vereint_done
+            }
+        }
+    }
+}

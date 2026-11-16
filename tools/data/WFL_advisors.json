@@ -1,0 +1,779 @@
+{
+  "source_version": "1.19.4.1",
+  "sources": {
+    "common/characters/GER.txt": "c0c860d5fcd6deefa47ad3b5e6188b49ece86357f4729d75a2635e2bd93c399f",
+    "common/country_leader/00_traits.txt": "04381ba8c16bdb0fad18adaedf7d5dad6a8e67bc54c51d1900fcce75fd4e2923",
+    "common/defines/00_defines.lua": "727ac0522ac7e55313dd249c819f273a248c4a438c5e4ce21c867923f9dd0767"
+  },
+  "advisors": [
+    {
+      "id": "WFL_advisor_01",
+      "source_character": "GER_otto_strasser",
+      "name": "Arne Rabenau",
+      "portrait": "01",
+      "roles": [
+        {
+          "source_trait": "GER_revolutionary_nationalist_advisor",
+          "trait": "WFL_advisor_skill_01",
+          "base_cost": 150,
+          "modifiers": {
+            "fascism_drift": "0.12",
+            "war_support_factor": "0.05"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_02",
+      "source_character": "GER_hermann_goring",
+      "name": "Friedrich Ufermann",
+      "portrait": "02",
+      "roles": [
+        {
+          "source_trait": "GER_overseer_four_year_plan",
+          "trait": "WFL_advisor_skill_02",
+          "base_cost": 150,
+          "modifiers": {
+            "local_resources_factor": "0.05",
+            "political_power_factor": "0.05"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_03",
+      "source_character": "GER_joachim_von_ribbentrop",
+      "name": "Ludwig Dornbach",
+      "portrait": "03",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_foreign_affairs_ribbentrop",
+          "trait": "WFL_advisor_skill_03",
+          "base_cost": 50,
+          "modifiers": {
+            "subversive_activites_upkeep": "-0.25",
+            "drift_defence_factor": "0.25",
+            "justify_war_goal_time": "-0.15",
+            "faction_trade_opinion_factor": "0.1",
+            "opinion_gain_monthly_same_ideology": "5"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_04",
+      "source_character": "GER_konstantin_von_neurath",
+      "name": "Johann Auenfeld",
+      "portrait": "04",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_foreign_affairs_neurath",
+          "trait": "WFL_advisor_skill_04",
+          "base_cost": 50,
+          "modifiers": {
+            "improve_relations_maintain_cost_factor": "-0.5",
+            "trade_opinion_factor": "0.10",
+            "subjects_autonomy_gain": "-0.1",
+            "compliance_growth": "0.01",
+            "foreign_subversive_activites": "-0.25"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_05",
+      "source_character": "GER_fritz_todt",
+      "name": "Emil Werkhausen",
+      "portrait": "05",
+      "roles": [
+        {
+          "source_trait": "GER_reich_engineer",
+          "trait": "WFL_advisor_skill_05",
+          "base_cost": 150,
+          "modifiers": {
+            "production_speed_industrial_complex_factor": "0.1",
+            "production_speed_infrastructure_factor": "0.1",
+            "production_speed_rail_way_factor": "0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_06",
+      "source_character": "GER_albert_speer",
+      "name": "Benedikt Torberg",
+      "portrait": "06",
+      "roles": [
+        {
+          "source_trait": "GER_reich_architect",
+          "trait": "WFL_advisor_skill_06",
+          "base_cost": 150,
+          "modifiers": {
+            "production_speed_buildings_factor": "0.05",
+            "fascism_drift": "0.01"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_07",
+      "source_character": "GER_hjalmar_schacht",
+      "name": "Heinrich Rechenberg",
+      "portrait": "07",
+      "roles": [
+        {
+          "source_trait": "GER_mefo_bills_architect",
+          "trait": "WFL_advisor_skill_07",
+          "base_cost": 75,
+          "modifiers": {
+            "production_speed_arms_factory_factor": "0.1",
+            "production_speed_dockyard_factor": "0.1",
+            "consumer_goods_factor": "-0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_08",
+      "source_character": "GER_walther_funk",
+      "name": "Rudolf Stahlbach",
+      "portrait": "08",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_of_economy",
+          "trait": "WFL_advisor_skill_08",
+          "base_cost": 150,
+          "modifiers": {
+            "consumer_goods_factor": "-0.1",
+            "production_speed_supply_node_factor": "0.15",
+            "production_lack_of_resource_penalty_factor": "-0.05",
+            "industry_free_repair_factor": "0.15"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_09",
+      "source_character": "GER_joseph_goebbels",
+      "name": "Karl Lauterfeld",
+      "portrait": "09",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_of_propaganda",
+          "trait": "WFL_advisor_skill_09",
+          "base_cost": 150,
+          "modifiers": {
+            "war_support_factor": "0.05",
+            "fascism_drift": "0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_10",
+      "source_character": "GER_rudolf_hess",
+      "name": "Wilhelm Ratsburg",
+      "portrait": "10",
+      "roles": [
+        {
+          "source_trait": "GER_first_among_equals",
+          "trait": "WFL_advisor_skill_10",
+          "base_cost": 150,
+          "modifiers": {
+            "opinion_gain_monthly_same_ideology_factor": "1",
+            "political_power_factor": "0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_11",
+      "source_character": "GER_heinrich_himmler",
+      "name": "Konrad Wachtmann",
+      "portrait": "11",
+      "roles": [
+        {
+          "source_trait": "prince_of_terror",
+          "trait": "WFL_advisor_skill_11",
+          "base_cost": 150,
+          "modifiers": {
+            "resistance_damage_to_garrison": "-0.25",
+            "foreign_subversive_activites": "-0.3",
+            "non_core_manpower": "0.02"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_12",
+      "source_character": "GER_martin_bormann",
+      "name": "Oskar Binnenhof",
+      "portrait": "13",
+      "roles": [
+        {
+          "source_trait": "GER_secretary_to_the_fuhrer",
+          "trait": "WFL_advisor_skill_12",
+          "base_cost": 150,
+          "modifiers": {
+            "political_advisor_cost_factor": "-0.1",
+            "political_power_factor": "0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_13",
+      "source_character": "GER_leni_riefenstahl",
+      "name": "Marlene Rheinfeld",
+      "portrait": "12",
+      "roles": [
+        {
+          "source_trait": "GER_film_director",
+          "trait": "WFL_advisor_skill_13",
+          "base_cost": 150,
+          "modifiers": {
+            "weekly_casualties_war_support": "0.001",
+            "offensive_war_stability_factor": "0.05",
+            "defensive_war_stability_factor": "0.05",
+            "drift_defence_factor": "0.15"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_14",
+      "source_character": "GER_franz_seldte",
+      "name": "Theodor Werksdorf",
+      "portrait": "15",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_for_labor",
+          "trait": "WFL_advisor_skill_14",
+          "base_cost": 150,
+          "modifiers": {
+            "stability_factor": "-0.05",
+            "compliance_growth": "-0.01",
+            "resistance_growth": "0.03",
+            "industrial_capacity_factory": "0.025",
+            "industrial_capacity_dockyard": "0.025",
+            "production_factory_efficiency_gain_factor": "0.025",
+            "production_factory_start_efficiency_factor": "0.025"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_15",
+      "source_character": "GER_hanns_kerrl",
+      "name": "Paul Kirchhain",
+      "portrait": "16",
+      "roles": [
+        {
+          "source_trait": "GER_reich_minister_of_church_affairs",
+          "trait": "WFL_advisor_skill_15",
+          "base_cost": 150,
+          "modifiers": {
+            "political_power_factor": "0.05",
+            "party_popularity_stability_factor": "0.1",
+            "resistance_growth": "-0.025",
+            "research_speed_factor": "-0.025",
+            "weekly_bombing_war_support": "0.002"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_16",
+      "source_character": "GER_reinhard_heydrich",
+      "name": "Ernst Sicherau",
+      "portrait": "17",
+      "roles": [
+        {
+          "source_trait": "GER_reich_security_main_office_director_lar",
+          "trait": "WFL_advisor_skill_16",
+          "base_cost": 150,
+          "modifiers": {
+            "resistance_growth": "-0.05",
+            "civilian_intel_to_others": "-0.2",
+            "army_intel_to_others": "-0.2",
+            "operative_slot": "1"
+          },
+          "required_dlc": [],
+          "instance_allowed": "allowed = {\n    has_dlc = \"La Resistance\"\n}"
+        },
+        {
+          "source_trait": "GER_reich_security_main_office_director_no_lar",
+          "trait": "WFL_advisor_skill_17",
+          "base_cost": 150,
+          "modifiers": {
+            "resistance_growth": "-0.05",
+            "army_core_defence_factor": "0.02",
+            "foreign_subversive_activites": "-0.25"
+          },
+          "required_dlc": [],
+          "instance_allowed": "allowed = {\n    NOT = {\n        has_dlc = \"La Resistance\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_17",
+      "source_character": "GER_wilhelm_canaris",
+      "name": "Adrian Falkenried",
+      "portrait": "18",
+      "roles": [
+        {
+          "source_trait": "head_of_the_abwehr",
+          "trait": "WFL_advisor_skill_18",
+          "base_cost": 150,
+          "modifiers": {
+            "operative_slot": "1",
+            "agency_upgrade_time": "-0.2"
+          },
+          "required_dlc": [
+            "La Resistance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_18",
+      "source_character": "GER_hans_oster",
+      "name": "Leonhard Freihagen",
+      "portrait": "01",
+      "roles": [
+        {
+          "source_trait": "anti_fascist_agent",
+          "trait": "WFL_advisor_skill_19",
+          "base_cost": 150,
+          "modifiers": {
+            "fascism_drift": "-0.05",
+            "stability_factor": "0.1"
+          },
+          "required_dlc": [
+            "Waking the Tiger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_19",
+      "source_character": "GER_alfred_hugenberg",
+      "name": "Hermann Kronwald",
+      "portrait": "02",
+      "roles": [
+        {
+          "source_trait": "monarchist_media_mogul",
+          "trait": "WFL_advisor_skill_20",
+          "base_cost": 150,
+          "modifiers": {
+            "neutrality_drift": "0.1",
+            "war_stability_factor": "0.1"
+          },
+          "required_dlc": [
+            "Waking the Tiger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_20",
+      "source_character": "GER_carl_friedrich_goerdeler",
+      "name": "Georg Maßfeld",
+      "portrait": "03",
+      "roles": [
+        {
+          "source_trait": "GER_price_commissioner",
+          "trait": "WFL_advisor_skill_21",
+          "base_cost": 150,
+          "modifiers": {
+            "production_lack_of_resource_penalty_factor": "-0.05",
+            "local_resources_factor": "0.05",
+            "trade_opinion_factor": "0.15",
+            "consumer_goods_factor": "-0.05"
+          },
+          "required_dlc": [
+            "Waking the Tiger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_21",
+      "source_character": "GER_julius_leber",
+      "name": "Matthias Bürgering",
+      "portrait": "04",
+      "roles": [
+        {
+          "source_trait": "connected_citizen",
+          "trait": "WFL_advisor_skill_22",
+          "base_cost": 150,
+          "modifiers": {
+            "political_power_factor": "0.05",
+            "stability_factor": "0.05",
+            "drift_defence_factor": "0.15"
+          },
+          "required_dlc": [
+            "Waking the Tiger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_22",
+      "source_character": "GER_kurt_schumacher",
+      "name": "Daniel Wiesenbrück",
+      "portrait": "05",
+      "roles": [
+        {
+          "source_trait": "democratic_reformer",
+          "trait": "WFL_advisor_skill_23",
+          "base_cost": 150,
+          "modifiers": {
+            "democratic_drift": "0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_23",
+      "source_character": "GER_theodor_heuss",
+      "name": "Felix Blattmann",
+      "portrait": "06",
+      "roles": [
+        {
+          "source_trait": "liberal_journalist",
+          "trait": "WFL_advisor_skill_24",
+          "base_cost": 150,
+          "modifiers": {
+            "democratic_drift": "0.05",
+            "political_power_factor": "0.1"
+          },
+          "required_dlc": [
+            "Waking the Tiger"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_24",
+      "source_character": "GER_hans_luther",
+      "name": "Anton Münzberg",
+      "portrait": "07",
+      "roles": [
+        {
+          "source_trait": "GER_former_reichsbank_president",
+          "trait": "WFL_advisor_skill_25",
+          "base_cost": 150,
+          "modifiers": {
+            "production_speed_infrastructure_factor": "0.1",
+            "production_speed_industrial_complex_factor": "0.1",
+            "consumer_goods_factor": "-0.1"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_25",
+      "source_character": "GER_ludwig_erhard",
+      "name": "Otmar Freimarkt",
+      "portrait": "08",
+      "roles": [
+        {
+          "source_trait": "economic_reformer",
+          "trait": "WFL_advisor_skill_26",
+          "base_cost": 150,
+          "modifiers": {
+            "trade_laws_cost_factor": "-0.33",
+            "economy_cost_factor": "-0.33",
+            "consumer_goods_factor": "-0.15"
+          },
+          "required_dlc": []
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_26",
+      "source_character": "GER_hermann_erhardt",
+      "name": "Kurt Schützenwald",
+      "portrait": "09",
+      "roles": [
+        {
+          "source_trait": "GER_freikorps_commander",
+          "trait": "WFL_advisor_skill_27",
+          "base_cost": 150,
+          "modifiers": {
+            "conscription_factor": "0.03",
+            "modifier_army_sub_unit_militia_defence_factor": "0.05",
+            "modifier_army_sub_unit_militia_attack_factor": "0.05",
+            "modifier_army_sub_unit_militia_max_org_factor": "0.05",
+            "drift_defence_factor": "0.15"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_27",
+      "source_character": "GER_adolf_friedrich_von_mecklenburg",
+      "name": "August Fernbach",
+      "portrait": "10",
+      "roles": [
+        {
+          "source_trait": "GER_minister_of_the_colonies",
+          "trait": "WFL_advisor_skill_28",
+          "base_cost": 150,
+          "modifiers": {
+            "political_power_factor": "0.05",
+            "non_core_manpower": "0.02",
+            "resistance_garrison_penetration_chance": "-0.1"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_28",
+      "source_character": "GER_wilhelm_von_gayl",
+      "name": "Rainer Rechtfeld",
+      "portrait": "11",
+      "roles": [
+        {
+          "source_trait": "GER_monarchist_jurist",
+          "trait": "WFL_advisor_skill_29",
+          "base_cost": 150,
+          "modifiers": {
+            "political_power_factor": "0.05",
+            "stability_factor": "0.05",
+            "weekly_casualties_war_support": "0.001",
+            "offensive_war_stability_factor": "0.05",
+            "defensive_war_stability_factor": "0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_29",
+      "source_character": "GER_andreas_hermes",
+      "name": "Wendelin Kornau",
+      "portrait": "13",
+      "roles": [
+        {
+          "source_trait": "GER_minister_of_agriculture",
+          "trait": "WFL_advisor_skill_30",
+          "base_cost": 150,
+          "modifiers": {
+            "out_of_supply_factor": "-0.1",
+            "monthly_population": "0.1",
+            "industrial_capacity_factory": "0.05",
+            "industrial_capacity_dockyard": "0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_30",
+      "source_character": "GER_dietrich_bonhoeffer",
+      "name": "Martin Friedenshain",
+      "portrait": "14",
+      "roles": [
+        {
+          "source_trait": "GER_influential_pastor",
+          "trait": "WFL_advisor_skill_31",
+          "base_cost": 150,
+          "modifiers": {
+            "political_power_factor": "0.05",
+            "party_popularity_stability_factor": "0.1",
+            "resistance_growth": "-0.03",
+            "fascism_drift": "-0.05",
+            "communism_drift": "-0.03",
+            "communism_acceptance": "-25",
+            "fascism_acceptance": "-50"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_31",
+      "source_character": "GER_ernst_thalmann",
+      "name": "Jakob Rotacker",
+      "portrait": "15",
+      "roles": [
+        {
+          "source_trait": "communist_revolutionary",
+          "trait": "WFL_advisor_skill_32",
+          "base_cost": 150,
+          "modifiers": {
+            "communism_drift": "0.1"
+          },
+          "required_dlc": [],
+          "instance_allowed": "allowed = {\n    NOT = {\n        has_dlc = Gotterdammerung\n    }\n}"
+        },
+        {
+          "source_trait": "GER_proletarian_leader",
+          "trait": "WFL_advisor_skill_33",
+          "base_cost": 150,
+          "modifiers": {
+            "communism_drift": "0.1",
+            "political_power_factor": "0.05"
+          },
+          "required_dlc": [],
+          "instance_allowed": "allowed = {\n    has_dlc = Gotterdammerung\n}"
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_32",
+      "source_character": "GER_walter_ulbricht",
+      "name": "Viktor Ordnau",
+      "portrait": "16",
+      "roles": [
+        {
+          "source_trait": "GER_inflexible_communist_organizer",
+          "trait": "WFL_advisor_skill_34",
+          "base_cost": 150,
+          "modifiers": {
+            "communism_drift": "0.05",
+            "political_power_factor": "0.1"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_33",
+      "source_character": "GER_wilhelm_zaisser",
+      "name": "Richard Nachrichtenau",
+      "portrait": "17",
+      "roles": [
+        {
+          "source_trait": "GER_intelligence_coordinator",
+          "trait": "WFL_advisor_skill_35",
+          "base_cost": 150,
+          "modifiers": {
+            "operative_slot": "1",
+            "agency_upgrade_time": "-0.2"
+          },
+          "required_dlc": [
+            "Gotterdammerung",
+            "La Resistance"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_34",
+      "source_character": "GER_otto_ruhle",
+      "name": "Eduard Denkfeld",
+      "portrait": "18",
+      "roles": [
+        {
+          "source_trait": "marxist_philosopher",
+          "trait": "WFL_advisor_skill_36",
+          "base_cost": 150,
+          "modifiers": {
+            "communism_drift": "0.05",
+            "political_power_factor": "0.1",
+            "research_speed_factor": "0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_35",
+      "source_character": "GER_hermann_duncker",
+      "name": "Lorenz Lehrmann",
+      "portrait": "01",
+      "roles": [
+        {
+          "source_trait": "GER_workers_educator",
+          "trait": "WFL_advisor_skill_37",
+          "base_cost": 150,
+          "modifiers": {
+            "compliance_gain": "0.05",
+            "production_factory_efficiency_gain_factor": "0.05",
+            "line_change_production_efficiency_factor": "0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_36",
+      "source_character": "GER_august_thalheimer",
+      "name": "Alfred Gemeinschaft",
+      "portrait": "02",
+      "roles": [
+        {
+          "source_trait": "GER_stakhonovite_collectivist1",
+          "trait": "WFL_advisor_skill_38",
+          "base_cost": 150,
+          "modifiers": {
+            "industrial_capacity_factory": "0.05",
+            "local_resources_factor": "0.05",
+            "production_lack_of_resource_penalty_factor": "-0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "WFL_advisor_37",
+      "source_character": "GER_bernhard_bastlein",
+      "name": "Samuel Standhaft",
+      "portrait": "03",
+      "roles": [
+        {
+          "source_trait": "GER_seasoned_socialist_resistance_fighter",
+          "trait": "WFL_advisor_skill_39",
+          "base_cost": 150,
+          "modifiers": {
+            "army_core_defence_factor": "0.05",
+            "conscription_factor": "0.05"
+          },
+          "required_dlc": [
+            "Gotterdammerung"
+          ]
+        }
+      ]
+    }
+  ]
+}

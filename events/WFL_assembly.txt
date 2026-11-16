@@ -1,0 +1,12 @@
+add_namespace = wfl_assembly
+news_event = {
+    id = wfl_assembly.1
+    title = wfl_assembly.1.t
+    desc = wfl_assembly.1.d
+    picture = GFX_WFL_assembly_hall
+    is_triggered_only = yes
+    major = no
+    trigger = { tag = WFL exists = yes }
+    # The monthly tick already resolved every vote; this only displays news.
+    option = { name = wfl_assembly.1.a }
+}

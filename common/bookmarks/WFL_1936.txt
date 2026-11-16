@@ -1,0 +1,17 @@
+bookmarks = {
+    bookmark = {
+        name = WFL_BOOKMARK_NAME
+        desc = WFL_BOOKMARK_DESC
+        date = 1936.1.1.12
+        picture = GFX_select_date_1936
+        default_country = WFL
+        default = no
+        WFL = {
+            history = WFL_BOOKMARK_HISTORY
+            ideology = neutrality
+            ideas = { WFL_kleine_verwaltung }
+            focuses = { WFL_rat_der_buergerhalle }
+        }
+        effect = { randomize_weather = 22345 }
+    }
+}

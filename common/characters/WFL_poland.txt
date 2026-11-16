@@ -1,0 +1,16 @@
+characters = {
+    WFL_POL_kevin_von_beverungen_i = {
+        name = WFL_POL_kevin_von_beverungen_i
+        portraits = {
+            civilian = {
+                large = GFX_portrait_WFL_POL_kevin_von_beverungen_i
+                small = GFX_portrait_WFL_POL_kevin_von_beverungen_i_small
+            }
+        }
+        country_leader = {
+            ideology = despotism
+            traits = { WFL_POL_pragmatischer_koenig WFL_POL_ausgleichender_monarch }
+            expire = "1965.1.1.1"
+        }
+    }
+}

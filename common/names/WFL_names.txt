@@ -1,0 +1,88 @@
+# Fictional regional combinations for generated WFL characters and aces.
+# Schema: installed common/names/00_names.txt (HoI4 1.19.4.1).
+# These are independent name pools, not identities assigned to supplied photos.
+# Existing vanilla/global pools are neither replaced nor extended.
+
+WFL = {
+    male = {
+        names = {
+            "Alwin" "Arne" "Arvid" "Anton" "Benedikt" "Bernhard" "Bruno"
+            "Carsten" "Clemens" "Dieter" "Edgar" "Edmund" "Emil" "Erhard"
+            "Erik" "Fabian" "Felix" "Franz" "Friedrich" "Gerrit" "Gregor"
+            "Hannes" "Henrik" "Hugo" "Jochen" "Johann" "Jonas" "Julius"
+            "Konrad" "Leonhard" "Lorenz" "Ludwig" "Martin" "Matthias" "Merten"
+            "Oskar" "Richard" "Ruben" "Theodor" "Volker" "Walter" "Wilhelm"
+        }
+    }
+    female = {
+        names = {
+            "Ada" "Adelheid" "Alina" "Alma" "Anneliese" "Annelotte" "Astrid"
+            "Berta" "Charlotte" "Clara" "Dora" "Dorothea" "Edith" "Elfriede"
+            "Elise" "Elsa" "Emilie" "Erika" "Frieda" "Greta" "Hanna"
+            "Hedwig" "Helene" "Henriette" "Hilde" "Ida" "Ilse" "Irma"
+            "Johanna" "Jutta" "Klara" "Lena" "Lieselotte" "Luise" "Margarete"
+            "Marianne" "Marta" "Mathilde" "Mina" "Nora" "Ottilie" "Paula"
+            "Renate" "Rosa" "Sigrid" "Thea" "Tilda" "Ursula" "Vera"
+            "Wilhelmine"
+        }
+    }
+    surnames = {
+        "Auenbrück" "Auenkamp" "Auental" "Birkenau" "Birkenfeld" "Deichbach" "Deichfeld"
+        "Deichkamp" "Eichenbruch" "Eichenkamp" "Eichenried" "Flussberg" "Flusskamp" "Flurental"
+        "Gartenbach" "Grabenau" "Grafenbruch" "Hafenau" "Hafenberg" "Hafenfeld" "Hafenhorst"
+        "Heidebach" "Heidebrück" "Heidengrund" "Hoftal" "Kornbach" "Kornbrück" "Kornfeld"
+        "Kornhorst" "Kronenau" "Mühlau" "Mühlenbach" "Mühlenfeld" "Niederaue" "Niederkamp"
+        "Nordauen" "Quellbach" "Quellbrück" "Rheinau" "Rheinbach" "Rheinhagen" "Rheinkamp"
+        "Rheinried" "Rheintal" "Rohrbach" "Schilfau" "Schilfberg" "Schilfgrund" "Schilfkamp"
+        "Schützenau" "Sommerbruch" "Sommerdeich" "Sonnenaue" "Torbrück" "Torfeld" "Uferau"
+        "Uferbruch" "Uferfeld" "Waldau" "Waldkamp" "Waldried" "Weidenau" "Weidenbrück"
+        "Weidenfeld" "Westauen" "Wiesenaue" "Wiesenbach" "Wiesenkamp"
+    }
+    callsigns = {
+        "Auenfalke" "Rheinwind" "Lippefunke" "Torwache" "Schilfrohr" "Kornvogel" "Deichlicht"
+        "Aueseeblick" "Bürgerhallenecho" "Wiesenkomet" "Abendstern" "Morgenrot" "Uferblitz" "Flussläufer"
+        "Schützenstern" "Klapperstorch" "Werkbankfuchs" "Niederrheinwelle" "Kartoffelkönig"
+    }
+}
+
+WFL_KINGDOM = {
+    male = {
+        names = {
+            "Alwin" "Arne" "Arvid" "Anton" "Benedikt" "Bernhard" "Bruno"
+            "Carsten" "Clemens" "Dieter" "Edgar" "Edmund" "Emil" "Erhard"
+            "Erik" "Fabian" "Felix" "Franz" "Friedrich" "Gerrit" "Gregor"
+            "Hannes" "Henrik" "Hugo" "Jochen" "Johann" "Jonas" "Julius"
+            "Konrad" "Leonhard" "Lorenz" "Ludwig" "Martin" "Matthias" "Merten"
+            "Oskar" "Richard" "Ruben" "Theodor" "Volker" "Walter" "Wilhelm"
+        }
+    }
+    female = {
+        names = {
+            "Ada" "Adelheid" "Alina" "Alma" "Anneliese" "Annelotte" "Astrid"
+            "Berta" "Charlotte" "Clara" "Dora" "Dorothea" "Edith" "Elfriede"
+            "Elise" "Elsa" "Emilie" "Erika" "Frieda" "Greta" "Hanna"
+            "Hedwig" "Helene" "Henriette" "Hilde" "Ida" "Ilse" "Irma"
+            "Johanna" "Jutta" "Klara" "Lena" "Lieselotte" "Luise" "Margarete"
+            "Marianne" "Marta" "Mathilde" "Mina" "Nora" "Ottilie" "Paula"
+            "Renate" "Rosa" "Sigrid" "Thea" "Tilda" "Ursula" "Vera"
+            "Wilhelmine"
+        }
+    }
+    surnames = {
+        "Auenbrück" "Auenkamp" "Auental" "Birkenau" "Birkenfeld" "Deichbach" "Deichfeld"
+        "Deichkamp" "Eichenbruch" "Eichenkamp" "Eichenried" "Flussberg" "Flusskamp" "Flurental"
+        "Gartenbach" "Grabenau" "Grafenbruch" "Hafenau" "Hafenberg" "Hafenfeld" "Hafenhorst"
+        "Heidebach" "Heidebrück" "Heidengrund" "Hoftal" "Kornbach" "Kornbrück" "Kornfeld"
+        "Kornhorst" "Kronenau" "Mühlau" "Mühlenbach" "Mühlenfeld" "Niederaue" "Niederkamp"
+        "Nordauen" "Quellbach" "Quellbrück" "Rheinau" "Rheinbach" "Rheinhagen" "Rheinkamp"
+        "Rheinried" "Rheintal" "Rohrbach" "Schilfau" "Schilfberg" "Schilfgrund" "Schilfkamp"
+        "Schützenau" "Sommerbruch" "Sommerdeich" "Sonnenaue" "Torbrück" "Torfeld" "Uferau"
+        "Uferbruch" "Uferfeld" "Waldau" "Waldkamp" "Waldried" "Weidenau" "Weidenbrück"
+        "Weidenfeld" "Westauen" "Wiesenaue" "Wiesenbach" "Wiesenkamp"
+    }
+    callsigns = {
+        "Auenfalke" "Rheinwind" "Lippefunke" "Torwache" "Schilfrohr" "Kornvogel" "Deichlicht"
+        "Aueseeblick" "Bürgerhallenecho" "Wiesenkomet" "Abendstern" "Morgenrot" "Uferblitz" "Flussläufer"
+        "Schützenstern" "Klapperstorch" "Werkbankfuchs" "Niederrheinwelle" "Kartoffelkönig"
+    }
+}
